@@ -1,26 +1,26 @@
 const navBarStyles = {
-    expandedOptionsButton: {
-        marginY: 2,
-        color: 'white',
-        display: 'block',
-        textTransform: 'none' 
+  expandedOptionsButton: {
+    marginY: 2,
+    color: "white",
+    display: "block",
+    textTransform: "none",
+  },
+  expandedOptionsContainer: {
+    flex: 2,
+    display: {
+      xs: "none",
+      md: "flex",
     },
-    expandedOptionsContainer: {
-        flex: 2,
-        display: {
-            xs: 'none',
-            md: 'flex'
-        },
-        justifyContent: 'space-evenly',
-        maxWidth: '1000px'
+    justifyContent: "space-evenly",
+    maxWidth: "1000px",
+  },
+  menuIcon: {
+    display: {
+      sm: "flex",
+      md: "none",
     },
-    menuIcon: {
-        display: {
-            sm: 'flex',
-            md: 'none'
-        }, 
-        justifyContent: 'flex-end'
-    }
+    justifyContent: "flex-end",
+  },
 };
 
 export default navBarStyles;

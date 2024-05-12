@@ -1,7 +1,5 @@
-function Health () {
-    return (
-        <div>Health!</div>
-    );
+function Health() {
+  return <div>Health!</div>;
 }
 
 export default Health;

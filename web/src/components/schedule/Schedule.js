@@ -1,7 +1,5 @@
 function Schedule() {
-    return (
-        <div>Schedule!</div>
-    );
+  return <div>Schedule!</div>;
 }
 
 export default Schedule;
