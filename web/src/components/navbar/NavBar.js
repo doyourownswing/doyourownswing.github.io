@@ -12,6 +12,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import './NavBar.css';
 import navOptions from './NavOptions';
+import navBarStyles from './NavBar.styles'
 
 function NavBar() {
     const [anchorElMenu, setAnchorElMenu] = React.useState(null);
@@ -29,7 +30,7 @@ function NavBar() {
         navOptions.map((option) => ( 
             <Button 
                 key={option.displayName}
-                sx={{ marginY: 2, color: 'white', display: 'block', textTransform: 'none' }}
+                sx={navBarStyles.expandedOptionsButton}
                 href={option.url}>
                     {option.displayName}
             </Button>
@@ -56,13 +57,13 @@ function NavBar() {
                         Do Your Own Swing
                     </Typography>
                     { /* Nav bar options for large screens */ }
-                    <Box sx={{ flex: 2, display: { xs: 'none', md: 'flex' }, justifyContent: 'space-evenly', maxWidth: '1000px'}}>
+                    <Box sx={navBarStyles.expandedOptionsContainer}>
                         {generateExpandedNavBarOptions()}
                     </Box>
 
                     { /* Menu with options for small screens */ }
                     <IconButton
-                     sx={{ display: { sm: 'flex', md: 'none' }, justifyContent: 'flex-end'}}
+                        sx={navBarStyles.menuIcon}
                         size="large"
                         aria-label="Open menu"
                         edge="end"
