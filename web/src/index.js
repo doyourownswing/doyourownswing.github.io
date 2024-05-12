@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { createHashRouter, RouterProvider } from "react-router-dom";
 import { createTheme } from "@mui/material/styles";
+import FeatureFlags from "./infra/FeatureFlags";
 import Contact from "./components/contact/Contact";
 import Schedule from "./components/schedule/Schedule";
 import About from "./components/about/About";
@@ -12,32 +13,53 @@ import NavBar from "./components/navbar/NavBar";
 import ThemeProvider from "@mui/material/styles/ThemeProvider";
 import "./index.css";
 
-const router = createHashRouter([
-  {
-    path: "/",
-    element: <Home />,
-  },
-  {
-    path: "/contact",
-    element: <Contact />,
-  },
-  {
-    path: "/schedule",
-    element: <Schedule />,
-  },
-  {
-    path: "/about",
-    element: <About />,
-  },
-  {
-    path: "/health",
-    element: <Health />,
-  },
-  {
-    path: "/code",
-    element: <CodeOfConduct />,
-  },
-]);
+/** Generates the list of routes to include in the router based on the feature eligibility. */
+function generateRoutes() {
+  let routes = [
+    {
+      path: "/",
+      element: <Home />,
+    },
+  ];
+
+  if (FeatureFlags.showScheduleTab) {
+    routes.push({
+      path: "/schedule",
+      element: <Schedule />,
+    });
+  }
+  if (FeatureFlags.showAboutTab) {
+    routes.push({
+      path: "/about",
+      element: <About />,
+    });
+  }
+
+  if (FeatureFlags.showHealthTab) {
+    routes.push({
+      path: "/health",
+      element: <Health />,
+    });
+  }
+
+  if (FeatureFlags.showCodeOfConductTab) {
+    routes.push({
+      path: "/code",
+      element: <CodeOfConduct />,
+    });
+  }
+
+  if (FeatureFlags.showContactTab) {
+    routes.push({
+      path: "/contact",
+      element: <Contact />,
+    });
+  }
+
+  return routes;
+}
+
+const router = createHashRouter(generateRoutes());
 
 const theme = createTheme({
   palette: {

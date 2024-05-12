@@ -2,6 +2,7 @@ import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
+import FeatureFlags from "../../infra/FeatureFlags";
 import IconButton from "@mui/material/IconButton";
 import Link from "@mui/material/Link";
 import Menu from "@mui/material/Menu";
@@ -43,6 +44,20 @@ function NavBar() {
       </Link>
     ));
 
+  if (!FeatureFlags.showMenuOptions) {
+    return (
+      <AppBar position="static" id="NavBar">
+        <Container maxWidth="null">
+          <Toolbar disableGutters>
+            <Typography variant="h6" noWrap component="div" sx={{ flex: 1 }}>
+              Do Your Own Swing
+            </Typography>
+          </Toolbar>
+        </Container>
+      </AppBar>
+    );
+  }
+
   return (
     <AppBar position="static" id="NavBar">
       <Container maxWidth="null">
@@ -50,6 +65,7 @@ function NavBar() {
           <Typography variant="h6" noWrap component="div" sx={{ flex: 1 }}>
             Do Your Own Swing
           </Typography>
+
           {/* Nav bar options for large screens */}
           <Box sx={navBarStyles.expandedOptionsContainer}>
             {generateExpandedNavBarOptions()}
