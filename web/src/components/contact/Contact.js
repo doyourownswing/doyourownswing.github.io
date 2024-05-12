@@ -1,7 +1,7 @@
-import React from "react";
-
-export default class Contact extends React.Component {
-    render() {
-        return <div>Contact!</div>
-    }
+function Contact() {
+    return (
+        <div>Contact!</div>
+    );
 }
+
+export default Contact;

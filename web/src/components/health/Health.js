@@ -1,7 +1,7 @@
-import React from "react";
-
-export default class Health extends React.Component {
-    render() {
-        return <div>Health!</div>
-    }
+function Health () {
+    return (
+        <div>Health!</div>
+    );
 }
+
+export default Health;
