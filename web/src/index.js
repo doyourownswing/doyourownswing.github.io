@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { createHashRouter, RouterProvider } from "react-router-dom";
-import { createTheme } from "@mui/material/styles";
 import FeatureFlags from "./infra/FeatureFlags";
 import Contact from "./components/contact/Contact";
 import Schedule from "./components/schedule/Schedule";
@@ -11,6 +10,7 @@ import CodeOfConduct from "./components/codeofconduct/CodeOfConduct";
 import Home from "./components/home/Home";
 import NavBar from "./components/navbar/NavBar";
 import ThemeProvider from "@mui/material/styles/ThemeProvider";
+import theme from "./common/theme";
 import "./index.css";
 
 /** Generates the list of routes to include in the router based on the feature eligibility. */
@@ -60,19 +60,6 @@ function generateRoutes() {
 }
 
 const router = createHashRouter(generateRoutes());
-
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: "#260B34",
-    },
-    secondary: {
-      main: "#502268",
-    },
-  },
-});
-
-// https://coolors.co/260b34-502268-955ab5-bf9ad3-ebebeb
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

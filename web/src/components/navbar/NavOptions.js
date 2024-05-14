@@ -5,6 +5,10 @@ class NavOption {
     this.displayName = displayName;
     this.url = url;
   }
+
+  isCurrentPage() {
+    return window.location.hash === this.url;
+  }
 }
 
 function generateNavOptions() {
