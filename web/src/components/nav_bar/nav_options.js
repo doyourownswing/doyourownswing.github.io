@@ -1,4 +1,4 @@
-import FeatureFlags from "../../infra/FeatureFlags";
+import FeatureFlags from "../../infra/feature_flags";
 
 class NavOption {
   constructor(displayName, url) {
