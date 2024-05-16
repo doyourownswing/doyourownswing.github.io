@@ -1,9 +1,9 @@
-import "./NavBar.css";
+import "./nav_bar.css";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
-import FeatureFlags from "../../infra/FeatureFlags";
+import FeatureFlags from "../../infra/feature_flags";
 import IconButton from "@mui/material/IconButton";
 import Link from "@mui/material/Link";
 import Menu from "@mui/material/Menu";
@@ -13,8 +13,8 @@ import React from "react";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import messages from "../../common/messages";
-import navOptions from "./NavOptions";
-import navBarStyles from "./NavBar.styles";
+import navOptions from "./nav_options";
+import navBarStyles from "./nav_bar.styles";
 import { useTheme } from "@mui/material/styles";
 
 /** Nav bar options for large screens.
