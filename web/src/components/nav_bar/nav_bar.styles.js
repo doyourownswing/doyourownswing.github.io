@@ -7,8 +7,8 @@ const navBarStyles = {
     textTransform: "none",
   },
   selectedOption: {
-    color: theme.palette.secondary.main,
-    fontWeight: 600,
+    color: theme.palette.text.activeSelection,
+    fontWeight: 700,
   },
   expandedOptionsContainer: {
     flex: 2,
