@@ -10,8 +10,8 @@ import TableContainer from "@mui/material/TableContainer";
 import TableRow from "@mui/material/TableRow";
 import Typography from "@mui/material/Typography";
 import { dateToHumanReadableString } from "../../../../../utils/date_utils";
-import messages from "../../../../../common/messages";
 import dyosRendererStyles from "./dyos_renderer.styles";
+import messages from "../messages";
 
 function ScheduleRenderer(props) {
   let schedule = props.schedule;
@@ -34,7 +34,6 @@ function ScheduleRenderer(props) {
 
 function DyosRenderer(props) {
   let event = props.event;
-  console.log(event);
 
   return (
     <Card sx={dyosRendererStyles.card}>

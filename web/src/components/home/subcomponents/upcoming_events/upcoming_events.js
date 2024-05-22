@@ -10,6 +10,7 @@ import Typography from "@mui/material/Typography";
 import getNextEvents from "../../../../data/events";
 import FeatureFlags from "../../../../infra/feature_flags";
 import upcomingEventsStyles from "./upcoming_events.styles";
+import messages from "./messages";
 
 function TwoEventRenderer(props) {
   let events = props.events;
@@ -50,7 +51,7 @@ function CarouselEventRenderer(props) {
               onClick={handleNext}
               disabled={currentEventIndex === maxSteps - 1}
             >
-              Next
+              {messages.next}
               <KeyboardArrowRight />
             </Button>
           }
@@ -61,7 +62,7 @@ function CarouselEventRenderer(props) {
               disabled={currentEventIndex === 0}
             >
               <KeyboardArrowLeft />
-              Back
+              {messages.back}
             </Button>
           }
         />
@@ -76,12 +77,9 @@ function UpcomingEvents() {
   return (
     <div style={{ backgroundColor: "#ededed" }}>
       <Container sx={{ paddingTop: "24px", paddingBottom: "24px" }}>
-        <Typography variant="h4">Upcoming events</Typography>
+        <Typography variant="h4">{messages.upcomingEventsTitle}</Typography>
         {FeatureFlags.showScheduleTab && (
-          <Typography>
-            See the Classes tab for class description, prerequisites, pricing,
-            and masking policy.
-          </Typography>
+          <Typography>{messages.upcomingEventsDescription}</Typography>
         )}
 
         <TwoEventRenderer events={events} />

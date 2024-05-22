@@ -26,7 +26,7 @@ class Event {
 const defaultDyosSchedule = [
   { time: "7:30pm - 8:15pm", name: "Building Blocks" },
   { time: "8:15pm - 9:00pm", name: "Creative Expressions" },
-  { time: "9:00pm - 9:30pm", name: "Welcome to WCS" },
+  { time: "8:45pm - 9:30pm", name: "Welcome to WCS" },
   { time: "9:00pm - 11:30pm", name: "Social Dancing" },
 ];
 

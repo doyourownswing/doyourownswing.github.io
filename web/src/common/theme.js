@@ -10,9 +10,6 @@ const theme = createTheme({
         light: "white",
       },
     },
-    // secondary: {
-    //   main: "#502268",
-    // },
     text: {
       subtitle: "#808080",
       // For less essential body text that we don't want to stand out as much.
