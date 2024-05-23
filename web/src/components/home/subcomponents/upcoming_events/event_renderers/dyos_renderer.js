@@ -1,14 +1,16 @@
-import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
-import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
-import CardContent from "@mui/material/CardContent";
-import Table from "@mui/material/Table";
-import TableBody from "@mui/material/TableBody";
-import TableCell from "@mui/material/TableCell";
-import TableContainer from "@mui/material/TableContainer";
-import TableRow from "@mui/material/TableRow";
-import Typography from "@mui/material/Typography";
+import {
+  Box,
+  Button,
+  Card,
+  CardActions,
+  CardContent,
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableRow,
+  Typography,
+} from "@mui/material";
 import { dateToHumanReadableString } from "../../../../../utils/date_utils";
 import dyosRendererStyles from "./dyos_renderer.styles";
 import messages from "../messages";
@@ -56,18 +58,17 @@ function DyosRenderer(props) {
             {messages.dyosMaskingRequirement}
           </Typography>
         </Box>
-        {event.externalLinks !== null &&
-          event.externalLinks.facebookLink !== null && (
-            <CardActions sx={dyosRendererStyles.actionsContainer}>
-              <Button
-                sx={dyosRendererStyles.actionButton}
-                target="_blank"
-                href={event.externalLinks.facebookLink}
-              >
-                {messages.viewOnFacebook}
-              </Button>
-            </CardActions>
-          )}
+        {event.externalLinks && event.externalLinks.facebookLink && (
+          <CardActions sx={dyosRendererStyles.actionsContainer}>
+            <Button
+              sx={dyosRendererStyles.actionButton}
+              target="_blank"
+              href={event.externalLinks.facebookLink}
+            >
+              {messages.viewOnFacebook}
+            </Button>
+          </CardActions>
+        )}
       </CardContent>
     </Card>
   );

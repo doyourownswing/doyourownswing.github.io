@@ -6,9 +6,15 @@ const theme = createTheme({
   palette: {
     primary: {
       main: "#260B34",
+      // TODO: remove this and clean up uses
       background: {
         light: "white",
+        lightGray: "ededed",
       },
+    },
+    background: {
+      light: "white",
+      lightGray: "#ededed",
     },
     text: {
       subtitle: "#808080",

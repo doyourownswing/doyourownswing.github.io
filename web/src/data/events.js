@@ -1,5 +1,3 @@
-import messages from "../common/messages";
-
 /**
  * Exposes a function to get the details of the next [numEvents] [Event]s.
  *
@@ -8,6 +6,11 @@ import messages from "../common/messages";
  * can also be extended to allow adding additional details (i.e. schedule, pricing,
  * etc.) And should be handled be the caller to be rendered properly.
  */
+import messages from "../common/messages";
+
+const dayjs = require("dayjs");
+const customParseFormat = require("dayjs/plugin/customParseFormat");
+dayjs.extend(customParseFormat);
 
 const EventTypes = Object.freeze({
   DYOS: Symbol("DYOS"),
@@ -30,6 +33,10 @@ const defaultDyosSchedule = [
   { time: "9:00pm - 11:30pm", name: "Social Dancing" },
 ];
 
+function createDate(dateString) {
+  return dayjs(dateString, "MM/DD/YYYY");
+}
+
 /**
  * Hardcoded database of all of the events.
  *
@@ -39,16 +46,13 @@ const events = [
   new Event(
     EventTypes.DYOS,
     messages.doYourOwnSwing,
-    new Date("05/16/2024"),
-    defaultDyosSchedule,
-    {
-      facebookLink: "test.com",
-    }
+    createDate("05/16/2024"),
+    defaultDyosSchedule
   ),
   new Event(
     EventTypes.DYOS,
     messages.doYourOwnSwing,
-    new Date("05/23/2024"),
+    createDate("05/23/2024"),
     defaultDyosSchedule,
     {
       facebookLink: "https://www.facebook.com/events/1471380160454652",
@@ -57,7 +61,7 @@ const events = [
   new Event(
     EventTypes.DYOS,
     "Do Your Own Swing feat. DJ Andrew Roth!",
-    new Date("05/30/2024"),
+    createDate("05/30/2024"),
     defaultDyosSchedule,
     {
       facebookLink: "https://www.facebook.com/events/812141927505563",
@@ -66,16 +70,13 @@ const events = [
   new Event(
     EventTypes.DYOS,
     messages.doYourOwnSwing,
-    new Date("06/06/2024"),
-    defaultDyosSchedule,
-    {
-      facebookLink: "test.com",
-    }
+    createDate("06/06/2024"),
+    defaultDyosSchedule
   ),
 ];
 
 function getNextEvents(numEvents) {
-  let beginningOfToday = new Date(new Date().setHours(0, 0, 0, 0));
+  let beginningOfToday = dayjs(new Date().setHours(0, 0, 0, 0));
 
   return events
     .filter((event) => event.date >= beginningOfToday)

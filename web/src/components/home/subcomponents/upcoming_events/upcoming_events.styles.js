@@ -1,3 +1,5 @@
+import theme from "../../../../common/theme";
+
 const upcomingEventsStyles = {
   twoEventRenderer: {
     paddingTop: "24px",
@@ -21,6 +23,13 @@ const upcomingEventsStyles = {
     width: { xs: "100%", sm: "450px" },
     padding: "8px 0px 0px 0px",
     backgroundColor: "transparent",
+  },
+  upcomingEventsContainer: {
+    backgroundColor: theme.palette.background.lightGray,
+  },
+  upcomingEventsRendererContainer: {
+    paddingTop: "24px",
+    paddingBottom: "24px",
   },
 };
 
