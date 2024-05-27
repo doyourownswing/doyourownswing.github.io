@@ -1,13 +1,22 @@
 import FeatureFlags from "infra/feature_flags";
 
 class NavOption {
-  constructor(displayName, url) {
+  constructor(displayName, url, isCurrentPageFunction) {
     this.displayName = displayName;
     this.url = url;
+    this.isCurrentPageFunction = isCurrentPageFunction;
+  }
+
+  defaultIsCurrentPage() {
+    return window.location.hash === this.url;
   }
 
   isCurrentPage() {
-    return window.location.hash === this.url;
+    if (this.isCurrentPageFunction) {
+      return this.isCurrentPageFunction();
+    } else {
+      return this.defaultIsCurrentPage();
+    }
   }
 }
 
@@ -15,7 +24,11 @@ function generateNavOptions() {
   let navOptions = [];
 
   if (FeatureFlags.showMenuOptions) {
-    navOptions.push(new NavOption("Home", "#/"));
+    navOptions.push(
+      new NavOption("Home", "#/", () => {
+        return window.location.hash === "#/" || window.location.hash === "";
+      })
+    );
   }
 
   if (FeatureFlags.showScheduleTab) {
