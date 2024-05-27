@@ -5,6 +5,7 @@ import About from "components/about/about";
 import CodeOfConduct from "components/code_of_conduct/code_of_conduct";
 import Contact from "components/contact/contact";
 import FeatureFlags from "infra/feature_flags";
+import Footer from "components/footer/footer";
 import Health from "components/health/health";
 import Home from "components/home/home";
 import NavBar from "components/nav_bar/nav_bar";
