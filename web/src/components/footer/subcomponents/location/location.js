@@ -5,7 +5,11 @@ function Location() {
   return (
     <Box sx={locationStyles.locationContainer}>
       <Typography variant="h6">Location</Typography>
-      <Link href="https://maps.app.goo.gl/SaV1ZcT82wXA2CHFA" target="_blank">
+      <Link
+        href="https://maps.app.goo.gl/SaV1ZcT82wXA2CHFA"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <Typography variant="body2" sx={locationStyles.address}>
           Studio M Ballroom Club
         </Typography>
