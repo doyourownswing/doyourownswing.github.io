@@ -15,6 +15,7 @@ const theme = createTheme({
     background: {
       light: "white",
       lightGray: "#ededed",
+      darkPurple: "#260B34",
     },
     text: {
       subtitle: "#808080",
@@ -22,6 +23,8 @@ const theme = createTheme({
       secondaryBody: "#666666",
       textButton: "#955ab5",
       activeSelection: "#955ab5",
+      textLight: "white",
+      subtitleLight: "#bbbbbb",
     },
   },
   typography: {
