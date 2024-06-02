@@ -1,6 +1,12 @@
 import { Box, Link, Typography } from "@mui/material";
 import locationStyles from "./location.styles";
 
+const locationLines = [
+  "Studio M Ballroom Club",
+  "3550 Stevens Creek Blvd",
+  "San Jose, CA 95117 USA",
+];
+
 function Location() {
   return (
     <Box sx={locationStyles.locationContainer}>
@@ -10,15 +16,11 @@ function Location() {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <Typography variant="body2" sx={locationStyles.address}>
-          Studio M Ballroom Club
-        </Typography>
-        <Typography variant="body2" sx={locationStyles.address}>
-          3550 Stevens Creek Blvd
-        </Typography>
-        <Typography variant="body2" sx={locationStyles.address}>
-          San Jose, CA 95117 USA
-        </Typography>
+        {locationLines.map((line) => (
+          <Typography variant="body2" sx={locationStyles.address}>
+            {line}
+          </Typography>
+        ))}
       </Link>
     </Box>
   );
