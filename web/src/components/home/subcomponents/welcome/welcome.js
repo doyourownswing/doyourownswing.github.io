@@ -3,7 +3,7 @@ import welcomePic from "../../../../assets/images/teacher-demo-2-blurred-min.JPG
 import welcomeStyles from "./welcome.styles.js";
 import FeatureFlags from "infra/feature_flags";
 
-const Welcome = () => {
+export const Welcome = () => {
   return (
     <Stack sx={welcomeStyles.sectionLayout}>
       <Stack justifyContent="center" sx={welcomeStyles.titleBox}>
@@ -27,5 +27,3 @@ const Welcome = () => {
     </Stack>
   );
 };
-
-export default Welcome;
