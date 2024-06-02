@@ -73,6 +73,33 @@ const events = [
     createDate("06/06/2024"),
     defaultDyosSchedule
   ),
+  new Event(
+    EventTypes.DYOS,
+    messages.doYourOwnSwing,
+    createDate("06/13/2024"),
+    defaultDyosSchedule
+  ),
+  new Event(
+    EventTypes.DYOS,
+    messages.doYourOwnSwing,
+    createDate("06/20/2024"),
+    defaultDyosSchedule
+  ),
+  new Event(
+    EventTypes.DYOS,
+    "Do Your Own Swing - Pride Party!",
+    createDate("06/27/2024"),
+    defaultDyosSchedule,
+    {
+      facebookLink: "https://www.facebook.com/events/457255416887420",
+    }
+  ),
+  new Event(
+    EventTypes.DYOS,
+    messages.doYourOwnSwing,
+    createDate("07/11/2024"),
+    defaultDyosSchedule
+  ),
 ];
 
 function getNextEvents(numEvents) {
