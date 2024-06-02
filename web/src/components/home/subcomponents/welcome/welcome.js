@@ -1,9 +1,9 @@
 import { Box, Button, Stack } from "@mui/material";
-import welcomePic from "../../../../assets/images/teacher-demo-2-blurred-min.JPG";
+import welcomePic from "assets/images/teacher-demo-2-blurred-min.JPG";
 import welcomeStyles from "./welcome.styles.js";
 import FeatureFlags from "infra/feature_flags";
 
-export const Welcome = () => {
+function Welcome() {
   return (
     <Stack sx={welcomeStyles.sectionLayout}>
       <Stack justifyContent="center" sx={welcomeStyles.titleBox}>
@@ -23,7 +23,14 @@ export const Welcome = () => {
           </Button>
         )}
       </Stack>
-      <Box component="img" src={welcomePic} sx={welcomeStyles.splashPicture} />
+      <Box
+        component="img"
+        src={welcomePic}
+        sx={welcomeStyles.splashPicture}
+        alt="Two dancers in a mid-dance pose"
+      />
     </Stack>
   );
-};
+}
+
+export default Welcome;
