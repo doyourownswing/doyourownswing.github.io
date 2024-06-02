@@ -4,19 +4,11 @@ class NavOption {
   constructor(displayName, url, isCurrentPageFunction) {
     this.displayName = displayName;
     this.url = url;
-    this.isCurrentPageFunction = isCurrentPageFunction;
+    this.isCurrentPage = isCurrentPageFunction ?? this.defaultIsCurrentPage;
   }
 
   defaultIsCurrentPage() {
     return window.location.hash === this.url;
-  }
-
-  isCurrentPage() {
-    if (this.isCurrentPageFunction) {
-      return this.isCurrentPageFunction();
-    } else {
-      return this.defaultIsCurrentPage();
-    }
   }
 }
 
@@ -25,9 +17,11 @@ function generateNavOptions() {
 
   if (FeatureFlags.showMenuOptions) {
     navOptions.push(
-      new NavOption("Home", "#/", () => {
-        return window.location.hash === "#/" || window.location.hash === "";
-      })
+      new NavOption(
+        "Home",
+        "#/",
+        () => window.location.hash === "#/" || window.location.hash === ""
+      )
     );
   }
 
