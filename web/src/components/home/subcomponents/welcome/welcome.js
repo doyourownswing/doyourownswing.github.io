@@ -5,10 +5,7 @@ import FeatureFlags from "infra/feature_flags";
 
 const Welcome = () => {
   return (
-    <Stack
-      direction={{ xs: "column", md: "row" }}
-      justifyContent="space-between"
-    >
+    <Stack sx={welcomeStyles.sectionLayout}>
       <Stack justifyContent="center" sx={welcomeStyles.titleBox}>
         <Box>
           <Box sx={welcomeStyles.subtitle}>Discover your rhythm at</Box>

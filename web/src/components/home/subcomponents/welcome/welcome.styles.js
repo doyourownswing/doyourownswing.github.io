@@ -1,12 +1,20 @@
 import theme from "../../../../common/theme";
 
 const welcomeStyles = {
+  sectionLayout: {
+    display: "flex",
+    flexDirection: { xs: "column", md: "row" },
+    justifyContent: "space-between",
+    maxHeight: { xs: "40rem", sm: "50rem", md: "35rem" },
+  },
   splashPicture: {
-    height: { xs: "20rem", sm: "28rem", md: "35rem" },
-    width: "auto",
+    objectFit: "cover",
+    height: { xs: "20rem", sm: "25rem", md: "35rem" },
+    aspectRatio: "3/2",
   },
   titleBox: {
-    padding: { xs: "1rem", md: "8rem" },
+    padding: "8vw",
+    whiteSpace: "nowrap",
   },
   title: {
     color: theme.palette.text.title,
