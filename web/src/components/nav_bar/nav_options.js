@@ -1,12 +1,13 @@
 import FeatureFlags from "infra/feature_flags";
 
 class NavOption {
-  constructor(displayName, url) {
+  constructor(displayName, url, isCurrentPageFunction) {
     this.displayName = displayName;
     this.url = url;
+    this.isCurrentPage = isCurrentPageFunction ?? this.defaultIsCurrentPage;
   }
 
-  isCurrentPage() {
+  defaultIsCurrentPage() {
     return window.location.hash === this.url;
   }
 }
@@ -15,7 +16,13 @@ function generateNavOptions() {
   let navOptions = [];
 
   if (FeatureFlags.showMenuOptions) {
-    navOptions.push(new NavOption("Home", "#/"));
+    navOptions.push(
+      new NavOption(
+        "Home",
+        "#/",
+        () => window.location.hash === "#/" || window.location.hash === ""
+      )
+    );
   }
 
   if (FeatureFlags.showScheduleTab) {
