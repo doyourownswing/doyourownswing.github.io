@@ -29,7 +29,7 @@ const welcomeStyles = {
     marginBottom: "-.8rem",
   },
   startHereButton: {
-    backgroundColor: theme.palette.text.textButton,
+    backgroundColor: theme.palette.background.darkPurple,
     color: theme.palette.text.textLight,
     marginTop: "2rem",
     borderRadius: ".75rem",
