@@ -1,4 +1,4 @@
-import theme from "../../../../common/theme";
+import theme from "common/theme";
 
 const welcomeStyles = {
   sectionLayout: {
@@ -26,7 +26,7 @@ const welcomeStyles = {
   subtitle: {
     color: theme.palette.text.secondary,
     fontSize: { xs: "1.5rem", md: "2.5rem" },
-    marginBottom: "-.8rem",
+    lineHeight: ".8",
   },
   startHereButton: {
     backgroundColor: theme.palette.background.darkPurple,
