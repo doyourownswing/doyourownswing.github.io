@@ -24,7 +24,7 @@ const theme = createTheme({
       subtitle: "#808080",
       // For less essential body text that we don't want to stand out as much.
       secondaryBody: "#666666",
-      textButton: "#260b34",
+      textButton: "#955ab5",
       activeSelection: "#955ab5",
       textLight: "white",
       subtitleLight: "#bbbbbb",

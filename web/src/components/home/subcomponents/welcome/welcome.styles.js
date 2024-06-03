@@ -29,8 +29,6 @@ const welcomeStyles = {
     lineHeight: ".8",
   },
   startHereButton: {
-    backgroundColor: theme.palette.background.darkPurple,
-    color: theme.palette.text.textLight,
     marginTop: "2rem",
     borderRadius: ".75rem",
     width: "fit-content",
