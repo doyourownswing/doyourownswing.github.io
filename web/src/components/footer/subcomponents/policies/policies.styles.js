@@ -1,19 +1,20 @@
 import theme from "common/theme";
 
-const locationStyles = {
-  locationContainer: {
+const policiesStyles = {
+  container: {
     color: theme.palette.text.textLight,
     marginTop: "8px",
   },
   linkContainer: {
     marginTop: "8px",
   },
-  address: {
+  link: {
     color: theme.palette.text.subtitleLight,
+    marginTop: "8px",
     "&:hover": {
       color: theme.palette.text.textLight,
     },
   },
 };
 
-export default locationStyles;
+export default policiesStyles;

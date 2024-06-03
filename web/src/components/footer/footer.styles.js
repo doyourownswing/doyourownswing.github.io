@@ -1,19 +1,14 @@
-import theme from "../../common/theme";
+import theme from "common/theme";
 
 const footerStyles = {
   footerContainer: {
     backgroundColor: theme.palette.background.darkPurple,
     display: "flex",
     justifyContent: "space-between",
-    paddingLeft: "8px",
-    paddingBottom: "8px",
-    paddingRight: {
-      md: "5vw",
-      sm: "2vw",
-    },
-  },
-  brand: {
-    alignSelf: "center",
+    paddingLeft: "5%",
+    paddingRight: "5%",
+    paddingBottom: "24px",
+    paddingTop: "16px",
   },
 };
 

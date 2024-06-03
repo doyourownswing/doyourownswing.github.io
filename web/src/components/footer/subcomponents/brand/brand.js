@@ -1,22 +1,10 @@
-import { Box, Typography } from "@mui/material";
-import prideLogo from "../../../../assets/images/color_logo_512.png";
+import { SvgIcon } from "@mui/material";
+import { ReactComponent as StarIcon } from "assets/svgs/color-logo.svg";
 import brandStyles from "./brand.styles";
-import messages from "../../../../common/messages";
 
 function Brand() {
   return (
-    <Box sx={brandStyles.brandContainer}>
-      <Box sx={brandStyles.logoContainer}>
-        <Box
-          component="img"
-          sx={brandStyles.logoImage}
-          alt="Do Your Own Swing progress-themed logo"
-          src={prideLogo}
-        />
-        <Typography variant="h5">{messages.dyos}</Typography>
-      </Box>
-      <Typography>{messages.doYourOwnSwingYear}</Typography>
-    </Box>
+    <SvgIcon component={StarIcon} viewBox="0 0 640 600" sx={brandStyles.logo} />
   );
 }
 
