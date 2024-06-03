@@ -18,7 +18,11 @@ function Welcome() {
           <Box>Thursday Nights @ Studio M Ballroom</Box>
         </Box>
         {FeatureFlags.showStartHereTab && (
-          <Button sx={welcomeStyles.startHereButton}>
+          <Button
+            color="primary"
+            variant="contained"
+            sx={welcomeStyles.startHereButton}
+          >
             Start here if you're new
           </Button>
         )}
