@@ -18,16 +18,6 @@ const welcomeStyles = {
     padding: "8vw",
     whiteSpace: "nowrap",
   },
-  title: {
-    color: theme.palette.text.title,
-    fontSize: { xs: "2.5rem", md: "4rem" },
-    marginBottom: "1rem",
-  },
-  subtitle: {
-    color: theme.palette.text.secondary,
-    fontSize: { xs: "1.5rem", md: "2.5rem" },
-    lineHeight: ".8",
-  },
   startHereButton: {
     marginTop: "2rem",
     borderRadius: ".75rem",

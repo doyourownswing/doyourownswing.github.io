@@ -2,37 +2,33 @@ import { Box, Button, Stack, Typography } from "@mui/material";
 import welcomePic from "assets/images/teacher-demo-2-blurred-min.JPG";
 import welcomeStyles from "./welcome.styles.js";
 import FeatureFlags from "infra/feature_flags";
+import { useTheme } from "@emotion/react";
 
 function Welcome() {
+  const theme = useTheme();
   return (
     <Stack sx={welcomeStyles.sectionLayout}>
       <Stack justifyContent="center" sx={welcomeStyles.titleBox}>
         <Box>
-          <Box>
-            <Typography sx={welcomeStyles.subtitle}>
-              Discover your rhythm at
-            </Typography>
-          </Box>
-          <Box>
-            <Typography sx={welcomeStyles.title}>Do Your Own Swing</Typography>
-          </Box>
+          <Typography variant="h4" color={theme.palette.text.secondary}>
+            Discover your rhythm at
+          </Typography>
+          {/* No longer has text size changes based on size breakpoint */}
+          <Typography variant="h2" color={theme.palette.text.title}>Do Your Own Swing</Typography>
         </Box>
         <Box>
+          <Typography variant="body">
+            West Coast Swing classes and social dancing in San Jose, CA.
+          </Typography>
           <Box>
-            <Typography>
-              West Coast Swing classes and social dancing in San Jose, CA.
-            </Typography>
-          </Box>
-          <Box>
-            <Typography>Thursday Nights @ Studio M Ballroom</Typography>
+            <Typography variant="body">Thursday Nights @ Studio M Ballroom</Typography>
           </Box>
         </Box>
         {FeatureFlags.showStartHereTab && (
           <Button
             color="primary"
             variant="contained"
-            sx={welcomeStyles.startHereButton}
-          >
+            sx={welcomeStyles.startHereButton}>
             Start here if you're new
           </Button>
         )}
