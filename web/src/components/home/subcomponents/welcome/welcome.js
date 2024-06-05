@@ -1,4 +1,4 @@
-import { Box, Button, Stack } from "@mui/material";
+import { Box, Button, Stack, Typography } from "@mui/material";
 import welcomePic from "assets/images/teacher-demo-2-blurred-min.JPG";
 import welcomeStyles from "./welcome.styles.js";
 import FeatureFlags from "infra/feature_flags";
@@ -8,14 +8,24 @@ function Welcome() {
     <Stack sx={welcomeStyles.sectionLayout}>
       <Stack justifyContent="center" sx={welcomeStyles.titleBox}>
         <Box>
-          <Box sx={welcomeStyles.subtitle}>Discover your rhythm at</Box>
-          <Box sx={welcomeStyles.title}>Do Your Own Swing</Box>
+          <Box>
+            <Typography sx={welcomeStyles.subtitle}>
+              Discover your rhythm at
+            </Typography>
+          </Box>
+          <Box>
+            <Typography sx={welcomeStyles.title}>Do Your Own Swing</Typography>
+          </Box>
         </Box>
         <Box>
           <Box>
-            West Coast Swing classes and social dancing in San Jose, CA.
+            <Typography>
+              West Coast Swing classes and social dancing in San Jose, CA.
+            </Typography>
           </Box>
-          <Box>Thursday Nights @ Studio M Ballroom</Box>
+          <Box>
+            <Typography>Thursday Nights @ Studio M Ballroom</Typography>
+          </Box>
         </Box>
         {FeatureFlags.showStartHereTab && (
           <Button
