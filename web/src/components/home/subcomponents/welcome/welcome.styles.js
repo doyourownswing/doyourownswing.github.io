@@ -1,5 +1,3 @@
-import theme from "common/theme";
-
 const welcomeStyles = {
   sectionLayout: {
     display: "flex",
