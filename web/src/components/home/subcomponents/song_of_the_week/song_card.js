@@ -1,45 +1,63 @@
 import { Box, Button, Card, Typography } from "@mui/material";
 import songCardStyles from "./song_card.styles";
 import messages from "./messages";
+import YouTubeIcon from "@mui/icons-material/YouTube";
+import { ReactComponent as SpotifyIcon } from "assets/images/spotifyIcon.svg";
+
+function SongLinkButton(props) {
+  return (
+    <Button
+      variant="outlined"
+      sx={props.sx}
+      href={props.href}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      {props.children}
+    </Button>
+  );
+}
 
 function SongCard(props) {
   let songInfo = props.songInfo;
 
   return (
     <Card sx={songCardStyles.songCardContainer}>
-      <Box
-        component="img"
-        sx={songCardStyles.albumCoverImage}
-        alt="Album cover"
-        src={songInfo.songLinks.albumCoverImage}
-      ></Box>
+      <Box sx={songCardStyles.albumCoverContainer}>
+        <Box
+          component="img"
+          sx={songCardStyles.albumCoverImage}
+          alt="Album cover"
+          src={songInfo.songLinks.albumCoverImage}
+        ></Box>
+      </Box>
       <Box sx={songCardStyles.songCardRightContent}>
         <Box sx={songCardStyles.songInfoContainer}>
-          <Typography variant="h6">{songInfo.songInfo.name}</Typography>
-          <Typography variant="subtitle1">
-            {songInfo.songInfo.artist} ・ {songInfo.songInfo.year}
+          <Typography variant="h6" sx={songCardStyles.songName}>
+            {songInfo.songInfo.name}
           </Typography>
-          <Typography variant="subtitle2">
-            {songInfo.songInfo.songLength}
+          <Typography variant="subtitle2" sx={songCardStyles.songDetails}>
+            {songInfo.songInfo.artist} ・ {songInfo.songInfo.year}
           </Typography>
         </Box>
         <Box sx={songCardStyles.linksContainer}>
-          <Button
-            sx={songCardStyles.link}
+          <SongLinkButton
+            sx={songCardStyles.linkButton}
             href={songInfo.songLinks.youtube}
-            target="_blank"
-            rel="noopener noreferrer"
           >
+            <YouTubeIcon sx={songCardStyles.youtubeIcon} />
             {messages.listenOnYoutube}
-          </Button>
-          <Button
-            sx={songCardStyles.link}
+          </SongLinkButton>
+          <SongLinkButton
+            sx={songCardStyles.linkButton}
             href={songInfo.songLinks.spotify}
-            target="_blank"
-            rel="noopener noreferrer"
           >
+            <SpotifyIcon
+              style={songCardStyles.spotifyIcon}
+              fill={songCardStyles.spotifyColor}
+            ></SpotifyIcon>
             {messages.listenOnSpotify}
-          </Button>
+          </SongLinkButton>
         </Box>
       </Box>
     </Card>

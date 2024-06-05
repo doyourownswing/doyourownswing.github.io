@@ -1,7 +1,7 @@
 const messages = {
-  title: "Song of the week",
-  listenOnYoutube: "Listen on YouTube",
-  listenOnSpotify: "Listen on Spotify",
+  title: "Song of the Week",
+  listenOnYoutube: "YouTube",
+  listenOnSpotify: "Spotify",
 };
 
 export default messages;

@@ -1,4 +1,4 @@
-import theme from "../../../../common/theme";
+import theme from "common/theme";
 
 const songOfTheWeekStyles = {
   songOfTheWeekSection: {
@@ -8,17 +8,27 @@ const songOfTheWeekStyles = {
   songOfTheWeekContainer: {
     display: "flex",
     padding: "24px 0px",
+    flexWrap: "wrap",
   },
   title: {
-    paddingBottom: "16px",
+    paddingBottom: "8px",
+    fontWeight: "700",
   },
   quoteContainer: {
     maxWidth: "400px",
+    minWidth: "400px",
     flex: 1,
+    margin: "auto",
+    paddingBottom: "24px",
+  },
+  quote: {
+    color: theme.palette.text.secondaryBody,
+    paddingBottom: "16px",
   },
   songCardContainer: {
     flex: 2,
     display: "flex",
+    paddingRight: "24px",
   },
   songCard: {
     margin: "auto",

@@ -12,6 +12,9 @@ const theme = createTheme({
         lightGray: "ededed",
       },
     },
+    secondary: {
+      main: "#502268",
+    },
     background: {
       light: "white",
       lightGray: "#ededed",
@@ -25,6 +28,9 @@ const theme = createTheme({
       activeSelection: "#955ab5",
       textLight: "white",
       subtitleLight: "#bbbbbb",
+    },
+    button: {
+      lightGray: "#dddddd",
     },
   },
   typography: {

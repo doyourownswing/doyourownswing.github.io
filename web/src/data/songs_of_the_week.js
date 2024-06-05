@@ -1,4 +1,6 @@
-import { createDate } from "../utils/date_utils";
+import { createDate } from "utils/date_utils";
+import RileyHeadshot from "assets/images/riley.jpg";
+
 const dayjs = require("dayjs");
 
 class SongOfTheWeek {
@@ -10,21 +12,27 @@ class SongOfTheWeek {
   }
 }
 
+const attributors = {
+  riley: {
+    name: "Riley",
+    picture: RileyHeadshot,
+  },
+};
+
 const songs = [
   new SongOfTheWeek(
     createDate("05/26/2024"),
     {
       quote:
-        "This song is one of my favorites to dance to. \
-This month's creative expressions class will be working on choreography to this song. \
-Absolute banger, and brings back a lot of great memories.",
-      attributor: "Riley",
+        "This song is one of my favorites to dance to. " +
+        "This month's creative expressions class will be working on choreography to this song. " +
+        "Absolute banger, and brings back a lot of great memories.",
+      attributionInfo: attributors.riley,
     },
     {
       name: "Old School Turntables",
       artist: "Matt DiMona",
       year: "2017",
-      songLength: "4:24",
     },
     {
       albumCoverImage:
