@@ -8,8 +8,8 @@ import {
 } from "@mui/material";
 import { KeyboardArrowLeft, KeyboardArrowRight } from "@mui/icons-material";
 import DyosRenderer from "./event_renderers/dyos_renderer";
-import FeatureFlags from "../../../../infra/feature_flags";
-import getNextEvents from "../../../../data/events";
+import FeatureFlags from "infra/feature_flags";
+import getNextEvents from "data/events";
 import messages from "./messages";
 import upcomingEventsStyles from "./upcoming_events.styles";
 

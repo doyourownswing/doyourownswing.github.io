@@ -25,6 +25,8 @@ const theme = createTheme({
       secondaryBody: "#666666",
       textButton: "#955ab5",
       activeSelection: "#955ab5",
+      textLight: "white",
+      subtitleLight: "#bbbbbb",
     },
   },
   typography: {

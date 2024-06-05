@@ -11,7 +11,7 @@ import {
   TableRow,
   Typography,
 } from "@mui/material";
-import { dateToHumanReadableString } from "../../../../../utils/date_utils";
+import { dateToHumanReadableString } from "utils/date_utils";
 import dyosRendererStyles from "./dyos_renderer.styles";
 import messages from "../messages";
 
