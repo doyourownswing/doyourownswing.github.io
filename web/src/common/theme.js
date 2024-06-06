@@ -45,22 +45,22 @@ const theme = responsiveFontSizes(
       textButton: "#955ab5",
       activeSelection: "#955ab5",
     },
-  },
-  typography: {
-    fontFamily: [
-      "Nunito",
-      "-apple-system",
-      "BlinkMacSystemFont",
-      '"Segoe UI"',
-      "Roboto",
-      '"Helvetica Neue"',
-      "Arial",
-      "sans-serif",
-      '"Apple Color Emoji"',
-      '"Segoe UI Emoji"',
-      '"Segoe UI Symbol"',
-    ].join(","),
-  },
-));
+    typography: {
+      fontFamily: [
+        "Nunito",
+        "-apple-system",
+        "BlinkMacSystemFont",
+        '"Segoe UI"',
+        "Roboto",
+        '"Helvetica Neue"',
+        "Arial",
+        "sans-serif",
+        '"Apple Color Emoji"',
+        '"Segoe UI Emoji"',
+        '"Segoe UI Symbol"',
+      ].join(","),
+    },
+  })
+);
 
 export default theme;
