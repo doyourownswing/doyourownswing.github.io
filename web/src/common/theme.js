@@ -31,6 +31,22 @@ const theme = createTheme({
     },
   },
   typography: {
+    h4: {
+      "@media (min-width:0px)": {
+        fontSize: "1.5rem",
+      },
+      "@media (min-width:900px)": {
+        fontSize: "2.5rem",
+      },
+    },
+    h2: {
+      "@media (min-width:0px)": {
+        fontSize: "2.5rem",
+      },
+      "@media (min-width:900px)": {
+        fontSize: "4rem",
+      },
+    },
     fontFamily: [
       "Nunito",
       "-apple-system",
