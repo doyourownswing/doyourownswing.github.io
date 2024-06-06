@@ -21,6 +21,8 @@ const theme = responsiveFontSizes(
         darkPurple: "#260B34",
       },
       text: {
+        titleLight: "white",
+        subtitleLight: "#bbbbbb",
         title: "#955ab5",
         subtitle: "#808080",
         // For less essential body text that we don't want to stand out as much.
@@ -30,20 +32,6 @@ const theme = responsiveFontSizes(
         textLight: "white",
         subtitleLight: "#bbbbbb",
       },
-    },
-    background: {
-      light: "white",
-      lightGray: "#ededed",
-      darkPurple: "#260B34",
-    },
-    text: {
-      titleLight: "white",
-      subtitleLight: "#bbbbbb",
-      subtitle: "#808080",
-      // For less essential body text that we don't want to stand out as much.
-      secondaryBody: "#666666",
-      textButton: "#955ab5",
-      activeSelection: "#955ab5",
     },
     typography: {
       fontFamily: [
