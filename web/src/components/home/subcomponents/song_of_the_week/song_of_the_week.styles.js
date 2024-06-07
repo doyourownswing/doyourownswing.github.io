@@ -5,18 +5,16 @@ const songOfTheWeekStyles = {
     backgroundColor: theme.palette.background.lightGray,
     padding: "24px",
   },
-  songOfTheWeekContainer: {
-    display: "flex",
-    padding: "24px 0px",
-    flexWrap: "wrap",
+  songOfTheWeekFlexContainer: {
+    xs: "column",
+    md: "row",
   },
   title: {
     paddingBottom: "8px",
-    fontWeight: "700",
+    // TODO: update the titles to be bold as per Vedant's suggestion
   },
   quoteContainer: {
     maxWidth: "400px",
-    minWidth: "400px",
     flex: 1,
     margin: "auto",
     paddingBottom: "24px",

@@ -1,4 +1,4 @@
-import { Box, Card, Container, Typography } from "@mui/material";
+import { Box, Card, Container, Stack, Typography } from "@mui/material";
 import songOfTheWeekStyles from "./song_of_the_week.styles";
 import SongCard from "./song_card";
 import getCurrentSong from "../../../../data/songs_of_the_week";
@@ -17,7 +17,7 @@ function SongOfTheWeek() {
   return (
     <div style={songOfTheWeekStyles.songOfTheWeekSection}>
       <Container>
-        <Box sx={songOfTheWeekStyles.songOfTheWeekContainer}>
+        <Stack direction={songOfTheWeekStyles.songOfTheWeekFlexContainer}>
           <Box sx={songOfTheWeekStyles.quoteContainer}>
             <Typography variant="h4" sx={songOfTheWeekStyles.title}>
               {messages.title}
@@ -34,7 +34,7 @@ function SongOfTheWeek() {
               <SongCard songInfo={songInfo}></SongCard>
             </Box>
           </Container>
-        </Box>
+        </Stack>
       </Container>
     </div>
   );

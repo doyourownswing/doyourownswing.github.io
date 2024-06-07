@@ -6,8 +6,7 @@ const songCardStyles = {
     maxWidth: { xs: "320px", sm: "fit-content" },
     flexWrap: {
       xs: "wrap",
-      sm: "wrap",
-      md: "nowrap",
+      sm: "nowrap",
     },
     borderRadius: "16px",
   },
@@ -24,7 +23,7 @@ const songCardStyles = {
     margin: { xs: "auto" },
   },
   albumCoverImage: {
-    width: { xs: "272px", sm: "128px" },
+    width: { xs: "100%", sm: "128px" },
     borderRadius: "8px",
   },
   songCardRightContent: {
@@ -38,11 +37,13 @@ const songCardStyles = {
   },
   linksContainer: {
     display: "flex",
-    gap: "16px",
+    gap: "8px 16px",
+    paddingTop: "8px",
+    flexWrap: "wrap",
   },
   linkButton: {
     textTransform: "none",
-    width: "128px",
+    width: { xs: "100%", sm: "128px" },
     borderColor: theme.palette.button.lightGray,
     color: "black",
   },

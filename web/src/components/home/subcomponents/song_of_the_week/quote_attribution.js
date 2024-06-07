@@ -1,15 +1,16 @@
 import { Avatar, Box, Typography } from "@mui/material";
+import quoteAttributionStyles from "./quote_attribution.styles";
 
 function QuoteAttribution(props) {
   let attributionInfo = props.attributionInfo;
 
   return (
-    <Box sx={{ display: "flex", alignItems: "center" }}>
-      <Avatar sx={{ marginRight: "12px" }}>
+    <Box sx={quoteAttributionStyles.quoteAttributionContainer}>
+      <Avatar sx={quoteAttributionStyles.avatar}>
         <Box
           component="img"
           src={attributionInfo.picture}
-          sx={{ height: "40px", width: "40px" }}
+          sx={quoteAttributionStyles.avatarImage}
         ></Box>
       </Avatar>
       <Typography>{attributionInfo.name}</Typography>
