@@ -3,7 +3,7 @@ import theme from "common/theme";
 const footerStyles = {
   footerContainer: {
     backgroundColor: theme.palette.background.darkPurple,
-    display: "flex",
+    display: { xs: "flex", md: "flex" },
     justifyContent: "space-between",
     paddingLeft: "5%",
     paddingRight: "5%",

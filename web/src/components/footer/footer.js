@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Grid } from "@mui/material";
 import footerStyles from "./footer.styles";
 import Brand from "./subcomponents/brand/brand";
 import Contact from "./subcomponents/contact/contact";
@@ -9,13 +9,27 @@ import { PolicyOptions, BrowseOptions } from "components/nav_bar/nav_options";
 
 function Footer() {
   return (
-    <Box sx={footerStyles.footerContainer}>
-      <Brand />
-      {BrowseOptions.length > 0 && <Browse />}
-      {PolicyOptions.length > 0 && <Policies />}
-      <Location />
-      <Contact />
-    </Box>
+    <Grid container sx={footerStyles.footerContainer} rowGap={2}>
+      <Grid xs={12} sm={4} md={2}>
+        <Brand />
+      </Grid>
+      {BrowseOptions.length && (
+        <Grid xs={6} sm={4} md={2}>
+          <Browse />
+        </Grid>
+      )}
+      {PolicyOptions.length && (
+        <Grid xs={6} sm={4} md={2}>
+          <Policies />
+        </Grid>
+      )}
+      <Grid xs={6} sm={6} md={3}>
+        <Location />
+      </Grid>
+      <Grid xs={6} sm={4} md={2}>
+        <Contact />
+      </Grid>
+    </Grid>
   );
 }
 
