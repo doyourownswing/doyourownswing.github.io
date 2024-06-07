@@ -2,7 +2,7 @@ import { Box, Button, Card, Typography } from "@mui/material";
 import songCardStyles from "./song_card.styles";
 import messages from "./messages";
 import YouTubeIcon from "@mui/icons-material/YouTube";
-import { ReactComponent as SpotifyIcon } from "assets/images/spotifyIcon.svg";
+import SpotifyIcon from "components/common/icons/spotify";
 
 function SongLinkButton(props) {
   return (
@@ -52,10 +52,7 @@ function SongCard(props) {
             sx={songCardStyles.linkButton}
             href={songInfo.songLinks.spotify}
           >
-            <SpotifyIcon
-              style={songCardStyles.spotifyIcon}
-              fill={songCardStyles.spotifyColor}
-            ></SpotifyIcon>
+            <SpotifyIcon style={songCardStyles.spotifyIcon}></SpotifyIcon>
             {messages.listenOnSpotify}
           </SongLinkButton>
         </Box>

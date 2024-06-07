@@ -7,7 +7,7 @@
  * etc.) And should be handled be the caller to be rendered properly.
  */
 import messages from "../common/messages";
-import { createDate } from "../utils/date_utils";
+import { createDate } from "utils/date_utils";
 const dayjs = require("dayjs");
 
 const EventTypes = Object.freeze({

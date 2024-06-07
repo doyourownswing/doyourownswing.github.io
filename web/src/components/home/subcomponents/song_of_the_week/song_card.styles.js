@@ -52,11 +52,9 @@ const songCardStyles = {
     color: "#ff0000",
   },
   spotifyIcon: {
-    height: "1.5em",
-    width: "1.5em",
     paddingRight: "8px",
+    fill: "#1ed760",
   },
-  spotifyColor: "#1ed760",
 };
 
 export default songCardStyles;

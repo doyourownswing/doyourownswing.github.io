@@ -15,6 +15,7 @@ const songOfTheWeekStyles = {
   },
   quoteContainer: {
     maxWidth: "400px",
+    minWidth: { sm: "280px" },
     flex: 1,
     margin: "auto",
     paddingBottom: "24px",
