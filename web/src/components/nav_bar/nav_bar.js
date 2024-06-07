@@ -13,7 +13,7 @@ import React from "react";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import messages from "common/messages";
-import navOptions from "./nav_options";
+import NavOptions from "./nav_options";
 import navBarStyles from "./nav_bar.styles";
 import { useTheme } from "@mui/material/styles";
 
@@ -48,7 +48,7 @@ function ExpandedMenuOptions() {
 
   return (
     <Box sx={navBarStyles.expandedOptionsContainer}>
-      {navOptions.map((option) => (
+      {NavOptions.map((option) => (
         <Button
           key={option.displayName}
           sx={getButtonStyle(option)}
@@ -101,7 +101,7 @@ function MenuIconOptions() {
         open={Boolean(anchorElMenu)}
         onClose={handleCloseNavMenu}
       >
-        {navOptions.map((option) => (
+        {NavOptions.map((option) => (
           <Link
             href={option.url}
             sx={navBarStyles.menuItem}

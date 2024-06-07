@@ -1,16 +1,16 @@
 import { Box, Link, Typography } from "@mui/material";
 import contactStyles from "./contact.styles";
+import DiscordIcon from "./DiscordIcon.js";
 import EmailIcon from "@mui/icons-material/Email";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import { SvgIcon } from "@mui/material";
-import { DiscountRounded } from "@mui/icons-material";
 
 const contactOptions = [
   {
     href: "https://discord.gg/EwXq7EYS7e",
     displayText: "Discord",
-    icon: DiscountRounded,
+    icon: DiscordIcon,
   },
   {
     href: "mailto:doyourownswing@gmail.com",

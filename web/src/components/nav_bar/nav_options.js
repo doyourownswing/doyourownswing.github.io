@@ -4,50 +4,53 @@ class NavOption {
   constructor(displayName, url, isCurrentPageFunction) {
     this.displayName = displayName;
     this.url = url;
-    this.isCurrentPage = isCurrentPageFunction ?? this.defaultIsCurrentPage;
-  }
-
-  defaultIsCurrentPage() {
-    return window.location.hash === this.url;
+    const defaultIsCurrentPage = () => window.location.hash === this.url;
+    this.isCurrentPage = isCurrentPageFunction ?? defaultIsCurrentPage;
   }
 }
 
-function generateNavOptions() {
-  let navOptions = [];
+const HomeNav = new NavOption(
+  "Home",
+  "#/",
+  () => window.location.hash === "#/" || window.location.hash === ""
+);
+const ScheduleNav = new NavOption("Schedule", "#/schedule");
+const AboutNav = new NavOption("About us", "#/about");
+const HealthNav = new NavOption("Health protocol", "#/health");
+const CodeNav = new NavOption("Code of conduct", "#/code");
+const ContactNav = new NavOption("Contact", "#/contact");
 
-  if (FeatureFlags.showMenuOptions) {
-    navOptions.push(
-      new NavOption(
-        "Home",
-        "#/",
-        () => window.location.hash === "#/" || window.location.hash === ""
-      )
-    );
-  }
+const NavOptions = [
+  FeatureFlags.showMenuOptions && HomeNav,
+  FeatureFlags.showScheduleTab && ScheduleNav,
+  FeatureFlags.showAboutTab && AboutNav,
+  FeatureFlags.showHealthTab && HealthNav,
+  FeatureFlags.showCodeOfConductTab && CodeNav,
+  FeatureFlags.showContactTab && ContactNav,
+];
 
-  if (FeatureFlags.showScheduleTab) {
-    navOptions.push(new NavOption("Schedule", "#/schedule"));
-  }
+// Nav Option Groups
 
-  if (FeatureFlags.showAboutTab) {
-    navOptions.push(new NavOption("About us", "#/about"));
-  }
+const BrowseOptions = [
+  FeatureFlags.showMenuOptions && HomeNav,
+  FeatureFlags.showAboutTab && ScheduleNav,
+  FeatureFlags.showScheduleTab && AboutNav,
+];
 
-  if (FeatureFlags.showHealthTab) {
-    navOptions.push(new NavOption("Health protocol", "#/health"));
-  }
+const PolicyOptions = [
+  FeatureFlags.showAboutTab && AboutNav,
+  FeatureFlags.showHealthTab && HealthNav,
+]
 
-  if (FeatureFlags.showCodeOfConductTab) {
-    navOptions.push(new NavOption("Code of conduct", "#/code"));
-  }
+export {
+  HomeNav,
+  ScheduleNav,
+  AboutNav,
+  HealthNav,
+  CodeNav,
+  ContactNav,
+  BrowseOptions,
+  PolicyOptions
+};
 
-  if (FeatureFlags.showContactTab) {
-    navOptions.push(new NavOption("Contact", "#/contact"));
-  }
-
-  return navOptions;
-}
-
-let navOptions = generateNavOptions();
-
-export default navOptions;
+export default NavOptions;

@@ -5,16 +5,14 @@ import Contact from "./subcomponents/contact/contact";
 import Location from "./subcomponents/location/location";
 import Browse from "./subcomponents/browse/browse";
 import Policies from "./subcomponents/policies/policies";
-import FeatureFlags from "infra/feature_flags";
+import { PolicyOptions, BrowseOptions } from "components/nav_bar/nav_options";
 
 function Footer() {
   return (
     <Box sx={footerStyles.footerContainer}>
       <Brand />
-      <Browse />
-      {(FeatureFlags.showHealthTab || FeatureFlags.showCodeOfConductTab) && (
-        <Policies />
-      )}
+      {BrowseOptions.length > 0 && <Browse />}
+      {PolicyOptions.length > 0 && <Policies />}
       <Location />
       <Contact />
     </Box>

@@ -1,25 +1,20 @@
 import { Box, Link, Typography } from "@mui/material";
 import policiesStyles from "./policies.styles";
-import FeatureFlags from "infra/feature_flags";
-
-const pages = [
-  FeatureFlags.showHealthTab && { name: "Health Protocol", to: "#/health" },
-  FeatureFlags.showCodeOfConductTab && { name: "Code of Conduct", to: "#/code" },
-];
+import { PolicyOptions } from "components/nav_bar/nav_options";
 
 function Policies() {
   return (
     <Box sx={policiesStyles.container}>
       <Typography variant="h6">Policies</Typography>
-      {pages.map((page) => (
+      {PolicyOptions.map((page) => (
         <Box sx={policiesStyles.linkContainer}>
           <Link
-            href={page.to}
+            href={page.url}
             rel="noopener noreferrer"
             underline="none"
             sx={policiesStyles.link}
           >
-            <Typography variant="body2">{page.name}</Typography>
+            <Typography variant="body2">{page.displayName}</Typography>
           </Link>
         </Box>
       ))}
