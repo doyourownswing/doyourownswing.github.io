@@ -1,13 +1,12 @@
 import { Box, Card, Container, Stack, Typography } from "@mui/material";
 import songOfTheWeekStyles from "./song_of_the_week.styles";
 import SongCard from "./song_card";
-import getCurrentSong from "../../../../data/songs_of_the_week";
+import getCurrentSong from "data/songs_of_the_week";
 import messages from "./messages";
 import QuoteAttribution from "./quote_attribution";
 
 function SongOfTheWeek() {
   let songInfo = getCurrentSong();
-  console.log(songInfo);
 
   // If there are no current songs, don't display this section.
   if (!songInfo) {
