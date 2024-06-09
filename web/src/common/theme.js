@@ -30,10 +30,12 @@ const theme = responsiveFontSizes(
         textButton: "#955ab5",
         activeSelection: "#955ab5",
         textLight: "white",
-        subtitleLight: "#bbbbbb",
       },
       button: {
         lightGray: "#dddddd",
+      },
+      icon: {
+        lightPurple: "#BF9AD3",
       },
     },
     typography: {

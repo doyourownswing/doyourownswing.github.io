@@ -2,9 +2,7 @@ import { Box, Container, Typography } from "@mui/material";
 import whoWeAreStyles from "./who_we_are.styles";
 import messages from "./messages";
 import {
-  Abc,
   AllInclusive,
-  Architecture,
   AutoFixHigh,
   ColorLens,
   Diversity2,
@@ -12,13 +10,15 @@ import {
   Handshake,
   LocalFlorist,
 } from "@mui/icons-material";
+import Grid2 from "@mui/material/Unstable_Grid2/Grid2";
 
 // Icons are from:
 // https://mui.com/material-ui/material-icons/
+// Commented out values are potential alternatives
 const valueIcons = [
   {
     text: "Creativity",
-    icon: ColorLens, //Architecture, Build, ColorLens, DesignServices, Draw, Palette
+    icon: ColorLens, // Architecture, Build, ColorLens, DesignServices, Draw, Palette
   },
   {
     text: "Connection",
@@ -42,18 +42,52 @@ const valueIcons = [
   },
   {
     text: "Play",
-    icon: AutoFixHigh, // Celebration, Draw, GolfCourse, Interests, MusicNote, Piano, Sports*
+    icon: AutoFixHigh, // Celebration, Draw, GolfCourse, Interests, MusicNote, Piano, Sports*, SportsGymnastics
   },
 ];
 
-function ValuesRenderer(props) {
+/** Renders a specific value and its icon. */
+function ValueRenderer(props) {
   let value = props.value;
 
   return (
-    <Box sx={whoWeAreStyles.valueContainer}>
-      <value.icon></value.icon>
-      <Typography>{value.text}</Typography>
+    <Box sx={whoWeAreStyles.valueRenderer}>
+      <value.icon fontSize="large" sx={whoWeAreStyles.valueIcon}></value.icon>
+      <Typography variant="body1">{value.text}</Typography>
     </Box>
+  );
+}
+
+/**
+ * Renders the values in a flex grid.
+ *
+ * xs: 3 rows of 2 values and 1 row of 1.
+ * sm: a row of 4 on top and a row of 3 on the bottom.
+ * md+: all 7 in one line.
+ */
+function ValuesRenderer() {
+  return (
+    <Grid2
+      container
+      columns={{ xs: 2, sm: 12, md: 7 }}
+      spacing={5}
+      sx={whoWeAreStyles.valuesContainer}
+    >
+      {valueIcons.map((v, index) => (
+        <Grid2
+          // The last value will have a size of 2 so it will span both columns.
+          xs={index === 6 ? 2 : 1}
+          // The first 4 values will have size 3, and the last 3 will have size 4
+          // to get 4 on top and 3 on bottom and evenly spaced.
+          sm={index < 4 ? 3 : 4}
+          // Fit all on one line.
+          md={1}
+          sx={whoWeAreStyles.valueRendererContainer}
+        >
+          <ValueRenderer value={v}></ValueRenderer>
+        </Grid2>
+      ))}
+    </Grid2>
   );
 }
 
@@ -67,13 +101,9 @@ function WhoWeAre() {
         <Typography variant="body" sx={whoWeAreStyles.subtitle}>
           {messages.description}
         </Typography>
-        <Box sx={whoWeAreStyles.header}>
+        <Box sx={whoWeAreStyles.valuesSection}>
           <Typography variant="h6">{messages.ourCommunityValues}</Typography>
-        </Box>
-        <Box sx={whoWeAreStyles.valuesContainer}>
-          {valueIcons.map((v) => (
-            <ValuesRenderer value={v}></ValuesRenderer>
-          ))}
+          <ValuesRenderer></ValuesRenderer>
         </Box>
       </Container>
     </div>

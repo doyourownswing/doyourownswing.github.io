@@ -5,29 +5,34 @@ const whoWeAreStyles = {
     backgroundColor: theme.palette.background.darkPurple,
     color: theme.palette.text.titleLight,
   },
-  whoWeAreContentContainer: { paddingTop: "24px", paddingBottom: "24px" },
+  whoWeAreContentContainer: { padding: "24px 0px" },
   title: {
     color: theme.palette.text.titleLight,
+    padding: "8px 0px",
   },
   subtitle: {
     color: theme.palette.text.subtitleLight,
   },
-  header: {
-    paddingTop: "24px",
-    color: theme.palette.text.titleLight,
+  valuesSection: {
+    paddingTop: "32px",
   },
-  valueContainer: {
+  valueRenderer: {
     display: "inline-flex",
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    padding: "24px 40px",
     flex: 1,
+    gap: "8px",
+  },
+  valueRendererContainer: {
+    display: "flex",
   },
   valuesContainer: {
-    display: "flex",
-    justifyContent: "space-around",
-    flexWrap: "wrap",
+    paddingTop: "24px",
+    paddingBottom: "24px",
+  },
+  valueIcon: {
+    color: theme.palette.icon.lightPurple,
   },
 };
 
