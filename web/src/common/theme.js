@@ -32,6 +32,9 @@ const theme = responsiveFontSizes(
         textLight: "white",
         subtitleLight: "#bbbbbb",
       },
+      button: {
+        lightGray: "#dddddd",
+      },
     },
     typography: {
       fontFamily: [

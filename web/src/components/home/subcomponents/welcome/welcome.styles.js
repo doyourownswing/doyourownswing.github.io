@@ -14,7 +14,6 @@ const welcomeStyles = {
   },
   titleBox: {
     padding: "8vw",
-    whiteSpace: "nowrap",
   },
   startHereButton: {
     marginTop: "2rem",
