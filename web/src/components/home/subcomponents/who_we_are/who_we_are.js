@@ -1,16 +1,58 @@
 import { Box, Container, Typography } from "@mui/material";
 import whoWeAreStyles from "./who_we_are.styles";
 import messages from "./messages";
-import { Abc, AcUnit, AccessAlarm } from "@mui/icons-material";
+import {
+  Abc,
+  AllInclusive,
+  Architecture,
+  AutoFixHigh,
+  ColorLens,
+  Diversity2,
+  Favorite,
+  Handshake,
+  LocalFlorist,
+} from "@mui/icons-material";
+
+// Icons are from:
+// https://mui.com/material-ui/material-icons/
+const valueIcons = [
+  {
+    text: "Creativity",
+    icon: ColorLens, //Architecture, Build, ColorLens, DesignServices, Draw, Palette
+  },
+  {
+    text: "Connection",
+    icon: Handshake, // ConnectWithoutContact, Group*, SignLanguage, Webhook
+  },
+  {
+    text: "Diversity",
+    icon: Diversity2, // Diversity1, Diversity3, Interests
+  },
+  {
+    text: "Inclusivity",
+    icon: AllInclusive, // Groups2, Groups3, People, WebHook
+  },
+  {
+    text: "Kindness",
+    icon: Favorite, // Recommend, SentimentSatisfied, TagFaces, VolunteerActivism
+  },
+  {
+    text: "Growth",
+    icon: LocalFlorist, // FilterVintage, Grass, Spa
+  },
+  {
+    text: "Play",
+    icon: AutoFixHigh, // Celebration, Draw, GolfCourse, Interests, MusicNote, Piano, Sports*
+  },
+];
 
 function ValuesRenderer(props) {
   let value = props.value;
+
   return (
     <Box sx={whoWeAreStyles.valueContainer}>
-      {value === "Inclusion" && <Abc></Abc>}
-      {value === "Community" && <AcUnit></AcUnit>}
-      {value === "Growth" && <AccessAlarm></AccessAlarm>}
-      <Typography>{value}</Typography>
+      <value.icon></value.icon>
+      <Typography>{value.text}</Typography>
     </Box>
   );
 }
@@ -29,12 +71,9 @@ function WhoWeAre() {
           <Typography variant="h6">{messages.ourCommunityValues}</Typography>
         </Box>
         <Box sx={whoWeAreStyles.valuesContainer}>
-          <ValuesRenderer value={"Inclusion"}></ValuesRenderer>
-          <ValuesRenderer value={"Community"}></ValuesRenderer>
-          <ValuesRenderer value={"Growth"}></ValuesRenderer>
-          <ValuesRenderer value={"Inclusion"}></ValuesRenderer>
-          <ValuesRenderer value={"Community"}></ValuesRenderer>
-          <ValuesRenderer value={"Growth"}></ValuesRenderer>
+          {valueIcons.map((v) => (
+            <ValuesRenderer value={v}></ValuesRenderer>
+          ))}
         </Box>
       </Container>
     </div>
