@@ -5,7 +5,10 @@ const whoWeAreStyles = {
     backgroundColor: theme.palette.background.darkPurple,
     color: theme.palette.text.titleLight,
   },
-  whoWeAreContentContainer: { padding: "24px 0px" },
+  whoWeAreContentContainer: {
+    paddingTop: "24px",
+    paddingBottom: "24px",
+  },
   title: {
     color: theme.palette.text.titleLight,
     padding: "8px 0px",
