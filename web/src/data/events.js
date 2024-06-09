@@ -69,15 +69,21 @@ const events = [
   ),
   new Event(
     EventTypes.DYOS,
-    messages.doYourOwnSwing,
+    "DYOS: Slingshot from Any Hand",
     createDate("06/13/2024"),
-    defaultDyosSchedule
+    defaultDyosSchedule,
+    {
+      facebookLink: "https://www.facebook.com/events/976640170426321",
+    }
   ),
   new Event(
     EventTypes.DYOS,
-    messages.doYourOwnSwing,
+    "DYOS: Wraps and Rolls Galore!",
     createDate("06/20/2024"),
-    defaultDyosSchedule
+    defaultDyosSchedule,
+    {
+      facebookLink: "https://www.facebook.com/events/476321498262098",
+    }
   ),
   new Event(
     EventTypes.DYOS,
