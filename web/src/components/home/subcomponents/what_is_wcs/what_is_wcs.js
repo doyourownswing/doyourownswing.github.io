@@ -1,20 +1,19 @@
 import { Box, Stack, Typography } from "@mui/material";
-import { useTheme } from "@emotion/react";
 import whatIsWcsStyles from "./what_is_wcs.styles";
+import messages from "./messages";
 
 function WhatIsWcs() {
-  const theme = useTheme();
   return (
     <Box sx={whatIsWcsStyles.whatIsWcsStylesContainer}>
+      <Typography variant="h4" sx={whatIsWcsStyles.header}>
+        What is West Coast Swing?
+      </Typography>
       <Box sx={whatIsWcsStyles.itemsContainer}>
-        <Typography variant="h4" sx={whatIsWcsStyles.header}>
-          What is West Coast Swing?
-        </Typography>
         <Stack sx={whatIsWcsStyles.twoColumnContent}>
           <Box sx={whatIsWcsStyles.videoContainer}>
             <iframe
-              width="560"
-              height="315"
+              width="100%"
+              height="100%"
               src="https://www.youtube.com/embed/v4fRV0aG3lc?si=BKXYaAPC8ozlSUWF"
               title="YouTube video player"
               frameborder="0"
@@ -23,26 +22,16 @@ function WhatIsWcs() {
               allowfullscreen
             ></iframe>
           </Box>
-          <Stack sx={whatIsWcsStyles.descriptionContainer}>
+          <Stack
+            sx={whatIsWcsStyles.descriptionContainer}
+            spacing={{ xs: 1, md: 2 }}
+          >
             <Typography variant="body">West Coast Swing is...</Typography>
-            <Typography variant="body" sx={whatIsWcsStyles.lineItems}>
-              A partner dance involving the conversation between 2 roles: leader
-              and follower.
-            </Typography>
-            <Typography variant="body" sx={whatIsWcsStyles.lineItems}>
-              Recognized for its smooth, elastic movement following basic
-              patterns with endless variations.
-            </Typography>
-            <Typography variant="body" sx={whatIsWcsStyles.lineItems}>
-              Often improvised rather than choreographed, offering the
-              opportunity for creative expression.
-            </Typography>
-            <Typography variant="body" sx={whatIsWcsStyles.lineItems}>
-              Commonly danced to contemporary pop, blues, and R&B music.
-            </Typography>
-            <Typography variant="body" sx={whatIsWcsStyles.lineItems}>
-              Danced both in social and competitive settings.
-            </Typography>
+            {Object.entries(messages).map(([_, value]) => (
+              <Typography variant="body" sx={whatIsWcsStyles.lineItems}>
+                {value}
+              </Typography>
+            ))}
           </Stack>
         </Stack>
       </Box>
