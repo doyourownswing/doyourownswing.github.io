@@ -9,9 +9,9 @@ const contactStyles = {
     display: "flex",
     marginTop: "8px",
 
-    color: theme.palette.text.subtitleLight,
+    color: theme.palette.text.linkLight,
     "&:hover": {
-      color: theme.palette.text.textLight,
+      color: theme.palette.text.linkLightHover,
     },
   },
   icon: {

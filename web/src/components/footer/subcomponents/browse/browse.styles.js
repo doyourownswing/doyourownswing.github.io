@@ -10,10 +10,10 @@ const browseStyles = {
     marginTop: "8px",
   },
   link: {
-    color: theme.palette.text.subtitleLight,
+    color: theme.palette.text.linkLight,
     marginTop: "8px",
     "&:hover": {
-      color: theme.palette.text.textLight,
+      color: theme.palette.text.linkLightHover,
     },
   },
 };

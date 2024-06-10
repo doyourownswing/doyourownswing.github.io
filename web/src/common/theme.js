@@ -29,7 +29,7 @@ const theme = responsiveFontSizes(
         activeSelection: "#955ab5",
         textLight: "white",
         subtitleLight: "#bbbbbb",
-        linkLight: "#808080",
+        linkLight: "#bbbbbb",
         linkLightHover: "white",
         lightPurple: "#BF9AD3",
       },

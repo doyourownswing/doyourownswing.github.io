@@ -9,9 +9,9 @@ const locationStyles = {
     marginTop: "8px",
   },
   address: {
-    color: theme.palette.text.subtitleLight,
+    color: theme.palette.text.linkLight,
     "&:hover": {
-      color: theme.palette.text.textLight,
+      color: theme.palette.text.linkLightHover,
     },
   },
 };
