@@ -3,6 +3,7 @@ import theme from "common/theme";
 const contactStyles = {
   contactContainer: {
     color: theme.palette.text.textLight,
+    marginTop: "8px",
   },
   row: {
     display: "flex",

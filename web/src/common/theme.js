@@ -25,8 +25,12 @@ const theme = createTheme({
       activeSelection: "#955ab5",
       textLight: "white",
       subtitleLight: "#bbbbbb",
+<<<<<<< HEAD
       linkLight: "#808080",
       linkLightHover: "white",
+=======
+      lightPurple: "#BF9AD3",
+>>>>>>> ba2d4b7 (Updates footer to look nicer and be better responsive)
     },
   },
   typography: {
