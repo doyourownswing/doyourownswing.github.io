@@ -1,6 +1,6 @@
 import { Box, Link, Typography } from "@mui/material";
 import browseStyles from "./browse.styles";
-import { BrowseOptions } from "components/nav_bar/nav_options";
+import { BrowseOptions } from "common/nav_options";
 
 function Browse() {
   return (

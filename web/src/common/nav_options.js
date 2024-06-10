@@ -4,8 +4,8 @@ class NavOption {
   constructor(displayName, url, isCurrentPageFunction) {
     this.displayName = displayName;
     this.url = url;
-    const defaultIsCurrentPage = () => window.location.hash === this.url;
-    this.isCurrentPage = isCurrentPageFunction ?? defaultIsCurrentPage;
+    this.isCurrentPage =
+      isCurrentPageFunction ?? (() => window.location.hash === this.url);
   }
 }
 
@@ -40,7 +40,7 @@ const BrowseOptions = [
 const PolicyOptions = [
   FeatureFlags.showAboutTab && AboutNav,
   FeatureFlags.showHealthTab && HealthNav,
-]
+];
 
 export {
   HomeNav,
@@ -50,7 +50,7 @@ export {
   CodeNav,
   ContactNav,
   BrowseOptions,
-  PolicyOptions
+  PolicyOptions,
 };
 
 export default NavOptions;

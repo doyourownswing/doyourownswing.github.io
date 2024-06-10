@@ -1,6 +1,6 @@
 import { Box, Link, Typography } from "@mui/material";
 import policiesStyles from "./policies.styles";
-import { PolicyOptions } from "components/nav_bar/nav_options";
+import { PolicyOptions } from "common/nav_options";
 
 function Policies() {
   return (

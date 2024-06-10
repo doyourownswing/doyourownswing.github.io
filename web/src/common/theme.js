@@ -25,6 +25,8 @@ const theme = createTheme({
       activeSelection: "#955ab5",
       textLight: "white",
       subtitleLight: "#bbbbbb",
+      linkLight: "#808080",
+      linkLightHover: "white",
     },
   },
   typography: {

@@ -5,7 +5,7 @@ import Contact from "./subcomponents/contact/contact";
 import Location from "./subcomponents/location/location";
 import Browse from "./subcomponents/browse/browse";
 import Policies from "./subcomponents/policies/policies";
-import { PolicyOptions, BrowseOptions } from "components/nav_bar/nav_options";
+import { PolicyOptions, BrowseOptions } from "common/nav_options";
 
 function Footer() {
   return (

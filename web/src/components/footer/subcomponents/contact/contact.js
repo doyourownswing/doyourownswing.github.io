@@ -1,6 +1,6 @@
 import { Box, Link, Typography } from "@mui/material";
 import contactStyles from "./contact.styles";
-import DiscordIcon from "./DiscordIcon.js";
+import DiscordIcon from "../../../../common/icons/discord.js/index.js";
 import EmailIcon from "@mui/icons-material/Email";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
