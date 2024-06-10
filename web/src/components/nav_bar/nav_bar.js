@@ -13,7 +13,7 @@ import React from "react";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import messages from "common/messages";
-import NavOptions from "../../common/nav_options";
+import NavOptions from "common/nav_options";
 import navBarStyles from "./nav_bar.styles";
 import { useTheme } from "@mui/material/styles";
 
