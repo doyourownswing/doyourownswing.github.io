@@ -12,11 +12,13 @@ import FeatureFlags from "infra/feature_flags";
 import getNextEvents from "data/events";
 import messages from "./messages";
 import upcomingEventsStyles from "./upcoming_events.styles";
+import EventCard from "./event_card";
 
 function TwoEventRenderer(props) {
   let events = props.events;
   return (
     <Box sx={upcomingEventsStyles.twoEventRenderer}>
+      <EventCard title="Title" date="hello" location="hello" price="123" />
       <DyosRenderer event={events[0]} />
       <DyosRenderer event={events[1]} />
     </Box>
