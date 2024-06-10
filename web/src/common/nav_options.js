@@ -39,10 +39,7 @@ const BrowseOptions = [
 
 const PolicyOptions = [
   FeatureFlags.showHealthTab && HealthNav,
-<<<<<<< HEAD
-=======
   FeatureFlags.showCodeOfConductTab && CodeNav,
->>>>>>> ba2d4b7 (Updates footer to look nicer and be better responsive)
 ];
 
 export {
