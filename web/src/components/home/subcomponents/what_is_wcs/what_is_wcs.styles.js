@@ -3,7 +3,7 @@ import theme from "common/theme";
 const whatIsWcsStyles = {
   whatIsWcsStylesContainer: {
     padding: "24px",
-    maxWidth: "1152px", // to match Upcoming Events. Halp me here plz
+    maxWidth: "1200px",
     margin: "auto",
   },
   itemsContainer: {
