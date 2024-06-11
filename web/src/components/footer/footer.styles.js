@@ -1,19 +1,24 @@
-import theme from "../../common/theme";
+import theme from "common/theme";
 
 const footerStyles = {
   footerContainer: {
     backgroundColor: theme.palette.background.darkPurple,
-    display: "flex",
-    justifyContent: "space-between",
-    paddingLeft: "8px",
-    paddingBottom: "8px",
-    paddingRight: {
-      md: "5vw",
-      sm: "2vw",
-    },
+    paddingLeft: "5%",
+    paddingRight: "5%",
+    paddingBottom: "24px",
+    paddingTop: "16px",
   },
-  brand: {
-    alignSelf: "center",
+  footerStack: {
+    gap: "24px",
+  },
+  footerLinksGridContainer: { width: "100%" },
+  footerLinksGrid: {
+    justifyContent: "space-evenly",
+    width: "100%",
+  },
+  gridItem: {
+    display: { md: "flex" },
+    justifyContent: "flex-end",
   },
 };
 

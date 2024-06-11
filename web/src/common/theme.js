@@ -38,6 +38,9 @@ const theme = responsiveFontSizes(
         textButton: basePalette.mediumPurple,
         activeSelection: basePalette.mediumPurple,
         textLight: basePalette.white,
+        linkLight: "#bbbbbb",
+        linkLightHover: basePalette.white,
+        lightPurple: basePalette.lightPurple,
       },
       button: {
         lightGray: "#dddddd",

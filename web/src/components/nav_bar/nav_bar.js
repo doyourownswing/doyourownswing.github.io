@@ -16,7 +16,7 @@ import FeatureFlags from "infra/feature_flags";
 import React from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import messages from "common/messages";
-import navOptions from "./nav_options";
+import NavOptions from "common/nav_options";
 import navBarStyles from "./nav_bar.styles";
 import purpleLogo from "assets/images/purple_logo_512.png";
 
@@ -51,7 +51,7 @@ function ExpandedMenuOptions() {
 
   return (
     <Box sx={navBarStyles.expandedOptionsContainer}>
-      {navOptions.map((option) => (
+      {NavOptions.map((option) => (
         <Button
           key={option.displayName}
           sx={getButtonStyle(option)}
@@ -104,7 +104,7 @@ function MenuIconOptions() {
         open={Boolean(anchorElMenu)}
         onClose={handleCloseNavMenu}
       >
-        {navOptions.map((option) => (
+        {NavOptions.map((option) => (
           <Link
             href={option.url}
             sx={navBarStyles.menuItem}
