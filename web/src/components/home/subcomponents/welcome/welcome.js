@@ -29,7 +29,6 @@ function Welcome() {
         </Box>
         {FeatureFlags.showStartHerePage && (
           <Button
-            // color="primary"
             variant="contained"
             sx={welcomeStyles.startHereButton}
             href="#/start-here"
