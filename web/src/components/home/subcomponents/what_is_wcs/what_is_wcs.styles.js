@@ -21,11 +21,6 @@ const whatIsWcsStyles = {
     justifySelf: "center",
     gap: "48px",
   },
-  videoContainer: {
-    width: { xs: 0.8, md: "560px" },
-    height: { xs: "15rem", md: "315px" },
-    alignSelf: "center",
-  },
   descriptionContainer: {
     flexDirection: "column",
   },

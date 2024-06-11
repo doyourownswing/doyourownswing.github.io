@@ -1,6 +1,7 @@
 import { Box, Container, Stack, Typography } from "@mui/material";
 import whatIsWcsStyles from "./what_is_wcs.styles";
 import messages from "./messages";
+import DefaultVideoRenderer from "./video_renderer/default_video_renderer";
 
 function WhatIsWcs() {
   return (
@@ -11,18 +12,7 @@ function WhatIsWcs() {
         </Typography>
         <Box sx={whatIsWcsStyles.itemsContainer}>
           <Stack sx={whatIsWcsStyles.twoColumnContent}>
-            <Box sx={whatIsWcsStyles.videoContainer}>
-              <iframe
-                width="100%"
-                height="100%"
-                src="https://www.youtube.com/embed/v4fRV0aG3lc?si=BKXYaAPC8ozlSUWF"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin"
-                allowfullscreen
-              ></iframe>
-            </Box>
+            <DefaultVideoRenderer />
             <Stack
               sx={whatIsWcsStyles.descriptionContainer}
               spacing={{ xs: 1, md: 2 }}
