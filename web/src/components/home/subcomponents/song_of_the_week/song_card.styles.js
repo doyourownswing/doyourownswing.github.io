@@ -39,7 +39,7 @@ const songCardStyles = {
     display: "flex",
     gap: "8px 16px",
     paddingTop: "8px",
-    flexWrap: "wrap",
+    flexWrap: { xs: "wrap", sm: "nowrap" },
   },
   linkButton: {
     textTransform: "none",

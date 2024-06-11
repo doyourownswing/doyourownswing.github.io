@@ -7,11 +7,15 @@ function QuoteAttribution(props) {
   return (
     <Box sx={quoteAttributionStyles.quoteAttributionContainer}>
       <Avatar sx={quoteAttributionStyles.avatar}>
-        <Box
-          component="img"
-          src={attributionInfo.picture}
-          sx={quoteAttributionStyles.avatarImage}
-        ></Box>
+        {!attributionInfo.picture ? (
+          attributionInfo.name[0]
+        ) : (
+          <Box
+            component="img"
+            src={attributionInfo.picture}
+            sx={quoteAttributionStyles.avatarImage}
+          ></Box>
+        )}
       </Avatar>
       <Typography>{attributionInfo.name}</Typography>
     </Box>
