@@ -14,8 +14,11 @@ class SongOfTheWeek {
 
 const attributors = {
   riley: {
-    name: "Riley",
+    name: "Riley C",
     picture: RileyHeadshot,
+  },
+  makenzie: {
+    name: "Makenzie S",
   },
 };
 
@@ -39,6 +42,27 @@ const songs = [
         "https://i.scdn.co/image/ab67616d0000b2732275c283db198eed78f157cf",
       youtube: "https://www.youtube.com/watch?v=ZxdHJm_ZGQk",
       spotify: "https://open.spotify.com/track/3ijo1UGnywzuH1YIqnSdo3",
+    }
+  ),
+  new SongOfTheWeek(
+    createDate("06/10/2024"),
+    {
+      quote:
+        "I saw Dora Jar perform live last year and discovered this song on her debut EP. " +
+        "I love everything about it - the grooving bassline, the " +
+        "syncopated rhythms, and the whimsical lyrics. Such a fun song to dance to. ",
+      attributionInfo: attributors.makenzie,
+    },
+    {
+      name: "Wizard",
+      artist: "Dora Jar",
+      year: "2021",
+    },
+    {
+      albumCoverImage:
+        "https://i.scdn.co/image/ab67616d0000b273e90ad23c08b4aa0e3aa8d7a1",
+      youtube: "https://www.youtube.com/watch?v=uCmcKuA5r3A",
+      spotify: "https://open.spotify.com/track/6q8bIgs9jfJpkM3bJmbDie",
     }
   ),
 ];
