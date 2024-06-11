@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/static/css/main.67b1aea8.css",
-    "main.js": "/static/js/main.003e1e5e.js",
+    "main.js": "/static/js/main.b3c9c6a1.js",
     "static/media/teacher-demo-2-blurred-min.JPG": "/static/media/teacher-demo-2-blurred-min.ed11e4120c380ca5192f.JPG",
     "static/media/riley.jpg": "/static/media/riley.40b359834006c2f513ce.jpg",
-    "static/media/color_logo_512.png": "/static/media/color_logo_512.23fb79ef30d08ff8844a.png",
+    "static/media/purple_logo_512.png": "/static/media/purple_logo_512.982644045b68ee4fabe0.png",
+    "static/media/color-logo.svg": "/static/media/color-logo.c872f92f85a8018a151a825ecf4ae317.svg",
     "index.html": "/index.html",
-    "static/media/spotifyIcon.svg": "/static/media/spotifyIcon.ee623c56b8e6391a34b5eed7f9926090.svg",
     "main.67b1aea8.css.map": "/static/css/main.67b1aea8.css.map",
-    "main.003e1e5e.js.map": "/static/js/main.003e1e5e.js.map"
+    "main.b3c9c6a1.js.map": "/static/js/main.b3c9c6a1.js.map"
   },
   "entrypoints": [
     "static/css/main.67b1aea8.css",
-    "static/js/main.003e1e5e.js"
+    "static/js/main.b3c9c6a1.js"
   ]
 }
