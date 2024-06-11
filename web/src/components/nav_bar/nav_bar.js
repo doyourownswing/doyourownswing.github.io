@@ -1,21 +1,24 @@
 import "./nav_bar.css";
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
-import Container from "@mui/material/Container";
+import {
+  AppBar,
+  Box,
+  Button,
+  Container,
+  IconButton,
+  Link,
+  Menu,
+  MenuItem,
+  Toolbar,
+  Typography,
+  useTheme,
+} from "@mui/material";
 import FeatureFlags from "infra/feature_flags";
-import IconButton from "@mui/material/IconButton";
-import Link from "@mui/material/Link";
-import Menu from "@mui/material/Menu";
-import MenuIcon from "@mui/icons-material/Menu";
-import MenuItem from "@mui/material/MenuItem";
 import React from "react";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
+import MenuIcon from "@mui/icons-material/Menu";
 import messages from "common/messages";
 import navOptions from "./nav_options";
 import navBarStyles from "./nav_bar.styles";
-import { useTheme } from "@mui/material/styles";
+import purpleLogo from "assets/images/purple_logo_512.png";
 
 /** Nav bar options for large screens.
  *
@@ -137,7 +140,7 @@ function NavBar() {
                 component="img"
                 sx={navBarStyles.logoImage}
                 alt="Do Your Own Swing logo"
-                src="logo512.png"
+                src={purpleLogo}
               />
               <Typography variant="h6" noWrap component="div" color="secondary">
                 {messages.dyos}
