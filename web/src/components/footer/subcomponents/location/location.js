@@ -11,17 +11,19 @@ function Location() {
   return (
     <Box sx={locationStyles.locationContainer}>
       <Typography variant="h6">Location</Typography>
-      <Link
-        href="https://maps.app.goo.gl/SaV1ZcT82wXA2CHFA"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        {locationLines.map((line) => (
-          <Typography variant="body2" sx={locationStyles.address}>
-            {line}
-          </Typography>
-        ))}
-      </Link>
+      <Box sx={locationStyles.linkContainer}>
+        <Link
+          href="https://maps.app.goo.gl/SaV1ZcT82wXA2CHFA"
+          target="_blank"
+          rel="noopener noreferrer"
+          underline="none"
+          sx={locationStyles.address}
+        >
+          {locationLines.map((line) => (
+            <Typography variant="body2">{line}</Typography>
+          ))}
+        </Link>
+      </Box>
     </Box>
   );
 }

@@ -37,6 +37,9 @@ const theme = responsiveFontSizes(
         activeSelection: basePalette.mediumPurple,
         textLight: basePalette.white,
         subtitleLight: "#bbbbbb",
+        linkLight: "#bbbbbb",
+        linkLightHover: "white",
+        lightPurple: "#BF9AD3",
       },
       button: {
         lightGray: "#dddddd",

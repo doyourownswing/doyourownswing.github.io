@@ -1,17 +1,21 @@
-import theme from "../../../../common/theme";
+import theme from "common/theme";
 
 const brandStyles = {
-  brandContainer: {
-    color: theme.palette.text.textLight,
-    padding: "8px 0px 16px 8px",
+  brandContainerContainer: {
+    color: theme.palette.text.lightPurple,
+    flex: { sm: "1 1 200px" },
+    alignItems: "center",
+    display: "flex",
   },
   logoContainer: {
     display: "flex",
     alignItems: "center",
   },
   logoImage: {
-    height: 64,
-    width: 64,
+    fontSize: "40px",
+  },
+  logoText: {
+    padding: "8px",
   },
 };
 
