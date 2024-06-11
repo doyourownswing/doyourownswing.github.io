@@ -1,3 +1,5 @@
+import theme from "common/theme";
+
 const welcomeStyles = {
   sectionLayout: {
     display: "flex",
@@ -21,6 +23,7 @@ const welcomeStyles = {
     width: "fit-content",
     padding: ".75rem 1.5rem",
     textTransform: "unset",
+    backgroundColor: theme.palette.button.purpleFilled,
   },
 };
 

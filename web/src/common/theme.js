@@ -40,6 +40,7 @@ const theme = responsiveFontSizes(
       },
       button: {
         lightGray: "#dddddd",
+        purpleFilled: "#502268",
       },
       icon: {
         avatar: basePalette.purple,
