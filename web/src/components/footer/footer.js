@@ -34,18 +34,16 @@ const sections = [
 function GridItem(props) {
   let section = props.section;
 
-  return (
-    section.visible && (
-      <Grid
-        xs={section.size.xs}
-        sm={section.size.sm}
-        md={section.size.md}
-        sx={footerStyles.gridItem}
-      >
-        <section.component />
-      </Grid>
-    )
-  );
+  return section.visible ? (
+    <Grid
+      xs={section.size.xs}
+      sm={section.size.sm}
+      md={section.size.md}
+      sx={footerStyles.gridItem}
+    >
+      <section.component />
+    </Grid>
+  ) : null;
 }
 
 function Footer() {

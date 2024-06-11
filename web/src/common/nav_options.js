@@ -20,27 +20,37 @@ const HealthNav = new NavOption("Health protocol", "#/health");
 const CodeNav = new NavOption("Code of conduct", "#/code");
 const ContactNav = new NavOption("Contact", "#/contact");
 
-const NavOptions = [
+const NavOptions = cleanUpOptionsList([
   FeatureFlags.showMenuOptions && HomeNav,
   FeatureFlags.showScheduleTab && ScheduleNav,
   FeatureFlags.showAboutTab && AboutNav,
   FeatureFlags.showHealthTab && HealthNav,
   FeatureFlags.showCodeOfConductTab && CodeNav,
   FeatureFlags.showContactTab && ContactNav,
-];
+]);
 
 // Nav Option Groups
 
-const BrowseOptions = [
+const BrowseOptions = cleanUpOptionsList([
   FeatureFlags.showMenuOptions && HomeNav,
   FeatureFlags.showAboutTab && ScheduleNav,
   FeatureFlags.showScheduleTab && AboutNav,
-];
+]);
 
-const PolicyOptions = [
+const PolicyOptions = cleanUpOptionsList([
   FeatureFlags.showHealthTab && HealthNav,
   FeatureFlags.showCodeOfConductTab && CodeNav,
-];
+]);
+
+/**
+ * Returns a clean list of NavOptions.
+ *
+ * `FeatureFlag.myFlag && MyItem` will return `false`, instead of being excluded from arrays.
+ *  Strips out any false values.
+ */
+function cleanUpOptionsList(list) {
+  return list.filter((i) => i);
+}
 
 export {
   HomeNav,
