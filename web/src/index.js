@@ -13,6 +13,7 @@ import Schedule from "components/schedule/schedule";
 import ThemeProvider from "@mui/material/styles/ThemeProvider";
 import theme from "common/theme";
 import "index.css";
+import StartHere from "components/start_here/start_here";
 
 /** Generates the list of routes to include in the router based on the feature eligibility. */
 function generateRoutes() {
@@ -54,6 +55,13 @@ function generateRoutes() {
     routes.push({
       path: "/contact",
       element: <Contact />,
+    });
+  }
+
+  if (FeatureFlags.showStartHerePage) {
+    routes.push({
+      path: "/start-here",
+      element: <StartHere />,
     });
   }
 

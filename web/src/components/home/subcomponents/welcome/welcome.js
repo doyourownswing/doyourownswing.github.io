@@ -27,11 +27,12 @@ function Welcome() {
             </Typography>
           </Box>
         </Box>
-        {FeatureFlags.showStartHereTab && (
+        {FeatureFlags.showStartHerePage && (
           <Button
-            color="primary"
+            // color="primary"
             variant="contained"
             sx={welcomeStyles.startHereButton}
+            href="#/start-here"
           >
             Start here if you're new
           </Button>

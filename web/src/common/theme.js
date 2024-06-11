@@ -32,6 +32,7 @@ const theme = responsiveFontSizes(
       },
       button: {
         lightGray: "#dddddd",
+        purpleFilled: "#502268",
       },
     },
     typography: {
