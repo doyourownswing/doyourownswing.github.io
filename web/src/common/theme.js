@@ -29,6 +29,8 @@ const theme = responsiveFontSizes(
         darkPurple: basePalette.darkPurple,
       },
       text: {
+        titleLight: basePalette.white,
+        subtitleLight: "#bbbbbb",
         title: basePalette.mediumPurple,
         subtitle: "#808080",
         // For less essential body text that we don't want to stand out as much.
@@ -36,17 +38,19 @@ const theme = responsiveFontSizes(
         textButton: basePalette.mediumPurple,
         activeSelection: basePalette.mediumPurple,
         textLight: basePalette.white,
-        subtitleLight: "#bbbbbb",
         linkLight: "#bbbbbb",
-        linkLightHover: "white",
-        lightPurple: "#BF9AD3",
+        linkLightHover: basePalette.white,
+        lightPurple: basePalette.lightPurple,
       },
       button: {
         lightGray: "#dddddd",
-        purpleFilled: "#502268",
+        purpleFilled: basePalette.purple,
       },
       icon: {
         avatar: basePalette.purple,
+      },
+      icon: {
+        lightPurple: basePalette.lightPurple,
       },
     },
     typography: {
