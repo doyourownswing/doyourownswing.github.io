@@ -1,21 +1,24 @@
 import "./nav_bar.css";
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
-import Container from "@mui/material/Container";
+import {
+  AppBar,
+  Box,
+  Button,
+  Container,
+  IconButton,
+  Link,
+  Menu,
+  MenuItem,
+  Toolbar,
+  Typography,
+  useTheme,
+} from "@mui/material";
 import FeatureFlags from "infra/feature_flags";
-import IconButton from "@mui/material/IconButton";
-import Link from "@mui/material/Link";
-import Menu from "@mui/material/Menu";
-import MenuIcon from "@mui/icons-material/Menu";
-import MenuItem from "@mui/material/MenuItem";
 import React from "react";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
+import MenuIcon from "@mui/icons-material/Menu";
 import messages from "common/messages";
-import navOptions from "./nav_options";
+import NavOptions from "common/nav_options";
 import navBarStyles from "./nav_bar.styles";
-import { useTheme } from "@mui/material/styles";
+import purpleLogo from "assets/images/purple_logo_512.png";
 
 /** Nav bar options for large screens.
  *
@@ -48,7 +51,7 @@ function ExpandedMenuOptions() {
 
   return (
     <Box sx={navBarStyles.expandedOptionsContainer}>
-      {navOptions.map((option) => (
+      {NavOptions.map((option) => (
         <Button
           key={option.displayName}
           sx={getButtonStyle(option)}
@@ -101,7 +104,7 @@ function MenuIconOptions() {
         open={Boolean(anchorElMenu)}
         onClose={handleCloseNavMenu}
       >
-        {navOptions.map((option) => (
+        {NavOptions.map((option) => (
           <Link
             href={option.url}
             sx={navBarStyles.menuItem}
@@ -137,7 +140,7 @@ function NavBar() {
                 component="img"
                 sx={navBarStyles.logoImage}
                 alt="Do Your Own Swing logo"
-                src="logo512.png"
+                src={purpleLogo}
               />
               <Typography variant="h6" noWrap component="div" color="secondary">
                 {messages.dyos}

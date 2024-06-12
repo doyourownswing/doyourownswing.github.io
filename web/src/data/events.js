@@ -7,10 +7,8 @@
  * etc.) And should be handled be the caller to be rendered properly.
  */
 import messages from "../common/messages";
-
+import { createDate } from "utils/date_utils";
 const dayjs = require("dayjs");
-const customParseFormat = require("dayjs/plugin/customParseFormat");
-dayjs.extend(customParseFormat);
 
 const EventTypes = Object.freeze({
   DYOS: Symbol("DYOS"),
@@ -47,10 +45,6 @@ const addons = [
   { time: "7:30pm - 8:15pm", name: "Building Blocks" },
   { time: "8:15pm - 9:00pm", name: "Creative Expressions" },
 ];
-
-function createDate(dateString) {
-  return dayjs(dateString, "MM/DD/YYYY");
-}
 
 /**
  * Hardcoded database of all of the events.
@@ -101,9 +95,9 @@ const events = [
   ),
   new Event(
     EventTypes.DYOS,
-    messages.doYourOwnSwing,
+    "DYOS: Slingshot from Any Hand",
     createDate("06/13/2024"),
-    [...defaultDyosSchedule, ...addons],
+    defaultDyosSchedule,
     "Studio M Ballroom, San Jose, CA",
     "$10 - $40",
     {
@@ -112,7 +106,7 @@ const events = [
   ),
   new Event(
     EventTypes.DYOS,
-    messages.doYourOwnSwing,
+    "DYOS: Wraps and Rolls Galore!",
     createDate("06/20/2024"),
     defaultDyosSchedule,
     "Studio M Ballroom, San Jose, CA",

@@ -28,13 +28,10 @@ function CarouselEventRenderer(props) {
   const [currentEventIndex, setCurrentEventIndex] = useState(0);
   const maxSteps = events.length;
 
-  const handleNext = () => {
+  const handleNext = () =>
     setCurrentEventIndex((prevEventIndex) => prevEventIndex + 1);
-  };
-
-  const handleBack = () => {
+  const handleBack = () =>
     setCurrentEventIndex((prevEventIndex) => prevEventIndex - 1);
-  };
 
   return (
     <Box sx={upcomingEventsStyles.carouselEventRenderer}>
