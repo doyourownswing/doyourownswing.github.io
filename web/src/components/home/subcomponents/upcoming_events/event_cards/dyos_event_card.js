@@ -1,5 +1,5 @@
 import { Typography, Box } from "@mui/material";
-import EventCard from "../event_card";
+import EventCard from "./event_card";
 import dyosEventCardStyle from "./dyos_event_card.styles";
 
 const DYOSEventCard = (props) => (
