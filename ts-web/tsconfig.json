@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "paths": {
+      "components/*": ["./src/components/*"],
+      "assets/*": ["./src/assets/*"],
+      "common/*": ["./src/common/*"],
+      "data/*": ["./src/data/*"],
+      "infra/*": ["./src/infra/*"],
+      "utils/*": ["./src/utils/*"]
+    },
+    "outDir": "./dist/", // path to output directory
+    "sourceMap": true, // allow sourcemap support
+    "strictNullChecks": true, // enable strict null checks as a best practice
+    "module": "es6", // specify module code generation
+    "jsx": "react", // use typescript to transpile jsx to js
+    "target": "es5", // specify ECMAScript target version
+    "allowJs": true, // allow a partial TypeScript and JavaScript codebase
+    "allowSyntheticDefaultImports": true,
+    "lib": ["es6", "dom"],
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "moduleResolution": "node"
+  },
+  "include": ["./src/**/*", "src/types.d.ts"],
+  "exclude": ["dist"]
+}
