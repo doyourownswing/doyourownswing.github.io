@@ -17,7 +17,7 @@ function Location() {
         rel="noopener noreferrer"
       >
         {locationLines.map((line) => (
-          <Typography variant="body2" sx={locationStyles.address}>
+          <Typography key={line} variant="body2" sx={locationStyles.address}>
             {line}
           </Typography>
         ))}

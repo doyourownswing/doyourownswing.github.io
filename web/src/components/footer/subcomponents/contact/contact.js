@@ -22,7 +22,12 @@ function Contact() {
     <Box style={contactStyles.contactContainer}>
       <Typography variant="h6">Contact</Typography>
       {contactOptions.map((info) => (
-        <Link href={info.href} target="_blank" rel="noopener noreferrer">
+        <Link
+          key={info.href}
+          href={info.href}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <Typography variant="body2" sx={contactStyles.link}>
             {info.displayText}
           </Typography>

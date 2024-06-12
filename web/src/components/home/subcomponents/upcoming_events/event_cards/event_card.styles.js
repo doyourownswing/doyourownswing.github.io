@@ -2,9 +2,8 @@ import theme from "common/theme";
 
 const eventCardStyles = {
   card: {
-    position: "relative",
-    minWidth: "200px",
     padding: "24px",
+    minWidth: "320px",
     borderRadius: "16px",
     backgroundColor: theme.palette.background.light,
     boxShadow:
@@ -28,13 +27,7 @@ const eventCardStyles = {
   divider: {
     margin: "24px 0 24px 0",
   },
-  priceContainer: {
-    position: "absolute",
-    left: "24px",
-    bottom: "20px",
-  },
   priceLabel: {
-    // marginBottom: "8px",
     fontSize: "16px",
     color: theme.palette.text.subtitle,
   },
@@ -43,15 +36,18 @@ const eventCardStyles = {
     fontWeight: "600",
     color: theme.palette.text.primary,
   },
+  footerBox: {
+    display: "flex",
+    justifyContent: "space-between",
+  },
   button: {
-    position: "absolute",
-    right: "24px",
-    bottom: "24px",
     backgroundImage: "linear-gradient(#8637DA, #6400CF)",
     width: "135px",
     height: "51px",
     fontSize: "16px",
     fontWeight: "500",
+    textTransform: "none",
+    borderRadius: "8px",
   },
 };
 
