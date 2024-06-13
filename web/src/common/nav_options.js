@@ -20,15 +20,6 @@ const HealthNav = new NavOption("Health protocol", "#/health");
 const CodeNav = new NavOption("Code of conduct", "#/code");
 const ContactNav = new NavOption("Contact", "#/contact");
 
-const NavOptions = [
-  FeatureFlags.showMenuOptions && HomeNav,
-  FeatureFlags.showScheduleTab && ScheduleNav,
-  FeatureFlags.showAboutTab && AboutNav,
-  FeatureFlags.showHealthTab && HealthNav,
-  FeatureFlags.showCodeOfConductTab && CodeNav,
-  FeatureFlags.showContactTab && ContactNav,
-];
-
 // Nav Option Groups
 
 const BrowseOptions = [
@@ -40,6 +31,12 @@ const BrowseOptions = [
 const PolicyOptions = [
   FeatureFlags.showHealthTab && HealthNav,
   FeatureFlags.showCodeOfConductTab && CodeNav,
+];
+
+const NavOptions = [
+  ...BrowseOptions,
+  ...PolicyOptions,
+  FeatureFlags.showContactTab && ContactNav,
 ];
 
 export {

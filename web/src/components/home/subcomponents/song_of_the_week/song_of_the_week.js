@@ -4,6 +4,7 @@ import SongCard from "./song_card";
 import getCurrentSong from "data/songs_of_the_week";
 import messages from "./messages";
 import QuoteAttribution from "./quote_attribution";
+import { SECTION_MAX_WIDTH } from "common/constants";
 
 function SongOfTheWeek() {
   let songInfo = getCurrentSong();

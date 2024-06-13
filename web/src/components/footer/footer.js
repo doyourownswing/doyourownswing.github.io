@@ -1,4 +1,4 @@
-import { Box, Grid, Stack } from "@mui/material";
+import { Container, Box, Grid, Stack } from "@mui/material";
 import footerStyles from "./footer.styles";
 import Brand from "./subcomponents/brand/brand";
 import Contact from "./subcomponents/contact/contact";
@@ -51,19 +51,21 @@ function GridItem(props) {
 function Footer() {
   return (
     <Box sx={footerStyles.footerContainer}>
-      <Stack
-        flexDirection={{ xs: "column", sm: "row" }}
-        sx={footerStyles.footerStack}
-      >
-        <Brand />
-        <Box sx={footerStyles.footerLinksGridContainer}>
-          <Grid container rowGap={2} sx={footerStyles.footerLinksGrid}>
-            {sections.map((s) => (
-              <GridItem section={s} />
-            ))}
-          </Grid>
-        </Box>
-      </Stack>
+      <Container>
+        <Stack
+          flexDirection={{ xs: "column", sm: "row" }}
+          sx={footerStyles.footerStack}
+        >
+          <Brand />
+          <Box sx={footerStyles.footerLinksGridContainer}>
+            <Grid container rowGap={2} sx={footerStyles.footerLinksGrid}>
+              {sections.map((s) => (
+                <GridItem section={s} />
+              ))}
+            </Grid>
+          </Box>
+        </Stack>
+      </Container>
     </Box>
   );
 }

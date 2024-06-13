@@ -1,9 +1,10 @@
 import theme from "common/theme";
+import { SECTION_PADDING } from "common/constants";
 
 const songOfTheWeekStyles = {
   songOfTheWeekSection: {
     backgroundColor: theme.palette.background.lightGray,
-    padding: "24px",
+    padding: SECTION_PADDING,
   },
   songOfTheWeekFlexContainer: {
     xs: "column",
@@ -31,6 +32,7 @@ const songOfTheWeekStyles = {
   },
   songCard: {
     margin: "auto",
+    marginRight: { md: 0 },
   },
 };
 

@@ -93,8 +93,8 @@ function ValuesRenderer() {
 
 function WhoWeAre() {
   return (
-    <div style={whoWeAreStyles.whoWeAreContainer}>
-      <Container sx={whoWeAreStyles.whoWeAreContentContainer}>
+    <Box sx={whoWeAreStyles.whoWeAreContainer}>
+      <Container>
         <Typography variant="h4" sx={whoWeAreStyles.title}>
           {messages.title}
         </Typography>
@@ -106,7 +106,7 @@ function WhoWeAre() {
           <ValuesRenderer></ValuesRenderer>
         </Box>
       </Container>
-    </div>
+    </Box>
   );
 }
 

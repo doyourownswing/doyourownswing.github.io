@@ -3,10 +3,11 @@ import UpcomingEvents from "./subcomponents/upcoming_events/upcoming_events";
 import Welcome from "./subcomponents/welcome/welcome";
 import WhatIsWcs from "./subcomponents/what_is_wcs/what_is_wcs";
 import WhoWeAre from "./subcomponents/who_we_are/who_we_are";
+import homeStyles from "./home.styles";
 
 function Home() {
   return (
-    <div>
+    <div style={homeStyles.home}>
       <Welcome />
       <UpcomingEvents />
       <WhoWeAre />
