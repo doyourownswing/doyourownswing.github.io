@@ -34,7 +34,7 @@ const Footer = (props) => (
         <Button
           sx={eventCardStyles.button}
           variant="contained"
-          // onClick={() => window.open(props.link)}
+          rel="noreferrer noopener"
           href={props.link}
           target="_blank"
         >
