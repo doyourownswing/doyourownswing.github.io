@@ -43,7 +43,7 @@ const eventCardStyles = {
   button: {
     backgroundImage: "linear-gradient(#8637DA, #6400CF)",
     width: "136px",
-    height: "51px",
+    height: "48px",
     fontSize: "16px",
     fontWeight: "500",
     textTransform: "none",
