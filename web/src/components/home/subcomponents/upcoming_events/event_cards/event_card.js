@@ -34,7 +34,9 @@ const Footer = (props) => (
         <Button
           sx={eventCardStyles.button}
           variant="contained"
-          onClick={() => window.open(props.link)}
+          // onClick={() => window.open(props.link)}
+          href={props.link}
+          target="_blank"
         >
           {"View Details"}
         </Button>
@@ -46,9 +48,8 @@ const Footer = (props) => (
 const EventCard = (props) => {
   let link;
 
-  if (props.externalLinks) {
-    link = Object.values(props.externalLinks).pop();
-  }
+  if (props.externalLinks && props.externalLinks.facebookLink)
+    link = props.externalLinks.facebookLink;
 
   return (
     <Box sx={eventCardStyles.card}>

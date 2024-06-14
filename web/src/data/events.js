@@ -8,6 +8,10 @@
  */
 import messages from "../common/messages";
 import { createDate } from "utils/date_utils";
+
+const DEFAULT_LOCATION = "Studio M Ballroom, San Jose, CA";
+const DEFAULT_PRICE = "$10 - 40";
+
 const dayjs = require("dayjs");
 
 const EventTypes = Object.freeze({
@@ -41,11 +45,6 @@ const defaultDyosSchedule = [
   { time: "9:00pm - 11:30pm", name: "Social Dancing" },
 ];
 
-const addons = [
-  { time: "7:30pm - 8:15pm", name: "Building Blocks" },
-  { time: "8:15pm - 9:00pm", name: "Creative Expressions" },
-];
-
 /**
  * Hardcoded database of all of the events.
  *
@@ -57,16 +56,16 @@ const events = [
     messages.doYourOwnSwing,
     createDate("05/16/2024"),
     defaultDyosSchedule,
-    "Studio M Ballroom, San Jose, CA",
-    "$10 - $40"
+    DEFAULT_LOCATION,
+    DEFAULT_PRICE
   ),
   new Event(
     EventTypes.DYOS,
     messages.doYourOwnSwing,
     createDate("05/23/2024"),
     defaultDyosSchedule,
-    "Studio M Ballroom, San Jose, CA",
-    "$10 - $40",
+    DEFAULT_LOCATION,
+    DEFAULT_PRICE,
     {
       facebookLink: "https://www.facebook.com/events/1471380160454652",
     }
@@ -76,8 +75,8 @@ const events = [
     "Do Your Own Swing feat. DJ Andrew Roth!",
     createDate("05/30/2024"),
     defaultDyosSchedule,
-    "Studio M Ballroom, San Jose, CA",
-    "$10 - $40",
+    DEFAULT_LOCATION,
+    DEFAULT_PRICE,
     {
       facebookLink: "https://www.facebook.com/events/812141927505563",
     }
@@ -87,8 +86,8 @@ const events = [
     messages.doYourOwnSwing,
     createDate("06/06/2024"),
     defaultDyosSchedule,
-    "Studio M Ballroom, San Jose, CA",
-    "$10 - $40",
+    DEFAULT_LOCATION,
+    DEFAULT_PRICE,
     {
       facebookLink: "https://www.facebook.com/events/457255416887420",
     }
@@ -98,10 +97,10 @@ const events = [
     "DYOS: Slingshot from Any Hand",
     createDate("06/13/2024"),
     defaultDyosSchedule,
-    "Studio M Ballroom, San Jose, CA",
-    "$10 - $40",
+    DEFAULT_LOCATION,
+    DEFAULT_PRICE,
     {
-      facebookLink: "https://www.facebook.com/events/457255416887420",
+      facebookLink: "https://www.facebook.com/events/976640170426321",
     }
   ),
   new Event(
@@ -109,16 +108,16 @@ const events = [
     "DYOS: Wraps and Rolls Galore!",
     createDate("06/20/2024"),
     defaultDyosSchedule,
-    "Studio M Ballroom, San Jose, CA",
-    "$10 - $40"
+    DEFAULT_LOCATION,
+    DEFAULT_PRICE
   ),
   new Event(
     EventTypes.DYOS,
     "Do Your Own Swing - Pride Party!",
     createDate("06/27/2024"),
     defaultDyosSchedule,
-    "Studio M Ballroom, San Jose, CA",
-    "$10 - $40",
+    DEFAULT_LOCATION,
+    DEFAULT_PRICE,
     {
       facebookLink: "https://www.facebook.com/events/457255416887420",
     }
@@ -127,12 +126,8 @@ const events = [
     EventTypes.DYOS,
     messages.doYourOwnSwing,
     createDate("07/11/2024"),
-    defaultDyosSchedule,
-    "Studio M Ballroom, San Jose, CA",
-    "$10 - $40",
-    {
-      facebookLink: "https://www.facebook.com/events/457255416887420",
-    }
+    defaultDyosSchedule 
+    // TODO: add details
   ),
 ];
 
