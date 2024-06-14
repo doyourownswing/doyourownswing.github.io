@@ -87,10 +87,7 @@ const events = [
     createDate("06/06/2024"),
     defaultDyosSchedule,
     DEFAULT_LOCATION,
-    DEFAULT_PRICE,
-    {
-      facebookLink: "https://www.facebook.com/events/457255416887420",
-    }
+    DEFAULT_PRICE
   ),
   new Event(
     EventTypes.DYOS,
