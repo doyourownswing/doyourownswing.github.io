@@ -32,8 +32,8 @@ const navBarStyles = {
     textDecoration: "none",
   },
   logoImage: {
-    maxHeight: 32,
-    maxWidth: 32,
+    maxHeight: "32px",
+    maxWidth: "32px",
     marginRight: "8px",
   },
   logoContainerLink: {

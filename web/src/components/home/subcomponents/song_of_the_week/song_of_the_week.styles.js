@@ -32,7 +32,7 @@ const songOfTheWeekStyles = {
   },
   songCard: {
     margin: "auto",
-    marginRight: { md: 0 },
+    marginRight: { md: 0,  },
   },
 };
 

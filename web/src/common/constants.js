@@ -1,1 +1,1 @@
-export const SECTION_PADDING = "50px 0 50px 0";
+export const SECTION_PADDING = "48px 0 48px 0";
