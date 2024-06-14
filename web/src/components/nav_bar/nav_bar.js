@@ -18,7 +18,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import messages from "common/messages";
 import NavOptions from "common/nav_options";
 import navBarStyles from "./nav_bar.styles";
-import purpleLogo from "assets/images/purple_logo_512.png";
+import purpleLogo from "assets/svgs/purple-logo.svg";
 
 /** Nav bar options for large screens.
  *
@@ -127,12 +127,8 @@ function NavBar() {
   const theme = useTheme();
 
   return (
-    <AppBar
-      position="static"
-      id="NavBar"
-      sx={{ backgroundColor: theme.palette.primary.background.light }}
-    >
-      <Container maxWidth="null">
+    <AppBar position="static" id="NavBar" sx={navBarStyles.appBar}>
+      <Container>
         <Toolbar disableGutters>
           <Box sx={navBarStyles.logoContainer}>
             <Link sx={navBarStyles.logoContainerLink} href="#/">

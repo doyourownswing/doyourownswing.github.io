@@ -73,17 +73,16 @@ function UpcomingEvents() {
   let events = getNextEvents(2);
 
   return (
-    <div style={upcomingEventsStyles.upcomingEventsContainer}>
+    <Box sx={upcomingEventsStyles.upcomingEventsContainer}>
       <Container sx={upcomingEventsStyles.upcomingEventsRendererContainer}>
         <Typography variant="h4">{messages.upcomingEventsTitle}</Typography>
         {FeatureFlags.showScheduleTab && (
           <Typography>{messages.upcomingEventsDescription}</Typography>
         )}
-
         <TwoEventRenderer events={events} />
         <CarouselEventRenderer events={events} />
       </Container>
-    </div>
+    </Box>
   );
 }
 

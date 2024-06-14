@@ -1,13 +1,11 @@
+import { SECTION_PADDING } from "common/constants";
 import theme from "common/theme";
 
 const whoWeAreStyles = {
   whoWeAreContainer: {
     backgroundColor: theme.palette.background.darkPurple,
     color: theme.palette.text.titleLight,
-  },
-  whoWeAreContentContainer: {
-    paddingTop: "24px",
-    paddingBottom: "24px",
+    padding: SECTION_PADDING,
   },
   title: {
     color: theme.palette.text.titleLight,
