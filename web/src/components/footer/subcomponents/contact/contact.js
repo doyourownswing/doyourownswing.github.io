@@ -35,6 +35,7 @@ function Contact() {
       <Typography variant="h6">Contact</Typography>
       {contactOptions.map((info) => (
         <Link
+          key={info.href}
           href={info.href}
           target="_blank"
           rel="noopener noreferrer"

@@ -7,14 +7,11 @@ import SpotifyIcon from "components/common/icons/spotify";
 function SongLinkButton(props) {
   return (
     <Button
+      {...props}
       variant="outlined"
-      sx={props.sx}
-      href={props.href}
       target="_blank"
       rel="noopener noreferrer"
-    >
-      {props.children}
-    </Button>
+    />
   );
 }
 
@@ -33,7 +30,7 @@ function SongCard(props) {
       </Box>
       <Box sx={songCardStyles.songCardRightContent}>
         <Box sx={songCardStyles.songInfoContainer}>
-          <Typography variant="h6" sx={songCardStyles.songName}>
+          <Typography variant="h5" sx={songCardStyles.songName}>
             {songInfo.songInfo.name}
           </Typography>
           <Typography variant="subtitle2" sx={songCardStyles.songDetails}>

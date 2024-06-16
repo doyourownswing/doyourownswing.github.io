@@ -1,4 +1,5 @@
 import theme from "common/theme";
+import { SECTION_PADDING } from "common/constants";
 
 const upcomingEventsStyles = {
   twoEventRenderer: {
@@ -28,8 +29,7 @@ const upcomingEventsStyles = {
     backgroundColor: theme.palette.background.lightGray,
   },
   upcomingEventsRendererContainer: {
-    paddingTop: "24px",
-    paddingBottom: "24px",
+    padding: SECTION_PADDING,
   },
 };
 

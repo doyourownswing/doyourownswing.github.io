@@ -12,9 +12,11 @@ const songCardStyles = {
   },
   songName: {
     fontWeight: "700",
+    fontSize: "24px",
   },
   songDetails: {
     color: theme.palette.text.secondaryBody,
+    fontSize: "16px",
   },
   albumCoverContainer: {
     // display block adds some space at the bottom of the image
@@ -23,7 +25,7 @@ const songCardStyles = {
     margin: { xs: "auto" },
   },
   albumCoverImage: {
-    width: { xs: "100%", sm: "128px" },
+    width: { xs: "100%", sm: "160px" },
     borderRadius: "8px",
   },
   songCardRightContent: {
@@ -43,16 +45,19 @@ const songCardStyles = {
   },
   linkButton: {
     textTransform: "none",
-    width: { xs: "100%", sm: "128px" },
+    width: { xs: "100%", sm: "136px" },
     borderColor: theme.palette.button.lightGray,
     color: "black",
+    fontSize: "16px",
   },
   youtubeIcon: {
     paddingRight: "8px",
+    fontSize: "32px",
     color: "#ff0000",
   },
   spotifyIcon: {
     paddingRight: "8px",
+    fontSize: "32px",
     fill: "#1ed760",
   },
 };
