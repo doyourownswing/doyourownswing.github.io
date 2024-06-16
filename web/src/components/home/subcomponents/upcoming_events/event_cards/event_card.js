@@ -2,13 +2,14 @@ import eventCardStyles from "./event_card.styles";
 import { Box, Divider, Typography, Button } from "@mui/material";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import FmdGoodOutlinedIcon from "@mui/icons-material/FmdGoodOutlined";
+import { dateToHumanReadableString } from "utils/date_utils";
 
 const HeaderDetails = (props) => (
   <Box>
     {props.date && (
       <Box sx={eventCardStyles.details}>
         <AccessTimeIcon sx={eventCardStyles.icon} />
-        <Typography>{props.date.toString()}</Typography>
+        <Typography>{dateToHumanReadableString(props.date)}</Typography>
       </Box>
     )}
     {props.location && (
