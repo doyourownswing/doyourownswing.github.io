@@ -52,6 +52,7 @@ const theme = responsiveFontSizes(
       icon: {
         lightPurple: basePalette.lightPurple,
       },
+      ...basePalette,
     },
     typography: {
       fontFamily: [

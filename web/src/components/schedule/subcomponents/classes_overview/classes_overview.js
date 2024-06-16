@@ -24,7 +24,12 @@ function ClassesOverview() {
             </Box>
           </Stack>
         </Box>
-        <Box sx={classesOverviewStyles.overviewBox}>
+        <Box
+          sx={[
+            classesOverviewStyles.overviewBox,
+            classesOverviewStyles.inviteBox,
+          ]}
+        >
           <Stack sx={classesOverviewStyles.inviteContent}>
             {FeatureFlags.showStartHerePage && (
               <>
@@ -38,7 +43,7 @@ function ClassesOverview() {
                   sx={classesOverviewStyles.startHereButton}
                   href="#/start-here"
                 >
-                  Get Started
+                  {messages.getStarted}
                 </Button>
               </>
             )}

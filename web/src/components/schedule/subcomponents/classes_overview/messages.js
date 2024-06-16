@@ -6,6 +6,7 @@ const messages = {
             class during the lesson. Keep reading to learn more about classes,
             prerequisites, pricing, volunteer opportunities, and other events.`,
   haveNotBeen: "Haven't been to DYOS before?",
+  getStarted: "Get Started",
 };
 
 export default messages;
