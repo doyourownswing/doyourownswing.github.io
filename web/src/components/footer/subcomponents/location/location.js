@@ -20,7 +20,9 @@ function Location() {
           sx={locationStyles.address}
         >
           {locationLines.map((line) => (
-            <Typography variant="body2">{line}</Typography>
+            <Typography key={line} variant="body2">
+              {line}
+            </Typography>
           ))}
         </Link>
       </Box>
