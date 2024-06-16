@@ -6,6 +6,7 @@ const dyosEventCardStyle = {
     justifyContent: "space-between",
     width: "auto",
     fontSize: "16px",
+    padding: "4px 0px",
   },
   left: {
     width: "48%",
