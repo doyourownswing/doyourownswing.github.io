@@ -3,7 +3,7 @@ import theme from "common/theme";
 const brandStyles = {
   brandContainerContainer: {
     color: theme.palette.text.lightPurple,
-    flex: { sm: "1 1 200px" },
+    flex: { sm: "1 1 240px" },
     alignItems: "center",
     display: "flex",
   },
