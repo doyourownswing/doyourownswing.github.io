@@ -48,8 +48,6 @@ const theme = responsiveFontSizes(
       },
       icon: {
         avatar: basePalette.purple,
-      },
-      icon: {
         lightPurple: basePalette.lightPurple,
       },
     },

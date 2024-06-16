@@ -22,22 +22,32 @@ const ContactNav = new NavOption("Contact", "#/contact");
 
 // Nav Option Groups
 
-const BrowseOptions = [
+const BrowseOptions = cleanUpOptionsList([
   FeatureFlags.showMenuOptions && HomeNav,
   FeatureFlags.showAboutTab && ScheduleNav,
   FeatureFlags.showScheduleTab && AboutNav,
-];
+]);
 
-const PolicyOptions = [
+const PolicyOptions = cleanUpOptionsList([
   FeatureFlags.showHealthTab && HealthNav,
   FeatureFlags.showCodeOfConductTab && CodeNav,
-];
+]);
 
-const NavOptions = [
+const NavOptions = cleanUpOptionsList([
   ...BrowseOptions,
   ...PolicyOptions,
   FeatureFlags.showContactTab && ContactNav,
-];
+]);
+
+/**
+ * Returns a clean list of NavOptions.
+ *
+ * `FeatureFlag.myFlag && MyItem` will return `false`, instead of being excluded from arrays.
+ *  Strips out any false values.
+ */
+function cleanUpOptionsList(list) {
+  return list.filter((i) => i);
+}
 
 export {
   HomeNav,
