@@ -14,6 +14,7 @@ import ThemeProvider from "@mui/material/styles/ThemeProvider";
 import theme from "common/theme";
 import "index.css";
 import StartHere from "components/start_here/start_here";
+import NotFound from "components/not_found/not_found";
 
 /** Generates the list of routes to include in the router based on the feature eligibility. */
 function generateRoutes() {
@@ -21,6 +22,10 @@ function generateRoutes() {
     {
       path: "/",
       element: <Home />,
+    },
+    {
+      path: "/*",
+      element: <NotFound />,
     },
   ];
 
