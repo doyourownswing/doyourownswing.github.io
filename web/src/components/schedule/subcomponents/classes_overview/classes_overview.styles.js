@@ -19,7 +19,7 @@ const classesOverviewStyles = {
     flex: 1,
   },
   inviteBox: {
-    backgroundColor: alpha(theme.palette.lightPurple, 0.25),
+    backgroundColor: alpha(theme.palette.background.lightPurple, 0.25),
     width: "100%",
     boxSizing: "border-box",
   },

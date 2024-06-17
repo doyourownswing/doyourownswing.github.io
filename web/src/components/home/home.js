@@ -4,10 +4,9 @@ import UpcomingEvents from "./subcomponents/upcoming_events/upcoming_events";
 import Welcome from "./subcomponents/welcome/welcome";
 import WhatIsWcs from "./subcomponents/what_is_wcs/what_is_wcs";
 import WhoWeAre from "./subcomponents/who_we_are/who_we_are";
-import indexStyles from "index.styles";
 
 const Home = () => (
-  <Box sx={indexStyles.mainContent}>
+  <Box>
     <Welcome />
     <UpcomingEvents />
     <WhoWeAre />
