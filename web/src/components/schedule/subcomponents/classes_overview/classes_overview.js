@@ -35,7 +35,7 @@ function ClassesOverview() {
               <>
                 <Typography variant="h6">{messages.haveNotBeen}</Typography>
                 <Typography variant="body">
-                  <Box dangerouslySetInnerHTML={messages.buttonCTA()} />
+                  <Box dangerouslySetInnerHTML={messages.buttonCTA} />
                 </Typography>
                 <Button
                   variant="contained"

@@ -7,11 +7,9 @@ const messages = {
             prerequisites, pricing, volunteer opportunities, and other events.`,
   haveNotBeen: "Haven't been to DYOS before?",
   getStarted: "Get Started",
-  buttonCTA() {
-    return {
-      __html:
-        "Click the <b>Get Started</b> button below for everything you need to know for your first time.",
-    };
+  buttonCTA: {
+    __html:
+      "Click the <b>Get Started</b> button below for everything you need to know for your first time.",
   },
 };
 
