@@ -14,6 +14,8 @@ import ThemeProvider from "@mui/material/styles/ThemeProvider";
 import theme from "common/theme";
 import "index.css";
 import StartHere from "components/start_here/start_here";
+import indexStyles from "index.styles";
+import { Box } from "@mui/material";
 
 /** Generates the list of routes to include in the router based on the feature eligibility. */
 function generateRoutes() {
@@ -75,7 +77,9 @@ root.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
       <NavBar />
-      <RouterProvider router={router} />
+      <Box sx={indexStyles.mainContent}>
+        <RouterProvider router={router} />
+      </Box>
       <Footer />
     </ThemeProvider>
   </React.StrictMode>

@@ -26,6 +26,7 @@ const theme = responsiveFontSizes(
       background: {
         light: basePalette.white,
         lightGray: basePalette.lightGray,
+        lightPurple: basePalette.lightPurple,
         darkPurple: basePalette.darkPurple,
       },
       text: {
