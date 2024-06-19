@@ -79,7 +79,6 @@ function UpcomingEvents() {
         {FeatureFlags.showScheduleTab && (
           <Typography>{messages.upcomingEventsDescription}</Typography>
         )}
-        <Typography>Teset</Typography>
         <TwoEventRenderer events={events} />
         <CarouselEventRenderer events={events} />
       </Container>
