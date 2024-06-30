@@ -15,7 +15,7 @@ function SongOfTheWeek() {
   }
 
   return (
-    <div style={songOfTheWeekStyles.songOfTheWeekSection}>
+    <Box sx={songOfTheWeekStyles.songOfTheWeekSection}>
       <Container>
         <Stack direction={songOfTheWeekStyles.songOfTheWeekFlexContainer}>
           <Box sx={songOfTheWeekStyles.quoteContainer}>
@@ -36,7 +36,7 @@ function SongOfTheWeek() {
           </Container>
         </Stack>
       </Container>
-    </div>
+    </Box>
   );
 }
 
