@@ -27,8 +27,6 @@ const upcomingEventsStyles = {
   },
   upcomingEventsContainer: {
     backgroundColor: theme.palette.background.lightGray,
-  },
-  upcomingEventsRendererContainer: {
     padding: SECTION_PADDING,
   },
 };
