@@ -3,6 +3,7 @@ import {
   Box,
   Button,
   Container,
+  Link,
   MobileStepper,
   Typography,
 } from "@mui/material";
@@ -15,10 +16,11 @@ import DYOSEventCard from "./event_cards/dyos_event_card";
 
 function TwoEventRenderer(props) {
   let events = props.events;
+
   return (
     <Box sx={upcomingEventsStyles.twoEventRenderer}>
       <DYOSEventCard event={events[0]} />
-      <DYOSEventCard event={events[1]} />
+      {events.length > 1 && <DYOSEventCard event={events[1]} />}
     </Box>
   );
 }
@@ -37,34 +39,56 @@ function CarouselEventRenderer(props) {
     <Box sx={upcomingEventsStyles.carouselEventRenderer}>
       <Box>
         <DYOSEventCard event={events[currentEventIndex]} />
-        <MobileStepper
-          sx={upcomingEventsStyles.carouselStepper}
-          variant="text"
-          steps={maxSteps}
-          position="static"
-          activeStep={currentEventIndex}
-          nextButton={
-            <Button
-              size="small"
-              onClick={handleNext}
-              disabled={currentEventIndex >= maxSteps - 1}
-            >
-              {messages.next}
-              <KeyboardArrowRight />
-            </Button>
-          }
-          backButton={
-            <Button
-              size="small"
-              onClick={handleBack}
-              disabled={currentEventIndex <= 0}
-            >
-              <KeyboardArrowLeft />
-              {messages.back}
-            </Button>
-          }
-        />
+        {maxSteps > 1 && (
+          <MobileStepper
+            sx={upcomingEventsStyles.carouselStepper}
+            variant="text"
+            steps={maxSteps}
+            position="static"
+            activeStep={currentEventIndex}
+            nextButton={
+              <Button
+                size="small"
+                onClick={handleNext}
+                disabled={currentEventIndex >= maxSteps - 1}
+              >
+                {messages.next}
+                <KeyboardArrowRight />
+              </Button>
+            }
+            backButton={
+              <Button
+                size="small"
+                onClick={handleBack}
+                disabled={currentEventIndex <= 0}
+              >
+                <KeyboardArrowLeft />
+                {messages.back}
+              </Button>
+            }
+          />
+        )}
       </Box>
+    </Box>
+  );
+}
+
+function NoUpcomingEvents() {
+  return (
+    <Box sx={upcomingEventsStyles.noUpcomingEventsContainer}>
+      <Typography display="inline">
+        {messages.noUpcomingEvents.start}
+      </Typography>
+      <Link
+        href={messages.noUpcomingEvents.facebookLink}
+        rel="noreferrer noopener"
+        target="_blank"
+      >
+        <Typography display="inline">
+          {messages.noUpcomingEvents.facebook}
+        </Typography>
+      </Link>
+      <Typography display="inline">{messages.noUpcomingEvents.end}</Typography>
     </Box>
   );
 }
@@ -79,8 +103,11 @@ function UpcomingEvents() {
         {FeatureFlags.showScheduleTab && (
           <Typography>{messages.upcomingEventsDescription}</Typography>
         )}
-        <TwoEventRenderer events={events} />
-        <CarouselEventRenderer events={events} />
+        {events.length === 0 && <NoUpcomingEvents />}
+        {events.length > 0 && [
+          <TwoEventRenderer events={events} />,
+          <CarouselEventRenderer events={events} />,
+        ]}
       </Container>
     </Box>
   );

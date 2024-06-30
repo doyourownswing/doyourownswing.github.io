@@ -31,6 +31,9 @@ const upcomingEventsStyles = {
   upcomingEventsRendererContainer: {
     padding: SECTION_PADDING,
   },
+  noUpcomingEventsContainer: {
+    padding: "24px 0px",
+  },
 };
 
 export default upcomingEventsStyles;
