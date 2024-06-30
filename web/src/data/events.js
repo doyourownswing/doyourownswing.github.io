@@ -124,9 +124,23 @@ const events = [
   ),
   new Event(
     EventTypes.DYOS,
+    "DYOS: 4th of July!",
+    createDate("07/04/2024"),
+    [
+      { time: "8:45pm - 9:30pm", name: "Welcome to WCS" },
+      { time: "9:00pm - 9:30pm", name: "Social Dancing" },
+    ],
+    DEFAULT_LOCATION,
+    DEFAULT_PRICE
+    // TODO: add details
+  ),
+  new Event(
+    EventTypes.DYOS,
     messages.doYourOwnSwing,
     createDate("07/11/2024"),
-    defaultDyosSchedule 
+    defaultDyosSchedule,
+    DEFAULT_LOCATION,
+    DEFAULT_PRICE
     // TODO: add details
   ),
 ];

@@ -29,6 +29,9 @@ const upcomingEventsStyles = {
     backgroundColor: theme.palette.background.lightGray,
     padding: SECTION_PADDING,
   },
+  noUpcomingEventsContainer: {
+    padding: "24px 0px",
+  },
 };
 
 export default upcomingEventsStyles;
