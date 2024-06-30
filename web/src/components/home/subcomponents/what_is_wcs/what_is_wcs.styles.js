@@ -4,8 +4,6 @@ import { SECTION_PADDING } from "common/constants";
 const whatIsWcsStyles = {
   whatIsWcsStylesContainer: {
     padding: SECTION_PADDING,
-    maxWidth: "1200px",
-    margin: "auto",
   },
   itemsContainer: {
     display: "flex",
