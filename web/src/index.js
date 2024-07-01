@@ -37,6 +37,7 @@ function generateRoutes() {
       element: <Schedule />,
     });
   }
+
   if (FeatureFlags.showAboutTab) {
     routes.push({
       path: "/about",
