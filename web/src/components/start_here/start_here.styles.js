@@ -40,7 +40,7 @@ const startHereStyles = {
     paddingBottom: "16px",
   },
   semiBold: {
-    fontWeight: "700",
+    fontWeight: 700,
   },
 };
 
