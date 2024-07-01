@@ -20,13 +20,14 @@ function Masks() {
 
 function Acquire() {
   let dash = <Typography display="inline"> - </Typography>;
+
   return (
     <Box>
       <Typography>{messages.whenYouArrive.acquire.station}</Typography>
       <List sx={startHereStyles.list}>
         {messages.whenYouArrive.acquire.items.map((item) => (
           <ListItem sx={startHereStyles.listItem2}>
-            <Typography display="inline" fontWeight="600">
+            <Typography display="inline" sx={startHereStyles.semiBold}>
               {item.item}
             </Typography>
             {dash}

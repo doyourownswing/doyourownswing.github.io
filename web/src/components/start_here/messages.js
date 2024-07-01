@@ -21,10 +21,31 @@ const messages = {
     },
     class: {
       choose:
-        "Choose which class to go. Classes are on Thursday evenings and span 3 " +
+        "Choose which class to go to. Classes are on Thursday evenings and span 3 " +
         "different levels. ",
       moreInfo: "Check out more information about our classes ",
       here: "here",
+      classOptions: [
+        {
+          class: "Welcome to WCS (Level 1) - 8:45pm in the Royal Ballroom",
+          description:
+            "Start here if you've never danced West Coast Swing. This class is also a great " +
+            "option if you want to start learning the opposite role, or just want a quick refresher.",
+        },
+        {
+          class: "Building Blocks (Level 2) - 7:30pm in the Spotlight Ballroom",
+          description:
+            "If you're already familiar with the basic patterns and timing of West Coast Swing, " +
+            "this is the class for you. If you're thinking about joining this class, you should be " +
+            "comfortable dancing a Left Side Pass, Under Arm Pass, and Sugar Push.",
+        },
+        {
+          class:
+            "Creative Expressions (Level 3) - 8:15pm in the Spotlight Ballroom",
+          description:
+            "For those who are proficient with the basics and want to learn higher level patterns, techniques, and styling.",
+        },
+      ],
     },
   },
   whenYouArrive: {
@@ -77,7 +98,7 @@ const messages = {
         question: "Do I need to bring a dance partner?",
         answer: {
           description:
-            "No, you are not required to bring a partner. During class, we rotate partners " +
+            "No partner required! During class, we rotate partners " +
             "often, so you will get to dance with many different people.",
         },
       },
@@ -107,7 +128,7 @@ const messages = {
         question: "How does social dancing work?",
         answer: {
           description:
-            "Social dancing is an informal, non-competitive time to dance and socialize with others." +
+            "Social dancing is an informal, non-competitive time to dance and socialize with others. " +
             "Navigating the social dance floor can be intimidating, but here are a few tips:",
           details: [
             "You can select a color-coded wristband at the entrance to indicate your preference " +

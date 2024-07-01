@@ -22,8 +22,6 @@ function Review() {
   let showCodeOfConduct = FeatureFlags.showCodeOfConductTab;
   let showHealthPolicy = FeatureFlags.showHealthTab;
 
-  if (!showCodeOfConduct && !showHealthPolicy) return null;
-
   return (
     <Box>
       <Text>{messages.beforeTheEvent.review.our}</Text>
@@ -66,6 +64,17 @@ function RegistrationForm() {
   );
 }
 
+function ClassDescription(props) {
+  let classInfo = props.class;
+
+  return (
+    <Box>
+      <Typography sx={startHereStyles.semiBold}>{classInfo.class}</Typography>
+      <Typography>{classInfo.description}</Typography>
+    </Box>
+  );
+}
+
 function ChooseClass() {
   return (
     <Box>
@@ -78,12 +87,21 @@ function ChooseClass() {
         </Link>,
         <Text>{messages.endSentence}</Text>,
       ]}
-      {/* TODO add some decriptions here */}
+      <List sx={startHereStyles.list}>
+        {messages.beforeTheEvent.class.classOptions.map((c, i) => (
+          <ListItem sx={startHereStyles.listItem2} key={i}>
+            <ClassDescription class={c} />
+          </ListItem>
+        ))}
+      </List>
     </Box>
   );
 }
 
 function BeforeTheEvent() {
+  let showReview =
+    FeatureFlags.showCodeOfConductTab || FeatureFlags.showHealthTab;
+
   return (
     <Box sx={startHereStyles.subSectionContainer}>
       <Container>
@@ -91,9 +109,11 @@ function BeforeTheEvent() {
           {messages.beforeTheEvent.title}
         </Typography>
         <List sx={startHereStyles.list}>
-          <ListItem sx={startHereStyles.listItem}>
-            <Review />
-          </ListItem>
+          {showReview && (
+            <ListItem sx={startHereStyles.listItem}>
+              <Review />
+            </ListItem>
+          )}
           <ListItem sx={startHereStyles.listItem}>
             <RegistrationForm />
           </ListItem>

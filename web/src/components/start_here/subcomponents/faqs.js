@@ -11,8 +11,10 @@ function QuestionAndAnswer(props) {
       <Typography>{answer.description}</Typography>
       {!!answer.details && (
         <List sx={startHereStyles.list}>
-          {answer.details.map((d) => (
-            <ListItem sx={startHereStyles.listItem}>{d}</ListItem>
+          {answer.details.map((d, i) => (
+            <ListItem sx={startHereStyles.listItem} key={i}>
+              {d}
+            </ListItem>
           ))}
         </List>
       )}
