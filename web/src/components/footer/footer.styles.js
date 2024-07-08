@@ -1,10 +1,10 @@
-import { SECTION_PADDING } from "common/constants";
+import { FOOTER_PADDING } from "common/constants";
 import theme from "common/theme";
 
 const footerStyles = {
   footerContainer: {
     backgroundColor: theme.palette.background.darkPurple,
-    padding: SECTION_PADDING,
+    padding: FOOTER_PADDING,
   },
   footerStack: {
     gap: "24px",
