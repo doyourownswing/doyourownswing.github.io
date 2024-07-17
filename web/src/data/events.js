@@ -45,6 +45,13 @@ const defaultDyosSchedule = [
   { time: "9:00pm - 11:30pm", name: "Social Dancing" },
 ];
 
+const updatedDyosClassNameSchedule = [
+  { time: "7:30pm - 8:15pm", name: "Connection, Rhythm, and Flow" },
+  { time: "8:15pm - 9:00pm", name: "You, Me, and the Music" },
+  { time: "8:45pm - 9:30pm", name: "WCS Foundations" },
+  { time: "9:00pm - 11:30pm", name: "Social Dancing" },
+];
+
 /**
  * Hardcoded database of all of the events.
  *
@@ -142,6 +149,35 @@ const events = [
     DEFAULT_LOCATION,
     DEFAULT_PRICE
     // TODO: add details
+  ),
+  new Event(
+    EventTypes.DYOS,
+    messages.doYourOwnSwing,
+    createDate("07/18/2024"),
+    updatedDyosClassNameSchedule,
+    DEFAULT_LOCATION,
+    DEFAULT_PRICE,
+    {
+      facebookLink: "https://www.facebook.com/events/1650813662363514",
+    }
+  ),
+  new Event(
+    EventTypes.DYOS,
+    messages.doYourOwnSwing,
+    createDate("07/25/2024"),
+    updatedDyosClassNameSchedule,
+    DEFAULT_LOCATION,
+    DEFAULT_PRICE
+    // todo: add details
+  ),
+  new Event(
+    EventTypes.DYOS,
+    messages.doYourOwnSwing,
+    createDate("08/01/2024"),
+    updatedDyosClassNameSchedule,
+    DEFAULT_LOCATION,
+    DEFAULT_PRICE
+    // todo: add details
   ),
 ];
 
