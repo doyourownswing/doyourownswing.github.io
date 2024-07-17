@@ -179,6 +179,42 @@ const events = [
     DEFAULT_PRICE
     // todo: add details
   ),
+  new Event(
+    EventTypes.DYOS,
+    messages.doYourOwnSwing,
+    createDate("08/08/2024"),
+    updatedDyosClassNameSchedule,
+    DEFAULT_LOCATION,
+    DEFAULT_PRICE
+    // todo: add details
+  ),
+  new Event(
+    EventTypes.DYOS,
+    messages.doYourOwnSwing,
+    createDate("08/15/2024"),
+    updatedDyosClassNameSchedule,
+    DEFAULT_LOCATION,
+    DEFAULT_PRICE
+    // todo: add details
+  ),
+  new Event(
+    EventTypes.DYOS,
+    messages.doYourOwnSwing,
+    createDate("08/23/2024"),
+    updatedDyosClassNameSchedule,
+    DEFAULT_LOCATION,
+    DEFAULT_PRICE
+    // todo: add details
+  ),
+  new Event(
+    EventTypes.DYOS,
+    messages.doYourOwnSwing,
+    createDate("08/30/2024"),
+    updatedDyosClassNameSchedule,
+    DEFAULT_LOCATION,
+    DEFAULT_PRICE
+    // todo: add details
+  ),
 ];
 
 function getNextEvents(numEvents) {
