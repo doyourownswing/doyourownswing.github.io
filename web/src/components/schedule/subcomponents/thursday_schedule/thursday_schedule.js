@@ -10,7 +10,9 @@ function ThursdaySchedule() {
     <Box sx={thursdayScheduleStyles.section}>
       <Stack>
         <Typography variant="h3">{messages.title}</Typography>
-        <Typography variant="h5">{messages.subtitle}</Typography>
+        <Typography variant="h5" color={theme.palette.text.subtitle}>
+          {messages.subtitle}
+        </Typography>
         <ScheduleTimeline />
 
         {/* Headers */}
