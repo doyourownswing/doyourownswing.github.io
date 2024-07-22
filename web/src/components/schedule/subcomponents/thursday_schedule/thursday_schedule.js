@@ -1,4 +1,4 @@
-import { Box, Button, Grid, Stack, Typography } from "@mui/material";
+import { Box, Grid, Stack, Typography } from "@mui/material";
 import ScheduleTimeline from "../schedule_timeline/schedule_timeline.js";
 import thursdayScheduleStyles from "./thursday_schedule.styles.js";
 import { useTheme } from "@emotion/react";
@@ -14,23 +14,23 @@ function ThursdaySchedule() {
         <ScheduleTimeline />
 
         {/* Headers */}
-        <Grid container spacing={2} columns={{ sm: 4, sm: 12 }}>
-          <Grid item xs={3} display={{ xs: "none", sm: "block" }}>
+        <Grid container spacing={2} columns={{ sm: 4, md: 12 }}>
+          <Grid item xs={3} display={{ xs: "none", md: "block" }}>
             <Typography variant="h5">{messages.classHeader}</Typography>
           </Grid>
-          <Grid item xs={4} display={{ xs: "none", sm: "block" }}>
+          <Grid item xs={4} display={{ xs: "none", md: "block" }}>
             <Typography variant="h5">{messages.descriptionHeader}</Typography>
           </Grid>
-          <Grid item xs={4} display={{ xs: "none", sm: "block" }}>
+          <Grid item xs={4} display={{ xs: "none", md: "block" }}>
             <Typography variant="h5">{messages.prerequisitesHeader}</Typography>
           </Grid>
 
           {/* WCS Foundations */}
           <Grid item xs={3}>
-            <Box display={{ xs: "none", sm: "block" }}>
+            <Box display={{ xs: "none", md: "block" }}>
               {messages.foundationsTitle}
             </Box>
-            <Typography variant="h5" display={{ xs: "block", sm: "none" }}>
+            <Typography variant="h5" display={{ xs: "block", md: "none" }}>
               {messages.foundationsTitle}
             </Typography>
             <Box color={theme.palette.text.subtitle}>
@@ -49,10 +49,10 @@ function ThursdaySchedule() {
 
           {/* Connection, Rhythm, and Flow */}
           <Grid item xs={3}>
-            <Box display={{ xs: "none", sm: "block" }}>
+            <Box display={{ xs: "none", md: "block" }}>
               {messages.connectionTitle}
             </Box>
-            <Typography variant="h5" display={{ xs: "block", sm: "none" }}>
+            <Typography variant="h5" display={{ xs: "block", md: "none" }}>
               {messages.connectionTitle}
             </Typography>
             <Box color={theme.palette.text.subtitle}>
@@ -74,10 +74,10 @@ function ThursdaySchedule() {
 
           {/* You, Me, and the Music */}
           <Grid item xs={3}>
-            <Box display={{ xs: "none", sm: "block" }}>
+            <Box display={{ xs: "none", md: "block" }}>
               {messages.youMeTitle}
             </Box>
-            <Typography variant="h5" display={{ xs: "block", sm: "none" }}>
+            <Typography variant="h5" display={{ xs: "block", md: "none" }}>
               {messages.youMeTitle}
             </Typography>
             <Box color={theme.palette.text.subtitle}>

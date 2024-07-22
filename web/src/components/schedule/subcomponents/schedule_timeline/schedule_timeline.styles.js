@@ -1,8 +1,21 @@
 const scheduleTimelineStyles = {
+  sectionContainer: {
+    display: "flex",
+    justifyContent: "center",
+  },
   section: {
-    height: "400px",
-    width: "800px",
-    backgroundColor: "purple",
+    backgroundColor: "white",
+    width: "fit-content",
+    display: "flex",
+    alignContent: "center",
+    borderRadius: "1rem",
+    border: "1px solid #dddddd",
+    margin: "1rem",
+  },
+  timelineClassTime: {
+    display: "flex",
+    justifyItems: "flex-end",
+    textAlign: "right",
   },
 };
 
