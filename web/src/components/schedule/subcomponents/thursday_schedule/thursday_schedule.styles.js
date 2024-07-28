@@ -5,9 +5,6 @@ const thursdayScheduleStyles = {
     backgroundColor: theme.palette.background.lightGray,
     padding: "2.5rem",
   },
-  gridItemTopOfSection: {
-    marginBottom: ".5rem",
-  },
 };
 
 export default thursdayScheduleStyles;

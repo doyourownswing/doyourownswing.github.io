@@ -1,22 +1,25 @@
-const scheduleTimelineStyles = {
+import theme from "common/theme";
+
+const timelineStyles = {
   sectionContainer: {
     display: "flex",
     justifyContent: "center",
   },
   section: {
-    backgroundColor: "white",
+    backgroundColor: theme.palette.background.light,
     width: "fit-content",
     display: "flex",
     alignContent: "center",
     borderRadius: "1rem",
     border: "1px solid #dddddd",
-    margin: "1rem",
+    margin: "2rem",
   },
-  timelineClassTime: {
-    display: "flex",
-    justifyItems: "flex-end",
+  leftContent: {
     textAlign: "right",
+  },
+  oppositeContent: {
+    textAlign: "left",
   },
 };
 
-export default scheduleTimelineStyles;
+export default timelineStyles;
