@@ -172,12 +172,15 @@ const events = [
   ),
   new Event(
     EventTypes.DYOS,
-    messages.doYourOwnSwing,
+    messages.miniDyos,
     createDate("08/01/2024"),
-    updatedDyosClassNameSchedule,
+    [
+      { time: "8:45pm - 9:30pm", name: "Welcome to WCS" },
+      { time: "9:00pm - 9:30pm", name: "Social Dancing" },
+    ],
     DEFAULT_LOCATION,
     DEFAULT_PRICE
-    // todo: add details
+    // TODO: add details
   ),
   new Event(
     EventTypes.DYOS,
@@ -200,7 +203,7 @@ const events = [
   new Event(
     EventTypes.DYOS,
     messages.doYourOwnSwing,
-    createDate("08/23/2024"),
+    createDate("08/22/2024"),
     updatedDyosClassNameSchedule,
     DEFAULT_LOCATION,
     DEFAULT_PRICE
@@ -208,9 +211,12 @@ const events = [
   ),
   new Event(
     EventTypes.DYOS,
-    messages.doYourOwnSwing,
-    createDate("08/30/2024"),
-    updatedDyosClassNameSchedule,
+    messages.miniDyos,
+    createDate("08/29/2024"),
+    [
+      { time: "8:45pm - 9:30pm", name: "Welcome to WCS" },
+      { time: "9:00pm - 9:30pm", name: "Social Dancing" },
+    ],
     DEFAULT_LOCATION,
     DEFAULT_PRICE
     // todo: add details
