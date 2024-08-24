@@ -70,7 +70,11 @@ function ClassDescription(props) {
   return (
     <Box>
       <Typography sx={startHereStyles.semiBold}>{classInfo.class}</Typography>
-      <Typography>{classInfo.description}</Typography>
+      {classInfo.description.map((d, i) => (
+        <Typography key={i} paragraph>
+          {d}
+        </Typography>
+      ))}
     </Box>
   );
 }

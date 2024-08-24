@@ -17,7 +17,7 @@ const FeatureFlags = {
   showHealthTab: isDevel(),
   showCodeOfConductTab: isDevel(),
   showContactTab: isDevel(),
-  showStartHerePage: isDevel(),
+  showStartHerePage: true,
 };
 
 export default FeatureFlags;
