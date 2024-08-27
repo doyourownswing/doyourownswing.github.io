@@ -28,22 +28,32 @@ const messages = {
       classOptions: [
         {
           class: "WCS Foundations (Level 1) - 8:45pm in the Royal Ballroom",
-          description:
-            "Start here if you've never danced West Coast Swing. This class is also a great " +
-            "option if you want to start learning the opposite role, or just want a quick refresher.",
-        },
-        {
-          class: "Connection, Rhythm, and Flow (Level 2) - 7:30pm in the Spotlight Ballroom",
-          description:
-            "If you're already familiar with the basic patterns and timing of West Coast Swing, " +
-            "this is the class for you. If you're thinking about joining this class, you should be " +
-            "comfortable dancing a Left Side Pass, Under Arm Pass, and Sugar Push.",
+          description: [
+            "For those who are brand new to West Coast Swing or developing a basic pattern vocabulary. " +
+              "No partner or experience required!",
+          ],
         },
         {
           class:
-            "You, Me, and the Music (Level 3) - 8:15pm in the Spotlight Ballroom",
-          description:
-            "For those who are proficient with the basics and want to learn higher level patterns, techniques, and styling.",
+            "Connection, Rhythm, & Flow (Level 2) - 7:30pm in the Spotlight Ballroom",
+          description: [
+            "For those who have attended at least one introductory level course at DYOS or another studio/event. " +
+              "This class will introduce you to connection skills, rhythm variations, and pattern variations that " +
+              "will help you feel more comfortable and creative on the social dance floor!",
+            "Dancers must be familiar with Left Side Pass, Under Arm Pass, and Sugar Push. " +
+              "Also recommended: Being familiar with Sugar Tuck, Spinning Side Pass (free spin or inside roll), and Whip.",
+          ],
+        },
+        {
+          class:
+            "Creative Expressions (Level 3) - 8:15pm in the Spotlight Ballroom",
+          description: [
+            "Learn the skills for improvised, partnered musical expression! " +
+              "In this class, we work on developing communication with our partner and connecting to the music. " +
+              'This class will help you cultivate those magical "How can this dance be improvised??" moments.',
+            "Must be comfortable with West Coast Swing basics! " +
+              "Familiarity with introductory level connection techniques and rhythm variations recommended.",
+          ],
         },
       ],
     },
