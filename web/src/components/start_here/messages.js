@@ -27,13 +27,13 @@ const messages = {
       here: "here",
       classOptions: [
         {
-          class: "Welcome to WCS (Level 1) - 8:45pm in the Royal Ballroom",
+          class: "WCS Foundations (Level 1) - 8:45pm in the Royal Ballroom",
           description:
             "Start here if you've never danced West Coast Swing. This class is also a great " +
             "option if you want to start learning the opposite role, or just want a quick refresher.",
         },
         {
-          class: "Building Blocks (Level 2) - 7:30pm in the Spotlight Ballroom",
+          class: "Connection, Rhythm, and Flow (Level 2) - 7:30pm in the Spotlight Ballroom",
           description:
             "If you're already familiar with the basic patterns and timing of West Coast Swing, " +
             "this is the class for you. If you're thinking about joining this class, you should be " +
@@ -41,7 +41,7 @@ const messages = {
         },
         {
           class:
-            "Creative Expressions (Level 3) - 8:15pm in the Spotlight Ballroom",
+            "You, Me, and the Music (Level 3) - 8:15pm in the Spotlight Ballroom",
           description:
             "For those who are proficient with the basics and want to learn higher level patterns, techniques, and styling.",
         },
@@ -77,7 +77,7 @@ const messages = {
         {
           item: "Pride stickers",
           description:
-            "we are 2SLGBTQIA+ affirming space and welcome the opportunity to express our pride!",
+            "we are a 2SLGBTQIA+ affirming space and welcome the opportunity to express our pride!",
         },
         {
           item: "Mints",
