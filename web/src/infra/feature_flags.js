@@ -12,7 +12,7 @@ function isDevel() {
 const FeatureFlags = {
   // We should only set this to true when we are showing at least one other page.
   showMenuOptions: isDevel(),
-  showScheduleTab: isDevel(),
+  showScheduleTab: true,
   showAboutTab: isDevel(),
   showHealthTab: isDevel(),
   showCodeOfConductTab: isDevel(),
