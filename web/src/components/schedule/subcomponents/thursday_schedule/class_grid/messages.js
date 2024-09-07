@@ -7,7 +7,8 @@ const messages = {
   foundationsSubtitle: "8:45pm @ Sky Ballroom (second floor)",
   foundationsDescription:
     "For those who are brand new to West Coast Swing or developing a basic pattern vocabulary. No partner or experience required!",
-  foundationsPrereq: "Come as you are! No previous dance experience required.",
+  foundationsPrereq:
+    "Come as you are! No previous dance experience required. NOTE: Use of stairs required to access the room.",
   connectionTitle: "Connection, Rhythm, and\u00A0Flow (Level\u00A02)",
   connectionSubtitle: "7:30pm @ Spotlight Ballroom",
   connectionDescription:
