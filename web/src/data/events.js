@@ -11,6 +11,7 @@ import { createDate } from "utils/date_utils";
 
 const DEFAULT_LOCATION = "Studio M Ballroom, San Jose, CA";
 const DEFAULT_PRICE = "$10 - 40";
+const MINI_DYOS_PRICE = "$10-$20";
 
 const dayjs = require("dayjs");
 
@@ -50,6 +51,11 @@ const updatedDyosClassNameSchedule = [
   { time: "8:15pm - 9:00pm", name: "You, Me, and the Music" },
   { time: "8:45pm - 9:30pm", name: "WCS Foundations" },
   { time: "9:00pm - 11:30pm", name: "Social Dancing" },
+];
+
+const miniDyosSchedule = [
+  { time: "8:30pm - 9:15pm", name: "WCS Foundations" },
+  { time: "9:15pm - 10:00pm", name: "Beginner-friendly Practice/Q&A" },
 ];
 
 /**
@@ -213,10 +219,88 @@ const events = [
     EventTypes.DYOS,
     messages.miniDyos,
     createDate("08/29/2024"),
-    [
-      { time: "8:45pm - 9:30pm", name: "Welcome to WCS" },
-      { time: "9:00pm - 9:30pm", name: "Social Dancing" },
-    ],
+    miniDyosSchedule,
+    DEFAULT_LOCATION,
+    MINI_DYOS_PRICE
+    // todo: add details
+  ),
+  new Event(
+    EventTypes.DYOS,
+    "DYOS - Switch Spins",
+    createDate("09/05/2024"),
+    updatedDyosClassNameSchedule,
+    DEFAULT_LOCATION,
+    DEFAULT_PRICE
+    // todo: add details
+  ),
+  new Event(
+    EventTypes.DYOS,
+    "DYOS - Switch Tucks",
+    createDate("09/12/2024"),
+    updatedDyosClassNameSchedule,
+    DEFAULT_LOCATION,
+    DEFAULT_PRICE
+    // todo: add details
+  ),
+  new Event(
+    EventTypes.DYOS,
+    "DYOS - Switch Whips",
+    createDate("09/19/2024"),
+    updatedDyosClassNameSchedule,
+    DEFAULT_LOCATION,
+    DEFAULT_PRICE
+    // todo: add details
+  ),
+  new Event(
+    EventTypes.DYOS,
+    "DYOS - Choreo Night",
+    createDate("09/26/2024"),
+    updatedDyosClassNameSchedule,
+    DEFAULT_LOCATION,
+    DEFAULT_PRICE
+    // todo: add details
+  ),
+  new Event(
+    EventTypes.DYOS,
+    messages.doYourOwnSwing,
+    createDate("10/03/2024"),
+    updatedDyosClassNameSchedule,
+    DEFAULT_LOCATION,
+    DEFAULT_PRICE
+    // todo: add details
+  ),
+  new Event(
+    EventTypes.DYOS,
+    messages.doYourOwnSwing,
+    createDate("10/10/2024"),
+    updatedDyosClassNameSchedule,
+    DEFAULT_LOCATION,
+    DEFAULT_PRICE
+    // todo: add details
+  ),
+  new Event(
+    EventTypes.DYOS,
+    messages.doYourOwnSwing,
+    createDate("10/17/2024"),
+    updatedDyosClassNameSchedule,
+    DEFAULT_LOCATION,
+    DEFAULT_PRICE
+    // todo: add details
+  ),
+  new Event(
+    EventTypes.DYOS,
+    messages.doYourOwnSwing,
+    createDate("10/24/2024"),
+    updatedDyosClassNameSchedule,
+    DEFAULT_LOCATION,
+    DEFAULT_PRICE
+    // todo: add details
+  ),
+  new Event(
+    EventTypes.DYOS,
+    messages.doYourOwnSwing,
+    createDate("10/31/2024"),
+    updatedDyosClassNameSchedule,
     DEFAULT_LOCATION,
     DEFAULT_PRICE
     // todo: add details

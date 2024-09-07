@@ -87,7 +87,7 @@ const messages = {
         {
           item: "Pride stickers",
           description:
-            "we are 2SLGBTQIA+ affirming space and welcome the opportunity to express our pride!",
+            "we are a 2SLGBTQIA+ affirming space and welcome the opportunity to express our pride!",
         },
         {
           item: "Mints",
