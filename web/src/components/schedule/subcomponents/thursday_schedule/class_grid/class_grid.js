@@ -2,6 +2,7 @@ import { Box, Grid, Typography } from "@mui/material";
 import { useTheme } from "@emotion/react";
 import messages from "./messages.js";
 import GridHeader from "./grid_header.js";
+import GridRow from "./grid_row.js";
 
 function ClassGrid() {
   const theme = useTheme();
@@ -21,61 +22,28 @@ function ClassGrid() {
         ></GridHeader>
 
         {/* WCS Foundations */}
-        <Grid item xs={4}>
-          <Typography variant="h6" display={{ xs: "none", md: "block" }}>
-            {messages.foundationsTitle}
-          </Typography>
-          <Typography variant="h4" display={{ xs: "block", md: "none" }}>
-            {messages.foundationsTitle}
-          </Typography>
-          <Box color={theme.palette.text.subtitle}>
-            {messages.foundationsSubtitle}
-          </Box>
-        </Grid>
-        <Grid item xs={4}>
-          <Box>{messages.foundationsDescription}</Box>
-        </Grid>
-        <Grid item xs={4}>
-          <Box>{messages.foundationsPrereq}</Box>
-        </Grid>
+        <GridRow
+          title={messages.foundationsTitle}
+          subtitle={messages.foundationsSubtitle}
+          itemSize={4}
+          items={[messages.foundationsDescription, messages.foundationsPrereq]}
+        ></GridRow>
 
         {/* Connection, Rhythm, and Flow */}
-        <Grid item xs={4}>
-          <Typography variant="h6" display={{ xs: "none", md: "block" }}>
-            {messages.connectionTitle}
-          </Typography>
-          <Typography variant="h4" display={{ xs: "block", md: "none" }}>
-            {messages.connectionTitle}
-          </Typography>
-          <Box color={theme.palette.text.subtitle}>
-            {messages.connectionSubtitle}
-          </Box>
-        </Grid>
-        <Grid item xs={4}>
-          <Box>{messages.connectionDescription}</Box>
-        </Grid>
-        <Grid item xs={4}>
-          <Box>{messages.connectionPrereq}</Box>
-        </Grid>
+        <GridRow
+          title={messages.connectionTitle}
+          subtitle={messages.connectionSubtitle}
+          itemSize={4}
+          items={[messages.connectionDescription, messages.connectionPrereq]}
+        ></GridRow>
 
         {/* You, Me, and the Music */}
-        <Grid item xs={4}>
-          <Typography variant="h6" display={{ xs: "none", md: "block" }}>
-            {messages.youMeTitle}
-          </Typography>
-          <Typography variant="h4" display={{ xs: "block", md: "none" }}>
-            {messages.youMeTitle}
-          </Typography>
-          <Box color={theme.palette.text.subtitle}>
-            {messages.youMeSubtitle}
-          </Box>
-        </Grid>
-        <Grid item xs={4}>
-          <Box>{messages.youMeDescription}</Box>
-        </Grid>
-        <Grid item xs={4}>
-          <Box>{messages.youMePrereq}</Box>
-        </Grid>
+        <GridRow
+          title={messages.youMeTitle}
+          subtitle={messages.youMeSubtitle}
+          itemSize={4}
+          items={[messages.youMeDescription, messages.youMePrereq]}
+        ></GridRow>
       </Grid>
     </Box>
   );
