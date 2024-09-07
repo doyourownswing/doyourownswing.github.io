@@ -226,7 +226,7 @@ const events = [
   ),
   new Event(
     EventTypes.DYOS,
-    messages.doYourOwnSwing,
+    "DYOS - Switch Spins",
     createDate("09/05/2024"),
     updatedDyosClassNameSchedule,
     DEFAULT_LOCATION,
@@ -235,7 +235,7 @@ const events = [
   ),
   new Event(
     EventTypes.DYOS,
-    messages.doYourOwnSwing,
+    "DYOS - Switch Tucks",
     createDate("09/12/2024"),
     updatedDyosClassNameSchedule,
     DEFAULT_LOCATION,
@@ -244,7 +244,7 @@ const events = [
   ),
   new Event(
     EventTypes.DYOS,
-    messages.doYourOwnSwing,
+    "DYOS - Switch Whips",
     createDate("09/19/2024"),
     updatedDyosClassNameSchedule,
     DEFAULT_LOCATION,
@@ -253,7 +253,7 @@ const events = [
   ),
   new Event(
     EventTypes.DYOS,
-    messages.doYourOwnSwing,
+    "DYOS - Choreo Night",
     createDate("09/26/2024"),
     updatedDyosClassNameSchedule,
     DEFAULT_LOCATION,
