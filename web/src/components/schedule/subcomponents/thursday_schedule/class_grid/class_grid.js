@@ -1,6 +1,7 @@
 import { Box, Grid, Typography } from "@mui/material";
 import { useTheme } from "@emotion/react";
 import messages from "./messages.js";
+import GridHeader from "./grid_header.js";
 
 function ClassGrid() {
   const theme = useTheme();
@@ -8,18 +9,19 @@ function ClassGrid() {
     <Box>
       <Grid container spacing={4} columns={{ sm: 4, md: 12 }}>
         {/* Headers */}
-        <Grid item xs={3} display={{ xs: "none", md: "block" }}>
-          <Typography variant="h4">{messages.classHeader}</Typography>
-        </Grid>
-        <Grid item xs={4} display={{ xs: "none", md: "block" }}>
-          <Typography variant="h4">{messages.descriptionHeader}</Typography>
-        </Grid>
-        <Grid item xs={4} display={{ xs: "none", md: "block" }}>
-          <Typography variant="h4">{messages.prerequisitesHeader}</Typography>
-        </Grid>
+        <GridHeader
+          items={[
+            messages.classHeader,
+            messages.descriptionHeader,
+            messages.prerequisitesHeader,
+          ]}
+          variant="h4"
+          itemSize={4}
+          breakpointStyles={{ xs: "none", md: "block" }}
+        ></GridHeader>
 
         {/* WCS Foundations */}
-        <Grid item xs={3}>
+        <Grid item xs={4}>
           <Typography variant="h6" display={{ xs: "none", md: "block" }}>
             {messages.foundationsTitle}
           </Typography>
@@ -38,7 +40,7 @@ function ClassGrid() {
         </Grid>
 
         {/* Connection, Rhythm, and Flow */}
-        <Grid item xs={3}>
+        <Grid item xs={4}>
           <Typography variant="h6" display={{ xs: "none", md: "block" }}>
             {messages.connectionTitle}
           </Typography>
@@ -57,7 +59,7 @@ function ClassGrid() {
         </Grid>
 
         {/* You, Me, and the Music */}
-        <Grid item xs={3}>
+        <Grid item xs={4}>
           <Typography variant="h6" display={{ xs: "none", md: "block" }}>
             {messages.youMeTitle}
           </Typography>

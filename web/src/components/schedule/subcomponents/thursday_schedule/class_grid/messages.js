@@ -2,6 +2,7 @@ const messages = {
   classHeader: "Class",
   descriptionHeader: "Description",
   prerequisitesHeader: "Prerequisites",
+  // \u00A0 is the non-breaking space character, used to make sure we don't have weird line breaks in certain messages
   foundationsTitle: "WCS Foundations (Level\u00A01)",
   foundationsSubtitle: "8:45pm @ Sky Ballroom (second floor)",
   foundationsDescription:

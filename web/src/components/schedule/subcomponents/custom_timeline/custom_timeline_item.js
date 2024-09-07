@@ -22,7 +22,7 @@ function CustomTimelineItem({ title, subtitle, oppositeText, isLastItem }) {
       </TimelineContent>
       <TimelineSeparator>
         <TimelineDot />
-        {!!isLastItem ? <></> : <TimelineConnector />}
+        {!isLastItem && <TimelineConnector />}
       </TimelineSeparator>
       <TimelineOppositeContent sx={timelineStyles.oppositeContent}>
         {oppositeText}

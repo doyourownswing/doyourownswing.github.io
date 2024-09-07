@@ -3,7 +3,7 @@ import ClassGrid from "./class_grid/class_grid.js";
 import thursdayScheduleStyles from "./thursday_schedule.styles.js";
 import { useTheme } from "@emotion/react";
 import messages from "./messages.js";
-import CustomTimeline from "components/custom_timeline/custom_timeline.js";
+import CustomTimeline from "components/schedule/subcomponents/custom_timeline/custom_timeline.js";
 import schedule from "./data.js";
 
 function ThursdaySchedule() {
