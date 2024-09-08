@@ -9,13 +9,17 @@ const HeaderDetails = (props) => (
     {props.date && (
       <Box sx={eventCardStyles.details}>
         <AccessTimeIcon sx={eventCardStyles.icon} />
-        <Typography>{dateToHumanReadableString(props.date)}</Typography>
+        <Typography sx={eventCardStyles.detailsText}>
+          {dateToHumanReadableString(props.date)}
+        </Typography>
       </Box>
     )}
     {props.location && (
       <Box sx={eventCardStyles.details}>
         <FmdGoodOutlinedIcon sx={eventCardStyles.icon} />
-        <Typography>{props.location}</Typography>
+        <Typography sx={eventCardStyles.detailsText}>
+          {props.location}
+        </Typography>
       </Box>
     )}
   </Box>

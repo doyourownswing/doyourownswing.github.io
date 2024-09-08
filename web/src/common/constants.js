@@ -1,5 +1,5 @@
 export const SECTION_PADDING = {
-  xs: "48px 0px",
+  xs: "48px 16px",
   md: "80px 0px",
 };
 
