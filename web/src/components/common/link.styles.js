@@ -1,15 +1,17 @@
+import theme from "common/theme";
+
 const linkStyles = {
-  color: "#1a73e8",
+  color: theme.palette.text.link,
   textDecoration: "unset",
   textUnderlineOffset: "2px",
   "&:visited": {
-    color: "purple",
+    color: theme.palette.text.linkVisited,
   },
   "&:hover": {
     textDecoration: "underline",
   },
   "&:active": {
-    color: "#174ea6",
+    color: theme.palette.text.linkActive,
   },
 };
 
