@@ -16,6 +16,13 @@ const welcomeStyles = {
   },
   titleBox: {
     padding: "8vw",
+    alignItems: { xs: "center", md: "start" },
+  },
+  titleText: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: { xs: "center", md: "start" },
+    scale: { xs: "1.3", md: "1" },
   },
   startHereButton: {
     marginTop: "2rem",
@@ -24,6 +31,14 @@ const welcomeStyles = {
     padding: ".75rem 1.5rem",
     textTransform: "unset",
     backgroundColor: theme.palette.button.purpleFilled,
+  },
+  mainDescription: {
+    display: "flex",
+    flexDirection: "column",
+    lineHeight: "1.75",
+    margin: "1rem 0",
+    alignItems: { xs: "center", md: "start" },
+    textAlign: { xs: "center", md: "left" },
   },
 };
 
