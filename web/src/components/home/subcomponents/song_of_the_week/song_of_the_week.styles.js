@@ -3,7 +3,6 @@ import { SECTION_PADDING } from "common/constants";
 
 const songOfTheWeekStyles = {
   songOfTheWeekSection: {
-    // backgroundColor: theme.palette.background.lightGray,
     backgroundImage: theme.palette.background.songOfTheWeek,
     padding: SECTION_PADDING,
   },
