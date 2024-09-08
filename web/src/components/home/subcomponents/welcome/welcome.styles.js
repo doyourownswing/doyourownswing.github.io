@@ -24,6 +24,9 @@ const welcomeStyles = {
     alignItems: { xs: "center", md: "start" },
     scale: { xs: "1.3", md: "1" },
   },
+  title: {
+    marginLeft: "-2.5px",
+  },
   startHereButton: {
     marginTop: "2rem",
     borderRadius: ".75rem",

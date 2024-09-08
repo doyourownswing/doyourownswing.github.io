@@ -14,7 +14,11 @@ function Welcome() {
           <Typography variant="h4" color={theme.palette.text.secondary}>
             {messages.discover}
           </Typography>
-          <Typography variant="h2" color={theme.palette.text.title}>
+          <Typography
+            variant="h2"
+            sx={welcomeStyles.title}
+            color={theme.palette.text.title}
+          >
             {messages.title}
           </Typography>
         </Box>
