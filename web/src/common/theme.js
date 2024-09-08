@@ -72,7 +72,7 @@ const theme = responsiveFontSizes(
         '"Segoe UI Symbol"',
       ].join(","),
       title: {
-        paddingBottom: "8px",
+        paddingBottom: "16px",
         fontWeight: "600",
         fontFamily: "Poppins",
       },

@@ -7,7 +7,7 @@ function WhatIsWcs() {
   return (
     <Box sx={whatIsWcsStyles.whatIsWcsStylesContainer}>
       <Container>
-        <Typography variant="h4" sx={whatIsWcsStyles.header}>
+        <Typography variant="h3" sx={whatIsWcsStyles.header}>
           What is West Coast Swing?
         </Typography>
         <Box sx={whatIsWcsStyles.itemsContainer}>
