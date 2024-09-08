@@ -20,8 +20,7 @@ const songOfTheWeekStyles = {
     },
   },
   title: {
-    paddingBottom: "8px",
-    // TODO: update the titles to be bold as per Vedant's suggestion
+    ...theme.typography.title,
   },
   leftContainer: {
     maxWidth: "400px",

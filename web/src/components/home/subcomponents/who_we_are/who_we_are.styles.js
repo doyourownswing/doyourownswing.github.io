@@ -8,8 +8,8 @@ const whoWeAreStyles = {
     padding: SECTION_PADDING,
   },
   title: {
+    ...theme.typography.title,
     color: theme.palette.text.titleLight,
-    paddingBottom: "16px",
   },
   subtitle: {
     color: theme.palette.text.subtitleLight,
