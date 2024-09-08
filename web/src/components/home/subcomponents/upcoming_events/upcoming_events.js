@@ -99,7 +99,7 @@ function UpcomingEvents() {
   return (
     <Box sx={upcomingEventsStyles.upcomingEventsContainer}>
       <Container>
-        <Typography variant="h4" sx={upcomingEventsStyles.title}>
+        <Typography variant="h3" sx={upcomingEventsStyles.title}>
           {messages.upcomingEventsTitle}
         </Typography>
         {FeatureFlags.showScheduleTab && (

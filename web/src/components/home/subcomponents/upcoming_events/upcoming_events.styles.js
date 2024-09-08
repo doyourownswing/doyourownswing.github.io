@@ -3,7 +3,7 @@ import { SECTION_PADDING } from "common/constants";
 
 const upcomingEventsStyles = {
   title: {
-    paddingBottom: "8px",
+    ...theme.typography.title,
   },
   twoEventRenderer: {
     paddingTop: "24px",

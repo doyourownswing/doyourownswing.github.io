@@ -70,7 +70,7 @@ function WhoWeAre() {
   return (
     <Box sx={whoWeAreStyles.whoWeAreContainer}>
       <Container>
-        <Typography variant="h4" sx={whoWeAreStyles.title}>
+        <Typography variant="h3" sx={whoWeAreStyles.title}>
           {messages.title}
         </Typography>
         <Typography variant="body" sx={whoWeAreStyles.subtitle}>
