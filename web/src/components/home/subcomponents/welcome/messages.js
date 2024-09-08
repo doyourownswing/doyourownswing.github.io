@@ -1,5 +1,5 @@
 const messages = {
-  discover: "Discover your rhythm\u00A0at",
+  discover: "Discover your rhythm at",
   title: "Do Your Own Swing",
   classesAndSocial:
     "West Coast Swing classes and social dancing in San Jose, CA.",

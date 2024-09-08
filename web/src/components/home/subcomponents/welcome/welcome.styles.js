@@ -21,6 +21,7 @@ const welcomeStyles = {
   titleText: {
     display: "flex",
     flexDirection: "column",
+    textWrap: "balance",
     alignItems: { xs: "center", md: "start" },
     scale: { xs: "1.3", md: "1" },
   },
