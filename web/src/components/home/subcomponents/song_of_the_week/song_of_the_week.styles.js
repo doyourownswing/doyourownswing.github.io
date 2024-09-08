@@ -29,15 +29,6 @@ const songOfTheWeekStyles = {
     flex: 1,
     margin: { xs: "auto", md: "unset" },
   },
-  quoteContainer: {
-    // move to its own file?
-    gap: "16px",
-    display: "flex",
-    flexDirection: "column",
-  },
-  quote: {
-    color: theme.palette.text.secondaryBody,
-  },
   songCardContainer: {
     flex: 2,
     display: "flex",

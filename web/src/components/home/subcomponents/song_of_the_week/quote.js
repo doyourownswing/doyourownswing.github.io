@@ -1,5 +1,5 @@
 import { Box, Typography } from "@mui/material";
-import songOfTheWeekStyles from "./song_of_the_week.styles";
+import quoteStyles from "./quote.styles";
 import QuoteAttribution from "./quote_attribution";
 
 function Quote(props) {
@@ -11,8 +11,8 @@ function Quote(props) {
   }
 
   return (
-    <Box sx={songOfTheWeekStyles.quoteContainer}>
-      <Typography variant="body1" sx={songOfTheWeekStyles.quote}>
+    <Box sx={quoteStyles.quoteContainer}>
+      <Typography variant="body1" sx={quoteStyles.quote}>
         "{songInfo.quoteInfo.quote}"
       </Typography>
       <QuoteAttribution

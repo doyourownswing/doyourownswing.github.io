@@ -14,7 +14,3 @@ export const SUB_SECTION_WRAPPER_PADDING = {
 };
 
 export const FOOTER_PADDING = "24px 0px";
-
-// export const LINK = {
-//   :visited:
-// }
