@@ -72,9 +72,9 @@ const songs = [
     createDate("09/07/2024"),
     {
       quote:
-        "This song has a ton of different layers to dance to, with tons of hits " +
-        "and variation from start to finish. " +
-        "It's groovy and has a ton of energy, it always gets me in the mood to dance!",
+        "This song has a ton of different layers to dance to, with a bunch of " +
+        "hits and variation from start to finish. It's groovy and has lots of energy, " +
+        "it always gets me in the mood to dance!",
       attributionInfo: attributors.jake,
     },
     {
