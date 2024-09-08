@@ -2,11 +2,11 @@ const messages = {
   title: "Who we are",
   // TODO: add links to about us and code of conduct pages behind feature flag.
   description: `
-  Do Your Own Swing strives to create a community not only of amazing west coast swing dancers, but 
-  one that makes everyone feel included and safe. While we focus on developing and refinining our dance skills,
-  our community is built on a foundation of ensuring all members of the community can freely express
-  who they are. We especially welcome those who are health and COVID-conscious and want to mask, and those
-  who identify as 2SLGBTQIA+.
+  Do Your Own Swing (DYOS) strives to be a safe and inclusive space that celebrates 
+  all people in their fullness. The DYOS community exists to celebrate community; 
+  inner- and interpersonal connection; personal, partnered, and communal acts of 
+  creativity and expression; and a desire to learn and dance West Coast Swing 
+  through a lens of respect, inclusion, and collaboration.  
   `,
   ourCommunityValues: "Our community values",
 };
