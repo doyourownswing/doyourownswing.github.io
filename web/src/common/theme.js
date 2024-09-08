@@ -59,6 +59,7 @@ const theme = responsiveFontSizes(
     typography: {
       fontFamily: [
         "Nunito",
+        "Poppins",
         "-apple-system",
         "BlinkMacSystemFont",
         '"Segoe UI"',
@@ -70,6 +71,11 @@ const theme = responsiveFontSizes(
         '"Segoe UI Emoji"',
         '"Segoe UI Symbol"',
       ].join(","),
+      title: {
+        paddingBottom: "16px",
+        fontWeight: "600",
+        fontFamily: "Poppins",
+      },
     },
   })
 );

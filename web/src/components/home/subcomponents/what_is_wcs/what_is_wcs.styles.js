@@ -11,6 +11,7 @@ const whatIsWcsStyles = {
     alignItems: "center",
   },
   header: {
+    ...theme.typography.title,
     color: theme.palette.text.title,
     paddingBottom: "24px",
   },

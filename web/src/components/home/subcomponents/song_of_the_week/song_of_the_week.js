@@ -52,7 +52,7 @@ function SongOfTheWeek() {
   return (
     <Box sx={songOfTheWeekStyles.songOfTheWeekSection}>
       <Container>
-        <Typography variant="h4" sx={songOfTheWeekStyles.title}>
+        <Typography variant="h3" sx={songOfTheWeekStyles.title}>
           {messages.title}
         </Typography>
         <Stack
