@@ -3,7 +3,7 @@ import { SECTION_PADDING } from "common/constants";
 
 const songOfTheWeekStyles = {
   songOfTheWeekSection: {
-    backgroundColor: theme.palette.background.lightGray,
+    backgroundImage: theme.palette.background.songOfTheWeek,
     padding: SECTION_PADDING,
   },
   songOfTheWeekFlexContainer: {
@@ -22,7 +22,7 @@ const songOfTheWeekStyles = {
     paddingBottom: "24px",
   },
   quote: {
-    color: theme.palette.text.secondaryBody,
+    color: theme.palette.text.secondaryBody2,
     paddingBottom: "16px",
   },
   songCardContainer: {
@@ -32,7 +32,7 @@ const songOfTheWeekStyles = {
   },
   songCard: {
     margin: "auto",
-    marginRight: { md: 0,  },
+    marginRight: { md: 0 },
   },
 };
 

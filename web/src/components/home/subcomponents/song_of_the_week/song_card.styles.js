@@ -1,3 +1,4 @@
+import { BOX_SHADOW } from "common/constants";
 import theme from "common/theme";
 
 const songCardStyles = {
@@ -9,6 +10,7 @@ const songCardStyles = {
       sm: "nowrap",
     },
     borderRadius: "16px",
+    boxShadow: BOX_SHADOW,
   },
   songName: {
     fontWeight: "700",

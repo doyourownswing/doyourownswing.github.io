@@ -9,13 +9,13 @@ const whoWeAreStyles = {
   },
   title: {
     color: theme.palette.text.titleLight,
-    padding: "8px 0px",
+    paddingBottom: "16px",
   },
   subtitle: {
     color: theme.palette.text.subtitleLight,
   },
   valuesSection: {
-    paddingTop: "32px",
+    paddingTop: "64px",
   },
   valueRenderer: {
     display: "inline-flex",

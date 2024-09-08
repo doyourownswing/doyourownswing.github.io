@@ -1,4 +1,5 @@
 import theme from "common/theme";
+import { BOX_SHADOW } from "common/constants";
 
 const eventCardStyles = {
   card: {
@@ -6,8 +7,7 @@ const eventCardStyles = {
     minWidth: "320px",
     borderRadius: "16px",
     backgroundColor: theme.palette.background.light,
-    boxShadow:
-      "0px 2px 1px -1px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 1px 3px 0px rgba(0,0,0,0.12)",
+    boxShadow: BOX_SHADOW,
   },
   title: {
     fontSize: 20,
