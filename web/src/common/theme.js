@@ -43,6 +43,9 @@ const theme = responsiveFontSizes(
         linkLightHover: basePalette.white,
         lightPurple: basePalette.lightPurple,
         headerPurple: basePalette.purple,
+        link: "#0F65D7",
+        linkActive: "#174ea6",
+        linkVisited: "#733E8F", // a midpoint between medium purple and purple
       },
       button: {
         lightGray: "#dddddd",
