@@ -3,29 +3,29 @@ import welcomePic from "assets/images/teacher-demo-2-blurred-min.JPG";
 import welcomeStyles from "./welcome.styles.js";
 import FeatureFlags from "infra/feature_flags";
 import { useTheme } from "@emotion/react";
+import messages from "./messages.js";
 
 function Welcome() {
   const theme = useTheme();
   return (
     <Stack sx={welcomeStyles.sectionLayout}>
       <Stack justifyContent="center" sx={welcomeStyles.titleBox}>
-        <Box>
+        <Box sx={welcomeStyles.titleText}>
           <Typography variant="h4" color={theme.palette.text.secondary}>
-            Discover your rhythm at
+            {messages.discover}
           </Typography>
-          <Typography variant="h2" color={theme.palette.text.title}>
-            Do Your Own Swing
+          <Typography
+            variant="h2"
+            sx={welcomeStyles.title}
+            color={theme.palette.text.title}
+          >
+            {messages.title}
           </Typography>
         </Box>
-        <Box>
-          <Typography variant="body">
-            West Coast Swing classes and social dancing in San Jose, CA.
-          </Typography>
-          <Box>
-            <Typography variant="body">
-              Thursday Nights @ Studio M Ballroom
-            </Typography>
-          </Box>
+        <Box sx={welcomeStyles.mainDescription}>
+          <Typography variant="body">{messages.classesAndSocial}</Typography>
+          <Typography variant="body">{messages.consciousSpace}</Typography>
+          <Typography variant="body">{messages.thursdayNights}</Typography>
         </Box>
         {FeatureFlags.showStartHerePage && (
           <Button
@@ -33,7 +33,7 @@ function Welcome() {
             sx={welcomeStyles.startHereButton}
             href="#/start-here"
           >
-            Start here if you're new
+            {messages.startHereText}
           </Button>
         )}
       </Stack>
