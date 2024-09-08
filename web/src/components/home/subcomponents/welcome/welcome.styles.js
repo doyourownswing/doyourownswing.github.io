@@ -38,7 +38,7 @@ const welcomeStyles = {
   mainDescription: {
     display: "flex",
     flexDirection: "column",
-    lineHeight: "1.75",
+    gap: "16px",
     margin: "1rem 0",
     textWrap: "balance",
     alignItems: { xs: "center", md: "start" },
