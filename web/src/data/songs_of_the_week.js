@@ -123,6 +123,21 @@ const songs = [
     createDate("09/28/2024"),
     null,
     {
+      name: "Vibe",
+      artist: "Mullally",
+      year: "2020",
+    },
+    {
+      albumCoverImage:
+        "https://i.scdn.co/image/ab67616d00001e02a00b8313075ff51eed734c20",
+      youtube: "https://youtu.be/4aA2u7WdERg?si=wRf-H0-mRZQB9D-x",
+      spotify: "https://open.spotify.com/track/1pDDhg9lxPMxwC3q6Kngg2",
+    }
+  ),
+  new SongOfTheWeek(
+    createDate("10/05/2024"),
+    null,
+    {
       name: "Spooky",
       artist: "Dusty Springfield",
       year: "2018",
@@ -135,7 +150,7 @@ const songs = [
     }
   ),
   new SongOfTheWeek(
-    createDate("10/05/2024"),
+    createDate("10/13/2024"),
     null,
     {
       name: "I'll Come Running Back To You",
