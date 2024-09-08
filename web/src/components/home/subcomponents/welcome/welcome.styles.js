@@ -40,6 +40,7 @@ const welcomeStyles = {
     flexDirection: "column",
     lineHeight: "1.75",
     margin: "1rem 0",
+    textWrap: "balance",
     alignItems: { xs: "center", md: "start" },
     textAlign: { xs: "center", md: "left" },
   },
