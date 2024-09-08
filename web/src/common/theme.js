@@ -17,17 +17,14 @@ const theme = responsiveFontSizes(
     palette: {
       primary: {
         main: basePalette.darkPurple,
-        // TODO: remove this and clean up uses
-        background: {
-          light: basePalette.white,
-          lightGray: basePalette.lightGray,
-        },
       },
       background: {
         light: basePalette.white,
         lightGray: basePalette.lightGray,
         lightPurple: basePalette.lightPurple,
         darkPurple: basePalette.darkPurple,
+        songOfTheWeek: "linear-gradient(to bottom, #e9e0fb 0%, #ffe2f7 100%);",
+        upcomingEvents: "linear-gradient(to bottom, #ffe2f7 0%, #e9e0fb 100%);",
       },
       text: {
         titleLight: basePalette.white,
@@ -36,6 +33,9 @@ const theme = responsiveFontSizes(
         subtitle: "#808080",
         // For less essential body text that we don't want to stand out as much.
         secondaryBody: "#666666",
+        // Same but slightly darker
+        // TODO: update default quote with this in song of the week too once merging is done
+        secondaryBody2: "#3f3f3f",
         textButton: basePalette.mediumPurple,
         activeSelection: basePalette.mediumPurple,
         textLight: basePalette.white,

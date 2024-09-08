@@ -2,6 +2,9 @@ import theme from "common/theme";
 import { SECTION_PADDING } from "common/constants";
 
 const upcomingEventsStyles = {
+  title: {
+    paddingBottom: "8px",
+  },
   twoEventRenderer: {
     paddingTop: "24px",
     justifyContent: "space-between",
@@ -26,7 +29,7 @@ const upcomingEventsStyles = {
     backgroundColor: "transparent",
   },
   upcomingEventsContainer: {
-    backgroundColor: theme.palette.background.lightGray,
+    backgroundImage: theme.palette.background.upcomingEvents,
     padding: SECTION_PADDING,
   },
   noUpcomingEventsContainer: {

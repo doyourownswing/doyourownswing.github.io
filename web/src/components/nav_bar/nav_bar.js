@@ -16,7 +16,7 @@ import FeatureFlags from "infra/feature_flags";
 import React from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import messages from "common/messages";
-import NavOptions from "common/nav_options";
+import { NavOptions } from "common/nav_options";
 import navBarStyles from "./nav_bar.styles";
 import purpleLogo from "assets/svgs/purple-logo.svg";
 
