@@ -48,9 +48,9 @@ const defaultDyosSchedule = [
 
 const updatedDyosClassNameSchedule = [
   { time: "7:30pm - 8:15pm", name: "Connection, Rhythm, and Flow" },
-  { time: "8:15pm - 9:00pm", name: "You, Me, and the Music" },
+  { time: "8:25pm - 9:15pm", name: "You, Me, and the Music" },
   { time: "8:45pm - 9:30pm", name: "WCS Foundations" },
-  { time: "9:00pm - 11:30pm", name: "Social Dancing" },
+  { time: "9:15pm - 11:30pm", name: "Social Dancing" },
 ];
 
 const miniDyosSchedule = [
