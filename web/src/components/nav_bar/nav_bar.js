@@ -10,12 +10,12 @@ import {
   MenuItem,
   Toolbar,
   Typography,
-  useTheme,
 } from "@mui/material";
 import FeatureFlags from "infra/feature_flags";
 import React from "react";
 import MenuIcon from "@mui/icons-material/Menu";
-import messages from "common/messages";
+import { default as commonMessages } from "common/messages";
+import messages from "./messages";
 import { NavOptions } from "common/nav_options";
 import navBarStyles from "./nav_bar.styles";
 import purpleLogo from "assets/svgs/purple-logo.svg";
@@ -124,8 +124,6 @@ function MenuIconOptions() {
 
 /** Navigation bar to be rendered at the top of the page containing tabs to other pages. */
 function NavBar() {
-  const theme = useTheme();
-
   return (
     <AppBar position="static" id="NavBar" sx={navBarStyles.appBar}>
       <Container>
@@ -138,9 +136,25 @@ function NavBar() {
                 alt="Do Your Own Swing logo"
                 src={purpleLogo}
               />
-              <Typography variant="h6" noWrap component="div" color="secondary">
-                {messages.dyos}
-              </Typography>
+              <Box>
+                <Typography
+                  variant="h6"
+                  noWrap
+                  component="div"
+                  sx={navBarStyles.logoBrandName}
+                >
+                  {commonMessages.doYourOwnSwing}
+                </Typography>
+
+                <Typography
+                  variant="subtitle1"
+                  noWrap
+                  component="div"
+                  sx={navBarStyles.logoBrandQuip}
+                >
+                  {messages.logoQuip}
+                </Typography>
+              </Box>
             </Link>
           </Box>
           {FeatureFlags.showMenuOptions && <ExpandedMenuOptions />}
