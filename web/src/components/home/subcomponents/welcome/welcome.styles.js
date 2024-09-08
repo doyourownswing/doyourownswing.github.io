@@ -14,8 +14,10 @@ const welcomeStyles = {
     aspectRatio: "3/2",
     overflow: "hidden",
   },
+  firstSectionBox: {
+    padding: { xs: "4vw", lg: "8vw" },
+  },
   titleBox: {
-    padding: "8vw",
     alignItems: { xs: "center", md: "start" },
   },
   titleText: {
@@ -23,12 +25,14 @@ const welcomeStyles = {
     flexDirection: "column",
     textWrap: "balance",
     alignItems: { xs: "center", md: "start" },
-    scale: { xs: "1.3", md: "1" },
   },
   title: {
+    // aligns the large text on the left
     marginLeft: "-2.5px",
   },
   startHereButton: {
+    display: "flex",
+    margin: { xs: "auto", md: "unset" },
     marginTop: "2rem",
     borderRadius: ".75rem",
     width: "fit-content",
