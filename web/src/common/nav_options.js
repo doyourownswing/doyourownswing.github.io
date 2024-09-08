@@ -1,42 +1,21 @@
 import FeatureFlags from "infra/feature_flags";
-
-class NavOption {
-  constructor(displayName, url, isCurrentPageFunction) {
-    this.displayName = displayName;
-    this.url = url;
-    this.isCurrentPage =
-      isCurrentPageFunction ?? (() => window.location.hash === this.url);
-  }
-}
-
-const HomeNav = new NavOption(
-  "Home",
-  "#/",
-  () => window.location.hash === "#/" || window.location.hash === ""
-);
-const ScheduleNav = new NavOption("Schedule", "#/schedule");
-const AboutNav = new NavOption("About us", "#/about");
-const HealthNav = new NavOption("Health protocol", "#/health");
-const CodeNav = new NavOption("Code of conduct", "#/code");
-const ContactNav = new NavOption("Contact", "#/contact");
-
-// Nav Option Groups
+import * as pages from "./pages";
 
 const BrowseOptions = cleanUpOptionsList([
-  FeatureFlags.showMenuOptions && HomeNav,
-  FeatureFlags.showScheduleTab && ScheduleNav,
-  FeatureFlags.showAboutTab && AboutNav,
+  FeatureFlags.showMenuOptions && pages.Home,
+  FeatureFlags.showScheduleTab && pages.Schedule,
+  FeatureFlags.showAboutTab && pages.About,
 ]);
 
 const PolicyOptions = cleanUpOptionsList([
-  FeatureFlags.showHealthTab && HealthNav,
-  FeatureFlags.showCodeOfConductTab && CodeNav,
+  FeatureFlags.showHealthTab && pages.Health,
+  FeatureFlags.showCodeOfConductTab && pages.Code,
 ]);
 
 const NavOptions = cleanUpOptionsList([
   ...BrowseOptions,
   ...PolicyOptions,
-  FeatureFlags.showContactTab && ContactNav,
+  FeatureFlags.showContactTab && pages.Contact,
 ]);
 
 /**
@@ -49,15 +28,4 @@ function cleanUpOptionsList(list) {
   return list.filter((i) => i);
 }
 
-export {
-  HomeNav,
-  ScheduleNav,
-  AboutNav,
-  HealthNav,
-  CodeNav,
-  ContactNav,
-  BrowseOptions,
-  PolicyOptions,
-};
-
-export default NavOptions;
+export { BrowseOptions, PolicyOptions, NavOptions };
