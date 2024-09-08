@@ -89,6 +89,66 @@ const songs = [
       spotify: "https://open.spotify.com/track/3V9cM3nCH2G66afoDi0snu",
     }
   ),
+  new SongOfTheWeek(
+    createDate("09/14/2024"),
+    null,
+    {
+      name: "Young",
+      artist: "Vallis Alps",
+      year: "2015",
+    },
+    {
+      albumCoverImage:
+        "https://i.scdn.co/image/ab67616d00001e021fb3115e3b35b94a49d6fe20",
+      youtube: "https://youtu.be/yoZPVMEsbeQ?si=bw2zzibpU-cYddpr",
+      spotify: "https://open.spotify.com/track/0ad87RTfHWmC2Syh1nOxEd",
+    }
+  ),
+  new SongOfTheWeek(
+    createDate("09/21/2024"),
+    null,
+    {
+      name: "Judy You Hung the Moon",
+      artist: "HARBOUR",
+      year: "2017",
+    },
+    {
+      albumCoverImage:
+        "https://i.scdn.co/image/ab67616d00001e02356628262c803315eece6380",
+      youtube: "https://youtu.be/psD04pozpcw?si=BhY5CnJxfjWYte9b",
+      spotify: "https://open.spotify.com/track/10oDDj46J0IMYBPSloeJ4Z",
+    }
+  ),
+  new SongOfTheWeek(
+    createDate("09/28/2024"),
+    null,
+    {
+      name: "Spooky",
+      artist: "Dusty Springfield",
+      year: "2018",
+    },
+    {
+      albumCoverImage:
+        "https://i.scdn.co/image/ab67616d0000b2731482b9376e50c5f8f6f65112",
+      youtube: "https://youtu.be/5QT1HjKXvT4?si=A7NIl2abpD2ygbuP",
+      spotify: "https://open.spotify.com/track/1683Q5FUEQ4fIG2f87MAW4",
+    }
+  ),
+  new SongOfTheWeek(
+    createDate("10/05/2024"),
+    null,
+    {
+      name: "I'll Come Running Back To You",
+      artist: "Sam Cooke",
+      year: "2002",
+    },
+    {
+      albumCoverImage:
+        "https://i.scdn.co/image/ab67616d0000b273ecfe3a20789aa24e8ab54bad",
+      youtube: "https://youtu.be/yAvJ6cxMrg0?si=oaalePn9BNhf1xFa",
+      spotify: "https://open.spotify.com/track/6xNrkmefXamZeNuruDCQn3",
+    }
+  ),
 ];
 
 /** Gets the [SongOfTheWeek] with the most recent [startDate] */

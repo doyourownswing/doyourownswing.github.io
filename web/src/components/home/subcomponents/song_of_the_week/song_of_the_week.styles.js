@@ -7,23 +7,36 @@ const songOfTheWeekStyles = {
     padding: SECTION_PADDING,
   },
   songOfTheWeekFlexContainer: {
-    xs: "column",
-    md: "row",
+    direction: {
+      xs: "column",
+      md: "row",
+    },
+    style: {
+      paddingBottom: "32px",
+      gap: {
+        xs: "24px",
+        md: "0px",
+      },
+    },
   },
   title: {
     paddingBottom: "8px",
     // TODO: update the titles to be bold as per Vedant's suggestion
   },
-  quoteContainer: {
+  leftContainer: {
     maxWidth: "400px",
     minWidth: { sm: "280px" },
     flex: 1,
-    margin: "auto",
-    paddingBottom: "24px",
+    margin: { xs: "auto", md: "unset" },
+  },
+  quoteContainer: {
+    // move to its own file?
+    gap: "16px",
+    display: "flex",
+    flexDirection: "column",
   },
   quote: {
     color: theme.palette.text.secondaryBody,
-    paddingBottom: "16px",
   },
   songCardContainer: {
     flex: 2,
@@ -32,7 +45,7 @@ const songOfTheWeekStyles = {
   },
   songCard: {
     margin: "auto",
-    marginRight: { md: 0,  },
+    marginRight: { md: 0 },
   },
 };
 

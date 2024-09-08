@@ -1,10 +1,43 @@
-import { Box, Card, Container, Stack, Typography } from "@mui/material";
+import { Box, Container, Link, Stack, Typography } from "@mui/material";
 import songOfTheWeekStyles from "./song_of_the_week.styles";
 import SongCard from "./song_card";
 import getCurrentSong from "data/songs_of_the_week";
 import messages from "./messages";
-import QuoteAttribution from "./quote_attribution";
-import { SECTION_MAX_WIDTH } from "common/constants";
+import Quote from "./quote";
+import DyosLink from "components/common/link";
+
+const dyosPlaylistLink =
+  "https://open.spotify.com/playlist/4pI5RuxmGMy0uyANUqGAyE?si=411919e6ece04cc7";
+
+function PlaylistCallout() {
+  return (
+    <Box sx={songOfTheWeekStyles.quote}>
+      <Typography display="inline" variant="body1">
+        {messages.noQuoteText.wannaKnow}
+      </Typography>
+      <Typography display="inline" variant="body1">
+        <DyosLink href={dyosPlaylistLink} openInNewTab>
+          {messages.noQuoteText.checkOut}
+        </DyosLink>
+      </Typography>
+    </Box>
+  );
+}
+
+function AbbreviatedPlaylistCallout() {
+  return (
+    <Box>
+      <Typography display="inline" variant="subtitle2">
+        {messages.abbreviatedPlaylistCallout.wannaKnow}
+      </Typography>
+      <Typography display="inline" variant="subtitle2">
+        <DyosLink href={dyosPlaylistLink} openInNewTab>
+          {messages.abbreviatedPlaylistCallout.checkOut}
+        </DyosLink>
+      </Typography>
+    </Box>
+  );
+}
 
 function SongOfTheWeek() {
   let songInfo = getCurrentSong();
@@ -14,20 +47,21 @@ function SongOfTheWeek() {
     return;
   }
 
+  let hasQuote = !!songInfo.quoteInfo;
+
   return (
     <Box sx={songOfTheWeekStyles.songOfTheWeekSection}>
       <Container>
-        <Stack direction={songOfTheWeekStyles.songOfTheWeekFlexContainer}>
-          <Box sx={songOfTheWeekStyles.quoteContainer}>
-            <Typography variant="h4" sx={songOfTheWeekStyles.title}>
-              {messages.title}
-            </Typography>
-            <Typography variant="body1" sx={songOfTheWeekStyles.quote}>
-              "{songInfo.quoteInfo.quote}"
-            </Typography>
-            <QuoteAttribution
-              attributionInfo={songInfo.quoteInfo.attributionInfo}
-            ></QuoteAttribution>
+        <Typography variant="h4" sx={songOfTheWeekStyles.title}>
+          {messages.title}
+        </Typography>
+        <Stack
+          direction={songOfTheWeekStyles.songOfTheWeekFlexContainer.direction}
+          sx={songOfTheWeekStyles.songOfTheWeekFlexContainer.style}
+        >
+          <Box sx={songOfTheWeekStyles.leftContainer}>
+            {hasQuote && <Quote songInfo={songInfo}></Quote>}
+            {!hasQuote && <PlaylistCallout />}
           </Box>
           <Container sx={songOfTheWeekStyles.songCardContainer}>
             <Box sx={songOfTheWeekStyles.songCard}>
@@ -35,6 +69,8 @@ function SongOfTheWeek() {
             </Box>
           </Container>
         </Stack>
+
+        {hasQuote && <AbbreviatedPlaylistCallout />}
       </Container>
     </Box>
   );
