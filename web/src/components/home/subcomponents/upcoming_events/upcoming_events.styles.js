@@ -2,6 +2,9 @@ import theme from "common/theme";
 import { SECTION_PADDING } from "common/constants";
 
 const upcomingEventsStyles = {
+  title: {
+    paddingBottom: "8px",
+  },
   twoEventRenderer: {
     paddingTop: "24px",
     justifyContent: "space-between",

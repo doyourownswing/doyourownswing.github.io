@@ -99,15 +99,19 @@ function UpcomingEvents() {
   return (
     <Box sx={upcomingEventsStyles.upcomingEventsContainer}>
       <Container>
-        <Typography variant="h4">{messages.upcomingEventsTitle}</Typography>
+        <Typography variant="h4" sx={upcomingEventsStyles.title}>
+          {messages.upcomingEventsTitle}
+        </Typography>
         {FeatureFlags.showScheduleTab && (
           <Typography>{messages.upcomingEventsDescription}</Typography>
         )}
-        {events.length === 0 && <NoUpcomingEvents />}
-        {events.length > 0 && [
-          <TwoEventRenderer events={events} />,
-          <CarouselEventRenderer events={events} />,
-        ]}
+        <Container>
+          {events.length === 0 && <NoUpcomingEvents />}
+          {events.length > 0 && [
+            <TwoEventRenderer events={events} />,
+            <CarouselEventRenderer events={events} />,
+          ]}
+        </Container>
       </Container>
     </Box>
   );

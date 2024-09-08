@@ -1,6 +1,6 @@
 export const SECTION_PADDING = {
-  xs: "24px 0px",
-  md: "48px 0px",
+  xs: "48px 0px",
+  md: "80px 0px",
 };
 
 export const SUB_SECTION_PADDING = {
@@ -14,3 +14,5 @@ export const SUB_SECTION_WRAPPER_PADDING = {
 };
 
 export const FOOTER_PADDING = "24px 0px";
+
+export const BOX_SHADOW = "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;";
