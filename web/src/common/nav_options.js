@@ -24,8 +24,8 @@ const ContactNav = new NavOption("Contact", "#/contact");
 
 const BrowseOptions = cleanUpOptionsList([
   FeatureFlags.showMenuOptions && HomeNav,
-  FeatureFlags.showAboutTab && ScheduleNav,
-  FeatureFlags.showScheduleTab && AboutNav,
+  FeatureFlags.showScheduleTab && ScheduleNav,
+  FeatureFlags.showAboutTab && AboutNav,
 ]);
 
 const PolicyOptions = cleanUpOptionsList([
