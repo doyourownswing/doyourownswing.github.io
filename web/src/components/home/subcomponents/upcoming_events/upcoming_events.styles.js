@@ -29,7 +29,7 @@ const upcomingEventsStyles = {
     backgroundColor: "transparent",
   },
   upcomingEventsContainer: {
-    backgroundColor: theme.palette.background.lightGray,
+    backgroundImage: theme.palette.background.upcomingEvents,
     padding: SECTION_PADDING,
   },
   noUpcomingEventsContainer: {
