@@ -11,10 +11,18 @@ const dyosEventCardStyle = {
   left: {
     width: "48%",
     color: theme.palette.text.subtitle,
+    fontSize: {
+      xs: "14px",
+      sm: "16px",
+    },
   },
   right: {
     width: "48%",
     fontWeight: 600,
+    fontSize: {
+      xs: "14px",
+      sm: "16px",
+    },
   },
 };
 

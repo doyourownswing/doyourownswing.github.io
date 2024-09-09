@@ -11,8 +11,9 @@ const whoWeAreStyles = {
     ...theme.typography.title,
     color: theme.palette.text.titleLight,
   },
-  subtitle: {
-    color: theme.palette.text.subtitleLight,
+  description: {
+    color: theme.palette.text.bodyLight,
+    fontSize: "18px",
   },
   valuesSection: {
     paddingTop: "64px",

@@ -37,6 +37,9 @@ const songOfTheWeekStyles = {
     margin: "auto",
     marginRight: { md: 0 },
   },
+  quotePlaceholder: {
+    fontSize: "18px",
+  },
 };
 
 export default songOfTheWeekStyles;

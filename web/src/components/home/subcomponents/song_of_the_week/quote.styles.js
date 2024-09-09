@@ -7,6 +7,7 @@ const quoteStyles = {
     flexDirection: "column",
   },
   quote: {
+    fontSize: "18px",
     color: theme.palette.text.secondaryBody2,
   },
 };
