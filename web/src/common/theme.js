@@ -5,7 +5,9 @@ const basePalette = {
   darkPurple: "#260b34",
   purple: "#502268",
   mediumPurple: "#955ab5",
-  lightPurple: "#bf9ad3",
+  lightPurple1: "#bf9ad3",
+  lightPurple2: "#d4bce2",
+  lightPurple3: "#eaddf0",
   lightGray: "#ebebeb",
   white: "white",
 };
@@ -21,14 +23,13 @@ const theme = responsiveFontSizes(
       background: {
         light: basePalette.white,
         lightGray: basePalette.lightGray,
-        lightPurple: basePalette.lightPurple,
+        lightPurple: basePalette.lightPurple1,
         darkPurple: basePalette.darkPurple,
         songOfTheWeek: "linear-gradient(to bottom, #e9e0fb 0%, #ffe2f7 100%);",
         upcomingEvents: "linear-gradient(to bottom, #ffe2f7 0%, #e9e0fb 100%);",
       },
       text: {
         titleLight: basePalette.white,
-        subtitleLight: "#bbbbbb",
         title: basePalette.mediumPurple,
         subtitle: "#808080",
         // For less essential body text that we don't want to stand out as much.
@@ -36,12 +37,13 @@ const theme = responsiveFontSizes(
         // Same but slightly darker
         // TODO: update default quote with this in song of the week too once merging is done
         secondaryBody2: "#3f3f3f",
+        bodyLight: basePalette.lightPurple3,
         textButton: basePalette.mediumPurple,
         activeSelection: basePalette.mediumPurple,
         textLight: basePalette.white,
         linkLight: "#bbbbbb",
         linkLightHover: basePalette.white,
-        lightPurple: basePalette.lightPurple,
+        lightPurple: basePalette.lightPurple1,
         headerPurple: basePalette.purple,
         link: "#0F65D7",
         linkActive: "#174ea6",
@@ -53,7 +55,7 @@ const theme = responsiveFontSizes(
       },
       icon: {
         avatar: basePalette.purple,
-        lightPurple: basePalette.lightPurple,
+        lightPurple: basePalette.lightPurple1,
       },
     },
     typography: {
