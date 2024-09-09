@@ -73,7 +73,7 @@ function WhoWeAre() {
         <Typography variant="h3" sx={whoWeAreStyles.title}>
           {messages.title}
         </Typography>
-        <Typography variant="body" sx={whoWeAreStyles.subtitle}>
+        <Typography variant="body" sx={whoWeAreStyles.description}>
           {messages.description}
         </Typography>
         <Box sx={whoWeAreStyles.valuesSection}>

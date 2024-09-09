@@ -4,7 +4,10 @@ import { BOX_SHADOW } from "common/constants";
 const eventCardStyles = {
   card: {
     padding: "24px",
-    minWidth: "320px",
+    minWidth: {
+      xs: "240px",
+      sm: "320px",
+    },
     borderRadius: "16px",
     backgroundColor: theme.palette.background.light,
     boxShadow: BOX_SHADOW,
@@ -16,9 +19,14 @@ const eventCardStyles = {
   },
   details: {
     display: "flex",
-    fontSize: "16px",
-    color: theme.palette.text.subtitle,
     marginTop: "8px",
+  },
+  detailsText: {
+    color: theme.palette.text.subtitle,
+    fontSize: {
+      xs: "14px",
+      sm: "16px",
+    },
   },
   icon: {
     color: "#320067",

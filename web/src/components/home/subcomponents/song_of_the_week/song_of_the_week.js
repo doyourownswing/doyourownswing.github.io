@@ -11,11 +11,19 @@ const dyosPlaylistLink =
 
 function PlaylistCallout() {
   return (
-    <Box sx={songOfTheWeekStyles.quote}>
-      <Typography display="inline" variant="body1">
+    <Box>
+      <Typography
+        display="inline"
+        variant="body1"
+        sx={songOfTheWeekStyles.quotePlaceholder}
+      >
         {messages.noQuoteText.wannaKnow}
       </Typography>
-      <Typography display="inline" variant="body1">
+      <Typography
+        display="inline"
+        variant="body1"
+        sx={songOfTheWeekStyles.quotePlaceholder}
+      >
         <DyosLink href={dyosPlaylistLink} openInNewTab>
           {messages.noQuoteText.checkOut}
         </DyosLink>
@@ -27,10 +35,10 @@ function PlaylistCallout() {
 function AbbreviatedPlaylistCallout() {
   return (
     <Box>
-      <Typography display="inline" variant="subtitle2">
+      <Typography display="inline" variant="body1">
         {messages.abbreviatedPlaylistCallout.wannaKnow}
       </Typography>
-      <Typography display="inline" variant="subtitle2">
+      <Typography display="inline" variant="body1">
         <DyosLink href={dyosPlaylistLink} openInNewTab>
           {messages.abbreviatedPlaylistCallout.checkOut}
         </DyosLink>
