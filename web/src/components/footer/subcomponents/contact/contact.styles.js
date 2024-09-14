@@ -8,6 +8,7 @@ const contactStyles = {
   row: {
     display: "flex",
     marginTop: "8px",
+    width: "fit-content",
 
     color: theme.palette.text.linkLight,
     "&:hover": {
