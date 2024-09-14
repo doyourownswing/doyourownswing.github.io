@@ -32,9 +32,19 @@ const navBarStyles = {
     textDecoration: "none",
   },
   logoImage: {
-    maxHeight: "32px",
-    maxWidth: "32px",
-    marginRight: "8px",
+    maxHeight: "40px",
+    maxWidth: "40px",
+    marginRight: "12px",
+  },
+  logoBrandName: {
+    color: theme.palette.text.title,
+    lineHeight: "1.2",
+  },
+  logoBrandQuip: {
+    lineHeight: "1",
+    color: theme.palette.text.secondaryBody,
+    fontSize: "14px",
+    fontWeight: "600",
   },
   logoContainerLink: {
     display: "inline-flex",
