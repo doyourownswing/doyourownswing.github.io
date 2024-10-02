@@ -3,7 +3,8 @@ import { createTheme, responsiveFontSizes } from "@mui/material/styles";
 // https://coolors.co/260b34-502268-955ab5-bf9ad3-ebebeb
 const basePalette = {
   darkPurple: "#260b34",
-  purple: "#502268",
+  purple1: "#502268",
+  purple2: "#733E8F",
   mediumPurple: "#955ab5",
   lightPurple1: "#bf9ad3",
   lightPurple2: "#d4bce2",
@@ -44,17 +45,18 @@ const theme = responsiveFontSizes(
         linkLight: "#bbbbbb",
         linkLightHover: basePalette.white,
         lightPurple: basePalette.lightPurple1,
-        headerPurple: basePalette.purple,
+        headerPurple: basePalette.purple1,
         link: "#0F65D7",
         linkActive: "#174ea6",
-        linkVisited: "#733E8F", // a midpoint between medium purple and purple
+        linkVisited: basePalette.purple2,
       },
       button: {
         lightGray: "#dddddd",
-        purpleFilled: basePalette.purple,
+        purpleFilled: basePalette.purple1,
       },
       icon: {
-        avatar: basePalette.purple,
+        avatar: basePalette.purple1,
+        default: basePalette.mediumPurple,
         lightPurple: basePalette.lightPurple1,
       },
     },

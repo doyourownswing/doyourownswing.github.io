@@ -13,14 +13,15 @@ import getNextEvents from "data/events";
 import messages from "./messages";
 import upcomingEventsStyles from "./upcoming_events.styles";
 import DYOSEventCard from "./event_cards/dyos_event_card";
+import EventRendererFactory from "./event_renderer";
 
 function TwoEventRenderer(props) {
   let events = props.events;
 
   return (
     <Box sx={upcomingEventsStyles.twoEventRenderer}>
-      <DYOSEventCard event={events[0]} />
-      {events.length > 1 && <DYOSEventCard event={events[1]} />}
+      <EventRendererFactory event={events[0]} />
+      {events.length > 1 && <EventRendererFactory event={events[1]} />}
     </Box>
   );
 }
@@ -38,7 +39,7 @@ function CarouselEventRenderer(props) {
   return (
     <Box sx={upcomingEventsStyles.carouselEventRenderer}>
       <Box>
-        <DYOSEventCard event={events[currentEventIndex]} />
+        <EventRendererFactory event={events[currentEventIndex]} />
         {maxSteps > 1 && (
           <MobileStepper
             sx={upcomingEventsStyles.carouselStepper}
