@@ -14,12 +14,13 @@ const eventCardStyles = {
   },
   title: {
     fontSize: 20,
-    color: theme.palette.text.primary,
     fontWeight: 600,
+    fontFamily: theme.typography.title.fontFamily,
   },
   details: {
     display: "flex",
     marginTop: "8px",
+    alignItems: "center",
   },
   detailsText: {
     color: theme.palette.text.subtitle,
@@ -29,8 +30,9 @@ const eventCardStyles = {
     },
   },
   icon: {
-    color: "#320067",
+    color: theme.palette.icon.default,
     marginRight: "8px",
+    fontSize: "1.25rem",
   },
   divider: {
     margin: "24px 0 24px 0",

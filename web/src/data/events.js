@@ -8,6 +8,7 @@
  */
 import messages from "../common/messages";
 import { createDate } from "utils/date_utils";
+import EventTypes from "common/event_types";
 
 const DEFAULT_LOCATION = "Studio M Ballroom, San Jose, CA";
 const DEFAULT_PRICE = "$10 - 40";
@@ -15,10 +16,8 @@ const MINI_DYOS_PRICE = "$10-$20";
 
 const dayjs = require("dayjs");
 
-const EventTypes = Object.freeze({
-  DYOS: Symbol("DYOS"),
-});
-
+// TODO(jesseezhang): the param list scales poorly with events with different types of information.
+// Refactor this to be more scalable.
 class Event {
   constructor(
     type,
@@ -145,7 +144,6 @@ const events = [
     ],
     DEFAULT_LOCATION,
     DEFAULT_PRICE
-    // TODO: add details
   ),
   new Event(
     EventTypes.DYOS,
@@ -154,7 +152,6 @@ const events = [
     defaultDyosSchedule,
     DEFAULT_LOCATION,
     DEFAULT_PRICE
-    // TODO: add details
   ),
   new Event(
     EventTypes.DYOS,
@@ -174,7 +171,6 @@ const events = [
     updatedDyosClassNameSchedule,
     DEFAULT_LOCATION,
     DEFAULT_PRICE
-    // todo: add details
   ),
   new Event(
     EventTypes.DYOS,
@@ -186,7 +182,6 @@ const events = [
     ],
     DEFAULT_LOCATION,
     DEFAULT_PRICE
-    // TODO: add details
   ),
   new Event(
     EventTypes.DYOS,
@@ -195,7 +190,6 @@ const events = [
     updatedDyosClassNameSchedule,
     DEFAULT_LOCATION,
     DEFAULT_PRICE
-    // todo: add details
   ),
   new Event(
     EventTypes.DYOS,
@@ -204,7 +198,6 @@ const events = [
     updatedDyosClassNameSchedule,
     DEFAULT_LOCATION,
     DEFAULT_PRICE
-    // todo: add details
   ),
   new Event(
     EventTypes.DYOS,
@@ -213,7 +206,6 @@ const events = [
     updatedDyosClassNameSchedule,
     DEFAULT_LOCATION,
     DEFAULT_PRICE
-    // todo: add details
   ),
   new Event(
     EventTypes.DYOS,
@@ -222,7 +214,6 @@ const events = [
     miniDyosSchedule,
     DEFAULT_LOCATION,
     MINI_DYOS_PRICE
-    // todo: add details
   ),
   new Event(
     EventTypes.DYOS,
@@ -231,7 +222,6 @@ const events = [
     updatedDyosClassNameSchedule,
     DEFAULT_LOCATION,
     DEFAULT_PRICE
-    // todo: add details
   ),
   new Event(
     EventTypes.DYOS,
@@ -240,7 +230,6 @@ const events = [
     updatedDyosClassNameSchedule,
     DEFAULT_LOCATION,
     DEFAULT_PRICE
-    // todo: add details
   ),
   new Event(
     EventTypes.DYOS,
@@ -249,7 +238,6 @@ const events = [
     updatedDyosClassNameSchedule,
     DEFAULT_LOCATION,
     DEFAULT_PRICE
-    // todo: add details
   ),
   new Event(
     EventTypes.DYOS,
@@ -258,11 +246,10 @@ const events = [
     updatedDyosClassNameSchedule,
     DEFAULT_LOCATION,
     DEFAULT_PRICE
-    // todo: add details
   ),
   new Event(
     EventTypes.DYOS,
-    messages.doYourOwnSwing,
+    "DYOS - styling",
     createDate("10/03/2024"),
     updatedDyosClassNameSchedule,
     DEFAULT_LOCATION,
@@ -270,17 +257,15 @@ const events = [
     // todo: add details
   ),
   new Event(
-    EventTypes.DYOS,
-    messages.doYourOwnSwing,
+    EventTypes.Boogie,
+    "Boogie by the Bay",
     createDate("10/10/2024"),
-    updatedDyosClassNameSchedule,
-    DEFAULT_LOCATION,
-    DEFAULT_PRICE
-    // todo: add details
+    /* eventSchedule = */ null,
+    "Hyatt Regency Airport Hotel, Burlingame, CA"
   ),
   new Event(
     EventTypes.DYOS,
-    messages.doYourOwnSwing,
+    "DYOS - styling",
     createDate("10/17/2024"),
     updatedDyosClassNameSchedule,
     DEFAULT_LOCATION,
@@ -289,7 +274,7 @@ const events = [
   ),
   new Event(
     EventTypes.DYOS,
-    messages.doYourOwnSwing,
+    "DYOS - Common Dips & How to Not",
     createDate("10/24/2024"),
     updatedDyosClassNameSchedule,
     DEFAULT_LOCATION,
@@ -298,13 +283,41 @@ const events = [
   ),
   new Event(
     EventTypes.DYOS,
-    messages.doYourOwnSwing,
+    "DYOS Halloween Party!!!",
     createDate("10/31/2024"),
     updatedDyosClassNameSchedule,
     DEFAULT_LOCATION,
     DEFAULT_PRICE
     // todo: add details
   ),
+  new Event(
+    EventTypes.DYOS,
+    "DYOS feat. Natasha & Joel!",
+    createDate("11/07/2024"),
+    updatedDyosClassNameSchedule,
+    DEFAULT_LOCATION,
+    DEFAULT_PRICE
+    // todo: add details
+  ),
+  new Event(
+    EventTypes.DYOS,
+    "DYOS feat. Natasha & Joel!",
+    createDate("11/14/2024"),
+    updatedDyosClassNameSchedule,
+    DEFAULT_LOCATION,
+    DEFAULT_PRICE
+    // todo: add details
+  ),
+  new Event(
+    EventTypes.DYOS,
+    "DYOS Holiday Party !!! + Farewell, 2024",
+    createDate("11/21/2024"),
+    updatedDyosClassNameSchedule,
+    DEFAULT_LOCATION,
+    DEFAULT_PRICE
+    // todo: add details
+  ),
+  // TODO: somehow note that there will be no class until January.
 ];
 
 function getNextEvents(numEvents) {
