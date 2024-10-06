@@ -138,6 +138,51 @@ const songs = [
     createDate("10/05/2024"),
     null,
     {
+      name: "o shit!",
+      artist: "lentra",
+      year: "2021",
+    },
+    {
+      albumCoverImage:
+        "https://i.scdn.co/image/ab67616d0000b27382fd53b257cb44f125f3a2a9",
+      youtube: "https://youtu.be/tPp4r8lDFIY",
+      spotify: "https://open.spotify.com/track/0RQpg3Q0QOxp6gqDpE8uWH",
+    }
+  ),
+  new SongOfTheWeek(
+    createDate("10/13/2024"),
+    null,
+    {
+      name: "What You Wanna Try",
+      artist: "Masego",
+      year: "2023",
+    },
+    {
+      albumCoverImage:
+        "https://i.scdn.co/image/ab67616d00001e02799cf48c9e6300054dac9467",
+      youtube: "https://youtu.be/SkeumKdBQDk",
+      spotify: "https://open.spotify.com/track/526fD9LiAEi3KKvhhYfWmm",
+    }
+  ),
+  new SongOfTheWeek(
+    createDate("10/20/2024"),
+    null,
+    {
+      name: "Empty Note",
+      artist: "Ghostly Kisses",
+      year: "2017",
+    },
+    {
+      albumCoverImage:
+        "https://i.scdn.co/image/ab67616d00001e02936214975cb244a6c7ecce3c",
+      youtube: "https://youtu.be/AZCzfLMHUQs",
+      spotify: "https://open.spotify.com/track/27FYQZ12stiJGFLVD5U4j6",
+    }
+  ),
+  new SongOfTheWeek(
+    createDate("10/27/2024"),
+    null,
+    {
       name: "Spooky",
       artist: "Dusty Springfield",
       year: "2018",
@@ -145,12 +190,12 @@ const songs = [
     {
       albumCoverImage:
         "https://i.scdn.co/image/ab67616d0000b2731482b9376e50c5f8f6f65112",
-      youtube: "https://youtu.be/5QT1HjKXvT4?si=A7NIl2abpD2ygbuP",
+      youtube: "https://youtu.be/5QT1HjKXvT4",
       spotify: "https://open.spotify.com/track/1683Q5FUEQ4fIG2f87MAW4",
     }
   ),
   new SongOfTheWeek(
-    createDate("10/13/2024"),
+    createDate("11/03/2024"),
     null,
     {
       name: "I'll Come Running Back To You",
@@ -160,7 +205,7 @@ const songs = [
     {
       albumCoverImage:
         "https://i.scdn.co/image/ab67616d0000b273ecfe3a20789aa24e8ab54bad",
-      youtube: "https://youtu.be/yAvJ6cxMrg0?si=oaalePn9BNhf1xFa",
+      youtube: "https://youtu.be/yAvJ6cxMrg0",
       spotify: "https://open.spotify.com/track/6xNrkmefXamZeNuruDCQn3",
     }
   ),
