@@ -209,6 +209,187 @@ const songs = [
       spotify: "https://open.spotify.com/track/6xNrkmefXamZeNuruDCQn3",
     }
   ),
+  new SongOfTheWeek(
+    createDate("11/16/2024"),
+    null,
+    {
+      name: "Be Like That - feat. Swae Lee & Khalid",
+      artist: "Kane Brown",
+      year: "2020",
+    },
+    {
+      albumCoverImage:
+        "https://i.scdn.co/image/ab67616d0000b273b670be86ddfa9d49caa56971",
+      youtube: "https://youtu.be/GEAy7eXb2lo",
+      spotify: "https://open.spotify.com/track/5f1joOtoMeyppIcJGZQvqJ",
+    }
+  ),
+  new SongOfTheWeek(
+    createDate("11/23/2024"),
+    null,
+    {
+      name: "Quantum Physics",
+      artist: "Ruby Waters",
+      year: "2020",
+    },
+    {
+      albumCoverImage:
+        "https://i.scdn.co/image/ab67616d00001e0283d9f42d869f4c3914094571",
+      youtube: "https://youtu.be/p4m3hyr5gus",
+      spotify: "https://open.spotify.com/track/5ZEq9YuBdFgwAnYmjafWu3",
+    }
+  ),
+  new SongOfTheWeek(
+    createDate("11/30/2024"),
+    null,
+    {
+      name: "Feel Good",
+      artist: "Charlotte Cardin",
+      year: "2023",
+    },
+    {
+      albumCoverImage:
+        "https://i.scdn.co/image/ab67616d00001e02422d93f6da874ae67ab4aa61",
+      youtube: "https://youtu.be/_eUYB7M4EDE",
+      spotify: "https://open.spotify.com/track/6PcVlezWXunO2Bh78iEq0W",
+    }
+  ),
+  new SongOfTheWeek(
+    createDate("12/7/2024"),
+    null,
+    {
+      name: "Memory",
+      artist: "Kane Brown",
+      year: "2021",
+    },
+    {
+      albumCoverImage:
+        "https://i.scdn.co/image/ab67616d00001e022a0806c429ec46624d028435",
+      youtube: "https://youtu.be/fPziOGGqEpw",
+      spotify: "https://open.spotify.com/track/34chhNX59Wo9HMFCsI3K8Y",
+    }
+  ),
+  new SongOfTheWeek(
+    createDate("12/14/2024"),
+    null,
+    {
+      name: "Skyline",
+      artist: "Khalid",
+      year: "2022",
+    },
+    {
+      albumCoverImage:
+        "https://i.scdn.co/image/ab67616d0000b273b25a6f8bac702391f3e59129",
+      youtube: "https://youtu.be/Z-0tTi7GaPg",
+      spotify: "https://open.spotify.com/track/1QxIFMs4M8qd5cbJJu80v4",
+    }
+  ),
+  new SongOfTheWeek(
+    createDate("12/21/2024"),
+    null,
+    {
+      name: "Take You Dancing",
+      artist: "Jason Derulo",
+      year: "2020",
+    },
+    {
+      albumCoverImage:
+        "https://i.scdn.co/image/ab67616d0000b273d9ddaea6ccea73f812f8afbc",
+      youtube: "https://youtu.be/s0-f5RncxcA",
+      spotify: "https://open.spotify.com/track/59qrUpoplZxbIZxk6X0Bm3",
+    }
+  ),
+  new SongOfTheWeek(
+    createDate("12/28/2024"),
+    null,
+    {
+      name: "Raindrops",
+      artist: "Katja Krasavice",
+      year: "2021",
+    },
+    {
+      albumCoverImage:
+        "https://i.scdn.co/image/ab67616d00001e0296addfaa8bbd3c386ebffad9",
+      youtube: "https://youtu.be/n67XgKzDYpY",
+      spotify: "https://open.spotify.com/track/3sZOiHgkXpDcilUBtHSixK",
+    }
+  ),
+  new SongOfTheWeek(
+    createDate("01/04/2025"),
+    null,
+    {
+      name: "Something Blue",
+      artist: "VOILÀ",
+      year: "2024",
+    },
+    {
+      albumCoverImage:
+        "https://i.scdn.co/image/ab67616d00001e02dca6f7951ff1beee9a8af7f1",
+      youtube: "https://youtu.be/pEFbuV90bUw",
+      spotify: "https://open.spotify.com/track/1XQecFY99zarSryU7dS1RN",
+    }
+  ),
+  new SongOfTheWeek(
+    createDate("01/11/2025"),
+    null,
+    {
+      name: "After Midnight",
+      artist: "Chappell Roan",
+      year: "2023",
+    },
+    {
+      albumCoverImage:
+        "https://i.scdn.co/image/ab67616d00001e0296fa88fb1789be437d5cb4b6",
+      youtube: "https://youtu.be/-KE8NmtTlPk",
+      spotify: "https://open.spotify.com/track/4rlQza35DE4Prh5yonxnCs",
+    }
+  ),
+  new SongOfTheWeek(
+    createDate("01/18/2025"),
+    null,
+    {
+      name: "Be There Soon",
+      artist: "Elderbrook",
+      year: "2015",
+    },
+    {
+      albumCoverImage:
+        "https://i.scdn.co/image/ab67616d00001e02ed44590584beb5f595c15b95",
+      youtube: "https://youtu.be/ymDl74eFb_U",
+      spotify: "https://open.spotify.com/track/7fbB70umrxlRbbh0mYCAHG",
+    }
+  ),
+  new SongOfTheWeek(
+    createDate("01/25/2025"),
+    null,
+    {
+      name: "Attitude",
+      artist: "Aaron Carpenter",
+      year: "2019",
+    },
+    {
+      albumCoverImage:
+        "https://i.scdn.co/image/ab67616d00001e02557162135c6ea6eb9e0914b6",
+      youtube: "https://youtu.be/ZVrvfezMf5c",
+      spotify: "https://open.spotify.com/track/1ia7yo4yHzBkoU6Xn214QG",
+    }
+  ),
+
+  new SongOfTheWeek(
+    createDate("02/01/2025"),
+    null,
+    {
+      name: "Twenty One",
+      artist: "Greyson Chance",
+      year: "2018",
+    },
+    {
+      albumCoverImage:
+        "https://i.scdn.co/image/ab67616d00001e02a09af84fd61b57fdb3a2e3fc",
+      youtube: "https://youtu.be/AhuVnrJqVHs",
+      spotify: "https://open.spotify.com/track/4i9gqxFLh72VHOWLfEMmJJ",
+    }
+  ),
 ];
 
 /** Gets the [SongOfTheWeek] with the most recent [startDate] */
