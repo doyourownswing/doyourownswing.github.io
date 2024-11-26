@@ -12,7 +12,7 @@ import EventTypes from "common/event_types";
 
 const DEFAULT_LOCATION = "Studio M Ballroom, San Jose, CA";
 const DEFAULT_PRICE = "$10 - 40";
-const MINI_DYOS_PRICE = "$10-$20";
+const MINI_DYOS_PRICE = "$10 - 20";
 
 const dayjs = require("dayjs");
 
@@ -270,7 +270,6 @@ const events = [
     updatedDyosClassNameSchedule,
     DEFAULT_LOCATION,
     DEFAULT_PRICE
-    // todo: add details
   ),
   new Event(
     EventTypes.DYOS,
@@ -279,7 +278,6 @@ const events = [
     updatedDyosClassNameSchedule,
     DEFAULT_LOCATION,
     DEFAULT_PRICE
-    // todo: add details
   ),
   new Event(
     EventTypes.DYOS,
@@ -288,7 +286,6 @@ const events = [
     updatedDyosClassNameSchedule,
     DEFAULT_LOCATION,
     DEFAULT_PRICE
-    // todo: add details
   ),
   new Event(
     EventTypes.DYOS,
@@ -297,7 +294,6 @@ const events = [
     updatedDyosClassNameSchedule,
     DEFAULT_LOCATION,
     DEFAULT_PRICE
-    // todo: add details
   ),
   new Event(
     EventTypes.DYOS,
@@ -306,7 +302,6 @@ const events = [
     updatedDyosClassNameSchedule,
     DEFAULT_LOCATION,
     DEFAULT_PRICE
-    // todo: add details
   ),
   new Event(
     EventTypes.DYOS,
@@ -315,7 +310,30 @@ const events = [
     updatedDyosClassNameSchedule,
     DEFAULT_LOCATION,
     DEFAULT_PRICE
-    // todo: add details
+  ),
+  new Event(
+    EventTypes.DYOS,
+    "DELETE ME PLZ",
+    createDate("11/24/2024"),
+    updatedDyosClassNameSchedule,
+    DEFAULT_LOCATION,
+    DEFAULT_PRICE
+  ),
+  new Event(
+    EventTypes.TeacherTraining,
+    "Teacher Training Part 1",
+    createDate("12/05/2024"),
+    /* eventSchedule = */ null,
+    DEFAULT_LOCATION,
+    DEFAULT_PRICE
+  ),
+  new Event(
+    EventTypes.TeacherTraining,
+    "Teacher Training Part 2",
+    createDate("12/12/2024"),
+    /* eventSchedule = */ null,
+    DEFAULT_LOCATION,
+    DEFAULT_PRICE
   ),
   // TODO: somehow note that there will be no class until January.
 ];
