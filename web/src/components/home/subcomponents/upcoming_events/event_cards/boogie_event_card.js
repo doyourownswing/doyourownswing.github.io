@@ -1,4 +1,4 @@
-import { Typography, Box } from "@mui/material";
+import { Typography } from "@mui/material";
 import EventCard from "./event_card";
 import DyosLink from "components/common/link";
 
