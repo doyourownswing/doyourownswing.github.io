@@ -327,7 +327,30 @@ const events = [
     DEFAULT_LOCATION,
     DEFAULT_PRICE
   ),
-  // TODO: somehow note that there will be no class until January.
+  new Event(
+    EventTypes.DYOS,
+    "First Class of 2025!",
+    createDate("01/09/2029"),
+    updatedDyosClassNameSchedule,
+    DEFAULT_LOCATION,
+    DEFAULT_PRICE
+  ),
+  new Event(
+    EventTypes.DYOS,
+    messages.doYourOwnSwing,
+    createDate("01/16/2029"),
+    updatedDyosClassNameSchedule,
+    DEFAULT_LOCATION,
+    DEFAULT_PRICE
+  ),
+  new Event(
+    EventTypes.DYOS,
+    messages.doYourOwnSwing,
+    createDate("01/25/2029"),
+    updatedDyosClassNameSchedule,
+    DEFAULT_LOCATION,
+    DEFAULT_PRICE
+  ),
 ];
 
 function getNextEvents(numEvents) {
