@@ -317,7 +317,10 @@ const events = [
     createDate("12/05/2024"),
     /* eventSchedule = */ null,
     DEFAULT_LOCATION,
-    DEFAULT_PRICE
+    DEFAULT_PRICE,
+    {
+      facebookLink: "https://www.facebook.com/events/544603031710636",
+    }
   ),
   new Event(
     EventTypes.TeacherTraining,
@@ -325,7 +328,10 @@ const events = [
     createDate("12/12/2024"),
     /* eventSchedule = */ null,
     DEFAULT_LOCATION,
-    DEFAULT_PRICE
+    DEFAULT_PRICE,
+    {
+      facebookLink: "https://www.facebook.com/events/949202813796366",
+    }
   ),
   new Event(
     EventTypes.DYOS,
