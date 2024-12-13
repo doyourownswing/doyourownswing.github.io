@@ -129,7 +129,7 @@ function NavBar() {
   let announcement = getCurrentAnnouncement();
 
   return (
-    <AppBar position="static" id="NavBar" sx={navBarStyles.appBar}>
+    <AppBar position="fixed" id="NavBar" sx={navBarStyles.appBar}>
       {!!announcement && (
         <Announcement announcement={announcement}></Announcement>
       )}
