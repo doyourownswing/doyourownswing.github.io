@@ -14,8 +14,6 @@ const time = "7:30pm - 9:00pm";
 const TeacherTrainingEventCard = (props) => {
   let event = props.event;
 
-  console.log(event);
-
   return (
     <EventCard {...event}>
       <Box sx={dyosEventCardStyle.row}>

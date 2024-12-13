@@ -19,6 +19,8 @@ import messages from "./messages";
 import { NavOptions } from "common/nav_options";
 import navBarStyles from "./nav_bar.styles";
 import purpleLogo from "assets/svgs/purple-logo.svg";
+import Announcement from "./announcement";
+import { getCurrentAnnouncement } from "data/announcements";
 
 /** Nav bar options for large screens.
  *
@@ -124,8 +126,13 @@ function MenuIconOptions() {
 
 /** Navigation bar to be rendered at the top of the page containing tabs to other pages. */
 function NavBar() {
+  let announcement = getCurrentAnnouncement();
+
   return (
-    <AppBar position="static" id="NavBar" sx={navBarStyles.appBar}>
+    <AppBar position="fixed" id="NavBar" sx={navBarStyles.appBar}>
+      {!!announcement && (
+        <Announcement announcement={announcement}></Announcement>
+      )}
       <Container>
         <Toolbar disableGutters>
           <Box sx={navBarStyles.logoContainer}>

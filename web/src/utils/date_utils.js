@@ -13,7 +13,15 @@ function dateToHumanReadableString(date) {
 
 /** Util for creating a dayjs date from string formatted "MM/DD/YYYY". */
 function createDate(dateString) {
+  if (dateString.length !== 10) {
+    throw new Error("DATE STRING FORMAT INVALID: " + dateString);
+  }
+
   return dayjs(dateString, "MM/DD/YYYY");
 }
 
-export { dateToHumanReadableString, createDate };
+function getBeginningOfTodayDate() {
+  return dayjs(new Date().setHours(0, 0, 0, 0));
+}
+
+export { dateToHumanReadableString, createDate, getBeginningOfTodayDate };

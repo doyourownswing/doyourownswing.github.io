@@ -255,7 +255,7 @@ const songs = [
     }
   ),
   new SongOfTheWeek(
-    createDate("12/7/2024"),
+    createDate("12/07/2024"),
     null,
     {
       name: "Memory",

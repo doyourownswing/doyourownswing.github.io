@@ -7,7 +7,7 @@
  * etc.) And should be handled be the caller to be rendered properly.
  */
 import messages from "../common/messages";
-import { createDate } from "utils/date_utils";
+import { createDate, getBeginningOfTodayDate } from "utils/date_utils";
 import EventTypes from "common/event_types";
 
 const DEFAULT_LOCATION = "Studio M Ballroom, San Jose, CA";
@@ -360,7 +360,7 @@ const events = [
 ];
 
 function getNextEvents(numEvents) {
-  let beginningOfToday = dayjs(new Date().setHours(0, 0, 0, 0));
+  let beginningOfToday = getBeginningOfTodayDate();
 
   return events
     .filter((event) => event.date >= beginningOfToday)
