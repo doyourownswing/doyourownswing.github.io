@@ -22,6 +22,8 @@ const theme = responsiveFontSizes(
         main: basePalette.darkPurple,
       },
       background: {
+        // a richer more vibrant purple for attention catching
+        announcement: "#b400d9",
         light: basePalette.white,
         lightGray: basePalette.lightGray,
         lightPurple: basePalette.lightPurple1,
@@ -77,6 +79,10 @@ const theme = responsiveFontSizes(
       ].join(","),
       title: {
         paddingBottom: "16px",
+        fontWeight: "600",
+        fontFamily: "Poppins",
+      },
+      announcement: {
         fontWeight: "600",
         fontFamily: "Poppins",
       },
