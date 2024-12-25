@@ -336,7 +336,7 @@ const events = [
   new Event(
     EventTypes.DYOS,
     "First Class of 2025!",
-    createDate("01/09/2029"),
+    createDate("01/09/2025"),
     updatedDyosClassNameSchedule,
     DEFAULT_LOCATION,
     DEFAULT_PRICE
@@ -344,7 +344,7 @@ const events = [
   new Event(
     EventTypes.DYOS,
     messages.doYourOwnSwing,
-    createDate("01/16/2029"),
+    createDate("01/16/2025"),
     updatedDyosClassNameSchedule,
     DEFAULT_LOCATION,
     DEFAULT_PRICE
@@ -352,7 +352,7 @@ const events = [
   new Event(
     EventTypes.DYOS,
     messages.doYourOwnSwing,
-    createDate("01/25/2029"),
+    createDate("01/23/2025"),
     updatedDyosClassNameSchedule,
     DEFAULT_LOCATION,
     DEFAULT_PRICE

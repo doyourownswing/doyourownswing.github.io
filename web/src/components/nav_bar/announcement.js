@@ -1,5 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import announcementStyles from "./announcement.styles";
+import "./announcement.css";
 
 function Announcement(props) {
   let announcement = props.announcement;
@@ -22,7 +23,9 @@ function Announcement(props) {
 
   return (
     <Box sx={containerStyles}>
-      <Typography sx={announcementStyles.text}>{announcement.text}</Typography>
+      <Typography className={"fade-in"} sx={announcementStyles.text}>
+        {announcement.text}
+      </Typography>
     </Box>
   );
 }
