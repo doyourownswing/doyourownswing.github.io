@@ -18,6 +18,7 @@ const FeatureFlags = {
   showCodeOfConductTab: isDevel(),
   showContactTab: isDevel(),
   showStartHerePage: true,
+  useHeroV2: isDevel() || window.location.href.includes("hero2"),
 };
 
 export default FeatureFlags;

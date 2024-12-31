@@ -9,14 +9,7 @@ import {
 import messages from "../messages";
 import startHereStyles from "../start_here.styles";
 import FeatureFlags from "infra/feature_flags";
-
-function Text(props) {
-  return <Typography display="inline">{props.children}</Typography>;
-}
-
-function Space() {
-  return <Text>&nbsp;</Text>;
-}
+import { Text, Space } from "components/common/typography";
 
 function Review() {
   let showCodeOfConduct = FeatureFlags.showCodeOfConductTab;
