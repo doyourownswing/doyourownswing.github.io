@@ -13,10 +13,6 @@ import heroStyles from "./hero.styles";
 import "./hero.css";
 import theme from "common/theme";
 
-function Adjective(props) {
-  return <Typography sx={heroStyles.adjective}>{props.adjective}</Typography>;
-}
-
 function Hero(props) {
   const smallestScreenSize = useMediaQuery(theme.breakpoints.down("sm"));
   const adjectiveContainerClass = smallestScreenSize
@@ -55,14 +51,10 @@ function Hero(props) {
               {messages.callToAction}
             </Typography>
             {!smallestScreenSize && <Space sx={heroStyles.callToAction} />}
-            <Box
-              id={"adjective-container"}
-              className={adjectiveContainerClass}
-              sx={heroStyles.adjectivesContainer}
-            >
-              <Adjective
-                adjective={messages.adjectives[adjectiveIndex]}
-              ></Adjective>
+            <Box id={"adjective-container"} className={adjectiveContainerClass}>
+              <Typography sx={heroStyles.adjective}>
+                {messages.adjectives[adjectiveIndex]}
+              </Typography>
             </Box>
           </Box>
           <Box sx={heroStyles.descriptionContainer}>

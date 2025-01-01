@@ -37,7 +37,7 @@ const messages = {
   ],
   friendly: "A COVID-conscious, Queer-led, 2SLGBTQIA+ affirming space",
   whatWhenWhere:
-    "West coast swing classes on Thursday nights at Studio M Ballroom in San Jose, CA",
+    "West Coast Swing classes on Thursday nights at Studio M Ballroom in San Jose, CA",
   primaryButton: "COME DANCE WITH US",
   secondaryButton: "START HERE IF YOU'RE NEW",
 };

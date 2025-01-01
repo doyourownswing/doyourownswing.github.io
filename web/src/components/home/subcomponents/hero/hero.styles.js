@@ -45,9 +45,6 @@ const heroStyles = {
   callToAction: {
     ...callToActionStyles,
   },
-  adjectivesContainer: {
-    // display: "inline",
-  },
   adjective: {
     ...callToActionStyles,
     position: "relative",
