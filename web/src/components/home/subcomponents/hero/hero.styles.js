@@ -36,7 +36,6 @@ const heroStyles = {
   },
   callToActionContainer: {
     display: "flex",
-    alignItems: "baseline",
     // Hacky, but need to make sure longer words fit, and that zooming doesn't make the line break
     minWidth: { md: "60rem" },
     alignItems: { xs: "center", sm: "unset" },

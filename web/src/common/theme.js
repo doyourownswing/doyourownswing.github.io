@@ -48,7 +48,6 @@ const theme = responsiveFontSizes(
         secondaryBody2: "#3f3f3f",
         bodyLight: basePalette.lightPurple3,
         bodyDark: basePalette.lightGray,
-        bodyLight: basePalette.lightPurple3,
         textButton: basePalette.mediumPurple,
         activeSelection: basePalette.mediumPurple,
         textLight: basePalette.white,
