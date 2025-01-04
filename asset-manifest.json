@@ -1,20 +1,21 @@
 {
   "files": {
-    "main.css": "/static/css/main.509b739d.css",
-    "main.js": "/static/js/main.b3424d5a.js",
+    "main.css": "/static/css/main.b8d837d8.css",
+    "main.js": "/static/js/main.868294a7.js",
     "static/media/birds-eye-social.jpg": "/static/media/birds-eye-social.00d43d29d75a219a7ce8.jpg",
     "static/media/teacher-demo-2-blurred-min.JPG": "/static/media/teacher-demo-2-blurred-min.ed11e4120c380ca5192f.JPG",
     "static/media/mimi_1.jpg": "/static/media/mimi_1.28ffaf994b40768f341c.jpg",
     "static/media/bubbles-bw-min.jpg": "/static/media/bubbles-bw-min.c336775ac058c85b87b5.jpg",
     "static/media/riley.jpg": "/static/media/riley.40b359834006c2f513ce.jpg",
+    "static/media/new-york-times-logo.png": "/static/media/new-york-times-logo.30609414a6e4ef0e8de4.png",
     "static/media/color-logo.svg": "/static/media/color-logo.c872f92f85a8018a151a825ecf4ae317.svg",
     "static/media/purple-logo.svg": "/static/media/purple-logo.6e20e09ee39fe4566de27ce454b9aaf7.svg",
     "index.html": "/index.html",
-    "main.509b739d.css.map": "/static/css/main.509b739d.css.map",
-    "main.b3424d5a.js.map": "/static/js/main.b3424d5a.js.map"
+    "main.b8d837d8.css.map": "/static/css/main.b8d837d8.css.map",
+    "main.868294a7.js.map": "/static/js/main.868294a7.js.map"
   },
   "entrypoints": [
-    "static/css/main.509b739d.css",
-    "static/js/main.b3424d5a.js"
+    "static/css/main.b8d837d8.css",
+    "static/js/main.868294a7.js"
   ]
 }
