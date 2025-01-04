@@ -80,7 +80,7 @@ const heroStyles = {
     fontFamily: "Poppins",
   },
   rightContent: {
-    margin: { xs: "auto", md: "4rem 0" },
+    margin: { xs: "auto", md: "4rem 0 0" },
     display: "flex",
     alignItems: "center",
     flexShrink: "0.5",
@@ -99,6 +99,34 @@ const heroStyles = {
     },
     borderRadius: "1rem",
     width: { xs: "95vw", md: "unset" },
+  },
+  nytCalloutContainer: {
+    display: { xs: "block", sm: "flex" },
+    justifyContent: "center",
+    padding: { xs: "0", md: "2rem 0" },
+    transform: { xs: "translateY(-5vh)", md: "unset" },
+  },
+  nytCallout: {
+    display: "flex",
+    alignItems: "center",
+  },
+  nytLogo: {
+    // on small screens, the text turns into two lines so the image needs to be bigger
+    height: { xs: "2.5rem", sm: "2rem" },
+    paddingRight: "0.5rem",
+  },
+  nytCalloutText: {
+    fontSize: "1rem",
+    fontFamily: "Poppins",
+    fontWeight: "600",
+    textWrap: "balance",
+    letterSpacing: "0.025rem",
+    color: theme.palette.text.linkLight,
+    "&:hover": {
+      color: theme.palette.text.linkLightHover,
+    },
+    textDecoration: "underline",
+    textUnderlineOffset: "0.2rem",
   },
 };
 
