@@ -4,13 +4,13 @@
 
 #adjective-container.adjective-sm {
   top: -3rem;
-  animation: fade-in-top-fade-out-bottom 4s ease-in-out infinite;
+  animation: fade-in-top-fade-out-bottom 3s ease-in-out infinite;
 }
 
 
 #adjective-container.adjective-xs {
   left: -3rem;
-  animation: fade-in-left-fade-out-right 4s ease-in-out infinite;
+  animation: fade-in-left-fade-out-right 3s ease-in-out infinite;
 }
 
 @keyframes fade-in-top-fade-out-bottom {
@@ -19,12 +19,12 @@
     top: -3rem; 
   }
 
-  20% { 
+  25% { 
     opacity: 1;
     top: 0px; 
   }
 
-  80% { 
+  75% { 
     opacity: 1;
     top: 0px;
   }

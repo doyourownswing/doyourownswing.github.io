@@ -12,6 +12,7 @@ import messages from "./messages";
 import heroStyles from "./hero.styles";
 import "./hero.css";
 import theme from "common/theme";
+import { StartHere } from "common/pages";
 
 function Hero(props) {
   const smallestScreenSize = useMediaQuery(theme.breakpoints.down("sm"));
@@ -70,6 +71,7 @@ function Hero(props) {
               sx={heroStyles.primaryButton}
               variant="contained"
               color="buttonLight"
+              onClick={props.onClickPrimaryButton}
             >
               {messages.primaryButton}
             </Button>
@@ -77,6 +79,7 @@ function Hero(props) {
               sx={heroStyles.secondaryButton}
               variant="outlined"
               color="buttonLight"
+              href={StartHere.url}
             >
               {messages.secondaryButton}
             </Button>

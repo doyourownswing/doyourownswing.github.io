@@ -6,16 +6,29 @@ import Welcome from "./subcomponents/welcome/welcome";
 import WhatIsWcs from "./subcomponents/what_is_wcs/what_is_wcs";
 import WhoWeAre from "./subcomponents/who_we_are/who_we_are";
 import FeatureFlags from "infra/feature_flags";
+import { useRef } from "react";
 
-const Home = () => (
-  <Box>
-    {!FeatureFlags.useHeroV2 && <Welcome />}
-    {FeatureFlags.useHeroV2 && <Hero />}
-    <UpcomingEvents />
-    <WhoWeAre />
-    <WhatIsWcs />
-    <SongOfTheWeek />
-  </Box>
-);
+export default function Home() {
+  const upcomingEventsRef = useRef(null);
 
-export default Home;
+  const onClickPrimaryHeroButton = () =>
+    upcomingEventsRef.current.scrollIntoView({
+      behavior: "smooth",
+      block: "center",
+    });
+
+  console.log(upcomingEventsRef);
+
+  return (
+    <Box>
+      {!FeatureFlags.useHeroV2 && <Welcome />}
+      {FeatureFlags.useHeroV2 && (
+        <Hero onClickPrimaryButton={onClickPrimaryHeroButton} />
+      )}
+      <UpcomingEvents ref={upcomingEventsRef} />
+      <WhoWeAre />
+      <WhatIsWcs />
+      <SongOfTheWeek />
+    </Box>
+  );
+}
