@@ -349,8 +349,16 @@ const events = [
   ),
   new Event(
     EventTypes.DYOS,
-    messages.doYourOwnSwing,
+    "DYOS ft. Natasha & Joel",
     createDate("01/23/2025"),
+    updatedDyosClassNameSchedule,
+    DEFAULT_LOCATION,
+    DEFAULT_PRICE
+  ),
+  new Event(
+    EventTypes.DYOS,
+    "DYOS ft. Natasha",
+    createDate("01/30/2025"),
     updatedDyosClassNameSchedule,
     DEFAULT_LOCATION,
     DEFAULT_PRICE
