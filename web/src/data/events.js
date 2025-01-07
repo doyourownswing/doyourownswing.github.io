@@ -14,8 +14,6 @@ const DEFAULT_LOCATION = "Studio M Ballroom, San Jose, CA";
 const DEFAULT_PRICE = "$10 - 40";
 const MINI_DYOS_PRICE = "$10 - 20";
 
-const dayjs = require("dayjs");
-
 // TODO(jesseezhang): the param list scales poorly with events with different types of information.
 // Refactor this to be more scalable.
 class Event {

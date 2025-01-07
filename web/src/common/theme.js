@@ -21,6 +21,13 @@ const theme = responsiveFontSizes(
       primary: {
         main: basePalette.darkPurple,
       },
+      buttonLight: {
+        name: "buttonLight",
+        main: "#ECE1F2",
+        light: basePalette.white,
+        dark: basePalette.white,
+        contrastText: basePalette.purple1,
+      },
       background: {
         // a richer more vibrant purple for attention catching
         announcement: "#b400d9",
@@ -41,6 +48,7 @@ const theme = responsiveFontSizes(
         // TODO: update default quote with this in song of the week too once merging is done
         secondaryBody2: "#3f3f3f",
         bodyLight: basePalette.lightPurple3,
+        bodyDark: basePalette.lightGray,
         textButton: basePalette.mediumPurple,
         activeSelection: basePalette.mediumPurple,
         textLight: basePalette.white,

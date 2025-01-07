@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { forwardRef, useState } from "react";
 import {
   Box,
   Button,
@@ -94,11 +94,14 @@ function NoUpcomingEvents() {
   );
 }
 
-function UpcomingEvents() {
+const UpcomingEvents = forwardRef(function UpcomingEvents(
+  { meeting, index },
+  ref
+) {
   let events = getNextEvents(2);
 
   return (
-    <Box sx={upcomingEventsStyles.upcomingEventsContainer}>
+    <Box sx={upcomingEventsStyles.upcomingEventsContainer} ref={ref}>
       <Container>
         <Typography variant="h3" sx={upcomingEventsStyles.title}>
           {messages.upcomingEventsTitle}
@@ -116,6 +119,6 @@ function UpcomingEvents() {
       </Container>
     </Box>
   );
-}
+});
 
 export default UpcomingEvents;
