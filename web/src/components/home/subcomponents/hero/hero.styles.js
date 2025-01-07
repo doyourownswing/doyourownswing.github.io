@@ -99,6 +99,8 @@ const heroStyles = {
     },
     borderRadius: "1rem",
     width: { xs: "95vw", md: "unset" },
+    pointerEvents: "none",
+    userSelect: "none",
   },
   nytCalloutContainer: {
     display: { xs: "block", sm: "flex" },
