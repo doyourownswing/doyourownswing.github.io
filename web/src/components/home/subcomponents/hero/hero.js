@@ -19,6 +19,10 @@ import { StartHere } from "common/pages";
 const newYorkTimesLink =
   "https://www.nytimes.com/2024/12/23/arts/dance/west-coast-swing-dance.html?unlocked_article_code=1.jk4.meau.nfbTxPGBIDP-";
 
+const animationIterationEventName = "animationiteration";
+
+const adjectiveContainerId = "adjective-container";
+
 function Hero(props) {
   const smallestScreenSize = useMediaQuery(theme.breakpoints.down("sm"));
   const adjectiveContainerClass = smallestScreenSize
@@ -32,16 +36,16 @@ function Hero(props) {
       setAdjectiveIndex((adjectiveIndex + 1) % messages.adjectives.length);
     };
 
-    const adjectiveContainer = document.getElementById("adjective-container");
+    const adjectiveContainer = document.getElementById(adjectiveContainerId);
 
     adjectiveContainer.addEventListener(
-      "animationiteration",
+      animationIterationEventName,
       onAnimationRestart
     );
 
     return () => {
       adjectiveContainer.removeEventListener(
-        "animationiteration",
+        animationIterationEventName,
         onAnimationRestart
       );
     };
@@ -61,7 +65,7 @@ function Hero(props) {
               </Typography>
               {!smallestScreenSize && <Space sx={heroStyles.callToAction} />}
               <Box
-                id={"adjective-container"}
+                id={adjectiveContainerId}
                 className={adjectiveContainerClass}
               >
                 <Typography sx={heroStyles.adjective}>
@@ -81,7 +85,7 @@ function Hero(props) {
               <Button
                 sx={heroStyles.primaryButton}
                 variant="contained"
-                color="buttonLight"
+                color={theme.palette.buttonLight.name}
                 onClick={props.onClickPrimaryButton}
               >
                 {messages.primaryButton}
@@ -89,7 +93,7 @@ function Hero(props) {
               <Button
                 sx={heroStyles.secondaryButton}
                 variant="outlined"
-                color="buttonLight"
+                color={theme.palette.buttonLight.name}
                 href={StartHere.url}
               >
                 {messages.secondaryButton}
@@ -102,7 +106,7 @@ function Hero(props) {
                 component="img"
                 src={SplashImage}
                 sx={heroStyles.picture}
-                alt="Birds eye view picture of a social at Do Your Own Swing"
+                alt={messages.splashImageAltText}
               />
             </Box>
           </Box>
@@ -118,7 +122,7 @@ function Hero(props) {
               component="img"
               src={NytLogo}
               sx={heroStyles.nytLogo}
-              alt="The New York Time logo"
+              alt={messages.nytLogoAltText}
             />
             <Typography sx={heroStyles.nytCalloutText}>
               {messages.nytCallout}

@@ -22,6 +22,7 @@ const theme = responsiveFontSizes(
         main: basePalette.darkPurple,
       },
       buttonLight: {
+        name: "buttonLight",
         main: "#ECE1F2",
         light: basePalette.white,
         dark: basePalette.white,

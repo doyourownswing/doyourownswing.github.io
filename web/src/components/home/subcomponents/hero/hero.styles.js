@@ -68,12 +68,10 @@ const heroStyles = {
     textTransform: "none",
     fontSize: "1rem",
     fontWeight: "600",
-    // TODO: find out how to make this better / repeatable
     fontFamily: "Poppins",
     "&:hover": {
       boxShadow: "0 0 0.75rem 0.25rem rgba(216, 144, 255, .8)",
     },
-    // TODO: canonicalize
     boxShadow: "0 0 0.5rem 0.25rem rgba(216, 144, 255, .6)",
   },
   secondaryButton: {
@@ -94,7 +92,9 @@ const heroStyles = {
   picture: {
     maxWidth: "50rem",
     maskImage: {
+      // Makes the top part of the image opaque
       xs: "linear-gradient(to bottom, rgb(0 0 0 / 0%) 0%, rgb(0 0 0 / 20%) 40%, rgb(0 0 0 / 100%) 100%)",
+      // Makes the left side of the image opaque
       md: "linear-gradient(to left, rgb(0 0 0) 0%, rgb(0 0 0 / 0%) 100%)",
     },
     borderRadius: "1rem",
@@ -104,6 +104,7 @@ const heroStyles = {
     display: { xs: "block", sm: "flex" },
     justifyContent: "center",
     padding: { xs: "0", md: "2rem 0" },
+    // Since the image is already scooted up by 10vh, just move the callout up 5vh
     transform: { xs: "translateY(-5vh)", md: "unset" },
   },
   nytCallout: {

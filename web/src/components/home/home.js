@@ -17,8 +17,6 @@ export default function Home() {
       block: "center",
     });
 
-  console.log(upcomingEventsRef);
-
   return (
     <Box>
       {!FeatureFlags.useHeroV2 && <Welcome />}
