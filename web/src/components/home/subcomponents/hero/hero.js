@@ -10,11 +10,11 @@ import { Space } from "components/common/typography";
 import { useEffect, useState } from "react";
 import SplashImage from "assets/images/birds-eye-social.jpg";
 import NytLogo from "assets/images/new-york-times-logo.png";
+import theme from "common/theme";
+import { StartHere } from "common/pages";
 import messages from "./messages";
 import heroStyles from "./hero.styles";
 import "./hero.css";
-import theme from "common/theme";
-import { StartHere } from "common/pages";
 
 const newYorkTimesLink =
   "https://www.nytimes.com/2024/12/23/arts/dance/west-coast-swing-dance.html?unlocked_article_code=1.jk4.meau.nfbTxPGBIDP-";

@@ -54,7 +54,6 @@ const theme = responsiveFontSizes(
         textLight: basePalette.white,
         linkLight: "#bbbbbb",
         linkLightHover: basePalette.white,
-        lightButton: basePalette.purple1,
         lightPurple: basePalette.lightPurple1,
         headerPurple: basePalette.purple1,
         link: "#0F65D7",

@@ -117,6 +117,8 @@ const heroStyles = {
     // on small screens, the text turns into two lines so the image needs to be bigger
     height: { xs: "2.5rem", sm: "2rem" },
     paddingRight: "0.5rem",
+    pointerEvents: "none",
+    userSelect: "none",
   },
   nytCalloutText: {
     fontSize: "1rem",
