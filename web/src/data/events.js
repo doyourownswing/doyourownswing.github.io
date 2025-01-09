@@ -337,7 +337,10 @@ const events = [
     createDate("01/09/2025"),
     updatedDyosClassNameSchedule,
     DEFAULT_LOCATION,
-    DEFAULT_PRICE
+    DEFAULT_PRICE,
+    {
+      facebookLink: "https://www.facebook.com/events/1330100964838453",
+    }
   ),
   new Event(
     EventTypes.DYOS,
@@ -345,7 +348,10 @@ const events = [
     createDate("01/16/2025"),
     updatedDyosClassNameSchedule,
     DEFAULT_LOCATION,
-    DEFAULT_PRICE
+    DEFAULT_PRICE,
+    {
+      facebookLink: "https://www.facebook.com/events/1111515506847041",
+    }
   ),
   new Event(
     EventTypes.DYOS,
@@ -353,7 +359,10 @@ const events = [
     createDate("01/23/2025"),
     updatedDyosClassNameSchedule,
     DEFAULT_LOCATION,
-    DEFAULT_PRICE
+    DEFAULT_PRICE,
+    {
+      facebookLink: "https://www.facebook.com/events/1410368940368922",
+    }
   ),
   new Event(
     EventTypes.DYOS,
@@ -361,7 +370,10 @@ const events = [
     createDate("01/30/2025"),
     updatedDyosClassNameSchedule,
     DEFAULT_LOCATION,
-    DEFAULT_PRICE
+    DEFAULT_PRICE,
+    {
+      facebookLink: "https://www.facebook.com/events/1111716973536171",
+    }
   ),
 ];
 
