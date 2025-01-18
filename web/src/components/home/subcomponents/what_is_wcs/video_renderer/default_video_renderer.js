@@ -1,13 +1,13 @@
 import { Box } from "@mui/material";
 import defaultVideoRendererStyles from "./default_video_renderer.styles";
 
-function DefaultVideoRenderer() {
+function DefaultVideoRenderer(props) {
   return (
     <Box sx={defaultVideoRendererStyles.videoContainer}>
       <iframe
         width="100%"
         height="100%"
-        src="https://www.youtube.com/embed/v4fRV0aG3lc?si=BKXYaAPC8ozlSUWF"
+        src={props.src}
         title="YouTube video player"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

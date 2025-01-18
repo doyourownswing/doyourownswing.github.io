@@ -13,19 +13,27 @@ const whatIsWcsStyles = {
   header: {
     ...theme.typography.title,
     color: theme.palette.text.title,
-    paddingBottom: "24px",
+    paddingBottom: "4rem",
   },
   twoColumnContent: {
-    flexDirection: { xs: "column-reverse", md: "row" },
+    flexDirection: { xs: "column", lg: "row" },
     justifyContent: "space-around",
     justifySelf: "center",
-    gap: "48px",
+    gap: "8rem",
   },
   descriptionContainer: {
     flexDirection: "column",
   },
   lineItems: {
     paddingLeft: "1.5rem",
+  },
+  pointHook: {
+    fontSize: "1rem",
+    fontWeight: "700",
+    fontFamily: "Poppins",
+  },
+  pointContent: {
+    fontSize: "1rem",
   },
 };
 
