@@ -6,6 +6,7 @@ import Location from "./subcomponents/location/location";
 import Browse from "./subcomponents/browse/browse";
 import Policies from "./subcomponents/policies/policies";
 import { PolicyOptions, BrowseOptions } from "common/nav_options";
+import messages from "./messages";
 
 const sections = [
   {
@@ -63,9 +64,7 @@ function Footer() {
             </Grid>
           </Box>
         </Stack>
-        <Box sx={footerStyles.authorFootnote}>
-          Made with love by the members of Do Your Own Swing
-        </Box>
+        <Box sx={footerStyles.authorFootnote}>{messages.footnote}</Box>
       </Container>
     </Box>
   );
