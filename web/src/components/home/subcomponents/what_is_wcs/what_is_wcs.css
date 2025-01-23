@@ -1,0 +1,88 @@
+.youtube-player-xs,
+.youtube-player-sm
+ {
+  width: 80vw;
+  height: 50vw;
+}
+.youtube-player-md {
+  width: 70vw;
+  height: 43.5vw;
+}
+
+.youtube-player-lg {
+  width: 32rem;
+  height: 20rem;
+}
+
+.youtube-player-xl {
+  width: 36rem;
+  height: 22rem;
+}
+
+.hidden {
+  display: none;
+}
+
+.previous {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.current.in-from-left {
+  animation: in-from-left 0.7s forwards ease-out;
+}
+
+.current.in-from-right {
+  animation: in-from-right 0.7s forwards ease-out;
+}
+
+.previous.out-from-left {
+  animation: out-from-left 0.7s forwards ease-out;
+}
+
+.previous.out-from-right {
+  animation: out-from-right 0.7s forwards ease-out;
+}
+
+@keyframes in-from-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-90vw);
+  }
+  100% {
+    opacity: 1
+  }
+}
+
+@keyframes in-from-right {
+  0% {
+    opacity: 0;
+    transform: translateX(90vw);
+  }
+  100% {
+    opacity: 1
+  }
+}
+
+@keyframes out-from-left {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(90vw);
+    display: none;
+  }
+}
+
+@keyframes out-from-right {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-90vw);
+    display: none;
+  }
+}
