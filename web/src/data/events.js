@@ -44,9 +44,9 @@ const defaultDyosSchedule = [
 ];
 
 const updatedDyosClassNameSchedule = [
-  { time: "7:30pm - 8:15pm", name: "Connection, Rhythm, and Flow" },
-  { time: "8:25pm - 9:15pm", name: "You, Me, and the Music" },
-  { time: "8:30pm - 9:15pm", name: "WCS Foundations" },
+  { time: "7:30pm - 8:15pm", name: "Connection, Rhythm, and Flow (Level 2)" },
+  { time: "8:25pm - 9:15pm", name: "You, Me, and the Music (Level 3)" },
+  { time: "8:30pm - 9:15pm", name: "WCS Foundations (Level 1)" },
   { time: "9:15pm - 11:30pm", name: "Social Dancing" },
 ];
 
