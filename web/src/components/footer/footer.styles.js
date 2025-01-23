@@ -18,6 +18,11 @@ const footerStyles = {
     display: { md: "flex" },
     justifyContent: "flex-end",
   },
+  authorFootnote: {
+    textAlign: "center",
+    padding: "2rem",
+    color: theme.palette.text.lightPurple,
+  },
 };
 
 export default footerStyles;
