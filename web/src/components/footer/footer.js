@@ -63,6 +63,9 @@ function Footer() {
             </Grid>
           </Box>
         </Stack>
+        <Box sx={footerStyles.authorFootnote}>
+          Made with love by the members of Do Your Own Swing
+        </Box>
       </Container>
     </Box>
   );
