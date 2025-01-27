@@ -375,6 +375,38 @@ const events = [
       facebookLink: "https://www.facebook.com/events/1111716973536171",
     }
   ),
+  new Event(
+    EventTypes.DYOS,
+    messages.doYourOwnSwing,
+    createDate("02/06/2025"),
+    updatedDyosClassNameSchedule,
+    DEFAULT_LOCATION,
+    DEFAULT_PRICE
+  ),
+  new Event(
+    EventTypes.DYOS,
+    messages.doYourOwnSwing,
+    createDate("02/13/2025"),
+    updatedDyosClassNameSchedule,
+    DEFAULT_LOCATION,
+    DEFAULT_PRICE
+  ),
+  new Event(
+    EventTypes.DYOS,
+    messages.doYourOwnSwing,
+    createDate("02/20/2025"),
+    updatedDyosClassNameSchedule,
+    DEFAULT_LOCATION,
+    DEFAULT_PRICE
+  ),
+  new Event(
+    EventTypes.DYOS,
+    messages.doYourOwnSwing,
+    createDate("02/27/2025"),
+    updatedDyosClassNameSchedule,
+    DEFAULT_LOCATION,
+    DEFAULT_PRICE
+  ),
 ];
 
 function getNextEvents(numEvents) {
