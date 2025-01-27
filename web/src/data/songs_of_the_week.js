@@ -374,7 +374,6 @@ const songs = [
       spotify: "https://open.spotify.com/track/1ia7yo4yHzBkoU6Xn214QG",
     }
   ),
-
   new SongOfTheWeek(
     createDate("02/01/2025"),
     null,
@@ -390,6 +389,174 @@ const songs = [
       spotify: "https://open.spotify.com/track/4i9gqxFLh72VHOWLfEMmJJ",
     }
   ),
+  new SongOfTheWeek(
+    createDate("02/08/2025"),
+    null,
+    {
+      name: "Swim",
+      artist: "Alec Benjamin",
+      year: "2018",
+    },
+    {
+      albumCoverImage:
+        "https://i.scdn.co/image/ab67616d00001e02459d675aa0b6f3b211357370",
+      youtube: "https://youtu.be/aKKQdn26QJc",
+      spotify: "https://open.spotify.com/track/1rMSja8j1k8VRXXztemdLb",
+    }
+  ),
+  new SongOfTheWeek(
+    createDate("02/15/2025"),
+    null,
+    {
+      name: "Apollo",
+      artist: "St. Paul & The Broken Bones",
+      year: "2018",
+    },
+    {
+      albumCoverImage:
+        "https://i.scdn.co/image/ab67616d0000b273aff0f524411824c03ab57302",
+      youtube: "https://youtu.be/mHEPoG11EtE",
+      spotify: "https://open.spotify.com/track/4lhhYqzREcts4uOOqWHjRJ",
+    }
+  ),
+  new SongOfTheWeek(
+    createDate("02/22/2025"),
+    null,
+    {
+      name: "religion (u can lay your hands on me)",
+      artist: "Shura",
+      year: "2019",
+    },
+    {
+      albumCoverImage:
+        "https://i.scdn.co/image/ab67616d0000b2730e20e9ac043a9d0bc249e2f9",
+      youtube: "https://youtu.be/HHI_WpVLT1g",
+      spotify: "https://open.spotify.com/track/4YIimRZi9KYx0ohj1b7vmj",
+    }
+  ),
+  new SongOfTheWeek(
+    createDate("03/01/2025"),
+    null,
+    {
+      name: "Fire for You",
+      artist: "Cannons",
+      year: "2023",
+    },
+    {
+      albumCoverImage:
+        "https://i.scdn.co/image/ab67616d00001e0230e218f90be97f4184d4ed29",
+      youtube: "https://youtu.be/u4HQevc9JE0",
+      spotify: "https://open.spotify.com/track/7lQC2XYQRT7AGJ76JADWZc",
+    }
+  ),
+  new SongOfTheWeek(
+    createDate("03/08/2025"),
+    null,
+    {
+      name: "Paper Love",
+      artist: "Allie X",
+      year: "2017",
+    },
+    {
+      albumCoverImage:
+        "https://i.scdn.co/image/ab67616d00001e028846c272c6fd8aa8c5d58bb6",
+      youtube: "https://youtu.be/9A6_a-Suv9c",
+      spotify: "https://open.spotify.com/track/0lJRiK4cXdgFqpNB53yFLN",
+    }
+  ),
+  new SongOfTheWeek(
+    createDate("03/15/2025"),
+    null,
+    {
+      name: "Magic in the Hamptons ft. Lil Yachty",
+      artist: "Social House",
+      year: "2018",
+    },
+    {
+      albumCoverImage:
+        "https://i.scdn.co/image/ab67616d00001e02013314e9861a2c4a796b2176",
+      youtube: "https://youtu.be/4aoQeOnZX1g",
+      spotify: "https://open.spotify.com/track/2Yer0p7uB2lVBUAtANuuQp",
+    }
+  ),
+  new SongOfTheWeek(
+    createDate("03/22/2025"),
+    null,
+    {
+      name: "My Universe",
+      artist: "Coldplay",
+      year: "2021",
+    },
+    {
+      albumCoverImage:
+        "	https://i.scdn.co/image/ab67616d0000b273f60a9b7e2abafc38da31f575",
+      youtube: "https://youtu.be/3YqPKLZF_WU",
+      spotify: "https://open.spotify.com/track/3FeVmId7tL5YN8B7R3imoM",
+    }
+  ),
+  new SongOfTheWeek(
+    createDate("04/05/2025"),
+    null,
+    {
+      name: "Strategy",
+      artist: "TWICE",
+      year: "2024",
+    },
+    {
+      albumCoverImage:
+        "https://i.scdn.co/image/ab67616d00001e02acf8ff27be32aec99d6c99a0",
+      youtube: "https://youtu.be/nmbiBVPe5bY",
+      spotify: "https://open.spotify.com/track/22fSzde77hjB052Vo155LF",
+    }
+  ),
+
+  new SongOfTheWeek(
+    createDate("04/12/2025"),
+    null,
+    {
+      name: "Sports car",
+      artist: "Tate McRae",
+      year: "2025",
+    },
+    {
+      albumCoverImage:
+        "	https://i.scdn.co/image/ab67616d00001e0218a681e1e525405b2f909032",
+      youtube: "https://youtu.be/7InTkBxPtK4",
+      spotify: "https://open.spotify.com/track/2zOmS55knKWSgScYPTNmGQ",
+    }
+  ),
+  new SongOfTheWeek(
+    createDate("04/19/2025"),
+    null,
+    {
+      name: "CAN'T DANCE",
+      artist: "Meghan Trainor",
+      year: "2018",
+    },
+    {
+      albumCoverImage:
+        "https://i.scdn.co/image/ab67616d0000b273e13eb2329bb1ec2dc1a3fb6d",
+      youtube: "https://youtu.be/nNZrc_XvF30",
+      spotify: "https://open.spotify.com/track/3CqT68zWwvcrY22UkhD67V",
+    }
+  ),
+  new SongOfTheWeek(
+    createDate("04/26/2025"),
+    null,
+    {
+      name: "Butter",
+      artist: "BTS",
+      year: "2021",
+    },
+    {
+      albumCoverImage:
+        "https://i.scdn.co/image/ab67616d0000b273240447f2da1433d8f4303596",
+      youtube: "https://youtu.be/WMweEpGlu_U",
+      spotify: "https://open.spotify.com/track/1mWdTewIgB3gtBM3TOSFhB",
+    }
+  ),
+  // got the most recent ones from
+  // https://open.spotify.com/playlist/0tpqlDJCQA2zoQxcxfRPkC
 ];
 
 /** Gets the [SongOfTheWeek] with the most recent [startDate] */
