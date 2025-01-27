@@ -489,7 +489,7 @@ const songs = [
     },
     {
       albumCoverImage:
-        "	https://i.scdn.co/image/ab67616d0000b273f60a9b7e2abafc38da31f575",
+        "https://i.scdn.co/image/ab67616d0000b273f60a9b7e2abafc38da31f575",
       youtube: "https://youtu.be/3YqPKLZF_WU",
       spotify: "https://open.spotify.com/track/3FeVmId7tL5YN8B7R3imoM",
     }
@@ -520,7 +520,7 @@ const songs = [
     },
     {
       albumCoverImage:
-        "	https://i.scdn.co/image/ab67616d00001e0218a681e1e525405b2f909032",
+        "https://i.scdn.co/image/ab67616d00001e0218a681e1e525405b2f909032",
       youtube: "https://youtu.be/7InTkBxPtK4",
       spotify: "https://open.spotify.com/track/2zOmS55knKWSgScYPTNmGQ",
     }
