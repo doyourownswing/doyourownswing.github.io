@@ -509,7 +509,6 @@ const songs = [
       spotify: "https://open.spotify.com/track/22fSzde77hjB052Vo155LF",
     }
   ),
-
   new SongOfTheWeek(
     createDate("04/12/2025"),
     null,
