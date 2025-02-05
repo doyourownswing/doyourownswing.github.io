@@ -6,6 +6,11 @@ const announcements = [
     startDate: createDate("11/21/2024"),
     endDate: createDate("01/05/2025"),
   },
+  {
+    text: "New class schedule starting Febrary 20th!",
+    startDate: createDate("02/04/2025"),
+    endDate: createDate("02/21/2025"),
+  },
 ];
 
 function getCurrentAnnouncement() {
