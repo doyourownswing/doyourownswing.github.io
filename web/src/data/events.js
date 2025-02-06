@@ -392,20 +392,23 @@ const events = [
     DEFAULT_LOCATION,
     DEFAULT_PRICE,
     {
-      facebookLink: "https://www.facebook.com/events/614664831193904/",
+      facebookLink: "https://www.facebook.com/events/614664831193904",
     }
   ),
   new Event(
     EventTypes.DYOS,
-    messages.doYourOwnSwing,
+    "DYOS feat. Alison + Joel!",
     createDate("02/13/2025"),
     updatedDyosClassNameSchedule,
     DEFAULT_LOCATION,
-    DEFAULT_PRICE
+    DEFAULT_PRICE,
+    {
+      facebookLink: "https://www.facebook.com/events/539457109110882",
+    }
   ),
   new Event(
     EventTypes.DYOS,
-    messages.doYourOwnSwing,
+    "DYOS: New Schedule!",
     createDate("02/20/2025"),
     feb2025Schedule,
     DEFAULT_LOCATION,
