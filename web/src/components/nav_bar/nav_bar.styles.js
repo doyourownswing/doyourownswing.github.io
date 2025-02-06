@@ -1,10 +1,16 @@
 import theme from "common/theme";
 
+const baseOptionItem = {
+  textTransform: "none",
+  textDecoration: "none",
+  fontFamily: "Poppins",
+  color: theme.palette.text.navigationOptions,
+};
+
 const navBarStyles = {
   expandedOptionsButton: {
+    ...baseOptionItem,
     marginY: 2,
-    display: "block",
-    textTransform: "none",
     textAlign: "center",
   },
   selectedOption: {
@@ -29,7 +35,7 @@ const navBarStyles = {
     justifyContent: "flex-end",
   },
   menuItem: {
-    textDecoration: "none",
+    ...baseOptionItem,
   },
   logoImage: {
     maxHeight: "40px",

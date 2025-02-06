@@ -91,7 +91,7 @@ function MenuIconOptions() {
         <MenuIcon />
       </IconButton>
       <Menu
-        sx={{ mt: "45px" }}
+        sx={{ marginTop: "48px" }}
         id="menu-appbar"
         anchorEl={anchorElMenu}
         anchorOrigin={{
