@@ -3,6 +3,7 @@ import { Box, Divider, Typography, Button } from "@mui/material";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import FmdGoodOutlinedIcon from "@mui/icons-material/FmdGoodOutlined";
 import { dateToHumanReadableString } from "utils/date_utils";
+import theme from "common/theme";
 
 const HeaderDetails = (props) => (
   <Box>
@@ -38,6 +39,7 @@ const Footer = (props) => (
       {props.link && (
         <Button
           sx={eventCardStyles.button}
+          color={theme.palette.buttonDark.name}
           variant="contained"
           rel="noreferrer noopener"
           href={props.link}

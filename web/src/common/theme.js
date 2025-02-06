@@ -21,12 +21,22 @@ const theme = responsiveFontSizes(
       primary: {
         main: basePalette.darkPurple,
       },
+      /// Theme for a light button used on dark backgrounds
       buttonLight: {
         name: "buttonLight",
+        // a very slight pink - TODO: maybe add this to the base palette
         main: "#ECE1F2",
         light: basePalette.white,
         dark: basePalette.white,
         contrastText: basePalette.purple1,
+      },
+      /// Theme for a dark button used on light backgrounds
+      buttonDark: {
+        name: "buttonDark",
+        main: basePalette.purple1,
+        light: basePalette.purple2,
+        dark: basePalette.purple2,
+        contrastText: basePalette.white,
       },
       background: {
         // a richer more vibrant purple for attention catching
@@ -41,6 +51,8 @@ const theme = responsiveFontSizes(
       text: {
         titleLight: basePalette.white,
         title: basePalette.mediumPurple,
+        // TODO: add these to the base palette
+        navigationOptions: "#555555",
         subtitle: "#808080",
         // For less essential body text that we don't want to stand out as much.
         secondaryBody: "#666666",

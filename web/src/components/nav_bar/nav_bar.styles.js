@@ -3,9 +3,10 @@ import theme from "common/theme";
 const navBarStyles = {
   expandedOptionsButton: {
     marginY: 2,
-    display: "block",
     textTransform: "none",
     textAlign: "center",
+    fontFamily: "Poppins",
+    color: theme.palette.text.navigationOptions,
   },
   selectedOption: {
     color: theme.palette.text.activeSelection,
