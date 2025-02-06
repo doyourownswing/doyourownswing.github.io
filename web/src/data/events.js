@@ -420,7 +420,10 @@ const events = [
     createDate("02/27/2025"),
     feb2025Schedule,
     DEFAULT_LOCATION,
-    DEFAULT_PRICE
+    DEFAULT_PRICE,
+    {
+      facebookLink: "https://www.facebook.com/events/1524689911505024",
+    }
   ),
 ];
 
