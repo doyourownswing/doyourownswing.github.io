@@ -16,7 +16,7 @@ const whatIsWcsStyles = {
     paddingBottom: { xs: "2rem", lg: "4rem" },
   },
   twoColumnContent: {
-    flexDirection: { xs: "column", lg: "row" },
+    flexDirection: { xs: "column", md: "row" },
     justifyContent: "space-around",
     justifySelf: "center",
     gap: { xs: "4rem", lg: "8rem" },
@@ -39,30 +39,37 @@ const whatIsWcsStyles = {
   videoContainer: {
     display: {
       xs: "flex",
-      lg: "block",
+      md: "block",
     },
-    flexDirection: "column",
+    flexDirection: { xs: "column", sm: "row", md: "column" },
     alignContent: "start",
   },
   videoPlayers: {
     display: {
       xs: "flex",
-      lg: "grid",
+      md: "grid",
     },
-    gap: { xs: "0", lg: "2rem" },
+    gap: { xs: "0", md: "2rem" },
     margin: "auto",
-    position: { xs: "relative", lg: "unset" },
+    position: { xs: "relative", md: "unset" },
   },
-  buttonContainer: {
-    display: "inline-flex",
+  buttonContainerAround: {
+    // display: "inline-flex",
+    // margin: "auto",
+    // gap: { xs: "20vw", sm: "80vw" },
+    // transform: { xs: "unset", sm: "translateY(calc(-20vw - 2rem))" },
+    // zIndex: 1,
+    // paddingTop: { xs: "1rem", sm: "unset" },
     margin: "auto",
-    gap: { xs: "20vw", md: "72vw" },
-    transform: { xs: "unset", md: "translateY(calc(-20vw - 2rem))" },
-    zIndex: 1,
-    paddingTop: { xs: "1rem", md: "unset" },
+  },
+  buttonsContainerBelow: {
+    margin: "auto",
+    display: "flex",
+    gap: "20vw",
+    paddingTop: "1rem",
   },
   button: {
-    scale: { md: "2", lg: "unset" },
+    scale: { sm: "2", lg: "unset" },
   },
 };
 

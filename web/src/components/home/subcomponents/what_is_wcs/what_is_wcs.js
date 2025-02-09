@@ -60,7 +60,8 @@ function VideoSection() {
     direction: null,
   });
 
-  const shouldUseCarousel = useMediaQuery(theme.breakpoints.down("lg"));
+  const shouldUseCarousel = useMediaQuery(theme.breakpoints.down("md"));
+  const carouselButtonsBelow = useMediaQuery(theme.breakpoints.down("sm"));
 
   // On screen resize, clear the previous / direction so that we don't have
   // animations when going from non-carousel to carousel.
@@ -176,23 +177,62 @@ function VideoSection() {
     pauseAllVideos();
   }
 
+  let previousVideoIconButton = (
+    <IconButton sx={whatIsWcsStyles.button} onClick={showPreviousVideo}>
+      <ChevronLeftIcon size="large" />
+    </IconButton>
+  );
+
+  let nextVideoIconButton = (
+    <IconButton sx={whatIsWcsStyles.button} onClick={showNextVideo}>
+      <ChevronRightIcon size="large" />
+    </IconButton>
+  );
+
+  // If we're using a carousel in a small breakpoint screensize, the "previous video"
+  // button should come before the videos.
+  let getPreVideosButtons = () => {
+    if (shouldUseCarousel && !carouselButtonsBelow) {
+      return (
+        <Box sx={whatIsWcsStyles.buttonContainerAround}>
+          {previousVideoIconButton}
+        </Box>
+      );
+    }
+  };
+
+  // If we're using a carousel in a small breakpoint screensize, only the "next video"
+  // button should come after the videos.
+  // If in an x-small breakpoint screensize, both buttons should be after the videos
+  // so they can be rendered below the videos
+  let getPostVideosButton = () => {
+    if (!shouldUseCarousel) return;
+
+    if (!carouselButtonsBelow) {
+      return (
+        <Box sx={whatIsWcsStyles.buttonContainerAround}>
+          {nextVideoIconButton}
+        </Box>
+      );
+    } else {
+      return (
+        <Box sx={whatIsWcsStyles.buttonsContainerBelow}>
+          {previousVideoIconButton}
+          {nextVideoIconButton}
+        </Box>
+      );
+    }
+  };
+
   return (
     <Box sx={whatIsWcsStyles.videoContainer}>
+      {getPreVideosButtons()}
       <Box sx={whatIsWcsStyles.videoPlayers}>
         {createVideoPlayerBuilder(0, "InPCm0d0dCQ")}
         {createVideoPlayerBuilder(1, "9ci5j2Bz8KQ")}
         {createVideoPlayerBuilder(2, "egG4y99A4nA")}
       </Box>
-      {shouldUseCarousel && (
-        <Box sx={whatIsWcsStyles.buttonContainer}>
-          <IconButton sx={whatIsWcsStyles.button} onClick={showPreviousVideo}>
-            <ChevronLeftIcon size="large" />
-          </IconButton>
-          <IconButton sx={whatIsWcsStyles.button} onClick={showNextVideo}>
-            <ChevronRightIcon size="large" />
-          </IconButton>
-        </Box>
-      )}
+      {getPostVideosButton()}
     </Box>
   );
 }
@@ -223,7 +263,7 @@ function WhatIsWcs() {
               ></BasicPointFormatter>
 
               <BasicPointFormatter
-                content={messages.versatile} //todo
+                content={messages.versatile}
               ></BasicPointFormatter>
 
               <BasicPointFormatter

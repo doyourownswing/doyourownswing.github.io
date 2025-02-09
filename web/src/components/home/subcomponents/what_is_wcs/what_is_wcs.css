@@ -1,12 +1,18 @@
-.youtube-player-xs,
-.youtube-player-sm
+.youtube-player-xs
  {
   width: 80vw;
   height: 50vw;
 }
+
+.youtube-player-sm
+ {
+  width: 75vw;
+  height: 47vw;
+}
+
 .youtube-player-md {
-  width: 70vw;
-  height: 43.5vw;
+  width: min(32rem, 45vw);
+  height: min(20rem, 28vw);
 }
 
 .youtube-player-lg {
