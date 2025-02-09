@@ -54,12 +54,6 @@ const whatIsWcsStyles = {
     position: { xs: "relative", md: "unset" },
   },
   buttonContainerAround: {
-    // display: "inline-flex",
-    // margin: "auto",
-    // gap: { xs: "20vw", sm: "80vw" },
-    // transform: { xs: "unset", sm: "translateY(calc(-20vw - 2rem))" },
-    // zIndex: 1,
-    // paddingTop: { xs: "1rem", sm: "unset" },
     margin: "auto",
   },
   buttonsContainerBelow: {
