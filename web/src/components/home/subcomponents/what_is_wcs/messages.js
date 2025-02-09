@@ -7,7 +7,7 @@ const messages = {
       "and the music. Through the partnership, there's an exchange of ideas and feelings, " +
       "wordlessly expressed through movement.",
   },
-  smooth: {
+  connection: {
     hook: "The foundation of this dance is in the connection,",
     content:
       " which is what we call the physical partnership between the dancers. " +
@@ -16,14 +16,14 @@ const messages = {
       "moments that the dance comes to life, changing it from just patterns into a " +
       "dialogue decorated with improvisation and a give and take that is rarely seen elsewhere.",
   },
-  improvised: {
+  versatile: {
     hook: "This dance is incredibly versatile,",
     content:
       " and can be danced to a huge variety of music, earning the nickname " +
       '"modern swing". Though its roots are in jazz, it can also be danced to ' +
       "pop, hip hop, blues, R&B, country, and funk, to name a few genres.",
   },
-  versatile: {
+  improvised: {
     hook: "It can be choreographed, but the vast majority of West Coast Swing is improvised. ",
     content:
       " During West Coast Swing socials, you'll have the opportunity to ask " +

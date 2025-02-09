@@ -15,10 +15,12 @@ import "./what_is_wcs.css";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 
-const video1 = "https://www.youtube.com/embed/InPCm0d0dCQ";
-const video2 = "https://www.youtube.com/embed/9ci5j2Bz8KQ";
-const video3 = "https://www.youtube.com/embed/egG4y99A4nA";
-const video4 = "https://www.youtube.com/embed/bWThBjHlUfw";
+// Saumya put together this doc for us:
+// https://docs.google.com/document/d/1hb9Ho3YnDe_uF4PUB-MfbJBytIC3B6heCXoBB-MPBrU/edit?tab=t.0
+
+// TODO: Add a callout at the bottom of this section with a link to
+// a youtube playlist with a bunch of other videos. Jessee started one,
+// should consider crowdsourcing. I bet Joel has a bunch.
 
 function BasicPointFormatter(props) {
   return (
@@ -40,9 +42,6 @@ function BasicPointFormatter(props) {
     </Box>
   );
 }
-
-// TODO: CREATE RENDERER FOR JOEL LINK SECTION (MUSIC)
-// CREATE CAROUSEL FOR VIDEOS ON SMALLER SCREENS
 
 const breakPointClassName = {
   xs: "youtube-player-xs",
@@ -237,6 +236,15 @@ function VideoSection() {
   );
 }
 
+const points = [
+  messages.leadFollow,
+  messages.connection,
+  messages.versatile,
+  messages.improvised,
+  messages.competitive,
+  messages.lindyHop,
+];
+
 function WhatIsWcs() {
   return (
     <Box sx={whatIsWcsStyles.whatIsWcsStylesContainer}>
@@ -250,29 +258,9 @@ function WhatIsWcs() {
               sx={whatIsWcsStyles.descriptionContainer}
               spacing={{ xs: 1, md: 4 }}
             >
-              <BasicPointFormatter
-                content={messages.leadFollow}
-              ></BasicPointFormatter>
-
-              <BasicPointFormatter
-                content={messages.smooth}
-              ></BasicPointFormatter>
-
-              <BasicPointFormatter
-                content={messages.improvised}
-              ></BasicPointFormatter>
-
-              <BasicPointFormatter
-                content={messages.versatile}
-              ></BasicPointFormatter>
-
-              <BasicPointFormatter
-                content={messages.competitive}
-              ></BasicPointFormatter>
-
-              <BasicPointFormatter
-                content={messages.lindyHop}
-              ></BasicPointFormatter>
+              {points.map((p) => (
+                <BasicPointFormatter content={p}></BasicPointFormatter>
+              ))}
             </Stack>
             <VideoSection />
           </Stack>
