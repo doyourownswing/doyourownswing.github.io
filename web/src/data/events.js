@@ -50,6 +50,15 @@ const updatedDyosClassNameSchedule = [
   { time: "9:15pm - 11:30pm", name: "Social Dancing" },
 ];
 
+// latest schedule starting 02/20/2025
+const feb2025Schedule = [
+  { time: "7:30pm - 8:00pm", name: "Beyond the Basics (Level 2)" },
+  { time: "8:05pm - 8:35pm", name: "Skill & Drills (Level 3)" },
+  { time: "8:30pm - 9:15pm", name: "Welcome to WCS (Level 1)" },
+  { time: "8:40pm - 9:10pm", name: "Artistic Application (Level 4)" },
+  { time: "9:15pm - 11:30pm", name: "Social Dancing" },
+];
+
 const miniDyosSchedule = [
   { time: "8:30pm - 9:15pm", name: "WCS Foundations" },
   { time: "9:15pm - 10:00pm", name: "Beginner-friendly Practice/Q&A" },
@@ -377,33 +386,42 @@ const events = [
   ),
   new Event(
     EventTypes.DYOS,
-    messages.doYourOwnSwing,
+    "DYOS ft. Natasha & Joel!",
     createDate("02/06/2025"),
     updatedDyosClassNameSchedule,
     DEFAULT_LOCATION,
-    DEFAULT_PRICE
+    DEFAULT_PRICE,
+    {
+      facebookLink: "https://www.facebook.com/events/614664831193904",
+    }
   ),
   new Event(
     EventTypes.DYOS,
-    messages.doYourOwnSwing,
+    "DYOS feat. Alison + Joel!",
     createDate("02/13/2025"),
     updatedDyosClassNameSchedule,
     DEFAULT_LOCATION,
-    DEFAULT_PRICE
+    DEFAULT_PRICE,
+    {
+      facebookLink: "https://www.facebook.com/events/539457109110882",
+    }
   ),
   new Event(
     EventTypes.DYOS,
-    messages.doYourOwnSwing,
+    "DYOS: New Schedule!",
     createDate("02/20/2025"),
-    updatedDyosClassNameSchedule,
+    feb2025Schedule,
     DEFAULT_LOCATION,
-    DEFAULT_PRICE
+    DEFAULT_PRICE,
+    {
+      facebookLink: "https://www.facebook.com/events/1524689911505024",
+    }
   ),
   new Event(
     EventTypes.DYOS,
     messages.doYourOwnSwing,
     createDate("02/27/2025"),
-    updatedDyosClassNameSchedule,
+    feb2025Schedule,
     DEFAULT_LOCATION,
     DEFAULT_PRICE
   ),
