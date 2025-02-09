@@ -22,7 +22,9 @@ import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 // a youtube playlist with a bunch of other videos. Jessee started one,
 // should consider crowdsourcing. I bet Joel has a bunch.
 
-function BasicPointFormatter(props) {
+/// A renderer for each paragraph that has a bolded "hook", and the
+/// rest has the regular body styling
+function BasicParagraphFormatter(props) {
   return (
     <Box>
       <Typography
@@ -59,7 +61,11 @@ function VideoSection() {
     direction: null,
   });
 
+  // For sm and xs screen sizes, render the videos in a carousel.
   const shouldUseCarousel = useMediaQuery(theme.breakpoints.down("md"));
+
+  // For sm screen sizes, the next / previous buttons are inline with the video.
+  // For xs, they are below the video player.
   const carouselButtonsBelow = useMediaQuery(theme.breakpoints.down("sm"));
 
   // On screen resize, clear the previous / direction so that we don't have
@@ -87,6 +93,11 @@ function VideoSection() {
     ? breakPointClassName.lg
     : breakPointClassName.xl;
 
+  // Returns an onVideoReady callback function scoped to the video index.
+  // Video index is used for tracking currently played video.
+  //
+  // The returned function registers the video player javascript handle
+  // in the component state so that we can control them dynamically.
   function createOnVideoReady(index) {
     return (event) => {
       videoPlayers.set(index, event.target);
@@ -94,6 +105,11 @@ function VideoSection() {
     };
   }
 
+  // Returns an onVideoPlay callback function scoped to the video index.
+  // Video index is used for tracking currently played video.
+  //
+  // The returned function updates the currently playing video in the state
+  // for carousel tracking, and pauses other videos upon playing the given video.
   function createOnVideoPlay(index) {
     return (event) => {
       // If not using the carousel, set the current index so if
@@ -114,12 +130,18 @@ function VideoSection() {
     };
   }
 
+  // Pauses all of the videos.
   function pauseAllVideos() {
     for (let player of videoPlayers.values()) {
       player.pauseVideo();
     }
   }
 
+  // Returns the list of classes that should be applied to a given video.
+  //
+  // If using the carousel, provides the classes used for animation,
+  // either in or out, depending on if it is the current or previous
+  // video, and from which direction it is coming from.
   function getPlayerContainerClasses(index) {
     let classes = [];
     if (!shouldUseCarousel) return classes;
@@ -137,7 +159,8 @@ function VideoSection() {
     return classes;
   }
 
-  function createVideoPlayerBuilder(index, videoId) {
+  // Creates the video player with the given id and tracking index.
+  function createVideoPlayer(index, videoId) {
     let classNames = getPlayerContainerClasses(index).join(" ");
 
     return (
@@ -151,6 +174,9 @@ function VideoSection() {
     );
   }
 
+  // Callback for when the "previous video" button is pressed.
+  // Updates state for animations in the carousel.
+  // TODO: throttle how fast this can be pressed.
   function showPreviousVideo() {
     let newCurrentIndex =
       (currentVideoIndex.current - 1 + videoPlayers.size) % videoPlayers.size;
@@ -164,6 +190,9 @@ function VideoSection() {
     pauseAllVideos();
   }
 
+  // Callback for when the "next video" button is pressed.
+  // Updates state for animations in the carousel.
+  // TODO: throttle how fast this can be pressed.
   function showNextVideo() {
     let newCurrentIndex = (currentVideoIndex.current + 1) % videoPlayers.size;
 
@@ -227,16 +256,16 @@ function VideoSection() {
     <Box sx={whatIsWcsStyles.videoContainer}>
       {getPreVideosButtons()}
       <Box sx={whatIsWcsStyles.videoPlayers}>
-        {createVideoPlayerBuilder(0, "InPCm0d0dCQ")}
-        {createVideoPlayerBuilder(1, "9ci5j2Bz8KQ")}
-        {createVideoPlayerBuilder(2, "egG4y99A4nA")}
+        {createVideoPlayer(0, "InPCm0d0dCQ")}
+        {createVideoPlayer(1, "9ci5j2Bz8KQ")}
+        {createVideoPlayer(2, "egG4y99A4nA")}
       </Box>
       {getPostVideosButton()}
     </Box>
   );
 }
 
-const points = [
+const paragraphs = [
   messages.leadFollow,
   messages.connection,
   messages.versatile,
@@ -245,6 +274,7 @@ const points = [
   messages.lindyHop,
 ];
 
+// The What is West Coast Swing section renderer.
 function WhatIsWcs() {
   return (
     <Box sx={whatIsWcsStyles.whatIsWcsStylesContainer}>
@@ -258,8 +288,8 @@ function WhatIsWcs() {
               sx={whatIsWcsStyles.descriptionContainer}
               spacing={{ xs: 1, md: 4 }}
             >
-              {points.map((p) => (
-                <BasicPointFormatter content={p}></BasicPointFormatter>
+              {paragraphs.map((p) => (
+                <BasicParagraphFormatter content={p} />
               ))}
             </Stack>
             <VideoSection />
