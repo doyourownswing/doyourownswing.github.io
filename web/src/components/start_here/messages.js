@@ -21,13 +21,13 @@ const messages = {
     },
     class: {
       choose:
-        "Choose which class to go to. Classes are on Thursday evenings and span 3 " +
+        "Choose which class to go to. Classes are on Thursday evenings and span 4 " +
         "different levels. ",
       moreInfo: "Check out more information about our classes ",
       here: "here",
       classOptions: [
         {
-          class: "WCS Foundations (Level 1) - 8:45pm in the Royal Ballroom",
+          class: "Welcome to WCS (Level 1) - 8:30pm in the Sky Ballroom",
           description: [
             "For those who are brand new to West Coast Swing or developing a basic pattern vocabulary. " +
               "No partner or experience required!",
@@ -35,24 +35,27 @@ const messages = {
         },
         {
           class:
-            "Connection, Rhythm, & Flow (Level 2) - 7:30pm in the Spotlight Ballroom",
+            "Beyond the Basics (Level 2) - 7:30pm in the Spotlight Ballroom",
           description: [
-            "For those who have attended at least one introductory level course at DYOS or another studio/event. " +
-              "This class will introduce you to connection skills, rhythm variations, and pattern variations that " +
-              "will help you feel more comfortable and creative on the social dance floor!",
-            "Dancers must be familiar with Left Side Pass, Under Arm Pass, and Sugar Push. " +
-              "Also recommended: Being familiar with Sugar Tuck, Spinning Side Pass (free spin or inside roll), and Whip.",
+            "This class will go over one or two patterns from the Level 1 class, with a focus on making them comfortable. " +
+              "Intended to bridge the gap between beginner and intermediate patterns.",
+          ],
+        },
+        {
+          class: "Skills & Drills (Level 3) - 8:05pm in the Spotlight Ballroom",
+          description: [
+            "Learn the skills for improvised, partnered musical expression! " +
+              "In this class, we work on developing communication with our partner and connecting to the music. " +
+              "Familiarity with introductory level connection techniques and rhythm variations recommended.",
           ],
         },
         {
           class:
-            "Creative Expressions (Level 3) - 8:15pm in the Spotlight Ballroom",
+            "Artistic Application (Level 4) - 8:40pm in the Spotlight Ballroom",
           description: [
-            "Learn the skills for improvised, partnered musical expression! " +
-              "In this class, we work on developing communication with our partner and connecting to the music. " +
-              'This class will help you cultivate those magical "How can this dance be improvised??" moments.',
-            "Must be comfortable with West Coast Swing basics! " +
-              "Familiarity with introductory level connection techniques and rhythm variations recommended.",
+            'This class will help you cultivate those magical "How can this dance be improvised??" moments. ' +
+              "Learning to respond to the music and your partner",
+            "Must be comfortable with West Coast Swing basics!",
           ],
         },
       ],

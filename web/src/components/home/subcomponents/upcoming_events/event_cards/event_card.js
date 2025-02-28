@@ -1,6 +1,6 @@
 import eventCardStyles from "./event_card.styles";
 import { Box, Divider, Typography, Button } from "@mui/material";
-import AccessTimeIcon from "@mui/icons-material/AccessTime";
+import EventIcon from "@mui/icons-material/Event";
 import FmdGoodOutlinedIcon from "@mui/icons-material/FmdGoodOutlined";
 import { dateToHumanReadableString } from "utils/date_utils";
 import theme from "common/theme";
@@ -9,7 +9,7 @@ const HeaderDetails = (props) => (
   <Box>
     {props.date && (
       <Box sx={eventCardStyles.details}>
-        <AccessTimeIcon sx={eventCardStyles.icon} />
+        <EventIcon sx={eventCardStyles.icon} />
         <Typography sx={eventCardStyles.detailsText}>
           {dateToHumanReadableString(props.date)}
         </Typography>
