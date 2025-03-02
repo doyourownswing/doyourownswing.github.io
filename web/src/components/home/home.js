@@ -7,6 +7,7 @@ import WhatIsWcs from "./subcomponents/what_is_wcs/what_is_wcs";
 import WhoWeAre from "./subcomponents/who_we_are/who_we_are";
 import FeatureFlags from "infra/feature_flags";
 import { useRef } from "react";
+import Merch from "./subcomponents/merch/merch";
 
 export default function Home() {
   const upcomingEventsRef = useRef(null);
@@ -27,6 +28,7 @@ export default function Home() {
       <WhoWeAre />
       <WhatIsWcs />
       <SongOfTheWeek />
+      <Merch />
     </Box>
   );
 }

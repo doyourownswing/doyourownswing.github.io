@@ -19,6 +19,7 @@ const FeatureFlags = {
   showContactTab: isDevel(),
   showStartHerePage: true,
   useHeroV2: true,
+  showMerchSection: isDevel() || window.location.href.includes("merch"),
 };
 
 export default FeatureFlags;

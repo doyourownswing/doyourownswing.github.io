@@ -4,6 +4,7 @@ const linkStyles = {
   color: theme.palette.text.link,
   textDecoration: "unset",
   textUnderlineOffset: "2px",
+  cursor: "pointer",
   "&:visited": {
     color: theme.palette.text.linkVisited,
   },

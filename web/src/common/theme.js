@@ -1,7 +1,9 @@
 import { createTheme, responsiveFontSizes } from "@mui/material/styles";
 
 // https://coolors.co/260b34-502268-955ab5-bf9ad3-ebebeb
+// TODO: make naming more consistent. ie like blue100, ..., blue900
 const basePalette = {
+  // purples
   darkPurple: "#260b34",
   purple1: "#502268",
   purple2: "#733E8F",
@@ -9,8 +11,14 @@ const basePalette = {
   lightPurple1: "#bf9ad3",
   lightPurple2: "#d4bce2",
   lightPurple3: "#eaddf0",
+
+  // grays
   lightGray: "#ebebeb",
   white: "white",
+
+  // blues
+  blue500: "#1058B5",
+  blue400: "#1976d2",
 };
 
 // Responsive Font Sizes only affects header styles, h1-h6, for sm, md, and lg breakpoints
@@ -38,6 +46,14 @@ const theme = responsiveFontSizes(
         dark: basePalette.purple2,
         contrastText: basePalette.white,
       },
+      /// Theme for a blue button used on light backgrounds
+      buttonBlue: {
+        name: "buttonBlue",
+        main: basePalette.blue400,
+        light: basePalette.blue500,
+        dark: basePalette.blue500,
+        contrastText: basePalette.white,
+      },
       background: {
         // a richer more vibrant purple for attention catching
         announcement: "#b400d9",
@@ -51,6 +67,7 @@ const theme = responsiveFontSizes(
       text: {
         titleLight: basePalette.white,
         title: basePalette.mediumPurple,
+        titleNotQuiteBlack: basePalette.darkPurple,
         // TODO: add these to the base palette
         navigationOptions: "#555555",
         subtitle: "#808080",
