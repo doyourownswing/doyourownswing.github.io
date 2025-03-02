@@ -28,7 +28,7 @@ export default function Home() {
       <WhoWeAre />
       <WhatIsWcs />
       <SongOfTheWeek />
-      <Merch />
+      {FeatureFlags.showMerchSection && <Merch />}
     </Box>
   );
 }
