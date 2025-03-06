@@ -14,7 +14,7 @@ import { Space, Text } from "components/common/typography";
 
 const googleFormLink =
   "https://docs.google.com/forms/d/e/1FAIpQLSeoUWA8LICvFhxhwiYBqWAjDxOZta1LgnPzkWtaWAoXQ1UESQ/viewform?usp=header";
-const printfulLink = "https://dyos.printful.me/";
+const printfulLink = "https://doyourownswing.printful.me/";
 
 // TODO: add alt text
 // maybe have each pic link to the particular listing?
@@ -30,7 +30,6 @@ export default function Merch() {
         <Typography variant="h3" sx={merchStyles.title}>
           {messages.title}
         </Typography>
-        {/* https://codepen.io/studiojvla/pen/qVbQqW */}
         <Box sx={merchStyles.carouselContainer}>
           <Box sx={merchStyles.carouselContent} id="carousel-content">
             {doubledShirts.map((s, i) => (
