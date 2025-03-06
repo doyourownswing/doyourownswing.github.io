@@ -26,6 +26,7 @@ const merchStyles = {
     display: "flex",
   },
   image: {
+    // Note: this value has to stay consistent with the animation in merch.css
     width: "20rem",
     pointerEvents: "none",
     userSelect: "none",
