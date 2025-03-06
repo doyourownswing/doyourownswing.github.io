@@ -431,7 +431,10 @@ const events = [
     createDate("03/06/2025"),
     feb2025Schedule,
     DEFAULT_LOCATION,
-    DEFAULT_PRICE
+    DEFAULT_PRICE,
+    {
+      facebookLink: "https://www.facebook.com/events/1710547873218845/",
+    }
   ),
   new Event(
     EventTypes.DYOS,
@@ -439,23 +442,76 @@ const events = [
     createDate("03/13/2025"),
     feb2025Schedule,
     DEFAULT_LOCATION,
-    DEFAULT_PRICE
+    DEFAULT_PRICE,
+    {
+      facebookLink: "https://www.facebook.com/events/983027693778198/",
+    }
   ),
   new Event(
     EventTypes.DYOS,
-    messages.doYourOwnSwing,
+    "DYOS: Happy Equinox!",
     createDate("03/20/2025"),
     feb2025Schedule,
     DEFAULT_LOCATION,
-    DEFAULT_PRICE
+    DEFAULT_PRICE,
+    {
+      facebookLink: "https://www.facebook.com/events/1426661538204036/",
+    }
+  ),
+  new Event(
+    EventTypes.DYOS,
+    "DYOS ft. Alison & Joel!",
+    createDate("03/27/2025"),
+    feb2025Schedule,
+    DEFAULT_LOCATION,
+    DEFAULT_PRICE,
+    {
+      facebookLink: "https://www.facebook.com/events/918253483541720/",
+    }
   ),
   new Event(
     EventTypes.DYOS,
     messages.doYourOwnSwing,
-    createDate("03/27/2025"),
+    createDate("04/03/2025"),
     feb2025Schedule,
     DEFAULT_LOCATION,
-    DEFAULT_PRICE
+    DEFAULT_PRICE,
+    {
+      facebookLink: "https://www.facebook.com/events/1167904950863891/",
+    }
+  ),
+  new Event(
+    EventTypes.DYOS,
+    messages.doYourOwnSwing,
+    createDate("04/10/2025"),
+    feb2025Schedule,
+    DEFAULT_LOCATION,
+    DEFAULT_PRICE,
+    {
+      facebookLink: "https://www.facebook.com/events/984227936988025/",
+    }
+  ),
+  new Event(
+    EventTypes.DYOS,
+    "DYOS: Riley's Birthday!",
+    createDate("04/17/2025"),
+    feb2025Schedule,
+    DEFAULT_LOCATION,
+    DEFAULT_PRICE,
+    {
+      facebookLink: "https://www.facebook.com/events/1201456921338933/",
+    }
+  ),
+  new Event(
+    EventTypes.DYOS,
+    messages.doYourOwnSwing,
+    createDate("04/24/2025"),
+    feb2025Schedule,
+    DEFAULT_LOCATION,
+    DEFAULT_PRICE,
+    {
+      facebookLink: "https://www.facebook.com/events/4023605991297703/",
+    }
   ),
 ];
 
