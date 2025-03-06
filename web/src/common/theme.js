@@ -46,7 +46,7 @@ const theme = responsiveFontSizes(
         dark: basePalette.purple2,
         contrastText: basePalette.white,
       },
-      /// Theme for a blue button used on light backgrounds
+      /// Theme for a blue button
       buttonBlue: {
         name: "buttonBlue",
         main: basePalette.blue400,

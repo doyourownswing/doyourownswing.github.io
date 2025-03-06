@@ -17,6 +17,8 @@ const merchStyles = {
   carouselContainer: {
     width: "min(80vw, 80rem)",
     overflow: "hidden",
+    // Applies a mask to the left and right side of the carousel to fade the edges.
+    // TODO: consider changing the values for different screen size breakpoints.
     maskImage:
       "linear-gradient(to right, rgb(0 0 0 / 60%) 0%, rgb(0 0 0 / 100%) 10%, rgb(0 0 0 / 100%) 90%, rgb(0 0 0 / 60%) 100%)",
   },
