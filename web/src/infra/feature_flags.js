@@ -19,6 +19,8 @@ const FeatureFlags = {
   showContactTab: isDevel(),
   showStartHerePage: true,
   useHeroV2: true,
+  // Enable the merch section once the initial set of shirts are added to https://doyourownswing.printful.me/
+  showMerchSection: isDevel() || window.location.href.includes("merch"),
 };
 
 export default FeatureFlags;

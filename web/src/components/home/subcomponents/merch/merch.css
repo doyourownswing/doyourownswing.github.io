@@ -1,0 +1,11 @@
+/* Time is also based on number of images. Advise 4 * numImages. */
+#carousel-content {
+  animation: infinite-carousel 24s linear infinite;
+}
+
+@keyframes infinite-carousel {
+    0% { transform: translateX(0); }
+
+    /* This is the image width * image number * -1 to go the other direction */
+    100% { transform: translateX(calc(20rem * 6 * -1))}
+}
