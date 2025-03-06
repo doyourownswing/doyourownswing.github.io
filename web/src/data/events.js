@@ -510,7 +510,7 @@ const events = [
     DEFAULT_LOCATION,
     DEFAULT_PRICE,
     {
-      facebookLink: "https://www.facebook.com/events/4023605991297703/s",
+      facebookLink: "https://www.facebook.com/events/4023605991297703/",
     }
   ),
 ];
