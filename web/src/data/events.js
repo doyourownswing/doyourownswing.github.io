@@ -460,7 +460,7 @@ const events = [
   ),
   new Event(
     EventTypes.DYOS,
-    "DYOS ft. Alison & Joel!",
+    messages.doYourOwnSwing,
     createDate("03/27/2025"),
     feb2025Schedule,
     DEFAULT_LOCATION,
