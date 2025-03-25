@@ -134,6 +134,7 @@ const theme = responsiveFontSizes(
         paddingBottom: "16px",
         fontWeight: "600",
         fontFamily: "Poppins",
+        color: basePalette.darkPurple,
       },
       announcement: {
         fontWeight: "600",
