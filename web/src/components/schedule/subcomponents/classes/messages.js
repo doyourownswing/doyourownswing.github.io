@@ -38,10 +38,6 @@ const messages = {
         "drills. This class will have less music and actual dancing than the " +
         "average dance class, but will develop awareness and intention in your " +
         "approach to West Coast Swing!",
-      prerequisites:
-        "You should know how to do: Tuck Turn (sugar and/or passing), " +
-        "Spinning Side Pass (inside roll and/or free spin), Starter Step, " +
-        "and an 8-Count Whip.",
       prerequisitesPrompt: "You should know how to do the following:",
       prerequisitesList: [
         "Tuck Turn (sugar and/or passing)",
@@ -64,7 +60,8 @@ const messages = {
         "class will help you cultivate those magical " +
         '"How can this dance be improvised??" moments.',
       prerequisites:
-        "All of the Level 3 prerequisites, as well as general comfort navigating social dances",
+        "All of the Skills and Drills (Level 3) prerequisites, as well as " +
+        "general comfort navigating social dances",
     },
   },
 };
