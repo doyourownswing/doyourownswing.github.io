@@ -42,7 +42,7 @@ const classesStyles = {
     fontFamily: "Poppins",
     fontWeight: "500",
     color: theme.palette.text.titleNotQuiteBlack,
-    lineHeight: "1",
+    lineHeight: "1.125",
     paddingBottom: "0.75rem",
   },
   timeAndPlaceContainer: {
