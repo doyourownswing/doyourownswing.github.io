@@ -13,11 +13,11 @@ const classesStyles = {
   card: {
     boxShadow: BOX_SHADOW,
     maxWidth: "40rem",
-    height: { md: "36rem", lg: "32rem" },
+    height: { md: "44rem", lg: "36rem" },
     borderRadius: "1rem",
   },
   cardContent: {
-    padding: "3rem 4rem 4rem",
+    padding: { xs: "2rem 2rem 3rem", sm: "3rem 4rem 4rem" },
   },
   cardHeader: {
     paddingBottom: "2rem",
@@ -52,13 +52,21 @@ const classesStyles = {
   },
   iconTextContainer: {
     display: "flex",
+    alignItems: "center",
     gap: "0.5rem",
     color: theme.palette.text.subtitle,
   },
   descriptionContainer: {
     paddingBottom: "2rem",
   },
-  prerequisitesContainer: {},
+  list: {
+    listStyleType: "disc",
+    paddingInlineStart: "2rem",
+  },
+  listItem: {
+    display: "list-item",
+    padding: "0",
+  },
   cardSectionTitle: {
     fontFamily: "Poppins",
     fontWeight: "600",

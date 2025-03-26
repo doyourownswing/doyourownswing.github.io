@@ -1,5 +1,6 @@
 const messages = {
-  title: "Classes",
+  title: "Thursday Night Classes",
+  prerequisites: "Prerequisites",
   classes: {
     levelOne: {
       difficulty: 1,
@@ -41,7 +42,15 @@ const messages = {
         "You should know how to do: Tuck Turn (sugar and/or passing), " +
         "Spinning Side Pass (inside roll and/or free spin), Starter Step, " +
         "and an 8-Count Whip.",
+      prerequisitesPrompt: "You should know how to do the following:",
+      prerequisitesList: [
+        "Tuck Turn (sugar and/or passing)",
+        "Spinning Side Pass (inside roll and/or free spin)",
+        "Starter Step",
+        "8-Count Whip",
+      ],
     },
+
     levelFour: {
       difficulty: 4,
       level: "Level 4",
