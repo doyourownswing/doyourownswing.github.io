@@ -11,9 +11,18 @@ const basePalette = {
   lightPurple1: "#bf9ad3",
   lightPurple2: "#d4bce2",
   lightPurple3: "#eaddf0",
+  purple100: "#fbf2ff",
 
   // grays
-  lightGray: "#ebebeb",
+  gray900: "#1A1A1A",
+  gray800: "#343434",
+  gray700: "#4E4E4E",
+  gray600: "#686868",
+  gray500: "#838383",
+  gray400: "#9D9D9D",
+  gray300: "#B7B7B7",
+  gray200: "#D1D1D1",
+  gray100: "#EBEBEB",
   white: "white",
 
   // blues
@@ -58,8 +67,9 @@ const theme = responsiveFontSizes(
         // a richer more vibrant purple for attention catching
         announcement: "#b400d9",
         light: basePalette.white,
-        lightGray: basePalette.lightGray,
+        lightGray: basePalette.gray100,
         lightPurple: basePalette.lightPurple1,
+        barelyPurple: basePalette.purple100,
         darkPurple: basePalette.darkPurple,
         songOfTheWeek: "linear-gradient(to bottom, #e9e0fb 0%, #ffe2f7 100%);",
         upcomingEvents: "linear-gradient(to bottom, #ffe2f7 0%, #e9e0fb 100%);",
@@ -68,20 +78,19 @@ const theme = responsiveFontSizes(
         titleLight: basePalette.white,
         title: basePalette.mediumPurple,
         titleNotQuiteBlack: basePalette.darkPurple,
-        // TODO: add these to the base palette
-        navigationOptions: "#555555",
-        subtitle: "#808080",
+        navigationOptions: basePalette.gray600,
+        subtitle: basePalette.gray500,
         // For less essential body text that we don't want to stand out as much.
-        secondaryBody: "#666666",
+        secondaryBody: basePalette.gray600,
         // Same but slightly darker
         // TODO: update default quote with this in song of the week too once merging is done
-        secondaryBody2: "#3f3f3f",
+        secondaryBody2: basePalette.gray700,
         bodyLight: basePalette.lightPurple3,
-        bodyDark: basePalette.lightGray,
+        bodyDark: basePalette.gray100,
         textButton: basePalette.mediumPurple,
         activeSelection: basePalette.mediumPurple,
         textLight: basePalette.white,
-        linkLight: "#bbbbbb",
+        linkLight: basePalette.gray300,
         linkLightHover: basePalette.white,
         lightPurple: basePalette.lightPurple1,
         headerPurple: basePalette.purple1,
@@ -90,13 +99,15 @@ const theme = responsiveFontSizes(
         linkVisited: basePalette.purple2,
       },
       button: {
-        lightGray: "#dddddd",
+        lightGray: basePalette.gray200,
         purpleFilled: basePalette.purple1,
       },
       icon: {
         avatar: basePalette.purple1,
         default: basePalette.mediumPurple,
         lightPurple: basePalette.lightPurple1,
+        activePurple: basePalette.mediumPurple,
+        inactive: basePalette.gray300,
       },
     },
     typography: {
@@ -114,10 +125,16 @@ const theme = responsiveFontSizes(
         '"Segoe UI Emoji"',
         '"Segoe UI Symbol"',
       ].join(","),
+      body1: {
+        lineHeight: "1.5",
+        color: basePalette.gray700,
+        letterSpacing: "0.2px",
+      },
       title: {
         paddingBottom: "16px",
         fontWeight: "600",
         fontFamily: "Poppins",
+        color: basePalette.darkPurple,
       },
       announcement: {
         fontWeight: "600",

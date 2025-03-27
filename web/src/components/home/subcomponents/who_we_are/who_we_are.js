@@ -38,7 +38,7 @@ function ValueRenderer(props) {
   return (
     <Box sx={whoWeAreStyles.valueRenderer}>
       <value.icon fontSize="large" sx={whoWeAreStyles.valueIcon}></value.icon>
-      <Typography variant="body1">{value.text}</Typography>
+      <Typography sx={whoWeAreStyles.value}>{value.text}</Typography>
     </Box>
   );
 }
