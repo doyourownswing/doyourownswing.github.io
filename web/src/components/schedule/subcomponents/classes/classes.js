@@ -14,6 +14,8 @@ import PlaceOutlinedIcon from "@mui/icons-material/PlaceOutlined";
 import AccessTimeOutlinedIcon from "@mui/icons-material/AccessTimeOutlined";
 import CircleIcon from "@mui/icons-material/Circle";
 
+import ClassImage from "assets/images/classes1.jpg"; // TODO REPLACE THIS
+
 const NUM_LEVELS = 4;
 
 function LevelIndicator(props) {
@@ -103,6 +105,27 @@ function Classes() {
         <Typography variant="h3" sx={classesStyles.title}>
           {messages.title}
         </Typography>
+        <Stack
+          direction={{ xs: "column", sm: "row" }}
+          sx={classesStyles.textAndImageContainer}
+        >
+          <Box>
+            <Typography variant="h5">
+              Join us for one or more of our classes!
+            </Typography>
+            <Typography variant="body1">
+              Learn how to dip dive dodge duck and dip
+            </Typography>
+          </Box>
+          <Box>
+            <Box
+              component="img"
+              src={ClassImage}
+              sx={classesStyles.picture}
+              // alt={messages.splashImageAltText}
+            />
+          </Box>
+        </Stack>
         <Grid2 container columns={{ xs: 1, md: 2 }} spacing={4}>
           <ClassCard class={messages.classes.levelOne} />
           <ClassCard class={messages.classes.levelTwo} />

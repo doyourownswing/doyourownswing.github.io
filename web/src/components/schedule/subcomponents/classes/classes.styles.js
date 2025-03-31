@@ -10,10 +10,23 @@ const classesStyles = {
     ...theme.typography.title,
     paddingBottom: "2rem",
   },
+  picture: {
+    width: {
+      xs: "80vw",
+      sm: "24rem",
+      md: "24vw",
+      lg: "min(60vw, 32rem)",
+      xl: "32rem",
+    },
+  },
+  textAndImageContainer: {
+    justifyContent: "space-between",
+    paddingBottom: "2rem",
+  },
   card: {
     boxShadow: BOX_SHADOW,
     maxWidth: "40rem",
-    height: { md: "44rem", lg: "36rem" },
+    height: "100%",
     borderRadius: "1rem",
   },
   cardContent: {
