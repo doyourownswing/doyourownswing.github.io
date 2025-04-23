@@ -17,7 +17,7 @@ import heroStyles from "./hero.styles";
 import "./hero.css";
 
 const newYorkTimesLink =
-  "https://www.nytimes.com/2024/12/23/arts/dance/west-coast-swing-dance.html?unlocked_article_code=1.jk4.meau.nfbTxPGBIDP-";
+  "https://www.removepaywall.com/search?url=https://www.nytimes.com/2024/12/23/arts/dance/west-coast-swing-dance.html";
 
 const animationIterationEventName = "animationiteration";
 
