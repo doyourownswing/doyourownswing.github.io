@@ -36,6 +36,9 @@ const whoWeAreStyles = {
   valueIcon: {
     color: theme.palette.icon.lightPurple,
   },
+  value: {
+    color: theme.palette.text.bodyLight,
+  },
 };
 
 export default whoWeAreStyles;
