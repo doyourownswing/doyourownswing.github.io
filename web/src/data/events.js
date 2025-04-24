@@ -504,7 +504,7 @@ const events = [
   ),
   new Event(
     EventTypes.DYOS,
-    messages.doYourOwnSwing,
+    "DYOS feat. DJ Joel Gibson!",
     createDate("04/24/2025"),
     feb2025Schedule,
     DEFAULT_LOCATION,
@@ -519,7 +519,10 @@ const events = [
     createDate("05/01/2025"),
     feb2025Schedule,
     DEFAULT_LOCATION,
-    DEFAULT_PRICE
+    DEFAULT_PRICE,
+    {
+      facebookLink: "https://www.facebook.com/events/713359444473103/",
+    }
   ),
   new Event(
     EventTypes.DYOS,
