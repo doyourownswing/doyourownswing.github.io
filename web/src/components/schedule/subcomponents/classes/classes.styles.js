@@ -1,9 +1,10 @@
-import { BOX_SHADOW, SECTION_PADDING } from "common/constants";
+import { BOX_SHADOW, BOX_SHADOW_2, SECTION_PADDING } from "common/constants";
 import theme from "common/theme";
 
 const classesStyles = {
   container: {
-    backgroundColor: theme.palette.background.barelyPurple,
+    // backgroundColor: theme.palette.background.barelyPurple,
+    background: "linear-gradient(140deg, #f3dcff 0%, #fdf8ff 15%)",
     padding: SECTION_PADDING,
   },
   title: {
@@ -12,16 +13,27 @@ const classesStyles = {
   },
   picture: {
     width: {
+      // TODO FIX
       xs: "80vw",
       sm: "24rem",
-      md: "24vw",
+      md: "40vw",
       lg: "min(60vw, 32rem)",
       xl: "32rem",
     },
+    borderRadius: "2rem",
+    boxShadow: BOX_SHADOW_2,
   },
   textAndImageContainer: {
     justifyContent: "space-between",
     paddingBottom: "2rem",
+  },
+  divider: {
+    margin: "2rem",
+    background:
+      // TODO make this cooler
+      "linear-gradient(90deg, transparent 10%, #955ab5 50%, transparent 90%)",
+    height: "1px",
+    borderColor: "transparent",
   },
   card: {
     boxShadow: BOX_SHADOW,

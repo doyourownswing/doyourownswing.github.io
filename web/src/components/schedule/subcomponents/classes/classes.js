@@ -2,6 +2,7 @@ import {
   Box,
   Card,
   Container,
+  Divider,
   List,
   ListItem,
   Stack,
@@ -14,7 +15,7 @@ import PlaceOutlinedIcon from "@mui/icons-material/PlaceOutlined";
 import AccessTimeOutlinedIcon from "@mui/icons-material/AccessTimeOutlined";
 import CircleIcon from "@mui/icons-material/Circle";
 
-import ClassImage from "assets/images/classes1.jpg"; // TODO REPLACE THIS
+import ClassImage from "assets/images/classes1.jpg"; // TODO REPLACE THIS or add more?
 
 const NUM_LEVELS = 4;
 
@@ -98,23 +99,33 @@ function ClassCard(props) {
   );
 }
 
+// Get rid of the pink solid background and get a light glow
+
+// CENTER EVERYTHING WHEN NOT TWO COLUMN
 function Classes() {
   return (
     <Box sx={classesStyles.container}>
       <Container>
-        <Typography variant="h3" sx={classesStyles.title}>
-          {messages.title}
-        </Typography>
         <Stack
-          direction={{ xs: "column", sm: "row" }}
+          direction={{ xs: "column", md: "row" }}
           sx={classesStyles.textAndImageContainer}
         >
           <Box>
+            <Typography variant="subtitle" sx={classesStyles.subtitleTODO}>
+              {messages.title}
+            </Typography>
+            <Typography variant="h3" sx={classesStyles.title}>
+              {messages.title}
+            </Typography>
             <Typography variant="h5">
               Join us for one or more of our classes!
             </Typography>
             <Typography variant="body1">
-              Learn how to dip dive dodge duck and dip
+              Learn how to dip dive dodge duck and dip Obviously updat all this
+              text. Maybe something like: Thursday Night Classes Discover Your
+              Rhythm lots of text here about finding your fit. Come for as many
+              as you want. Try the other role. Send us a message if you have
+              questions.
             </Typography>
           </Box>
           <Box>
@@ -126,6 +137,9 @@ function Classes() {
             />
           </Box>
         </Stack>
+
+        {/* MAKE THE DIVIDER FANCY */}
+        <Divider sx={classesStyles.divider} />
         <Grid2 container columns={{ xs: 1, md: 2 }} spacing={4}>
           <ClassCard class={messages.classes.levelOne} />
           <ClassCard class={messages.classes.levelTwo} />
