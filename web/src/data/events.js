@@ -515,7 +515,7 @@ const events = [
   ),
   new Event(
     EventTypes.DYOS,
-    messages.doYourOwnSwing,
+    "DYOS feat. DJ Preston!",
     createDate("05/01/2025"),
     feb2025Schedule,
     DEFAULT_LOCATION,
@@ -530,7 +530,10 @@ const events = [
     createDate("05/08/2025"),
     feb2025Schedule,
     DEFAULT_LOCATION,
-    DEFAULT_PRICE
+    DEFAULT_PRICE,
+    {
+      facebookLink: "https://www.facebook.com/events/1198379895262492/",
+    }
   ),
   new Event(
     EventTypes.DYOS,
@@ -538,7 +541,10 @@ const events = [
     createDate("05/15/2025"),
     feb2025Schedule,
     DEFAULT_LOCATION,
-    DEFAULT_PRICE
+    DEFAULT_PRICE,
+    {
+      facebookLink: "https://www.facebook.com/events/1059745852875841/",
+    }
   ),
   new Event(
     EventTypes.DYOS,
@@ -546,7 +552,10 @@ const events = [
     createDate("05/22/2025"),
     feb2025Schedule,
     DEFAULT_LOCATION,
-    DEFAULT_PRICE
+    DEFAULT_PRICE,
+    {
+      facebookLink: "https://www.facebook.com/events/1265031198381416/",
+    }
   ),
   new Event(
     EventTypes.DYOS,
@@ -554,7 +563,10 @@ const events = [
     createDate("05/29/2025"),
     feb2025Schedule,
     DEFAULT_LOCATION,
-    DEFAULT_PRICE
+    DEFAULT_PRICE,
+    {
+      facebookLink: "https://www.facebook.com/events/661047370163035/",
+    }
   ),
 ];
 
