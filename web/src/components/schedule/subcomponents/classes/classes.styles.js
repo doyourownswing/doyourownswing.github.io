@@ -3,22 +3,26 @@ import theme from "common/theme";
 
 const classesStyles = {
   container: {
-    // backgroundColor: theme.palette.background.barelyPurple,
     background: "linear-gradient(140deg, #f3dcff 0%, #fdf8ff 15%)",
     padding: SECTION_PADDING,
   },
+  subtitle: {
+    fontWeight: "700",
+    fontFamily: "Poppins",
+    color: theme.palette.text.title,
+    paddingBottom: ".5rem",
+  },
   title: {
     ...theme.typography.title,
-    paddingBottom: "2rem",
+    paddingBottom: { xs: "1rem", md: "2rem" },
+    lineHeight: "1",
   },
   picture: {
     width: {
-      // TODO FIX
-      xs: "80vw",
-      sm: "24rem",
-      md: "40vw",
-      lg: "min(60vw, 32rem)",
-      xl: "32rem",
+      xs: "100%",
+      md: "54vw",
+      lg: "min(54vw, 40rem)",
+      xl: "40rem",
     },
     borderRadius: "2rem",
     boxShadow: BOX_SHADOW_2,
@@ -26,6 +30,15 @@ const classesStyles = {
   textAndImageContainer: {
     justifyContent: "space-between",
     paddingBottom: "2rem",
+    gap: "2rem",
+  },
+  hookTextContainer: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+  },
+  calloutTitle: {
+    fontFamily: "Poppins",
   },
   divider: {
     margin: "2rem",
@@ -37,7 +50,6 @@ const classesStyles = {
   },
   card: {
     boxShadow: BOX_SHADOW,
-    maxWidth: "40rem",
     height: "100%",
     borderRadius: "1rem",
   },

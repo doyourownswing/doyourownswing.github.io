@@ -1,5 +1,27 @@
 const messages = {
-  title: "Thursday Night Classes",
+  subtitle: "Thursday Night Classes and Social",
+  title: "Elevate Your Dancing",
+  hook:
+    "DYOS offers four classes of different levels, which cover topics ranging from the basics, to " +
+    "exploring the creative opportunities within West Coast Swing. Join " +
+    "us for one or more classes, no partner required. Not sure which " +
+    "class is for you? Shoot us a message! Stay for social dancing " +
+    "starting at 9:15pm!",
+  maskingPolicyCallout: {
+    title: "Masking Policy",
+    description:
+      "DYOS's health policy is aimed at mitigating the spread of Covid-19 " +
+      "and reducing the severity of breakthrough infections.",
+    classes:
+      "X94+ Masks (KN95, N95, or KF94 with no exhaust port) are " +
+      "required for classes",
+    social:
+      "X94+ Masks MAY be required for social dancing, depending on " +
+      "prevalence of COVID-19 in Santa Clara County",
+    purchase:
+      "KN95 masks are available for sale at check-in - " + "$1 cash, $2 Venmo",
+  },
+
   prerequisites: "Prerequisites",
   classes: {
     levelOne: {

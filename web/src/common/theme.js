@@ -109,6 +109,11 @@ const theme = responsiveFontSizes(
         activePurple: basePalette.mediumPurple,
         inactive: basePalette.gray300,
       },
+      callout: {
+        border: basePalette.gray200,
+        accent: basePalette.mediumPurple,
+        backgroundColor: basePalette.purple100,
+      },
     },
     typography: {
       fontFamily: [
