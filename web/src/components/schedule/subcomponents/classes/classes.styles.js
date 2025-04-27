@@ -43,7 +43,6 @@ const classesStyles = {
   divider: {
     margin: "2rem",
     background:
-      // TODO make this cooler
       "linear-gradient(90deg, transparent 10%, #955ab5 50%, transparent 90%)",
     height: "1px",
     borderColor: "transparent",

@@ -12,7 +12,7 @@ import messages from "./messages";
 import PlaceOutlinedIcon from "@mui/icons-material/PlaceOutlined";
 import AccessTimeOutlinedIcon from "@mui/icons-material/AccessTimeOutlined";
 import CircleIcon from "@mui/icons-material/Circle";
-import ClassImage from "assets/images/classes1.jpg"; // TODO REPLACE THIS or add more?
+import ClassImage from "assets/images/classes1.jpg";
 import Callout from "components/common/callout";
 import {
   BulletedList,
@@ -143,7 +143,6 @@ function Classes() {
           <Typography>{messages.maskingPolicyCallout.purchase}</Typography>
         </Callout>
 
-        {/* MAKE THE DIVIDER FANCY */}
         <Divider sx={classesStyles.divider} />
         <Grid2 container columns={{ xs: 1, md: 2 }} spacing={4}>
           <ClassCard class={messages.classes.levelOne} />
