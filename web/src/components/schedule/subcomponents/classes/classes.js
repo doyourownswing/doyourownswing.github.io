@@ -2,8 +2,7 @@ import {
   Box,
   Card,
   Container,
-  List,
-  ListItem,
+  Divider,
   Stack,
   Typography,
 } from "@mui/material";
@@ -13,6 +12,12 @@ import messages from "./messages";
 import PlaceOutlinedIcon from "@mui/icons-material/PlaceOutlined";
 import AccessTimeOutlinedIcon from "@mui/icons-material/AccessTimeOutlined";
 import CircleIcon from "@mui/icons-material/Circle";
+import ClassImage from "assets/images/classes1.jpg";
+import Callout from "components/common/callout";
+import {
+  BulletedList,
+  BulletedListItem,
+} from "components/common/bulleted_list";
 
 const NUM_LEVELS = 4;
 
@@ -38,13 +43,13 @@ function ClassCard(props) {
   let prerequisites = !!classDetails.prerequisitesList ? (
     <Box>
       <Typography>{classDetails.prerequisitesPrompt}</Typography>
-      <List sx={classesStyles.list}>
+      <BulletedList>
         {classDetails.prerequisitesList.map((p, i) => (
-          <ListItem sx={classesStyles.listItem}>
+          <BulletedListItem>
             <Typography key={i}>{p}</Typography>
-          </ListItem>
+          </BulletedListItem>
         ))}
-      </List>
+      </BulletedList>
     </Box>
   ) : (
     <Typography>{classDetails.prerequisites}</Typography>
@@ -100,9 +105,45 @@ function Classes() {
   return (
     <Box sx={classesStyles.container}>
       <Container>
-        <Typography variant="h3" sx={classesStyles.title}>
-          {messages.title}
-        </Typography>
+        <Stack
+          direction={{ xs: "column", md: "row" }}
+          sx={classesStyles.textAndImageContainer}
+        >
+          <Box sx={classesStyles.hookTextContainer}>
+            <Typography variant="subtitle" sx={classesStyles.subtitle}>
+              {messages.subtitle}
+            </Typography>
+            <Typography variant="h3" sx={classesStyles.title}>
+              {messages.title}
+            </Typography>
+            <Typography variant="body1">{messages.hook}</Typography>
+          </Box>
+          <Box>
+            <Box
+              component="img"
+              src={ClassImage}
+              sx={classesStyles.picture}
+              alt={messages.splashImageAltText}
+            />
+          </Box>
+        </Stack>
+        <Callout>
+          <Typography variant="h6" sx={classesStyles.calloutTitle}>
+            {messages.maskingPolicyCallout.title}
+          </Typography>
+          <Typography>{messages.maskingPolicyCallout.description}</Typography>
+          <BulletedList>
+            <BulletedListItem>
+              <Typography>{messages.maskingPolicyCallout.classes}</Typography>
+            </BulletedListItem>
+            <BulletedListItem>
+              <Typography>{messages.maskingPolicyCallout.social}</Typography>
+            </BulletedListItem>
+          </BulletedList>
+          <Typography>{messages.maskingPolicyCallout.purchase}</Typography>
+        </Callout>
+
+        <Divider sx={classesStyles.divider} />
         <Grid2 container columns={{ xs: 1, md: 2 }} spacing={4}>
           <ClassCard class={messages.classes.levelOne} />
           <ClassCard class={messages.classes.levelTwo} />
