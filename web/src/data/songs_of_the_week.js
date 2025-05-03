@@ -590,7 +590,7 @@ const songs = [
     {
       name: "Black on Black",
       artist: "Greyson Chance",
-      year: "",
+      year: "2019",
     },
     {
       albumCoverImage:
