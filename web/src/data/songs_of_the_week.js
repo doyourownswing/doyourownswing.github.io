@@ -554,6 +554,82 @@ const songs = [
       spotify: "https://open.spotify.com/track/1mWdTewIgB3gtBM3TOSFhB",
     }
   ),
+  new SongOfTheWeek(
+    createDate("05/03/2025"),
+    null,
+    {
+      name: "Homeless Joe",
+      artist: "Shawn Mullins",
+      year: "2008",
+    },
+    {
+      albumCoverImage:
+        "https://i.scdn.co/image/ab67616d00001e0219721dbb1b444352016b863f",
+      youtube: "https://youtu.be/LVUJ90yu8w0",
+      spotify: "https://open.spotify.com/track/4CL5yNLGFBRrmwSJXLcTCW",
+    }
+  ),
+  new SongOfTheWeek(
+    createDate("05/10/2025"),
+    null,
+    {
+      name: "Taste",
+      artist: "Betty Who",
+      year: "2019",
+    },
+    {
+      albumCoverImage:
+        "https://i.scdn.co/image/ab67616d0000b27338a4591170f2a59b160f691e",
+      youtube: "https://youtu.be/5TXWqWKS6LI",
+      spotify: "https://open.spotify.com/track/5CkKPWFVh0eTOXGYwmaqU2",
+    }
+  ),
+  new SongOfTheWeek(
+    createDate("05/17/2025"),
+    null,
+    {
+      name: "Black on Black",
+      artist: "Greyson Chance",
+      year: "",
+    },
+    {
+      albumCoverImage:
+        "https://i.scdn.co/image/ab67616d00001e025d1459643f3df6b93546fb03",
+      youtube: "https://youtu.be/aArnlT23hQI",
+      spotify: "https://open.spotify.com/track/3TG0qTAImtlOtFGVSjQWY0",
+    }
+  ),
+  new SongOfTheWeek(
+    createDate("05/24/2025"),
+    null,
+    {
+      name: "Jealous",
+      artist: "Ingrid Michaelson",
+      year: "2019",
+    },
+    {
+      albumCoverImage:
+        "https://i.scdn.co/image/ab67616d0000b273a5d8f6d5fabff4612e9b5fe5",
+      youtube: "https://youtu.be/Lh3QMECJ_Ps ",
+      spotify: "https://open.spotify.com/track/32HvwAnsqYRP4RtecuB4xJ",
+    }
+  ),
+  new SongOfTheWeek(
+    createDate("05/31/2025"),
+    null,
+    {
+      name: "Fresh",
+      artist: "JAXSON GAMBLE",
+      year: "2021",
+    },
+    {
+      albumCoverImage:
+        "https://i.scdn.co/image/ab67616d00001e024eff79c7da8efb501c8e6f0c",
+      youtube: "https://youtu.be/Kj2uitvwiZY",
+      spotify: "https://open.spotify.com/track/3Rrs45HYeh0TOnA6RnRdt9",
+    }
+  ),
+
   // got the most recent ones from
   // https://open.spotify.com/playlist/0tpqlDJCQA2zoQxcxfRPkC
 ];
