@@ -78,6 +78,9 @@ const theme = responsiveFontSizes(
         gray: basePalette.gray200,
         emphasis: basePalette.lightPurple1,
       },
+      card: {
+        shadow: basePalette.gray400,
+      },
       text: {
         titleLight: basePalette.white,
         title: basePalette.mediumPurple,

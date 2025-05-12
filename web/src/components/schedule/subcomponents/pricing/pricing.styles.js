@@ -1,15 +1,15 @@
-import { BOX_SHADOW, SECTION_PADDING } from "common/constants";
+import { BOX_SHADOW_TOP, SECTION_PADDING } from "common/constants";
 import theme from "common/theme";
 
 const baseCard = {
   padding: { xs: "2rem", lg: "3rem" },
   borderRadius: "2rem",
-  boxShadow: "unset",
+  boxShadow: BOX_SHADOW_TOP,
 };
 
 const baseLesserCard = {
   ...baseCard,
-  height: { md: "26rem", lg: "22rem" },
+  height: { md: "28rem", lg: "22rem" },
   border: "1px solid " + theme.palette.border.gray,
 };
 
@@ -19,6 +19,21 @@ const pricingStyles = {
     //   "linear-gradient(to bottom, #fdf8ff 0%, #fdf8ff 20%, white 20%)",
     background: "#f3f4fe",
     padding: SECTION_PADDING,
+  },
+  subtitle: {
+    fontWeight: "700",
+    fontFamily: "Poppins",
+    color: theme.palette.text.title,
+    paddingBottom: ".5rem",
+  },
+  title: {
+    // color: "blue",
+    ...theme.typography.title,
+    // paddingBottom: { xs: "1rem", md: "2rem" },
+    lineHeight: "1",
+  },
+  subSubTitle: {
+    paddingBottom: { xs: "1rem", md: "2rem" },
   },
   lesserCardContainer: {
     alignContent: "center",
@@ -41,7 +56,7 @@ const pricingStyles = {
   },
   greaterCard: {
     ...baseCard,
-    height: { md: "30rem", lg: "26rem" },
+    height: { md: "32rem", lg: "26rem" },
     borderRadius: "2rem",
     border: "2px solid " + theme.palette.border.emphasis,
   },
@@ -49,7 +64,7 @@ const pricingStyles = {
     marginTop: "1.5rem",
     marginBottom: "1.5rem",
   },
-  title: {
+  cardTitle: {
     paddingBottom: "1rem",
   },
   costContainer: {
@@ -65,6 +80,7 @@ const pricingStyles = {
   costUnit: {
     fontFamily: "Poppins",
     fontWeight: "400",
+    color: theme.palette.text.subtitle,
   },
   cardContentSubContainer: {
     display: "flex",
@@ -75,7 +91,19 @@ const pricingStyles = {
     // display: "flex",
     // flexDirection: "column",
     // gap: "1rem",
-    alignText: "center",
+    textAlign: "center",
+  },
+  sponsorTitleContainer: {
+    display: "flex",
+    alignItems: "center",
+    gap: { xs: "0.5rem", lg: "1rem" },
+    paddingBottom: "1rem",
+  },
+  sponsorTitleText: {
+    color: theme.palette.text.title,
+    // fontSize: "1.2rem",
+    fontFamily: "Poppins",
+    fontWeight: "500",
   },
   finePrint: {
     fontSize: "0.8rem",
