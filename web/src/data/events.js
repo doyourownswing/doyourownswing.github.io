@@ -548,7 +548,7 @@ const events = [
   ),
   new Event(
     EventTypes.DYOS,
-    messages.doYourOwnSwing,
+    "DYOS feat. DJs Adam, Jen, & Joel!",
     createDate("05/22/2025"),
     feb2025Schedule,
     DEFAULT_LOCATION,
@@ -559,13 +559,27 @@ const events = [
   ),
   new Event(
     EventTypes.DYOS,
-    messages.doYourOwnSwing,
+    "DYOS 5th Thurs: Potluck & AANHPI Artists Social Set!",
     createDate("05/29/2025"),
     feb2025Schedule,
     DEFAULT_LOCATION,
     DEFAULT_PRICE,
     {
       facebookLink: "https://www.facebook.com/events/661047370163035/",
+    }
+  ),
+  new Event(
+    EventTypes.DYOS,
+    'Mini-dyos: "How to Learn & Practice" w/Natasha & Joel!',
+    createDate("06/05/2025"),
+    [
+      { time: "8:45pm - 9:30pm", name: "WCS Foundations (Level 1)" },
+      { time: "9:30pm - 10:00pm", name: "Practice/Social Dance" },
+    ],
+    DEFAULT_LOCATION,
+    DEFAULT_PRICE,
+    {
+      facebookLink: "https://www.facebook.com/events/697331432785767/",
     }
   ),
 ];
