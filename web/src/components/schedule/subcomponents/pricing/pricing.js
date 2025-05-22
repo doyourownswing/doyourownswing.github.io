@@ -146,6 +146,7 @@ function Pricing() {
           <Grid2
             container
             columns={{ xs: 1, md: 3 }}
+            sx={pricingStyles.cardsContainer}
             // spacing={{ xs: 2, md: 1, lg: 4 }}
           >
             <NameYourPrice />

@@ -35,6 +35,9 @@ const pricingStyles = {
   subSubTitle: {
     paddingBottom: { xs: "1rem", md: "2rem" },
   },
+  cardsContainer: {
+    flexDirection: { xs: "column", md: "row" },
+  },
   lesserCardContainer: {
     alignContent: "center",
   },
@@ -44,13 +47,14 @@ const pricingStyles = {
   },
   lesserCardLeft: {
     ...baseLesserCard,
-    borderRadius: "2rem 0 0 2rem",
+    borderRadius: { xs: "2rem", md: "2rem 0 0 2rem" },
     // Hide border slightly under the main card.
     transform: "translateX(1px)",
   },
   lesserCardRight: {
     ...baseLesserCard,
     borderRadius: "0 2rem 2rem 0",
+    borderRadius: { xs: "2rem", md: "0 2rem 2rem 0" },
     // Hide border slightly under the main card.
     transform: "translateX(-1px)",
   },
