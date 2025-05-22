@@ -582,6 +582,70 @@ const events = [
       facebookLink: "https://www.facebook.com/events/697331432785767/",
     }
   ),
+  new Event(
+    EventTypes.DYOS,
+    messages.doYourOwnSwing,
+    createDate("06/12/2025"),
+    feb2025Schedule,
+    DEFAULT_LOCATION,
+    DEFAULT_PRICE
+  ),
+  new Event(
+    EventTypes.DYOS,
+    messages.doYourOwnSwing,
+    createDate("06/19/2025"),
+    feb2025Schedule,
+    DEFAULT_LOCATION,
+    DEFAULT_PRICE
+  ),
+  new Event(
+    EventTypes.DYOS,
+    messages.doYourOwnSwing,
+    createDate("06/26/2025"),
+    feb2025Schedule,
+    DEFAULT_LOCATION,
+    DEFAULT_PRICE
+  ),
+  new Event(
+    EventTypes.DYOS,
+    messages.doYourOwnSwing,
+    createDate("07/03/2025"),
+    feb2025Schedule,
+    DEFAULT_LOCATION,
+    DEFAULT_PRICE
+  ),
+  new Event(
+    EventTypes.DYOS,
+    messages.doYourOwnSwing,
+    createDate("07/10/2025"),
+    feb2025Schedule,
+    DEFAULT_LOCATION,
+    DEFAULT_PRICE
+  ),
+  new Event(
+    EventTypes.DYOS,
+    messages.doYourOwnSwing,
+    createDate("07/17/2025"),
+    feb2025Schedule,
+    DEFAULT_LOCATION,
+    DEFAULT_PRICE
+  ),
+  new Event(
+    EventTypes.DYOS,
+    messages.doYourOwnSwing,
+    createDate("07/24/2025"),
+    feb2025Schedule,
+    DEFAULT_LOCATION,
+    DEFAULT_PRICE
+  ),
+  new Event(
+    EventTypes.DYOS,
+    messages.doYourOwnSwing,
+    createDate("07/31/2025"),
+    feb2025Schedule,
+    DEFAULT_LOCATION,
+    DEFAULT_PRICE
+  ),
 ];
 
 function getNextEvents(numEvents) {
