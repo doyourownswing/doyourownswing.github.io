@@ -18,7 +18,7 @@ function NameYourPrice() {
   let nameYourPrice = messages.pricingOptions.nameYourPrice;
 
   return (
-    <Grid2 xs={0.95} sx={pricingStyles.lesserCardContainer}>
+    <Grid2 xs={0.9} md={0.95} sx={pricingStyles.lesserCardContainer}>
       <Card sx={pricingStyles.lesserCardLeft}>
         <Box>
           <Typography variant="h6" sx={pricingStyles.cardTitle}>
@@ -48,7 +48,7 @@ function MonthlySponsor() {
   let sponsor = messages.pricingOptions.sponsor;
 
   return (
-    <Grid2 xs={1.1} sx={pricingStyles.greaterCardContainer}>
+    <Grid2 xs={1} md={1.1} sx={pricingStyles.greaterCardContainer}>
       <Card sx={pricingStyles.greaterCard}>
         <Box>
           <Box sx={pricingStyles.sponsorTitleContainer}>
@@ -89,7 +89,7 @@ function Volunteer() {
   let volunteer = messages.pricingOptions.volunteer;
 
   return (
-    <Grid2 xs={0.95} sx={pricingStyles.lesserCardContainer}>
+    <Grid2 xs={0.9} md={0.95} sx={pricingStyles.lesserCardContainer}>
       <Card sx={pricingStyles.lesserCardRight}>
         <Box>
           <Typography variant="h6" sx={pricingStyles.cardTitle}>

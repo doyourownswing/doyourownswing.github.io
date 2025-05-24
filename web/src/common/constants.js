@@ -23,3 +23,6 @@ export const BOX_SHADOW = "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;";
 export const BOX_SHADOW_2 = "rgba(99, 99, 99, 0.4) 0px 2px 16px 0px;";
 
 export const BOX_SHADOW_TOP = "0px 16px 16px 0px " + theme.palette.card.shadow;
+
+export const BOX_SHADOW_GLOW =
+  "0px 0px 16px 0px " + theme.palette.border.emphasisGlow;

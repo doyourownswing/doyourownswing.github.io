@@ -1,10 +1,20 @@
-import { BOX_SHADOW_TOP, SECTION_PADDING } from "common/constants";
+import {
+  BOX_SHADOW_2,
+  BOX_SHADOW_GLOW,
+  BOX_SHADOW_TOP,
+  SECTION_PADDING,
+} from "common/constants";
 import theme from "common/theme";
 
 const baseCard = {
   padding: { xs: "2rem", lg: "3rem" },
   borderRadius: "2rem",
-  boxShadow: BOX_SHADOW_TOP,
+  boxShadow: { xs: BOX_SHADOW_2, md: BOX_SHADOW_TOP },
+};
+
+const boxShadowWithGlow = {
+  xs: [BOX_SHADOW_GLOW, BOX_SHADOW_2].join(","),
+  md: [BOX_SHADOW_GLOW, BOX_SHADOW_TOP].join(","),
 };
 
 const baseLesserCard = {
@@ -37,6 +47,7 @@ const pricingStyles = {
   },
   cardsContainer: {
     flexDirection: { xs: "column", md: "row" },
+    alignItems: "center",
   },
   lesserCardContainer: {
     alignContent: "center",
@@ -47,22 +58,23 @@ const pricingStyles = {
   },
   lesserCardLeft: {
     ...baseLesserCard,
-    borderRadius: { xs: "2rem", md: "2rem 0 0 2rem" },
+    borderRadius: { xs: "2rem 2rem 0 0", md: "2rem 0 0 2rem" },
     // Hide border slightly under the main card.
-    transform: "translateX(1px)",
+    transform: { xs: "translateY(0.5rem)", md: "translateX(1px)" },
   },
   lesserCardRight: {
     ...baseLesserCard,
-    borderRadius: "0 2rem 2rem 0",
-    borderRadius: { xs: "2rem", md: "0 2rem 2rem 0" },
+    // borderRadius: "0 2rem 2rem 0",
+    borderRadius: { xs: "0 0 2rem 2rem", md: "0 2rem 2rem 0" },
     // Hide border slightly under the main card.
-    transform: "translateX(-1px)",
+    transform: { xs: "translateY(-0.5rem)", md: "translateX(-1px)" },
   },
   greaterCard: {
     ...baseCard,
     height: { md: "32rem", lg: "26rem" },
     borderRadius: "2rem",
     border: "2px solid " + theme.palette.border.emphasis,
+    boxShadow: boxShadowWithGlow,
   },
   divider: {
     marginTop: "1.5rem",
