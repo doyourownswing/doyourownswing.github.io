@@ -56,6 +56,7 @@ const classesStyles = {
     color: theme.palette.text.title,
     transform: "rotate(15deg)",
     fontFamily: "Poppins",
+    userSelect: "none",
   },
   card: {
     boxShadow: BOX_SHADOW,
