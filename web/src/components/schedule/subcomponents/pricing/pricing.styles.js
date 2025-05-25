@@ -25,9 +25,7 @@ const baseLesserCard = {
 
 const pricingStyles = {
   container: {
-    // background:
-    //   "linear-gradient(to bottom, #fdf8ff 0%, #fdf8ff 20%, white 20%)",
-    background: "#f3f4fe",
+    background: "linear-gradient(180deg, #fdf8ff 0%, #f3f4fe 5%)",
     padding: SECTION_PADDING,
   },
   subtitle: {
@@ -37,9 +35,7 @@ const pricingStyles = {
     paddingBottom: ".5rem",
   },
   title: {
-    // color: "blue",
     ...theme.typography.title,
-    // paddingBottom: { xs: "1rem", md: "2rem" },
     lineHeight: "1",
   },
   subSubTitle: {
@@ -64,7 +60,6 @@ const pricingStyles = {
   },
   lesserCardRight: {
     ...baseLesserCard,
-    // borderRadius: "0 2rem 2rem 0",
     borderRadius: { xs: "0 0 2rem 2rem", md: "0 2rem 2rem 0" },
     // Hide border slightly under the main card.
     transform: { xs: "translateY(-0.5rem)", md: "translateX(-1px)" },
@@ -91,7 +86,6 @@ const pricingStyles = {
     fontFamily: "Poppins",
     fontWeight: "500",
     letterSpacing: "-2px",
-    // color: "#4f5bff",
   },
   costUnit: {
     fontFamily: "Poppins",
@@ -104,9 +98,6 @@ const pricingStyles = {
     gap: "1rem",
   },
   cardContentFinePrintContainer: {
-    // display: "flex",
-    // flexDirection: "column",
-    // gap: "1rem",
     textAlign: "center",
   },
   sponsorTitleContainer: {
@@ -117,7 +108,6 @@ const pricingStyles = {
   },
   sponsorTitleText: {
     color: theme.palette.text.title,
-    // fontSize: "1.2rem",
     fontFamily: "Poppins",
     fontWeight: "500",
   },

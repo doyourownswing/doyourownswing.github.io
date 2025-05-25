@@ -1,4 +1,8 @@
 const messages = {
+  subtitle: "Pricing",
+  title: "Choose what you pay",
+  description:
+    "What matters most to us is that we see you at Do Your Own Swing on Thursday night",
   pricingOptions: {
     nameYourPrice: {
       title: "Name Your Price",

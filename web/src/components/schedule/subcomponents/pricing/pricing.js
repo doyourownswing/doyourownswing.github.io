@@ -1,17 +1,9 @@
-import {
-  Box,
-  Card,
-  Container,
-  Divider,
-  SvgIcon,
-  Typography,
-} from "@mui/material";
+import { Box, Card, Container, Divider, Typography } from "@mui/material";
 import Grid2 from "@mui/material/Unstable_Grid2";
 import pricingStyles from "./pricing.styles";
 import messages from "./messages";
 import DyosLink from "components/common/link";
-import { Text, Space } from "components/common/typography";
-import PricingImage from "assets/images/pricing1.jpg";
+import { Text } from "components/common/typography";
 import { PurpleLogo } from "components/common/logos";
 
 function NameYourPrice() {
@@ -26,7 +18,6 @@ function NameYourPrice() {
           </Typography>
           <Typography>{nameYourPrice.nameYourPrice}</Typography>
         </Box>
-        {/* <Divider sx={pricingStyles.divider} /> */}
         <Box sx={pricingStyles.costContainer}>
           <Text sx={pricingStyles.cost}>{nameYourPrice.cost}</Text>
           <Text sx={pricingStyles.costUnit}>{nameYourPrice.costUnit}</Text>
@@ -58,9 +49,7 @@ function MonthlySponsor() {
             </Typography>
           </Box>
           <Typography>{sponsor.pay}</Typography>
-          {/* <Typography variant="subtitle">{sponsor.cost}</Typography> */}
         </Box>
-        {/* <Divider sx={pricingStyles.divider} /> */}
 
         <Box sx={pricingStyles.costContainer}>
           <Text sx={pricingStyles.cost}>{sponsor.cost}</Text>
@@ -96,9 +85,7 @@ function Volunteer() {
             {volunteer.title}
           </Typography>
           <Typography>{volunteer.details}</Typography>
-          {/* <Typography variant="subtitle">{volunteer.cost}</Typography> */}
         </Box>
-        {/* <Divider sx={pricingStyles.divider} /> */}
         <Box sx={pricingStyles.costContainer}>
           <Text sx={pricingStyles.cost}>{volunteer.cost}</Text>
           <Text sx={pricingStyles.costUnit}>{volunteer.costUnit}</Text>
@@ -123,23 +110,15 @@ function Pricing() {
   return (
     <Box sx={pricingStyles.container}>
       <Container>
-        {/* <Box>
-          <Box
-            component="img"
-            src={PricingImage}
-            // sx={classesStyles.picture}
-            // alt={messages.splashImageAltText}
-          />
-        </Box> */}
         <Box>
           <Typography variant="h6" sx={pricingStyles.subtitle}>
-            Pricing
+            {messages.subtitle}
           </Typography>
           <Typography variant="h3" sx={pricingStyles.title}>
-            Choose what you pay
+            {messages.title}
           </Typography>
           <Typography variant="subtitle1" sx={pricingStyles.subSubTitle}>
-            What matters most to us is that we see you on Thursday night
+            {messages.description}
           </Typography>
         </Box>
         <Box>
@@ -147,7 +126,6 @@ function Pricing() {
             container
             columns={{ xs: 1, md: 3 }}
             sx={pricingStyles.cardsContainer}
-            // spacing={{ xs: 2, md: 1, lg: 4 }}
           >
             <NameYourPrice />
             <MonthlySponsor />
