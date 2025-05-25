@@ -74,6 +74,14 @@ const theme = responsiveFontSizes(
         songOfTheWeek: "linear-gradient(to bottom, #e9e0fb 0%, #ffe2f7 100%);",
         upcomingEvents: "linear-gradient(to bottom, #ffe2f7 0%, #e9e0fb 100%);",
       },
+      border: {
+        gray: basePalette.gray200,
+        emphasis: basePalette.lightPurple1,
+        emphasisGlow: basePalette.lightPurple2,
+      },
+      card: {
+        shadow: basePalette.gray400,
+      },
       text: {
         titleLight: basePalette.white,
         title: basePalette.mediumPurple,
@@ -130,6 +138,7 @@ const theme = responsiveFontSizes(
         '"Segoe UI Emoji"',
         '"Segoe UI Symbol"',
       ].join(","),
+      h6: { fontFamily: "Poppins" },
       body1: {
         lineHeight: "1.5",
         color: basePalette.gray700,
