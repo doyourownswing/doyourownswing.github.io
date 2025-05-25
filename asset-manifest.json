@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.f7fb994a.css",
-    "main.js": "/static/js/main.7754d04b.js",
+    "main.js": "/static/js/main.70919f4d.js",
     "static/media/birds-eye-social.jpg": "/static/media/birds-eye-social.00d43d29d75a219a7ce8.jpg",
     "static/media/classes1.jpg": "/static/media/classes1.21b57efc3893b1cc800b.jpg",
     "static/media/teacher-demo-2-blurred-min.JPG": "/static/media/teacher-demo-2-blurred-min.ed11e4120c380ca5192f.JPG",
@@ -18,10 +18,10 @@
     "static/media/color-logo.svg": "/static/media/color-logo.5e889ebd6d8c107050e3f0b5035af4cb.svg",
     "index.html": "/index.html",
     "main.f7fb994a.css.map": "/static/css/main.f7fb994a.css.map",
-    "main.7754d04b.js.map": "/static/js/main.7754d04b.js.map"
+    "main.70919f4d.js.map": "/static/js/main.70919f4d.js.map"
   },
   "entrypoints": [
     "static/css/main.f7fb994a.css",
-    "static/js/main.7754d04b.js"
+    "static/js/main.70919f4d.js"
   ]
 }
