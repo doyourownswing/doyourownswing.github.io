@@ -47,10 +47,22 @@ const classesStyles = {
     height: "1px",
     borderColor: "transparent",
   },
+  embellishment: {
+    position: "absolute",
+    scale: "25",
+    left: "70%",
+    top: "60%",
+    opacity: "0.04",
+    color: theme.palette.text.title,
+    transform: "rotate(15deg)",
+    fontFamily: "Poppins",
+    userSelect: "none",
+  },
   card: {
     boxShadow: BOX_SHADOW,
     height: "100%",
     borderRadius: "1rem",
+    position: "relative",
   },
   cardContent: {
     padding: { xs: "2rem 2rem 3rem", sm: "3rem 4rem 4rem" },

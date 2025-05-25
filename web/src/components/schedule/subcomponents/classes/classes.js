@@ -40,6 +40,12 @@ function LevelIndicator(props) {
 function ClassCard(props) {
   let classDetails = props.class;
 
+  let embellishment = (
+    <Typography sx={classesStyles.embellishment}>
+      {classDetails.difficulty}
+    </Typography>
+  );
+
   let prerequisites = !!classDetails.prerequisitesList ? (
     <Box>
       <Typography>{classDetails.prerequisitesPrompt}</Typography>
@@ -58,6 +64,7 @@ function ClassCard(props) {
   return (
     <Grid2 xs={1}>
       <Card sx={classesStyles.card}>
+        {embellishment}
         <Box sx={classesStyles.cardContent}>
           <Stack>
             <Box sx={classesStyles.cardHeader}>
