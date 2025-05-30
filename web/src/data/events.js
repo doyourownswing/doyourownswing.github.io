@@ -570,11 +570,11 @@ const events = [
   ),
   new Event(
     EventTypes.DYOS,
-    'Mini-dyos: "How to Learn & Practice" w/Natasha & Joel!',
+    'Mini-dyos: "How to Learn & Practice" w/ Natasha & Joel!',
     createDate("06/05/2025"),
     [
-      { time: "8:45pm - 9:30pm", name: "WCS Foundations (Level 1)" },
-      { time: "9:30pm - 10:00pm", name: "Practice/Social Dance" },
+      { time: "8:30pm - 10:00pm", name: "Intensive" },
+      { time: "10:00pm - 10:30pm", name: "Supervised Practice" },
     ],
     DEFAULT_LOCATION,
     DEFAULT_PRICE,
