@@ -584,7 +584,7 @@ const events = [
   ),
   new Event(
     EventTypes.DYOS,
-    messages.doYourOwnSwing,
+    "DYOS Spirit Night",
     createDate("06/12/2025"),
     feb2025Schedule,
     DEFAULT_LOCATION,
@@ -592,7 +592,7 @@ const events = [
   ),
   new Event(
     EventTypes.DYOS,
-    messages.doYourOwnSwing,
+    "DYOS Glitter and Glow Night",
     createDate("06/19/2025"),
     feb2025Schedule,
     DEFAULT_LOCATION,
@@ -600,7 +600,7 @@ const events = [
   ),
   new Event(
     EventTypes.DYOS,
-    messages.doYourOwnSwing,
+    "DYOS Rainbow and Flag Night",
     createDate("06/26/2025"),
     feb2025Schedule,
     DEFAULT_LOCATION,
