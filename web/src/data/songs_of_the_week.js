@@ -630,8 +630,70 @@ const songs = [
     }
   ),
 
-  // got the most recent ones from
+  new SongOfTheWeek(
+    createDate("06/08/2025"),
+    null,
+    {
+      name: "I Know A Place",
+      artist: "MUNA",
+      year: "2017",
+    },
+    {
+      albumCoverImage:
+        "https://i.scdn.co/image/ab67616d00001e02120baf06468dbd74a40582ca",
+      youtube: "https://youtu.be/-t5gGm3NWU4",
+      spotify: "https://open.spotify.com/track/0bPSRn4crnh5f1JhELPlyL",
+    }
+  ),
+  new SongOfTheWeek(
+    createDate("06/15/2025"),
+    null,
+    {
+      name: "Touch",
+      artist: "Shura",
+      year: "2016",
+    },
+    {
+      albumCoverImage:
+        "https://i.scdn.co/image/ab67616d0000b27347b93601aed57ab7e31c181a",
+      youtube: "https://open.spotify.com/track/2ylVfK4pVfeSV4zxieyT2B",
+      spotify: "https://open.spotify.com/track/2ylVfK4pVfeSV4zxieyT2B",
+    }
+  ),
+  new SongOfTheWeek(
+    createDate("06/22/2025"),
+    null,
+    {
+      name: "Pynk (feat. Grimes)",
+      artist: "Janelle Monáe",
+      year: "2018",
+    },
+    {
+      albumCoverImage:
+        "https://i.scdn.co/image/ab67616d00001e020a60fb0deda858270cca82ee",
+      youtube: "https://youtu.be/iGkDE2Gakow",
+      spotify: "https://open.spotify.com/track/5OpiyfqaQLdtwHd3SfembH",
+    }
+  ),
+  new SongOfTheWeek(
+    createDate("06/29/2025"),
+    null,
+    {
+      name: "Too Good",
+      artist: "Arlo Parks",
+      year: "2021",
+    },
+    {
+      albumCoverImage:
+        "https://i.scdn.co/image/ab67616d00001e020f5b85c5d4a8131d01aca941",
+      youtube: "https://youtu.be/-gFCd5CE4bg",
+      spotify: "https://open.spotify.com/track/1HHIv96gVeVkoOBzQeH9d8",
+    }
+  ),
+
+  // Playlists to pull from:
   // https://open.spotify.com/playlist/0tpqlDJCQA2zoQxcxfRPkC
+  // queer playlist: https://open.spotify.com/playlist/5wbCgERtE0rXMzmdaQiRsK
 ];
 
 /** Gets the [SongOfTheWeek] with the most recent [startDate] */
