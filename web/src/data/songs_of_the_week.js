@@ -656,7 +656,7 @@ const songs = [
     {
       albumCoverImage:
         "https://i.scdn.co/image/ab67616d0000b27347b93601aed57ab7e31c181a",
-      youtube: "https://open.spotify.com/track/2ylVfK4pVfeSV4zxieyT2B",
+      youtube: "https://youtu.be/x2AOjb9HW2E",
       spotify: "https://open.spotify.com/track/2ylVfK4pVfeSV4zxieyT2B",
     }
   ),
