@@ -12,6 +12,7 @@ const announcementStyles = {
   text: {
     ...theme.typography.announcement,
     fontSize: { xs: "0.875rem", sm: "1rem" },
+    color: theme.palette.text.announcement,
   },
 };
 

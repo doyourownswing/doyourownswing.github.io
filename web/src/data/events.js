@@ -646,6 +646,30 @@ const events = [
     DEFAULT_LOCATION,
     DEFAULT_PRICE
   ),
+  new Event(
+    EventTypes.DYOS,
+    messages.doYourOwnSwing,
+    createDate("08/14/2025"),
+    feb2025Schedule,
+    DEFAULT_LOCATION,
+    DEFAULT_PRICE
+  ),
+  new Event(
+    EventTypes.DYOS,
+    messages.doYourOwnSwing,
+    createDate("08/21/2025"),
+    feb2025Schedule,
+    DEFAULT_LOCATION,
+    DEFAULT_PRICE
+  ),
+  new Event(
+    EventTypes.DYOS,
+    messages.doYourOwnSwing,
+    createDate("08/28/2025"),
+    feb2025Schedule,
+    DEFAULT_LOCATION,
+    DEFAULT_PRICE
+  ),
 ];
 
 function getNextEvents(numEvents) {
