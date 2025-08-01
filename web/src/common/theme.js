@@ -84,6 +84,7 @@ const theme = responsiveFontSizes(
       },
       text: {
         titleLight: basePalette.white,
+        announcement: basePalette.white,
         title: basePalette.mediumPurple,
         titleNotQuiteBlack: basePalette.darkPurple,
         navigationOptions: basePalette.gray600,
