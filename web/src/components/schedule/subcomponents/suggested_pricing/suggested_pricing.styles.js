@@ -36,6 +36,9 @@ const suggestedPricingStyles = {
     paddingBottom: "0.5rem",
     minWidth: "0",
   },
+  smallCellContent: {
+    minWidth: "50%",
+  },
   rowLegendCell: {
     ...baseCell,
   },

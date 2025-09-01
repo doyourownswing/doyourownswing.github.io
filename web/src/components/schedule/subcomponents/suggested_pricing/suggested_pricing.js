@@ -1,6 +1,7 @@
 import {
   Box,
   Container,
+  IconButton,
   Paper,
   Table,
   TableBody,
@@ -11,10 +12,16 @@ import {
   Typography,
   useMediaQuery,
 } from "@mui/material";
+import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
+import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import suggestedPricingStyles from "./suggested_pricing.styles";
 import { messages, tableDetails } from "./messages";
 import theme from "common/theme";
+import { useState } from "react";
 
+const NUM_ROWS = 5;
+
+// A styled tablecell where the contents are center aligned.
 function CenteredTableCell(props) {
   return (
     <TableCell align="center" sx={suggestedPricingStyles.dataCell} {...props}>
@@ -23,6 +30,7 @@ function CenteredTableCell(props) {
   );
 }
 
+// A stylized tablecell for a data column that should span 3 columns.
 function SpanningCenteredTableCell(props) {
   return (
     <TableCell
@@ -36,6 +44,7 @@ function SpanningCenteredTableCell(props) {
   );
 }
 
+// A stylized tablecell for the column header.
 function HeaderTableCell(props) {
   let data = props.data;
 
@@ -49,6 +58,7 @@ function HeaderTableCell(props) {
   );
 }
 
+// A stylized tablecell for the legend cell of each row.
 function RowLegendTableCell(props) {
   return (
     <TableCell scope="row" sx={suggestedPricingStyles.rowLegendCell} {...props}>
@@ -57,6 +67,20 @@ function RowLegendTableCell(props) {
   );
 }
 
+// Convenience function for creating the legend row given data.
+function buildLegendCell(legendData) {
+  return (
+    <RowLegendTableCell>
+      {legendData.map((l, i) => (
+        <Typography key={i} sx={suggestedPricingStyles.cellTitle}>
+          {l}
+        </Typography>
+      ))}
+    </RowLegendTableCell>
+  );
+}
+
+// Table to be shown on large screens that display all 3 columns and values.
 function LargeScreenSuggestedPricingTable() {
   function buildHeader() {
     return (
@@ -66,18 +90,6 @@ function LargeScreenSuggestedPricingTable() {
           <HeaderTableCell key={i} data={d} />
         ))}
       </TableRow>
-    );
-  }
-
-  function buildLegendCell(legendData) {
-    return (
-      <RowLegendTableCell>
-        {legendData.map((l, i) => (
-          <Typography key={i} sx={suggestedPricingStyles.cellTitle}>
-            {l}
-          </Typography>
-        ))}
-      </RowLegendTableCell>
     );
   }
 
@@ -98,7 +110,7 @@ function LargeScreenSuggestedPricingTable() {
   let header = buildHeader();
   let rows = [];
 
-  for (var i = 0; i < 5; i++) {
+  for (var i = 0; i < NUM_ROWS; i++) {
     rows.push(
       <TableRow>
         {[
@@ -117,10 +129,84 @@ function LargeScreenSuggestedPricingTable() {
   );
 }
 
+// Table to be shown on small screens that display one column at a time and is scrollable.
 function SmallScreenSuggestedPricingTable() {
-  return "peepee";
+  const [visibleColumn, setVisibleColumn] = useState(1);
+
+  function createHeader() {
+    let visibleHeaderData = tableDetails.headerCells[visibleColumn];
+
+    function clickLeft() {
+      setVisibleColumn(visibleColumn - 1);
+    }
+
+    function clickRight() {
+      setVisibleColumn(visibleColumn + 1);
+    }
+
+    return (
+      <TableCell
+        align="center"
+        sx={suggestedPricingStyles.headerCell}
+        colSpan={2}
+      >
+        <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+          <IconButton disabled={visibleColumn === 0} onClick={clickLeft}>
+            <ChevronLeftIcon />
+          </IconButton>
+          <Box>
+            <Typography sx={suggestedPricingStyles.cellTitle}>
+              {visibleHeaderData.title}
+            </Typography>
+            <Typography>{visibleHeaderData.description}</Typography>
+          </Box>
+          <IconButton disabled={visibleColumn === 2} onClick={clickRight}>
+            <ChevronRightIcon />
+          </IconButton>
+        </Box>
+      </TableCell>
+    );
+  }
+
+  function createRow(legend, content, i) {
+    return (
+      <TableRow>
+        {buildLegendCell(legend)}
+        <CenteredTableCell key={i} align="left">
+          <Typography sx={suggestedPricingStyles.cellText}>
+            {content}
+          </Typography>
+        </CenteredTableCell>
+      </TableRow>
+    );
+  }
+
+  function createRows() {
+    let rows = [];
+
+    for (var i = 0; i < NUM_ROWS; i++) {
+      let rowData = tableDetails.rowContent[i];
+      let rowContent =
+        rowData.length === 1 ? rowData[0] : rowData[visibleColumn];
+
+      rows.push(createRow(tableDetails.rowLegendCells[i], rowContent, i));
+    }
+
+    return rows;
+  }
+
+  let header = createHeader();
+  let bodyRows = createRows();
+
+  return (
+    <Table>
+      <TableHead>{header}</TableHead>
+      <TableBody>{bodyRows}</TableBody>
+    </Table>
+  );
 }
 
+// Top-level component for the suggested pricing section.
 function SuggestedPricing() {
   const useSmallScreenTable = useMediaQuery(theme.breakpoints.down("md"));
 
