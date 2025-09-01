@@ -2,9 +2,7 @@ import { BOX_SHADOW, SECTION_PADDING } from "common/constants";
 import theme from "common/theme";
 
 const baseCell = {
-  padding: {
-    xs: "1rem 2rem",
-  },
+  padding: "1rem 2rem",
 };
 
 const suggestedPricingStyles = {
@@ -36,16 +34,7 @@ const suggestedPricingStyles = {
     paddingBottom: "0.5rem",
     minWidth: "0",
   },
-  smallCellContent: {
-    minWidth: "50%",
-  },
-  rowLegendCell: {
-    ...baseCell,
-  },
-  dataCell: {
-    ...baseCell,
-  },
-  spanningDataCell: {
+  tableCell: {
     ...baseCell,
   },
   cellText: {

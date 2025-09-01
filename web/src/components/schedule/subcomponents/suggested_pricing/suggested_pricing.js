@@ -24,7 +24,7 @@ const NUM_ROWS = 5;
 // A styled tablecell where the contents are center aligned.
 function CenteredTableCell(props) {
   return (
-    <TableCell align="center" sx={suggestedPricingStyles.dataCell} {...props}>
+    <TableCell align="center" sx={suggestedPricingStyles.tableCell} {...props}>
       {props.children}
     </TableCell>
   );
@@ -36,7 +36,7 @@ function SpanningCenteredTableCell(props) {
     <TableCell
       align="center"
       colSpan={3}
-      sx={suggestedPricingStyles.spanningDataCell}
+      sx={suggestedPricingStyles.tableCell}
       {...props}
     >
       {props.children}
@@ -61,7 +61,7 @@ function HeaderTableCell(props) {
 // A stylized tablecell for the legend cell of each row.
 function RowLegendTableCell(props) {
   return (
-    <TableCell scope="row" sx={suggestedPricingStyles.rowLegendCell} {...props}>
+    <TableCell scope="row" sx={suggestedPricingStyles.tableCell} {...props}>
       {props.children}
     </TableCell>
   );
