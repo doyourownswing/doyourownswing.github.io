@@ -7,6 +7,7 @@ import ZelleLogo from "assets/images/payment_logos/zelle-logo.png";
 import VenmoLogo from "assets/images/payment_logos/venmo-logo.png";
 import PaypalLogo from "assets/images/payment_logos/paypal-logo.png";
 import Callout from "components/common/callout";
+import QRCode from "react-qr-code";
 
 const ZELLE_DATA = {
   title: ZelleLogo,
@@ -15,7 +16,7 @@ const ZELLE_DATA = {
   isPreferred: true,
   link: "https://enroll.zellepay.com/qr-codes?data=eyJuYW1lIjoiTWljaGVsbGUiLCJhY3Rpb24iOiJwYXltZW50IiwidG9rZW4iOiJzaGFyZWRzd2luZ3NwYWNlc0BnbWFpbC5jb20ifQ==",
   associatedAccount: "SharedSwingSpaces@gmail.com",
-  footer: "Open Zelle on your preferred banking app",
+  footer: "Scan QR code using your preferred banking app to open Zelle",
 };
 
 const CASH_DATA = {
@@ -74,7 +75,7 @@ function PaymentOption(props) {
             />
           </Box>
           <Box sx={paymentStyles.cardBody}>
-            {data.qrCode}
+            <QRCode style={paymentStyles.qrCode} value={data.link}></QRCode>
             <Typography>{data.associatedAccount}</Typography>
           </Box>
           {!!data.buttonText && (
@@ -87,6 +88,9 @@ function PaymentOption(props) {
                 {data.buttonText}
               </Button>
             </Box>
+          )}
+          {!!data.footer && (
+            <Typography sx={paymentStyles.footer}>{data.footer}</Typography>
           )}
         </Stack>
       </DyosCard>
@@ -106,9 +110,13 @@ function CashOption() {
               Cash
             </Typography>
           </Box>
+          <Box>
+            <Typography sx={paymentStyles.dollarSign}>$</Typography>
+          </Box>
           <Box sx={paymentStyles.cardBody}>
-            <Typography>Pay with cash at the front desk.</Typography>
-            <Typography>Name your price at the door!</Typography>
+            <Typography sx={paymentStyles.footer}>
+              Name your price and pay with cash at the front desk!
+            </Typography>
             <Typography>(See chart above for details)</Typography>
           </Box>
         </Stack>

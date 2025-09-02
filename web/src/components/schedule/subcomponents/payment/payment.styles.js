@@ -49,7 +49,7 @@ const paymentStyles = {
     overflow: "unset",
   },
   cardContent: {
-    gap: "2rem",
+    gap: "1.5rem",
     textAlign: "center",
     alignItems: "center",
   },
@@ -76,6 +76,21 @@ const paymentStyles = {
     fontFamily: "Poppins",
     fontSize: "0.8rem",
     fontWeight: "600",
+  },
+  qrCode: {
+    height: "8rem",
+  },
+  footer: {
+    fontWeight: "700",
+    textWrap: "balance",
+  },
+  dollarSign: {
+    fontSize: "8rem",
+    fontFamily: "Poppins",
+    fontWeight: "600",
+    lineHeight: "1",
+    color: "green",
+    opacity: "20%",
   },
 };
 
