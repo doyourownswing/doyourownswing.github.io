@@ -123,6 +123,11 @@ const theme = responsiveFontSizes(
         accent: basePalette.mediumPurple,
         backgroundColor: basePalette.purple100,
       },
+      badge: {
+        border: "1px solid" + basePalette.mediumPurple,
+        backgroundColor: basePalette.purple100,
+        boxShadow: "0px 2px 4px " + basePalette.gray300,
+      },
     },
     typography: {
       fontFamily: [

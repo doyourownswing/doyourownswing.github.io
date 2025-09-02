@@ -59,13 +59,8 @@ const classesStyles = {
     userSelect: "none",
   },
   card: {
-    boxShadow: BOX_SHADOW,
     height: "100%",
-    borderRadius: "1rem",
     position: "relative",
-  },
-  cardContent: {
-    padding: { xs: "2rem 2rem 3rem", sm: "3rem 4rem 4rem" },
   },
   cardHeader: {
     paddingBottom: "2rem",
