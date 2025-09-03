@@ -40,6 +40,10 @@ const suggestedPricingStyles = {
   cellText: {
     minWidth: "0",
   },
+  smallHeaderCellContent: {
+    display: "flex",
+    justifyContent: "space-between",
+  },
 };
 
 export default suggestedPricingStyles;
