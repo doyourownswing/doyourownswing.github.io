@@ -71,6 +71,7 @@ const theme = responsiveFontSizes(
         lightPurple: basePalette.lightPurple1,
         barelyPurple: basePalette.purple100,
         darkPurple: basePalette.darkPurple,
+        purpleDivider: basePalette.purple1,
         songOfTheWeek: "linear-gradient(to bottom, #e9e0fb 0%, #ffe2f7 100%);",
         upcomingEvents: "linear-gradient(to bottom, #ffe2f7 0%, #e9e0fb 100%);",
       },
