@@ -14,7 +14,8 @@ const ZELLE_DATA = {
   titleAltText: messages.zelle,
   titleStyles: { height: "3.5rem" },
   isPreferred: true,
-  link: "https://enroll.zellepay.com/qr-codes?data=eyJuYW1lIjoiTWljaGVsbGUiLCJhY3Rpb24iOiJwYXltZW50IiwidG9rZW4iOiJzaGFyZWRzd2luZ3NwYWNlc0BnbWFpbC5jb20ifQ==",
+  qrCode:
+    "https://enroll.zellepay.com/qr-codes?data=eyJuYW1lIjoiTWljaGVsbGUiLCJhY3Rpb24iOiJwYXltZW50IiwidG9rZW4iOiJzaGFyZWRzd2luZ3NwYWNlc0BnbWFpbC5jb20ifQ==",
   associatedAccount: messages.sharedSwingSpacesAccount,
   footer: messages.scanZelle,
 };
@@ -24,9 +25,11 @@ const VENMO_DATA = {
   titleAltText: messages.venmo,
   titleStyles: { height: "2.5rem" },
   isPreferred: false,
-  link: "https://www.paypal.com/qrcodes/venmocs/fd351a61-a82e-437a-a889-e04c33f204b9",
+  qrCode:
+    "https://www.paypal.com/qrcodes/venmocs/fd351a61-a82e-437a-a889-e04c33f204b9",
   associatedAccount: messages.venmoHandle,
   buttonText: messages.openVenmo,
+  buttonLink: "https://venmo.com/riley-wcs",
   buttonColor: "#008cff", // Venmo logo color
 };
 
@@ -35,9 +38,11 @@ const PAYPAL_DATA = {
   titleAltText: messages.paypal,
   titleStyles: { height: "3rem" },
   isPreferred: false,
-  link: "https://www.paypal.com/qrcodes/managed/767fb6d3-a9ce-4cd8-bb74-2e3b2760b8e8",
+  qrCode:
+    "https://www.paypal.com/qrcodes/managed/767fb6d3-a9ce-4cd8-bb74-2e3b2760b8e8",
   associatedAccount: messages.sharedSwingSpacesAccount,
   buttonText: messages.openPaypal,
+  buttonLink: "https://paypal.me/sharedswingspaces",
   buttonColor: "#002b87", // PayPal logo color
 };
 
@@ -65,15 +70,17 @@ function PaymentOption(props) {
             />
           </Box>
           <Box sx={paymentStyles.cardBody}>
-            <QRCode style={paymentStyles.qrCode} value={data.link}></QRCode>
+            <QRCode style={paymentStyles.qrCode} value={data.qrCode}></QRCode>
             <Typography>{data.associatedAccount}</Typography>
           </Box>
           {!!data.buttonText && (
             <Box sx={paymentStyles.cardButton}>
               <Button
-                href={data.link}
-                sx={paymentStyles.buildButtonStyles(data.buttonColor)}
                 variant="outlined"
+                sx={paymentStyles.buildButtonStyles(data.buttonColor)}
+                href={data.buttonLink}
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 {data.buttonText}
               </Button>
