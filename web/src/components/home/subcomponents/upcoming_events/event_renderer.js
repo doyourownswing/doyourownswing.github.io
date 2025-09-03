@@ -13,6 +13,8 @@ function EventRendererFactory(props) {
       return <BoogieEventCard event={event} />;
     case EventTypes.TeacherTraining:
       return <TeacherTrainingEventCard event={event} />;
+    default:
+      return;
   }
 }
 

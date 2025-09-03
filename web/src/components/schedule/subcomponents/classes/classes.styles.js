@@ -1,4 +1,4 @@
-import { BOX_SHADOW, BOX_SHADOW_2, SECTION_PADDING } from "common/constants";
+import { BOX_SHADOW_2, SECTION_PADDING } from "common/constants";
 import theme from "common/theme";
 
 const classesStyles = {

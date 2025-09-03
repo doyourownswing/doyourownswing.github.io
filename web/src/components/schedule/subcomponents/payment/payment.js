@@ -1,4 +1,4 @@
-import { Box, Button, Card, Container, Stack, Typography } from "@mui/material";
+import { Box, Button, Container, Stack, Typography } from "@mui/material";
 import Grid2 from "@mui/material/Unstable_Grid2";
 import paymentStyles from "./payment.styles";
 import messages from "./messages";

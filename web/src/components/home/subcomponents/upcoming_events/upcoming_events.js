@@ -12,7 +12,6 @@ import FeatureFlags from "infra/feature_flags";
 import getNextEvents from "data/events";
 import messages from "./messages";
 import upcomingEventsStyles from "./upcoming_events.styles";
-import DYOSEventCard from "./event_cards/dyos_event_card";
 import EventRendererFactory from "./event_renderer";
 
 function TwoEventRenderer(props) {
