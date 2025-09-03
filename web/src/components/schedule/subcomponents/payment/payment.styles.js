@@ -1,4 +1,4 @@
-import { BOX_SHADOW, BOX_SHADOW_2, SECTION_PADDING } from "common/constants";
+import { SECTION_PADDING } from "common/constants";
 import theme from "common/theme";
 
 const baseButton = {
@@ -57,9 +57,11 @@ const paymentStyles = {
   logo: {
     height: "4rem",
     padding: "0.5rem",
+    userSelect: "none",
+    pointerEvents: "none",
   },
   cashTitle: {
-    color: "green", //todo move into theme maybe
+    color: "green",
     fontWeight: "600",
     fontFamily: "Poppins",
   },
@@ -71,7 +73,7 @@ const paymentStyles = {
     backgroundColor: theme.palette.badge.backgroundColor,
     padding: "0.4rem 1.5rem",
     borderRadius: "2rem",
-    border: "1px solid purple",
+    border: theme.palette.badge.border,
     boxShadow: theme.palette.badge.boxShadow,
     fontFamily: "Poppins",
     fontSize: "0.8rem",
@@ -91,6 +93,8 @@ const paymentStyles = {
     lineHeight: "1",
     color: "green",
     opacity: "20%",
+    userSelect: "none",
+    pointerEvents: "none",
   },
 };
 

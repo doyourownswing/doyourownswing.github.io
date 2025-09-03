@@ -11,48 +11,38 @@ import QRCode from "react-qr-code";
 
 const ZELLE_DATA = {
   title: ZelleLogo,
-  titleAltText: "Zelle",
+  titleAltText: messages.zelle,
   titleStyles: { height: "3.5rem" },
   isPreferred: true,
   link: "https://enroll.zellepay.com/qr-codes?data=eyJuYW1lIjoiTWljaGVsbGUiLCJhY3Rpb24iOiJwYXltZW50IiwidG9rZW4iOiJzaGFyZWRzd2luZ3NwYWNlc0BnbWFpbC5jb20ifQ==",
-  associatedAccount: "SharedSwingSpaces@gmail.com",
-  footer: "Scan QR code using your preferred banking app to open Zelle",
-};
-
-const CASH_DATA = {
-  title: "bepis",
-  titleAltText: "Cash",
-  isPreferred: true,
-  content: [
-    "Pay with cash at the front desk.",
-    "Name your price at the door! (See chart above for details)",
-  ],
+  associatedAccount: messages.sharedSwingSpacesAccount,
+  footer: messages.scanZelle,
 };
 
 const VENMO_DATA = {
   title: VenmoLogo,
-  titleAltText: "Venmo",
+  titleAltText: messages.venmo,
   titleStyles: { height: "2.5rem" },
   isPreferred: false,
   link: "https://www.paypal.com/qrcodes/venmocs/fd351a61-a82e-437a-a889-e04c33f204b9",
-  associatedAccount: "@riley-wcs",
-  buttonText: "Open Venmo",
-  buttonColor: "#008cff",
+  associatedAccount: messages.venmoHandle,
+  buttonText: messages.openVenmo,
+  buttonColor: "#008cff", // Venmo logo color
 };
 
 const PAYPAL_DATA = {
   title: PaypalLogo,
-  titleAltText: "PayPal",
+  titleAltText: messages.paypal,
   titleStyles: { height: "3rem" },
   isPreferred: false,
   link: "https://www.paypal.com/qrcodes/managed/767fb6d3-a9ce-4cd8-bb74-2e3b2760b8e8",
-  associatedAccount: "SharedSwingSpaces@gmail.com",
-  buttonText: "Open PayPal",
-  buttonColor: "#002b87",
+  associatedAccount: messages.sharedSwingSpacesAccount,
+  buttonText: messages.openPaypal,
+  buttonColor: "#002b87", // PayPal logo color
 };
 
 function PreferredEmbellishment() {
-  return <Box sx={paymentStyles.embellishment}>Preferred</Box>;
+  return <Box sx={paymentStyles.embellishment}>{messages.preferred}</Box>;
 }
 
 function PaymentOption(props) {
@@ -107,7 +97,7 @@ function CashOption() {
           <Box>
             <Typography>{messages.payUsing}</Typography>
             <Typography variant="h3" sx={paymentStyles.cashTitle}>
-              Cash
+              {messages.cash}
             </Typography>
           </Box>
           <Box>
@@ -115,9 +105,9 @@ function CashOption() {
           </Box>
           <Box sx={paymentStyles.cardBody}>
             <Typography sx={paymentStyles.footer}>
-              Name your price and pay with cash at the front desk!
+              {messages.payWithCash}
             </Typography>
-            <Typography>(See chart above for details)</Typography>
+            <Typography>{messages.seeChart}</Typography>
           </Box>
         </Stack>
       </DyosCard>
@@ -144,10 +134,7 @@ function Payment() {
             <PaymentOption data={VENMO_DATA} />
             <PaymentOption data={PAYPAL_DATA} />
           </Grid2>
-          <Callout>
-            Note: Recipient account names may read "Do Your Own Swing", "Riley
-            Crozier", or "Michelle Crozier".{" "}
-          </Callout>
+          <Callout>{messages.accountsNote}</Callout>
         </Box>
       </Container>
     </Box>
