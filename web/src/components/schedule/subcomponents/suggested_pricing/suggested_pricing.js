@@ -60,23 +60,16 @@ function HeaderTableCell(props) {
 
 // A stylized tablecell for the legend cell of each row.
 function RowLegendTableCell(props) {
+  let legendData = props.data;
+
   return (
     <TableCell scope="row" sx={suggestedPricingStyles.tableCell} {...props}>
-      {props.children}
-    </TableCell>
-  );
-}
-
-// Convenience function for creating the legend row given data.
-function buildLegendCell(legendData) {
-  return (
-    <RowLegendTableCell>
       {legendData.map((l, i) => (
         <Typography key={i} sx={suggestedPricingStyles.cellTitle}>
           {l}
         </Typography>
       ))}
-    </RowLegendTableCell>
+    </TableCell>
   );
 }
 
@@ -107,17 +100,23 @@ function LargeScreenSuggestedPricingTable() {
     }
   }
 
+  function buildRow(legendData, rowContent) {
+    return (
+      <TableRow>
+        {[
+          <RowLegendTableCell data={legendData} />,
+          ...buildRowDataCells(rowContent),
+        ]}
+      </TableRow>
+    );
+  }
+
   let header = buildHeader();
   let rows = [];
 
   for (var i = 0; i < NUM_ROWS; i++) {
     rows.push(
-      <TableRow>
-        {[
-          buildLegendCell(tableDetails.rowLegendCells[i]),
-          ...buildRowDataCells(tableDetails.rowContent[i]),
-        ]}
-      </TableRow>
+      buildRow(tableDetails.rowLegendCells[i], tableDetails.rowContent[i])
     );
   }
 
@@ -150,7 +149,7 @@ function SmallScreenSuggestedPricingTable() {
         sx={suggestedPricingStyles.headerCell}
         colSpan={2}
       >
-        <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+        <Box sx={suggestedPricingStyles.smallHeaderCellContent}>
           <IconButton disabled={visibleColumn === 0} onClick={clickLeft}>
             <ChevronLeftIcon />
           </IconButton>
@@ -171,7 +170,7 @@ function SmallScreenSuggestedPricingTable() {
   function createRow(legend, content, i) {
     return (
       <TableRow>
-        {buildLegendCell(legend)}
+        <RowLegendTableCell data={legend} />
         <CenteredTableCell key={i} align="left">
           <Typography sx={suggestedPricingStyles.cellText}>
             {content}
