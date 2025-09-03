@@ -1,4 +1,4 @@
-import { Box, SvgIcon, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import brandStyles from "./brand.styles";
 import messages from "common/messages";
 import { ColorLogo } from "components/common/logos";

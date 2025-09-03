@@ -1,4 +1,4 @@
-import { Box, Container, Link, Stack, Typography } from "@mui/material";
+import { Box, Container, Stack, Typography } from "@mui/material";
 import songOfTheWeekStyles from "./song_of_the_week.styles";
 import SongCard from "./song_card";
 import getCurrentSong from "data/songs_of_the_week";

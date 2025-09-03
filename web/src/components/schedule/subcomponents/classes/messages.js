@@ -19,7 +19,7 @@ const messages = {
       "X94+ Masks MAY be required for social dancing, depending on " +
       "prevalence of COVID-19 in Santa Clara County",
     purchase:
-      "KN95 masks are available for sale at check-in - " + "$1 cash, $2 Venmo",
+      "KN95 masks are available for sale at check-in - $1 cash / Zelle; $2 Venmo / PayPal",
   },
 
   prerequisites: "Prerequisites",
