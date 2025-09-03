@@ -1,11 +1,4 @@
-import {
-  Box,
-  Card,
-  Container,
-  Divider,
-  Stack,
-  Typography,
-} from "@mui/material";
+import { Box, Container, Divider, Stack, Typography } from "@mui/material";
 import classesStyles from "./classes.styles";
 import Grid2 from "@mui/material/Unstable_Grid2";
 import messages from "./messages";
@@ -18,6 +11,7 @@ import {
   BulletedList,
   BulletedListItem,
 } from "components/common/bulleted_list";
+import DyosCard from "components/common/card";
 
 const NUM_LEVELS = 4;
 
@@ -63,47 +57,43 @@ function ClassCard(props) {
 
   return (
     <Grid2 xs={1}>
-      <Card sx={classesStyles.card}>
+      <DyosCard sx={classesStyles.card}>
         {embellishment}
-        <Box sx={classesStyles.cardContent}>
-          <Stack>
-            <Box sx={classesStyles.cardHeader}>
-              <Box sx={classesStyles.levelContainer}>
-                <Typography sx={classesStyles.level}>
-                  {classDetails.level}
+        <Stack>
+          <Box sx={classesStyles.cardHeader}>
+            <Box sx={classesStyles.levelContainer}>
+              <Typography sx={classesStyles.level}>
+                {classDetails.level}
+              </Typography>
+              <LevelIndicator level={classDetails.difficulty} />
+            </Box>
+            <Typography sx={classesStyles.classTitle} variant="h5">
+              {classDetails.title}
+            </Typography>
+            <Box sx={classesStyles.timeAndPlaceContainer}>
+              <Box sx={classesStyles.iconTextContainer}>
+                <PlaceOutlinedIcon fontSize="small" />
+                <Typography variant="subtitle">
+                  {classDetails.location}
                 </Typography>
-                <LevelIndicator level={classDetails.difficulty} />
               </Box>
-              <Typography sx={classesStyles.classTitle} variant="h5">
-                {classDetails.title}
-              </Typography>
-              <Box sx={classesStyles.timeAndPlaceContainer}>
-                <Box sx={classesStyles.iconTextContainer}>
-                  <PlaceOutlinedIcon fontSize="small" />
-                  <Typography variant="subtitle">
-                    {classDetails.location}
-                  </Typography>
-                </Box>
-                <Box sx={classesStyles.iconTextContainer}>
-                  <AccessTimeOutlinedIcon fontSize="small" />
-                  <Typography variant="subtitle">
-                    {classDetails.time}
-                  </Typography>
-                </Box>
+              <Box sx={classesStyles.iconTextContainer}>
+                <AccessTimeOutlinedIcon fontSize="small" />
+                <Typography variant="subtitle">{classDetails.time}</Typography>
               </Box>
             </Box>
-            <Box sx={classesStyles.descriptionContainer}>
-              <Typography>{classDetails.description}</Typography>
-            </Box>
-            <Box sx={classesStyles.prerequisitesContainer}>
-              <Typography variant="h6" sx={classesStyles.cardSectionTitle}>
-                {messages.prerequisites}
-              </Typography>
-              {prerequisites}
-            </Box>
-          </Stack>
-        </Box>
-      </Card>
+          </Box>
+          <Box sx={classesStyles.descriptionContainer}>
+            <Typography>{classDetails.description}</Typography>
+          </Box>
+          <Box sx={classesStyles.prerequisitesContainer}>
+            <Typography variant="h6" sx={classesStyles.cardSectionTitle}>
+              {messages.prerequisites}
+            </Typography>
+            {prerequisites}
+          </Box>
+        </Stack>
+      </DyosCard>
     </Grid2>
   );
 }
