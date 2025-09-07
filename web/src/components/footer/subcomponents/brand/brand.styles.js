@@ -16,6 +16,10 @@ const brandStyles = {
   },
   logoText: {
     padding: "8px",
+    fontSize: "1.5rem",
+    color: theme.palette.text.lightPurple,
+    fontWeight: "600",
+    letterSpacing: "1px",
   },
 };
 

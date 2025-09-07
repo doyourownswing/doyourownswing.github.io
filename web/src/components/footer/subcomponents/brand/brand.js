@@ -9,9 +9,7 @@ function Brand() {
       <Box>
         <Box sx={brandStyles.logoContainer}>
           <ColorLogo sx={brandStyles.logoImage} />
-          <Typography variant="h5" sx={brandStyles.logoText}>
-            {messages.dyos}
-          </Typography>
+          <Typography sx={brandStyles.logoText}>{messages.dyos}</Typography>
         </Box>
         <Typography variant="caption">{messages.doYourOwnSwingYear}</Typography>
       </Box>

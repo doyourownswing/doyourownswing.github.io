@@ -17,7 +17,7 @@ import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import suggestedPricingStyles from "./suggested_pricing.styles";
 import { messages, tableDetails } from "./messages";
 import theme from "common/theme";
-import { useState } from "react";
+import { forwardRef, useState } from "react";
 
 const NUM_ROWS = 5;
 
@@ -206,11 +206,11 @@ function SmallScreenSuggestedPricingTable() {
 }
 
 // Top-level component for the suggested pricing section.
-function SuggestedPricing() {
+const SuggestedPricing = forwardRef(function SuggestedPricing({}, ref) {
   const useSmallScreenTable = useMediaQuery(theme.breakpoints.down("md"));
 
   return (
-    <Box sx={suggestedPricingStyles.container}>
+    <Box sx={suggestedPricingStyles.container} ref={ref}>
       <Container>
         <Box>
           <Typography variant="h6" sx={suggestedPricingStyles.title}>
@@ -235,6 +235,6 @@ function SuggestedPricing() {
       </Container>
     </Box>
   );
-}
+});
 
 export default SuggestedPricing;
