@@ -64,9 +64,7 @@ function VolunteerRole(props) {
           </Typography>
           <Typography>{data.description}</Typography>
           <Box sx={volunteerStyles.discountSection}>
-            <Typography variant="h6" sx={volunteerStyles.discount}>
-              {messages.discount}
-            </Typography>
+            <Typography variant="h6">{messages.discount}</Typography>
             {data.discountInfo.map((info, i) => (
               <Typography key={i}>{info}</Typography>
             ))}
