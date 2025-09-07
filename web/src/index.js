@@ -1,12 +1,6 @@
 import React, { useLayoutEffect } from "react";
 import ReactDOM from "react-dom/client";
-import {
-  createHashRouter,
-  HashRouter,
-  Route,
-  Routes,
-  useLocation,
-} from "react-router-dom";
+import { HashRouter, Route, Routes, useLocation } from "react-router-dom";
 import Footer from "components/footer/footer";
 import NavBar from "components/nav_bar/nav_bar";
 import ThemeProvider from "@mui/material/styles/ThemeProvider";
@@ -18,7 +12,6 @@ import generatedRoutes from "./page_registry";
 import Announcement from "components/nav_bar/announcement";
 import { getCurrentAnnouncement } from "data/announcements";
 
-const router = createHashRouter(generatedRoutes);
 const routes = generatedRoutes;
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -48,7 +41,6 @@ root.render(
       )}
       <NavBar />
       <Box sx={indexStyles.mainContent}>
-        {/* <RouterProvider router={router} /> */}
         <HashRouter>
           <ScrollResetContainer>
             <Routes>
