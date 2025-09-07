@@ -23,7 +23,7 @@ const basePalette = {
   gray300: "#B7B7B7",
   gray200: "#D1D1D1",
   gray100: "#EBEBEB",
-  white: "white",
+  white: "#FFFFFF",
 
   // blues
   blue500: "#1058B5",
@@ -63,6 +63,13 @@ const theme = responsiveFontSizes(
         dark: basePalette.blue500,
         contrastText: basePalette.white,
       },
+      /// Theme for a white button with purple outline and text
+      secondary: {
+        name: "secondary",
+        main: basePalette.white,
+        dark: basePalette.purple100,
+        contrastText: basePalette.mediumPurple,
+      },
       background: {
         // a richer more vibrant purple for attention catching
         announcement: "#b400d9",
@@ -70,7 +77,9 @@ const theme = responsiveFontSizes(
         lightGray: basePalette.gray100,
         lightPurple: basePalette.lightPurple1,
         barelyPurple: basePalette.purple100,
+        palePurple: basePalette.lightPurple3,
         darkPurple: basePalette.darkPurple,
+        purpleDivider: basePalette.purple1,
         songOfTheWeek: "linear-gradient(to bottom, #e9e0fb 0%, #ffe2f7 100%);",
         upcomingEvents: "linear-gradient(to bottom, #ffe2f7 0%, #e9e0fb 100%);",
       },
@@ -144,6 +153,11 @@ const theme = responsiveFontSizes(
         '"Segoe UI Emoji"',
         '"Segoe UI Symbol"',
       ].join(","),
+      h1: { fontFamily: "Poppins" },
+      h2: { fontFamily: "Poppins" },
+      h3: { fontFamily: "Poppins" },
+      h4: { fontFamily: "Poppins" },
+      h5: { fontFamily: "Poppins" },
       h6: { fontFamily: "Poppins" },
       body1: {
         lineHeight: "1.5",

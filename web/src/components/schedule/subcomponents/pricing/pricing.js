@@ -6,7 +6,7 @@ import DyosLink from "components/common/link";
 import { Text } from "components/common/typography";
 import { PurpleLogo } from "components/common/logos";
 
-function NameYourPrice() {
+function NameYourPrice(props) {
   let nameYourPrice = messages.pricingOptions.nameYourPrice;
 
   return (
@@ -26,7 +26,9 @@ function NameYourPrice() {
           <Typography>{nameYourPrice.paymentOptions}</Typography>
           <Box>
             <Text>{nameYourPrice.suggestedPricing.beginning}</Text>
-            <DyosLink>{nameYourPrice.suggestedPricing.link}</DyosLink>
+            <DyosLink onClick={props.onClickGoToSuggestedPricingSection}>
+              {nameYourPrice.suggestedPricing.link}
+            </DyosLink>
             <Text>{nameYourPrice.suggestedPricing.end}</Text>
           </Box>
         </Box>
@@ -74,7 +76,7 @@ function MonthlySponsor() {
   );
 }
 
-function Volunteer() {
+function Volunteer(props) {
   let volunteer = messages.pricingOptions.volunteer;
 
   return (
@@ -97,7 +99,9 @@ function Volunteer() {
           </Box>
           <Box>
             <Text>{volunteer.link.beginning}</Text>
-            <DyosLink>{volunteer.link.link}</DyosLink>
+            <DyosLink onClick={props.onClickGoToVolunteerSection}>
+              {volunteer.link.link}
+            </DyosLink>
             <Text>{volunteer.link.end}</Text>
           </Box>
         </Box>
@@ -106,7 +110,7 @@ function Volunteer() {
   );
 }
 
-function Pricing() {
+function Pricing(props) {
   return (
     <Box sx={pricingStyles.container}>
       <Container>
@@ -127,9 +131,15 @@ function Pricing() {
             columns={{ xs: 1, md: 3 }}
             sx={pricingStyles.cardsContainer}
           >
-            <NameYourPrice />
+            <NameYourPrice
+              onClickGoToSuggestedPricingSection={
+                props.onClickGoToSuggestedPricingSection
+              }
+            />
             <MonthlySponsor />
-            <Volunteer />
+            <Volunteer
+              onClickGoToVolunteerSection={props.onClickGoToVolunteerSection}
+            />
           </Grid2>
         </Box>
       </Container>

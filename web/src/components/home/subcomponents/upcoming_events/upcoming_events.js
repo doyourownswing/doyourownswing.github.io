@@ -93,10 +93,7 @@ function NoUpcomingEvents() {
   );
 }
 
-const UpcomingEvents = forwardRef(function UpcomingEvents(
-  { meeting, index },
-  ref
-) {
+const UpcomingEvents = forwardRef(function UpcomingEvents({}, ref) {
   let events = getNextEvents(2);
 
   return (

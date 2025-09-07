@@ -15,7 +15,7 @@ export default function Home() {
   const onClickPrimaryHeroButton = () =>
     upcomingEventsRef.current.scrollIntoView({
       behavior: "smooth",
-      block: "center",
+      block: "start",
     });
 
   return (
