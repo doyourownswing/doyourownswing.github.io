@@ -25,14 +25,7 @@ const volunteerStyles = {
     justifyContent: "center",
   },
   roleTitle: {
-    // fontFamily: "Nunito",
-    // fontWeight: "500",
     paddingBottom: "1.5rem",
-  },
-  discount: {
-    // fontFamily: "Nunito",
-    // fontWeight: "600",
-    // fontSize: "2rem",
   },
   discountSection: {
     paddingTop: "1.5rem",
@@ -44,7 +37,6 @@ const volunteerStyles = {
     fontFamily: "Poppins",
     borderRadius: "0.5rem",
     border: "solid 1px " + theme.palette.secondary.contrastText,
-    // margin: "2rem 0rem",
   },
   image: {
     width: { xs: "100%", md: "min(50vw, 40rem)" },
