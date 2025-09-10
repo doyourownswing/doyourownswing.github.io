@@ -11,8 +11,8 @@ function isDevel() {
 
 const FeatureFlags = {
   // We should only set this to true when we are showing at least one other page.
-  showMenuOptions: isDevel(),
-  showScheduleTab: isDevel() || window.location.href.includes("classes"),
+  showMenuOptions: true,
+  showScheduleTab: true,
   showAboutTab: isDevel(),
   showHealthTab: isDevel(),
   showCodeOfConductTab: isDevel(),

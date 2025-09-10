@@ -10,12 +10,11 @@ const baseOptionItem = {
 const navBarStyles = {
   expandedOptionsButton: {
     ...baseOptionItem,
-    marginY: 2,
     textAlign: "center",
   },
   selectedOption: {
     color: theme.palette.text.activeSelection,
-    fontWeight: 700,
+    fontWeight: "700",
     textAlign: "center",
   },
   expandedOptionsContainer: {
@@ -24,8 +23,8 @@ const navBarStyles = {
       xs: "none",
       md: "flex",
     },
-    justifyContent: "space-between",
-    maxWidth: "720px",
+    justifyContent: "flex-end",
+    gap: "2rem",
   },
   menuIcon: {
     display: {
@@ -38,9 +37,9 @@ const navBarStyles = {
     ...baseOptionItem,
   },
   logoImage: {
-    maxHeight: "40px",
-    maxWidth: "40px",
-    marginRight: "12px",
+    maxHeight: "2.5rem",
+    maxWidth: "2.5rem",
+    marginRight: "1rem",
   },
   logoBrandName: {
     color: theme.palette.text.title,
@@ -49,7 +48,6 @@ const navBarStyles = {
   logoBrandQuip: {
     lineHeight: "1",
     color: theme.palette.text.secondaryBody,
-    fontSize: "14px",
     fontWeight: "600",
   },
   logoContainerLink: {
