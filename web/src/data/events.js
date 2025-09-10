@@ -684,7 +684,10 @@ const events = [
     createDate("09/11/2025"),
     feb2025Schedule,
     DEFAULT_LOCATION,
-    DEFAULT_PRICE
+    DEFAULT_PRICE,
+    {
+      facebookLink: "https://www.facebook.com/events/1346000504201204",
+    }
   ),
   new Event(
     EventTypes.DYOS,
@@ -692,7 +695,10 @@ const events = [
     createDate("09/18/2025"),
     feb2025Schedule,
     DEFAULT_LOCATION,
-    DEFAULT_PRICE
+    DEFAULT_PRICE,
+    {
+      facebookLink: "https://www.facebook.com/events/24377628995211852",
+    }
   ),
   new Event(
     EventTypes.DYOS,
@@ -700,7 +706,10 @@ const events = [
     createDate("09/25/2025"),
     feb2025Schedule,
     DEFAULT_LOCATION,
-    DEFAULT_PRICE
+    DEFAULT_PRICE,
+    {
+      facebookLink: "https://www.facebook.com/events/1079246827299259",
+    }
   ),
   new Event(
     EventTypes.DYOS,
