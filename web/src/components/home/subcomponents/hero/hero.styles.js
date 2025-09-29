@@ -92,9 +92,9 @@ const heroStyles = {
   picture: {
     maxWidth: "50rem",
     maskImage: {
-      // Makes the top part of the image opaque
+      // Makes the top part of the image transparent
       xs: "linear-gradient(to bottom, rgb(0 0 0 / 0%) 0%, rgb(0 0 0 / 20%) 40%, rgb(0 0 0 / 100%) 100%)",
-      // Makes the left side of the image opaque
+      // Makes the left side of the image transparent
       md: "linear-gradient(to left, rgb(0 0 0) 0%, rgb(0 0 0 / 0%) 100%)",
     },
     borderRadius: "1rem",

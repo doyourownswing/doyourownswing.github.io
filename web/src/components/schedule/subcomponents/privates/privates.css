@@ -1,0 +1,63 @@
+/* TODO consider putting this somewhere common! */
+
+.current.in-from-left {
+  animation: in-from-left 0.5s forwards ease-out;
+  animation-delay: 0.1s;
+  opacity: 0;
+}
+
+.current.in-from-right {
+  animation: in-from-right 0.5s forwards ease-out;
+  animation-delay: 0.1s;
+  opacity: 0;
+}
+
+.previous.out-from-left {
+  animation: out-from-left 0.4s forwards ease-out;
+}
+
+.previous.out-from-right {
+  animation: out-from-right 0.4s forwards ease-out;
+}
+
+@keyframes in-from-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-20rem);
+  }
+  100% {
+    opacity: 1
+  }
+}
+
+@keyframes in-from-right {
+  0% {
+    opacity: 0;
+    transform: translateX(20rem);
+  }
+  100% {
+    opacity: 1
+  }
+}
+
+@keyframes out-from-left {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(20rem);
+    display: none;
+  }
+}
+
+@keyframes out-from-right {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-20rem);
+    display: none;
+  }
+}

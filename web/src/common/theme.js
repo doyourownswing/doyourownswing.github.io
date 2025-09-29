@@ -1,16 +1,15 @@
-import { createTheme, responsiveFontSizes } from "@mui/material/styles";
+import { alpha, createTheme, responsiveFontSizes } from "@mui/material/styles";
 
-// https://coolors.co/260b34-502268-955ab5-bf9ad3-ebebeb
-// TODO: make naming more consistent. ie like blue100, ..., blue900
 const basePalette = {
   // purples
-  darkPurple: "#260b34",
-  purple1: "#502268",
-  purple2: "#733E8F",
-  mediumPurple: "#955ab5",
-  lightPurple1: "#bf9ad3",
-  lightPurple2: "#d4bce2",
-  lightPurple3: "#eaddf0",
+  purple900: "#12021a",
+  purple800: "#260b34",
+  purple700: "#502268",
+  purple600: "#733E8F",
+  purple500: "#955ab5",
+  purple400: "#bf9ad3",
+  purple300: "#d4bce2",
+  purple200: "#eaddf0",
   purple100: "#fbf2ff",
 
   // grays
@@ -36,7 +35,7 @@ const theme = responsiveFontSizes(
   createTheme({
     palette: {
       primary: {
-        main: basePalette.darkPurple,
+        main: basePalette.purple800,
       },
       /// Theme for a light button used on dark backgrounds
       buttonLight: {
@@ -45,14 +44,14 @@ const theme = responsiveFontSizes(
         main: "#ECE1F2",
         light: basePalette.white,
         dark: basePalette.white,
-        contrastText: basePalette.purple1,
+        contrastText: basePalette.purple700,
       },
       /// Theme for a dark button used on light backgrounds
       buttonDark: {
         name: "buttonDark",
-        main: basePalette.purple1,
-        light: basePalette.purple2,
-        dark: basePalette.purple2,
+        main: basePalette.purple700,
+        light: basePalette.purple600,
+        dark: basePalette.purple600,
         contrastText: basePalette.white,
       },
       /// Theme for a blue button
@@ -68,25 +67,36 @@ const theme = responsiveFontSizes(
         name: "secondary",
         main: basePalette.white,
         dark: basePalette.purple100,
-        contrastText: basePalette.mediumPurple,
+        contrastText: basePalette.purple500,
+      },
+      /// Theme for a purple button, initially designed for use on dark background.
+      ///
+      /// Similar to buttonDark, but a bit flipped
+      buttonPurple: {
+        name: "buttonPurple",
+        main: basePalette.purple600,
+        light: basePalette.purple600,
+        dark: basePalette.purple700,
+        contrastText: basePalette.purple100,
       },
       background: {
         // a richer more vibrant purple for attention catching
         announcement: "#b400d9",
         light: basePalette.white,
         lightGray: basePalette.gray100,
-        lightPurple: basePalette.lightPurple1,
+        lightPurple: basePalette.purple400,
         barelyPurple: basePalette.purple100,
-        palePurple: basePalette.lightPurple3,
-        darkPurple: basePalette.darkPurple,
-        purpleDivider: basePalette.purple1,
+        palePurple: basePalette.purple200,
+        darkPurple: basePalette.purple800,
+        darkerPurple: basePalette.purple900,
+        purpleDivider: basePalette.purple700,
         songOfTheWeek: "linear-gradient(to bottom, #e9e0fb 0%, #ffe2f7 100%);",
         upcomingEvents: "linear-gradient(to bottom, #ffe2f7 0%, #e9e0fb 100%);",
       },
       border: {
         gray: basePalette.gray200,
-        emphasis: basePalette.lightPurple1,
-        emphasisGlow: basePalette.lightPurple2,
+        emphasis: basePalette.purple400,
+        emphasisGlow: basePalette.purple300,
       },
       card: {
         shadow: basePalette.gray400,
@@ -94,46 +104,49 @@ const theme = responsiveFontSizes(
       text: {
         titleLight: basePalette.white,
         announcement: basePalette.white,
-        title: basePalette.mediumPurple,
-        titleNotQuiteBlack: basePalette.darkPurple,
+        title: basePalette.purple500,
+        titleNotQuiteBlack: basePalette.purple800,
         navigationOptions: basePalette.gray600,
         subtitle: basePalette.gray500,
+        subtitleLight: basePalette.gray300,
         // For less essential body text that we don't want to stand out as much.
         secondaryBody: basePalette.gray600,
         // Same but slightly darker
         // TODO: update default quote with this in song of the week too once merging is done
         secondaryBody2: basePalette.gray700,
-        bodyLight: basePalette.lightPurple3,
+        bodyLight: basePalette.purple200,
         bodyDark: basePalette.gray100,
-        textButton: basePalette.mediumPurple,
-        activeSelection: basePalette.mediumPurple,
+        textButton: basePalette.purple500,
+        activeSelection: basePalette.purple500,
         textLight: basePalette.white,
         linkLight: basePalette.gray300,
         linkLightHover: basePalette.white,
-        lightPurple: basePalette.lightPurple1,
-        headerPurple: basePalette.purple1,
+        lightPurple: basePalette.purple400,
+        headerPurple: basePalette.purple700,
         link: "#0F65D7",
         linkActive: "#174ea6",
-        linkVisited: basePalette.purple2,
+        linkVisited: basePalette.purple600,
+        glow: alpha(basePalette.purple300, 0.66),
+        quote: basePalette.purple100,
       },
       button: {
         lightGray: basePalette.gray200,
-        purpleFilled: basePalette.purple1,
+        purpleFilled: basePalette.purple700,
       },
       icon: {
-        avatar: basePalette.purple1,
-        default: basePalette.mediumPurple,
-        lightPurple: basePalette.lightPurple1,
-        activePurple: basePalette.mediumPurple,
+        avatar: basePalette.purple700,
+        default: basePalette.purple500,
+        lightPurple: basePalette.purple400,
+        activePurple: basePalette.purple500,
         inactive: basePalette.gray300,
       },
       callout: {
         border: basePalette.gray200,
-        accent: basePalette.mediumPurple,
+        accent: basePalette.purple500,
         backgroundColor: basePalette.purple100,
       },
       badge: {
-        border: "1px solid" + basePalette.mediumPurple,
+        border: "1px solid" + basePalette.purple500,
         backgroundColor: basePalette.purple100,
         boxShadow: "0px 2px 4px " + basePalette.gray300,
       },
@@ -168,7 +181,7 @@ const theme = responsiveFontSizes(
         paddingBottom: "16px",
         fontWeight: "600",
         fontFamily: "Poppins",
-        color: basePalette.darkPurple,
+        color: basePalette.purple800,
       },
       announcement: {
         fontWeight: "600",
