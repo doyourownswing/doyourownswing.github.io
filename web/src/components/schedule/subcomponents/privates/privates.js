@@ -56,7 +56,7 @@ function TestimonialNav(props) {
 
 function Testimonials() {
   const [currentIndex, setCurrentIndex] = useState({
-    current: 1,
+    current: 0,
     previous: null,
     direction: null,
   });
