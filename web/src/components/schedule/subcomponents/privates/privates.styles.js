@@ -9,9 +9,12 @@ const privateStyles = {
     background: `linear-gradient(180deg, ${baseBackgroundColor} 0%, ${darkBackgroundColor} 10%, ${baseBackgroundColor} 80%)`,
     padding: SECTION_PADDING,
   },
-  contentContainer: {
+  firstContentContainer: {
     display: "grid",
     gap: "2rem",
+  },
+  secondContentContainer: {
+    paddingTop: { xs: "0px", md: "8rem" },
   },
   subtitle: {
     fontWeight: "700",
@@ -47,11 +50,11 @@ const privateStyles = {
     fontSize: "1.25rem",
     fontFamily: "Poppins",
     fontWeight: "600",
-    boxShadow: "0 0 2rem black",
+    boxShadow: "0rem 0 2rem #9e52ff33, " + "0rem 0 4rem #9e52ff66",
     background: "linear-gradient(to right, #55087f, #9e52ff)",
     transition: "0.5s",
     "&:hover": {
-      boxShadow: "0rem 0 2rem #9e52ff33, " + "0rem 0 4rem #9e52ff66",
+      boxShadow: "0rem 0 2rem #9e52ff55, " + "0rem 0 4rem #9e52ff88",
     },
   },
   secondContent: {
@@ -60,23 +63,23 @@ const privateStyles = {
     gap: { xs: "4rem", md: "0rem" },
   },
   imageContainer: {
-    width: { xs: "100%", md: "min(40vw, 28rem)" },
-    height: { xs: "max(32rem, 50vh, 60vw)", md: "unset" },
-    overflow: "clip",
-    filter: "grayscale(100%)",
-    borderRadius: "2rem",
-    mask:
-      "linear-gradient(to bottom, transparent 0%, #fff 30% 90%, transparent 100%), " +
-      "linear-gradient(to left, transparent 0%, #fff 10% 90%, transparent 100%)",
-    maskComposite: "intersect",
-    opacity: "0.6",
+    width: { xs: "90vw", md: "40rem" },
+    transform: { xs: "translateY(6rem)", md: "translateX(-10rem)" },
+    scale: { md: "1.2" },
   },
   image: {
-    width: "100%",
+    width: { xs: "100%", md: "calc(100% + 10rem)" },
+    borderRadius: "2rem",
+    mask: {
+      xs: "linear-gradient(to top, rgb(0 0 0 / 0%) 0%, rgb(0 0 0 / 25%) 40%, rgb(0 0 0) 100%)",
+      md: "linear-gradient(to right, rgb(0 0 0 / 0%) 0%, rgb(0 0 0 / 25%) 40%, rgb(0 0 0) 100%)",
+    },
   },
   testimonialContainer: {
-    width: { xs: "100%", md: "min(40vw, 28rem)" },
+    width: { xs: "100%", md: "32rem" },
     display: "flex",
+    flexShrink: "0",
+    zIndex: "1",
     justifyContent: "space-between",
     flexDirection: "column",
     alignItems: "center",
@@ -96,11 +99,12 @@ const privateStyles = {
     top: { xs: "-20%", md: "0%" },
     fontSize: "40rem",
     fontFamily: "Poppins",
-    opacity: "0.02",
+    opacity: { xs: "0.05", md: "0.03" },
     transform: "rotateZ(15deg)",
   },
   testimonialTitle: {
     color: theme.palette.text.title,
+    textAlign: "center",
     fontWeight: "600",
     paddingTop: {
       sm: "2rem",
@@ -112,24 +116,27 @@ const privateStyles = {
     width: "100%",
     height: {
       // Tune these values based on the length of the testimonials
-      xs: "22rem",
-      sm: "15rem",
+      xs: "28rem",
+      sm: "22rem",
       md: "24rem",
     },
   },
   testimonialText: {
     color: theme.palette.text.quote,
+    // Super subtle darkening to make the text easier to read
+    textShadow: "0px 0px 4px black",
     padding: "2rem 1rem",
     letterSpacing: "0.4px",
-    lineHeight: "1.8",
+    lineHeight: "1.5",
     textAlign: "center",
-    fontSize: "1.25rem",
-    fontWeight: "800",
+    fontSize: "1.2rem",
+    fontWeight: "700",
     position: "absolute",
   },
   testimonialNavContainer: {
     display: "inline-flex",
     paddingBottom: "4rem",
+    gap: "2rem",
   },
   testimonialNavIcons: {
     color: "white",
@@ -144,7 +151,7 @@ const privateStyles = {
     transition: "0.4s",
   },
   activeTestimonialCarouselIndicator: {
-    opacity: "0.7",
+    opacity: "0.8",
     height: "0.5rem",
   },
 };

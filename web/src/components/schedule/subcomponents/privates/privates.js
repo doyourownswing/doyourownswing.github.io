@@ -8,7 +8,7 @@ import {
 } from "@mui/material";
 import privateStyles from "./privates.styles";
 import theme from "common/theme";
-import RileyMikaela from "assets/images/riley-mikaela.jpg";
+import RileyJanani from "assets/images/riley-janani.jpg";
 import CircleIcon from "@mui/icons-material/Circle";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
@@ -69,7 +69,7 @@ function Testimonials() {
     setCurrentIndex({
       previous: currentIndex.current,
       current: newCurrentIndex,
-      direction: "right",
+      direction: "left",
     });
   }
 
@@ -81,7 +81,7 @@ function Testimonials() {
     setCurrentIndex({
       previous: currentIndex.current,
       current: newCurrentIndex,
-      direction: "left",
+      direction: "right",
     });
   }
 
@@ -136,20 +136,20 @@ function Testimonials() {
 function Privates() {
   return (
     <Box sx={privateStyles.container}>
-      <Container sx={privateStyles.contentContainer}>
+      <Container sx={privateStyles.firstContentContainer}>
         <Box sx={privateStyles.mainContent}>
           <Typography variant="h6" sx={privateStyles.subtitle}>
-            Private Lessons
+            {messages.subtitle}
           </Typography>
           <Typography variant="h3" sx={privateStyles.title}>
-            Fast track your growth
+            {messages.title}
           </Typography>
           <Typography
             variant="subtitle"
             align="center"
             sx={privateStyles.subSubTitle}
           >
-            Get direct one-on-one instruction from Riley
+            {messages.subSubTitle}
           </Typography>
           <Button
             variant="contained"
@@ -157,16 +157,18 @@ function Privates() {
             sx={privateStyles.button}
             size="large"
           >
-            Book a private lesson
+            {messages.buttonCta}
           </Button>
         </Box>
+      </Container>
+      <Container sx={privateStyles.secondContentContainer}>
         <Stack
           direction={{ xs: "column-reverse", md: "row" }}
           sx={privateStyles.secondContent}
         >
           <Testimonials></Testimonials>
           <Box sx={privateStyles.imageContainer}>
-            <Box component="img" src={RileyMikaela} sx={privateStyles.image} />
+            <Box component="img" src={RileyJanani} sx={privateStyles.image} />
           </Box>
         </Stack>
       </Container>
