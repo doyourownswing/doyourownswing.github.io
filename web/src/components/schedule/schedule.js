@@ -6,6 +6,7 @@ import Payment from "./subcomponents/payment/payment";
 import Volunteer from "./subcomponents/volunteer/volunteer";
 import scheduleStyles from "./schedule.styles";
 import { useRef } from "react";
+import Privates from "./subcomponents/privates/privates";
 
 function Schedule() {
   const suggestedPricingRef = useRef(null);
@@ -32,6 +33,7 @@ function Schedule() {
       <Payment />
       <Box sx={scheduleStyles.divider} />
       <Volunteer ref={volunteerRef} />
+      <Privates />
     </Box>
   );
 }
