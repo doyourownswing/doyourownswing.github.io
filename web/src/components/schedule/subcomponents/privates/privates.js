@@ -110,7 +110,7 @@ function Testimonials() {
     <Box sx={privateStyles.testimonialContainer}>
       <FormatQuoteIcon sx={privateStyles.embellishment} />
       <Typography variant="h5" sx={privateStyles.testimonialTitle}>
-        What students are saying
+        {messages.testimonialsTitle}
       </Typography>
       <Box sx={privateStyles.testimonialTextContainer}>
         {messages.testimonials.map((testimonial, i) => (

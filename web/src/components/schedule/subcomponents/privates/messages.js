@@ -35,6 +35,7 @@ const messages = {
   title: "Fast track your growth",
   subSubTitle: "Get direct one-on-one instruction from Riley",
   buttonCta: "Book a private lesson",
+  testimonialsTitle: "What students are saying",
 };
 
 export default messages;
