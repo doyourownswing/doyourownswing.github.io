@@ -106,6 +106,23 @@ function Testimonials() {
     return classes;
   }
 
+  let longestTestimonial = messages.testimonials.sort(function (a, b) {
+    return b.length - a.length;
+  })[0];
+
+  // This element will be rendered but completely transparent
+  // as a method of defining the container height dynamically.
+  let shadowText = (
+    <Typography
+      sx={{
+        ...privateStyles.testimonialText,
+        ...privateStyles.shadowText,
+      }}
+    >
+      {longestTestimonial}
+    </Typography>
+  );
+
   return (
     <Box sx={privateStyles.testimonialContainer}>
       <FormatQuoteIcon sx={privateStyles.embellishment} />
@@ -113,6 +130,7 @@ function Testimonials() {
         {messages.testimonialsTitle}
       </Typography>
       <Box sx={privateStyles.testimonialTextContainer}>
+        {shadowText}
         {messages.testimonials.map((testimonial, i) => (
           <Typography
             key={i}

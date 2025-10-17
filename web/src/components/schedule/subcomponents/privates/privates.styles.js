@@ -86,12 +86,6 @@ const privateStyles = {
     height: "100%",
     // Needed for the quote mark in the background
     position: "relative",
-    // Tune these values based on the length of the testimonials
-    minHeight: {
-      xs: "calc(40rem - 20vw)",
-      md: "calc(42rem - 10vw)",
-      lg: "unset",
-    },
   },
   embellishment: {
     color: "white",
@@ -114,12 +108,6 @@ const privateStyles = {
   testimonialTextContainer: {
     position: "relative",
     width: "100%",
-    height: {
-      // Tune these values based on the length of the testimonials
-      xs: "28rem",
-      sm: "22rem",
-      md: "24rem",
-    },
   },
   testimonialText: {
     color: theme.palette.text.quote,
@@ -132,6 +120,13 @@ const privateStyles = {
     fontSize: "1.2rem",
     fontWeight: "700",
     position: "absolute",
+    top: "0",
+  },
+  // Additional styles applied to the shadow testimonial text.
+  // That text is used to set the height of the container.
+  shadowText: {
+    position: "relative",
+    opacity: "0",
   },
   testimonialNavContainer: {
     display: "inline-flex",
