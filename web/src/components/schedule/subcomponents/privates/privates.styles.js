@@ -86,6 +86,9 @@ const privateStyles = {
     height: "100%",
     // Needed for the quote mark in the background
     position: "relative",
+    // On small screens, the quote icon takes up a lot of horizontal
+    // space because it's rotated
+    overflow: "clip",
   },
   embellishment: {
     color: "white",
