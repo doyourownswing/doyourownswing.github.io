@@ -17,6 +17,8 @@ import { useState } from "react";
 import messages from "./messages";
 import "./privates.css";
 
+const privatesLink = "https://calendly.com/rileywcs";
+
 function TestimonialNavIndicator(props) {
   let { num, activeIndex } = props;
 
@@ -174,6 +176,9 @@ function Privates() {
             color={theme.palette.buttonPurple.name}
             sx={privateStyles.button}
             size="large"
+            href={privatesLink}
+            target="_blank"
+            rel="noopener noreferrer"
           >
             {messages.buttonCta}
           </Button>

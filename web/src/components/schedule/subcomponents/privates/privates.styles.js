@@ -44,7 +44,7 @@ const privateStyles = {
   button: {
     marginTop: "2rem",
     height: "4rem",
-    width: "24rem",
+    width: "min(80vw, 24rem)",
     textTransform: "none",
     borderRadius: "4rem",
     fontSize: "1.25rem",
