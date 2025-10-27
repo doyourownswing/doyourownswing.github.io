@@ -18,7 +18,21 @@ const Health = new Page("#/health", "Health protocol");
 const Code = new Page("#/code", "Code of conduct");
 const Contact = new Page("#/contact", "Contact");
 const StartHere = new Page("#/start-here");
+
+// todo - update this link once we have a full admin portal
+const SignIn = new Page("#/admin");
+
 // Catch-all page for any 404 not found issues.
 const NotFound = new Page("/*");
 
-export { Home, Schedule, About, Health, Code, Contact, StartHere, NotFound };
+export {
+  Home,
+  Schedule,
+  About,
+  Health,
+  Code,
+  Contact,
+  StartHere,
+  SignIn,
+  NotFound,
+};

@@ -10,6 +10,7 @@ import messages from "../messages";
 import startHereStyles from "../start_here.styles";
 import FeatureFlags from "infra/feature_flags";
 import { Text, Space } from "components/common/typography";
+import DyosLink from "components/common/link";
 
 function Review() {
   let showCodeOfConduct = FeatureFlags.showCodeOfConductTab;
@@ -43,13 +44,9 @@ function RegistrationForm() {
     <Box>
       <Text>{messages.beforeTheEvent.registration.fillOut}</Text>
       <Space />
-      <Link
-        href="https://forms.gle/2kbGxh399PQ2seEe7"
-        target="__blank"
-        rel="noopener noreferrer"
-      >
+      <DyosLink href="https://forms.gle/2kbGxh399PQ2seEe7">
         <Text>{messages.beforeTheEvent.registration.registrationForm}</Text>
-      </Link>
+      </DyosLink>
       <Space />
       <Text>{messages.endSentence}</Text>
       <Text>{messages.beforeTheEvent.registration.doLater}</Text>
