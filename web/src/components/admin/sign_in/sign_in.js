@@ -278,7 +278,14 @@ function SignIn() {
   };
 
   const isPaymentAmountValid = () => {
+    // Matches ints or floats with 2 decimal points
+    let pattern = /^(\d+|\d+\.\d{2})$/;
+
     try {
+      if (!pattern.test(paymentAmount)) {
+        return false;
+      }
+
       let number = parseFloat(paymentAmount);
 
       return number > 0;
