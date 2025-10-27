@@ -1,4 +1,4 @@
-import { BOX_SHADOW, SECTION_PADDING } from "common/constants";
+import { SECTION_PADDING } from "common/constants";
 import theme from "common/theme";
 
 const baseBackgroundColor = theme.palette.background.darkPurple;
@@ -44,17 +44,17 @@ const privateStyles = {
   button: {
     marginTop: "2rem",
     height: "4rem",
-    width: "24rem",
+    width: "min(80vw, 24rem)",
     textTransform: "none",
     borderRadius: "4rem",
     fontSize: "1.25rem",
     fontFamily: "Poppins",
     fontWeight: "600",
-    boxShadow: "0rem 0 2rem #9e52ff33, " + "0rem 0 4rem #9e52ff66",
+    boxShadow: "0rem 0 2rem #9e52ff33, 0rem 0 4rem #9e52ff66",
     background: "linear-gradient(to right, #55087f, #9e52ff)",
     transition: "0.5s",
     "&:hover": {
-      boxShadow: "0rem 0 2rem #9e52ff55, " + "0rem 0 4rem #9e52ff88",
+      boxShadow: "0rem 0 2rem #9e52ff55, 0rem 0 4rem #9e52ff88",
     },
   },
   secondContent: {
