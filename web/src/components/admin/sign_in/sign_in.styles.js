@@ -1,3 +1,5 @@
+import theme from "common/theme";
+
 const signInStyles = {
   container: {
     paddingTop: "2rem",
@@ -39,6 +41,17 @@ const signInStyles = {
     textTransform: "none",
     fontSize: "1rem",
     fontWeight: "600",
+  },
+  eventsCheckboxGroup: {
+    paddingLeft: "2rem",
+  },
+  checkbox: {
+    "&.Mui-checked": {
+      color: theme.palette.checkbox.primary,
+    },
+    "&.MuiCheckbox-indeterminate": {
+      color: theme.palette.checkbox.primary,
+    },
   },
 };
 

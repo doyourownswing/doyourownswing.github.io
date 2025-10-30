@@ -119,6 +119,7 @@ function MaskInput(props) {
           <Checkbox
             checked={props.checked}
             onChange={props.onMaskPurchaseChange}
+            sx={signInStyles.checkbox}
           />
         }
         label="Purchasing Mask"
@@ -181,6 +182,14 @@ function WhichEvents(props) {
     [EVENTS.SOCIAL.id]: false,
   });
 
+  function notifyParent(newVal) {
+    props.onSetEventsAttendingChange(
+      Object.keys(EVENTS)
+        .filter((e) => newVal[EVENTS[e].id])
+        .map((e) => e.id)
+    );
+  }
+
   const handleChange = (event) => {
     let newVal = {
       ...events,
@@ -188,21 +197,54 @@ function WhichEvents(props) {
     };
 
     setEvents(newVal);
-
-    props.onSetEventsAttendingChange(
-      Object.keys(EVENTS)
-        .filter((e) => newVal[EVENTS[e].id])
-        .map((e) => e.id)
-    );
+    notifyParent(newVal);
   };
 
+  function areAllSelected() {
+    return Object.values(events).every((e) => e);
+  }
+
+  function areAllDeselected() {
+    return Object.values(events).every((e) => !e);
+  }
+
+  function areSomeSelected() {
+    return !areAllSelected() && !areAllDeselected();
+  }
+
+  const handleSelectAllChange = () => {
+    let checked = !areAllSelected();
+    let newVal = {};
+
+    for (const key in events) {
+      newVal[key] = checked;
+    }
+
+    setEvents(newVal);
+    notifyParent(newVal);
+  };
+
+  let allSelected = areAllSelected();
+  let someSelected = areSomeSelected();
+
   return (
-    <Box>
+    <Box sx={signInStyles.inputContainer}>
       <FormControl component="fieldset" variant="standard" required>
         <FormLabel component="legend" sx={signInStyles.formHeader}>
           Which events will they attend
         </FormLabel>
-        <FormGroup>
+        <FormControlLabel
+          label="Select all"
+          control={
+            <Checkbox
+              checked={allSelected}
+              indeterminate={someSelected}
+              onChange={handleSelectAllChange}
+              sx={signInStyles.checkbox}
+            />
+          }
+        />
+        <FormGroup sx={signInStyles.eventsCheckboxGroup}>
           {Object.values(EVENTS).map((v) => {
             return (
               <FormControlLabel
@@ -211,6 +253,7 @@ function WhichEvents(props) {
                     checked={events[v.id]}
                     onChange={handleChange}
                     name={v.id}
+                    sx={signInStyles.checkbox}
                   />
                 }
                 label={v.displayName}
