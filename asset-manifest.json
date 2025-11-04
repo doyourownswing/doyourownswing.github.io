@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.798ecf61.css",
-    "main.js": "/static/js/main.2e4aad78.js",
+    "main.js": "/static/js/main.6ab88ef9.js",
     "static/media/birds-eye-social.jpg": "/static/media/birds-eye-social.00d43d29d75a219a7ce8.jpg",
     "static/media/classes1.jpg": "/static/media/classes1.21b57efc3893b1cc800b.jpg",
     "static/media/riley-teaching.jpg": "/static/media/riley-teaching.c9414c71478442f0acc9.jpg",
@@ -10,6 +10,8 @@
     "static/media/betsy-adam-will.jpg": "/static/media/betsy-adam-will.3ff08bc4752c67d21216.jpg",
     "static/media/zelle-logo.png": "/static/media/zelle-logo.c77e9e7bd961bba27ad9.png",
     "static/media/mimi_1.jpg": "/static/media/mimi_1.28ffaf994b40768f341c.jpg",
+    "static/media/snowflake.png": "/static/media/snowflake.8533acd452ee63b0d491.png",
+    "static/media/hanging_stars.png": "/static/media/hanging_stars.7db5080b419900a25703.png",
     "static/media/dyos_stacked_unisex.webp": "/static/media/dyos_stacked_unisex.365dc80b2ac9328f7e87.webp",
     "static/media/paypal-logo.png": "/static/media/paypal-logo.93f3d95ff13af546d10c.png",
     "static/media/im_shy_tee_unisex.webp": "/static/media/im_shy_tee_unisex.3c7f5e0af0bae5e2c4ff.webp",
@@ -24,10 +26,10 @@
     "static/media/color-logo.svg": "/static/media/color-logo.5e889ebd6d8c107050e3f0b5035af4cb.svg",
     "index.html": "/index.html",
     "main.798ecf61.css.map": "/static/css/main.798ecf61.css.map",
-    "main.2e4aad78.js.map": "/static/js/main.2e4aad78.js.map"
+    "main.6ab88ef9.js.map": "/static/js/main.6ab88ef9.js.map"
   },
   "entrypoints": [
     "static/css/main.798ecf61.css",
-    "static/js/main.2e4aad78.js"
+    "static/js/main.6ab88ef9.js"
   ]
 }
