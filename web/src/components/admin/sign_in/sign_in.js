@@ -3,6 +3,8 @@
 // https://www.youtube.com/watch?v=42R-fVmB4WM
 // https://developers.google.com/apps-script/guides/web
 
+// https://script.google.com/macros/s/AKfycbxpbsemRgN3vjFOkuR1UoUew3CNCWTe1oy_Uimutyig3Sj5Avtg4cg8gNGHmvaQcYrl/exec
+
 import {
   Autocomplete,
   Box,
@@ -23,9 +25,10 @@ import {
   Typography,
 } from "@mui/material";
 import DyosLink from "components/common/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import signInStyles from "./sign_in.styles";
 import theme from "common/theme";
+import SignInService from "./sign_in_service";
 
 const dummyPeopleSelection = [
   { label: "Jessee Zhang" },
@@ -61,7 +64,27 @@ const EVENTS = {
   SOCIAL: { id: "Social", displayName: "9:15pm - Social Dancing" },
 };
 
+const DATA_STATE = {
+  NOT_LOADED: "NOT_LOADED",
+  LOADING: "LOADING",
+  LOADED: "LOADED",
+};
+
 function PersonInput(props) {
+  const [data, setData] = useState(null);
+  const [dataState, setDataState] = useState(DATA_STATE.NOT_LOADED);
+
+  // TODO resume this
+  // useEffect(() => {
+  //   if (dataState === DATA_STATE.NOT_LOADED)
+
+  //   setDataState.
+
+  //   return () => {
+  //     setDataState(DATA_STATE.LOADED);
+  //   };
+  // });
+
   // TODO add support for additional people
   // TODO upon selecting sponsor / volunteer, autopopulate fields
   return (
@@ -80,6 +103,14 @@ function PersonInput(props) {
 }
 
 function ExemptionInput(props) {
+  function createMenuItem(exemptionType, key) {
+    return (
+      <MenuItem value={exemptionType} key={key} sx={signInStyles.dropdownItem}>
+        {exemptionType}
+      </MenuItem>
+    );
+  }
+
   return (
     <Box sx={signInStyles.inputContainer}>
       <Typography sx={signInStyles.formHeader}>
@@ -95,6 +126,8 @@ function ExemptionInput(props) {
           onChange={props.onSelectExemption}
           sx={signInStyles.input}
         >
+          {Object.values(EXEMPTION).map((e, i) => createMenuItem(e, i))}
+          {/* 
           <MenuItem value={EXEMPTION.NONE}>{EXEMPTION.NONE}</MenuItem>
           <MenuItem value={EXEMPTION.SPONSOR}>{EXEMPTION.SPONSOR}</MenuItem>
           <MenuItem value={EXEMPTION.VOLUNTEER_15}>
@@ -104,7 +137,7 @@ function ExemptionInput(props) {
             {EXEMPTION.VOLUNTEER_30}
           </MenuItem>
           <MenuItem value={EXEMPTION.ALL_STAR}>{EXEMPTION.ALL_STAR}</MenuItem>
-          <MenuItem value={EXEMPTION.OTHER}>{EXEMPTION.OTHER}</MenuItem>
+          <MenuItem value={EXEMPTION.OTHER}>{EXEMPTION.OTHER}</MenuItem> */}
         </Select>
       </FormControl>
     </Box>
@@ -316,8 +349,9 @@ function SignIn() {
     setAdditionalNotes(event.target.value);
   };
 
-  const onSubmit = () => {
+  const onSubmit = async () => {
     console.log("Submitted. Add the data here to verify correctness.");
+    await SignInService.fetchPeople();
   };
 
   const isPaymentAmountValid = () => {
@@ -350,62 +384,65 @@ function SignIn() {
 
   return (
     <Box sx={signInStyles.container}>
-      <Container>
-        <Typography variant="h4" sx={signInStyles.title}>
-          Admin - sign in
-        </Typography>
-      </Container>
-      <Container>
-        <Box sx={signInStyles.section}>
-          <Typography variant="h5">
-            Have they filled out the registration form?
+      <Container sx={signInStyles.contentContainer}>
+        <Box sx={signInStyles.contentCard}>
+          <Typography variant="h4" sx={signInStyles.title}>
+            Admin - sign in
           </Typography>
-          <Typography>If not, have them fill out this form</Typography>
-          <DyosLink href="https://forms.gle/2kbGxh399PQ2seEe7" openInNewTab>
-            One time-registration form
-          </DyosLink>
-        </Box>
-        <Box sx={signInStyles.section}>
-          <Typography variant="h5">Check In</Typography>
-          {/* TODO add refresh data button */}
-          <PersonInput selectedPerson={person} onPersonSelected={setPerson} />
-          <Stack direction={{ lg: "row" }} gap={{ xs: 4, lg: 8 }}>
-            <Box sx={signInStyles.formLeft}>
-              <ExemptionInput
-                value={exemption}
-                onSelectExemption={onSelectExemption}
-              />
-              <MaskInput
-                checked={buyingMask}
-                onMaskPurchaseChange={onMaskPurchaseChange}
-              />
-              {shouldShowPayment && (
-                <PaymentInput
-                  paymentMethodValue={paymentMethod}
-                  onSelectPaymentMethod={onSelectPaymentMethod}
-                  paymentAmountValue={paymentAmount}
-                  onPaymentAmountChange={onSetPaymentAmount}
+          <Box sx={signInStyles.section}>
+            <Typography variant="h5">
+              Have they filled out the registration form?
+            </Typography>
+            <Typography>If not, have them fill out this form</Typography>
+            <DyosLink href="https://forms.gle/2kbGxh399PQ2seEe7" openInNewTab>
+              One time-registration form
+            </DyosLink>
+          </Box>
+          <Box sx={signInStyles.section}>
+            <Typography variant="h5">Check In</Typography>
+            {/* TODO add refresh data button */}
+            <PersonInput selectedPerson={person} onPersonSelected={setPerson} />
+            <Stack direction={{ lg: "row" }} gap={{ xs: 4, lg: 8 }}>
+              <Box sx={signInStyles.formLeft}>
+                <ExemptionInput
+                  value={exemption}
+                  onSelectExemption={onSelectExemption}
                 />
-              )}
+
+                {shouldShowPayment && (
+                  <PaymentInput
+                    paymentMethodValue={paymentMethod}
+                    onSelectPaymentMethod={onSelectPaymentMethod}
+                    paymentAmountValue={paymentAmount}
+                    onPaymentAmountChange={onSetPaymentAmount}
+                  />
+                )}
+
+                <MaskInput
+                  checked={buyingMask}
+                  onMaskPurchaseChange={onMaskPurchaseChange}
+                />
+
+                <NotesInput
+                  value={additionalNotes}
+                  onSetAddtionalNotes={onSetAddtionalNotes}
+                />
+              </Box>
+              <Box>
+                <WhichEvents onSetEventsAttendingChange={setEventsAttending} />
+              </Box>
+            </Stack>
+            <Box sx={signInStyles.inputContainer}>
+              <Button
+                variant="contained"
+                sx={signInStyles.submitButton}
+                color={theme.palette.buttonBlue.name}
+                onClick={onSubmit}
+                disabled={!formValid}
+              >
+                Submit
+              </Button>
             </Box>
-            <Box>
-              <WhichEvents onSetEventsAttendingChange={setEventsAttending} />
-            </Box>
-          </Stack>
-          <NotesInput
-            value={additionalNotes}
-            onSetAddtionalNotes={onSetAddtionalNotes}
-          />
-          <Box sx={signInStyles.inputContainer}>
-            <Button
-              variant="contained"
-              sx={signInStyles.submitButton}
-              color={theme.palette.buttonBlue.name}
-              onClick={onSubmit}
-              disabled={!formValid}
-            >
-              Submit
-            </Button>
           </Box>
         </Box>
       </Container>

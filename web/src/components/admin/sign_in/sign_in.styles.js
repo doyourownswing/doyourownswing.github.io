@@ -1,9 +1,20 @@
+import { BOX_SHADOW } from "common/constants";
 import theme from "common/theme";
 
 const signInStyles = {
   container: {
     paddingTop: "2rem",
     paddingBottom: "4rem",
+    background: "radial-gradient(#fde2ff, white)",
+  },
+  contentContainer: {
+    maxWidth: { lg: "84rem" },
+  },
+  contentCard: {
+    borderRadius: "2rem",
+    boxShadow: BOX_SHADOW,
+    backgroundColor: "white",
+    padding: "3rem 4rem",
   },
   title: {
     textAlign: "center",
@@ -52,6 +63,9 @@ const signInStyles = {
     "&.MuiCheckbox-indeterminate": {
       color: theme.palette.checkbox.primary,
     },
+  },
+  dropdownItem: {
+    padding: "0.75rem 1rem",
   },
 };
 
