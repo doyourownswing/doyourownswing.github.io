@@ -11,6 +11,10 @@ function dateToHumanReadableString(date) {
   return date.format("dddd, MMM D, YYYY");
 }
 
+function formatDate(date, format) {
+  return date.format(format);
+}
+
 /** Util for creating a dayjs date from string formatted "MM/DD/YYYY". */
 function createDate(dateString) {
   if (dateString.length !== 10) {
@@ -24,4 +28,9 @@ function getBeginningOfTodayDate() {
   return dayjs(new Date().setHours(0, 0, 0, 0));
 }
 
-export { dateToHumanReadableString, createDate, getBeginningOfTodayDate };
+export {
+  dateToHumanReadableString,
+  formatDate,
+  createDate,
+  getBeginningOfTodayDate,
+};
