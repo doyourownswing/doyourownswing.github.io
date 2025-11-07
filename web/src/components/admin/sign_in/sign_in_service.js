@@ -9,10 +9,9 @@ class SignInService {
     try {
       let response = await fetch(URL);
 
-      console.log(response);
+      let jsonResponse = await response.json();
 
-      let json = await response.json();
-      console.log(json);
+      return jsonResponse.people;
     } catch (e) {
       console.log("we got an error");
       console.log(e);

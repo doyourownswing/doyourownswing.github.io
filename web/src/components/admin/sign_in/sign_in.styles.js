@@ -1,6 +1,11 @@
 import { BOX_SHADOW } from "common/constants";
 import theme from "common/theme";
 
+const baseHeaderText = {
+  fontWeight: "700",
+  fontFamily: "Poppins",
+};
+
 const signInStyles = {
   container: {
     paddingTop: "2rem",
@@ -40,9 +45,21 @@ const signInStyles = {
     width: { xs: "20rem", md: "unset" },
   },
   formHeader: {
-    fontWeight: "700",
-    fontFamily: "Poppins",
+    ...baseHeaderText,
     paddingBottom: "1rem",
+  },
+  personSectionHeaderText: {
+    ...baseHeaderText,
+    paddingTop: "1rem",
+    paddingBottom: "1rem",
+  },
+  personSectionHeader: {
+    display: "inline-flex",
+    gap: "1rem",
+    alignItems: "center",
+  },
+  loadingSpinner: {
+    padding: "8px",
   },
   formLeft: {
     width: "min(90vw, 44rem)",

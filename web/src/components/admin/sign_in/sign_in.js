@@ -10,11 +10,13 @@ import {
   Box,
   Button,
   Checkbox,
+  CircularProgress,
   Container,
   FormControl,
   FormControlLabel,
   FormGroup,
   FormLabel,
+  IconButton,
   InputAdornment,
   InputLabel,
   MenuItem,
@@ -22,6 +24,7 @@ import {
   Select,
   Stack,
   TextField,
+  Tooltip,
   Typography,
 } from "@mui/material";
 import DyosLink from "components/common/link";
@@ -29,16 +32,8 @@ import { useEffect, useState } from "react";
 import signInStyles from "./sign_in.styles";
 import theme from "common/theme";
 import SignInService from "./sign_in_service";
-
-const dummyPeopleSelection = [
-  { label: "Jessee Zhang" },
-  { label: "Emily Chern" },
-  { label: "Makenzie Smith" },
-  { label: "Jake Rehwoldt" },
-  { label: "Riley Crozier" },
-  { label: "Jen Xiao" },
-  { label: "Saumya Bhandarker" },
-];
+import { Refresh } from "@mui/icons-material";
+import { sortPeopleAlphabetically } from "./utils";
 
 const EXEMPTION = {
   NONE: "N/A",
@@ -68,33 +63,83 @@ const DATA_STATE = {
   NOT_LOADED: "NOT_LOADED",
   LOADING: "LOADING",
   LOADED: "LOADED",
+  ERROR: "ERROR",
 };
 
 function PersonInput(props) {
   const [data, setData] = useState(null);
   const [dataState, setDataState] = useState(DATA_STATE.NOT_LOADED);
 
-  // TODO resume this
-  // useEffect(() => {
-  //   if (dataState === DATA_STATE.NOT_LOADED)
+  useEffect(() => {
+    // If data is already being fetched, exit early
+    if (dataState !== DATA_STATE.NOT_LOADED) return;
 
-  //   setDataState.
+    const fetchPeopleData = async () => {
+      setDataState(DATA_STATE.LOADING);
 
-  //   return () => {
-  //     setDataState(DATA_STATE.LOADED);
-  //   };
-  // });
+      try {
+        let people = await SignInService.fetchPeople();
+
+        let peopleOptions = sortPeopleAlphabetically(people).map((p) => {
+          return { label: p.name };
+        });
+
+        setData(peopleOptions);
+        setDataState(DATA_STATE.LOADED);
+      } catch (e) {
+        console.log(e);
+        setDataState(DATA_STATE.ERROR);
+      }
+    };
+
+    fetchPeopleData();
+  }, [dataState]);
+
+  function onClickRefresh() {
+    setDataState(DATA_STATE.NOT_LOADED);
+  }
+
+  let isLoading = dataState === DATA_STATE.LOADING;
+  let isLoaded = dataState === DATA_STATE.LOADED;
+  let hasError = dataState === DATA_STATE.ERROR;
+  let canRefresh = isLoaded || hasError;
 
   // TODO add support for additional people
   // TODO upon selecting sponsor / volunteer, autopopulate fields
+  // TODO include data like whether someone is already checked in today
+
   return (
     <Box sx={signInStyles.inputContainer}>
+      <Box sx={signInStyles.personSectionHeader}>
+        <Typography sx={signInStyles.personSectionHeaderText}>
+          Who is checking in
+        </Typography>
+        {isLoading && (
+          <Box sx={signInStyles.loadingSpinner}>
+            <CircularProgress size="1.25rem" />
+          </Box>
+        )}
+        {canRefresh && (
+          <Tooltip title="Refresh options" placement="right">
+            <IconButton onClick={onClickRefresh}>
+              <Refresh />
+            </IconButton>
+          </Tooltip>
+        )}
+      </Box>
+      {hasError && (
+        <Typography>
+          Something is wrong, please try again. Get Jessee if it still won't
+          work.
+        </Typography>
+      )}
       <Autocomplete
-        options={dummyPeopleSelection}
+        options={data}
         sx={signInStyles.input}
         renderInput={(params) => (
           <TextField {...params} label="Name" required />
         )}
+        disabled={!isLoaded}
         value={props.selectedPerson}
         onChange={(_, newValue) => props.onPersonSelected(newValue)}
       />
@@ -113,9 +158,7 @@ function ExemptionInput(props) {
 
   return (
     <Box sx={signInStyles.inputContainer}>
-      <Typography sx={signInStyles.formHeader}>
-        Something about exemption includes things like sponsors, volunteers etc
-      </Typography>
+      <Typography sx={signInStyles.formHeader}>Payment</Typography>
 
       <FormControl>
         <InputLabel id="exemption-label">Exemption</InputLabel>
@@ -127,17 +170,6 @@ function ExemptionInput(props) {
           sx={signInStyles.input}
         >
           {Object.values(EXEMPTION).map((e, i) => createMenuItem(e, i))}
-          {/* 
-          <MenuItem value={EXEMPTION.NONE}>{EXEMPTION.NONE}</MenuItem>
-          <MenuItem value={EXEMPTION.SPONSOR}>{EXEMPTION.SPONSOR}</MenuItem>
-          <MenuItem value={EXEMPTION.VOLUNTEER_15}>
-            {EXEMPTION.VOLUNTEER_15}
-          </MenuItem>
-          <MenuItem value={EXEMPTION.VOLUNTEER_30}>
-            {EXEMPTION.VOLUNTEER_30}
-          </MenuItem>
-          <MenuItem value={EXEMPTION.ALL_STAR}>{EXEMPTION.ALL_STAR}</MenuItem>
-          <MenuItem value={EXEMPTION.OTHER}>{EXEMPTION.OTHER}</MenuItem> */}
         </Select>
       </FormControl>
     </Box>
