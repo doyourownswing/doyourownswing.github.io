@@ -150,6 +150,9 @@ const theme = responsiveFontSizes(
         backgroundColor: basePalette.purple100,
         boxShadow: "0px 2px 4px " + basePalette.gray300,
       },
+      checkbox: {
+        primary: basePalette.blue500,
+      },
     },
     typography: {
       fontFamily: [
