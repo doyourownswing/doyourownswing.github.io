@@ -1,0 +1,10 @@
+@keyframes falling-snowflake {
+  0% {
+    top: -5%;
+    opacity: 5%;
+  }
+  100% {
+    top: 105%;
+    opacity: 15%;
+  }
+}
