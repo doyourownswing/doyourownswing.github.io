@@ -41,7 +41,6 @@ export default function Merch() {
         <Box sx={merchStyles.orderContainer}>
           <Button
             variant="contained"
-            color={theme.palette.buttonBlue.name}
             target="_blank"
             rel="noopener noreferrer"
             href={printfulLink}

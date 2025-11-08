@@ -73,14 +73,6 @@ const signInStyles = {
   eventsCheckboxGroup: {
     paddingLeft: "2rem",
   },
-  checkbox: {
-    "&.Mui-checked": {
-      color: theme.palette.checkbox.primary,
-    },
-    "&.MuiCheckbox-indeterminate": {
-      color: theme.palette.checkbox.primary,
-    },
-  },
   dropdownItem: {
     padding: "0.75rem 1rem",
   },

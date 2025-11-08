@@ -34,9 +34,6 @@ const basePalette = {
 const theme = responsiveFontSizes(
   createTheme({
     palette: {
-      primary: {
-        main: basePalette.purple800,
-      },
       /// Theme for a light button used on dark backgrounds
       buttonLight: {
         name: "buttonLight",
@@ -52,14 +49,6 @@ const theme = responsiveFontSizes(
         main: basePalette.purple700,
         light: basePalette.purple600,
         dark: basePalette.purple600,
-        contrastText: basePalette.white,
-      },
-      /// Theme for a blue button
-      buttonBlue: {
-        name: "buttonBlue",
-        main: basePalette.blue400,
-        light: basePalette.blue500,
-        dark: basePalette.blue500,
         contrastText: basePalette.white,
       },
       /// Theme for a white button with purple outline and text
@@ -149,9 +138,6 @@ const theme = responsiveFontSizes(
         border: "1px solid" + basePalette.purple500,
         backgroundColor: basePalette.purple100,
         boxShadow: "0px 2px 4px " + basePalette.gray300,
-      },
-      checkbox: {
-        primary: basePalette.blue500,
       },
     },
     typography: {

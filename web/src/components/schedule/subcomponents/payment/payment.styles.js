@@ -11,6 +11,8 @@ function buildButtonStyles(color) {
   return {
     ...baseButton,
     boxShadow: "4px 4px " + color,
+    color: color,
+    borderColor: color,
     "&:hover": {
       boxShadow: "2px 2px " + color,
     },

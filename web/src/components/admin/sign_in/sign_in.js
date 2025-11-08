@@ -184,7 +184,6 @@ function MaskInput(props) {
           <Checkbox
             checked={props.checked}
             onChange={props.onMaskPurchaseChange}
-            sx={signInStyles.checkbox}
           />
         }
         label="Purchasing Mask"
@@ -305,7 +304,6 @@ function WhichEvents(props) {
               checked={allSelected}
               indeterminate={someSelected}
               onChange={handleSelectAllChange}
-              sx={signInStyles.checkbox}
             />
           }
         />
@@ -318,7 +316,6 @@ function WhichEvents(props) {
                     checked={events[v.id]}
                     onChange={handleChange}
                     name={v.id}
-                    sx={signInStyles.checkbox}
                   />
                 }
                 label={v.displayName}
