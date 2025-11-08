@@ -7,6 +7,7 @@ import { formatDate } from "utils/date_utils";
 import stars from "assets/images/hanging_stars.png";
 import snowflake from "assets/images/snowflake.png";
 import messages from "./messages";
+import "./winter_schedule.css";
 
 const DATE_FORMAT = "MMM D";
 
@@ -16,6 +17,8 @@ function Event(props) {
   let baseStyle = details.hasDyos
     ? winterScheduleStyles.dyosDay
     : winterScheduleStyles.noDyos;
+
+  let link = details.eventLink ?? "#/classes";
 
   return (
     <Grid2 xs={1}>
@@ -28,7 +31,12 @@ function Event(props) {
         </Box>
         <Box>
           {details.hasDyos && (
-            <Button variant="text" sx={baseStyle.button} href="#/classes">
+            <Button
+              variant="text"
+              sx={baseStyle.button}
+              href={link}
+              target="_blank"
+            >
               {messages.seeDetails}
             </Button>
           )}

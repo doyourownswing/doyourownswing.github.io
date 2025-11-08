@@ -35,40 +35,38 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-function generateStars(numStarsPerSide) {
-  let stars = [];
+const snowflakeCounts = [
+  { size: 1, count: 40, duration: 100 },
+  { size: 2, count: 25, duration: 80 },
+  { size: 3, count: 15, duration: 60 },
+  { size: 4, count: 10, duration: 40 },
+  { size: 5, count: 5, duration: 20 },
+];
 
-  // Create stars for left side.
-  for (var i = 0; i < numStarsPerSide; i++) {
-    stars.push({
-      ...baseEmbellishment,
-      width: getRandomInt(1, 3) + "rem",
-      top: getRandomInt(10, 95) + "%",
-      left: getRandomInt(5, 30) + "%",
-    });
+function createBaseSnowflake(config) {
+  return {
+    ...baseEmbellishment,
+    width: config.size / 2 + 0.5 + "rem",
+    left: getRandomInt(2, 98) + "%",
+    animation: "falling-snowflake " + config.duration + "s ease-in",
+    animationIterationCount: "infinite",
+  };
+}
+
+function generateSnowflakes() {
+  let snowflakes = [];
+
+  for (var config of snowflakeCounts) {
+    for (var i = 0; i < config.count; i++) {
+      snowflakes.push({
+        ...createBaseSnowflake(config),
+        // This makes each snowflake start at a random location / time during the animation.
+        animationDelay: "-" + getRandomInt(1, config.duration) + "s",
+      });
+    }
   }
 
-  // Create stars for right side.
-  for (i = 0; i < numStarsPerSide; i++) {
-    stars.push({
-      ...baseEmbellishment,
-      width: getRandomInt(1, 3) + "rem",
-      top: getRandomInt(10, 95) + "%",
-      left: getRandomInt(70, 95) + "%",
-    });
-  }
-
-  // Create stars for middle section.
-  for (i = 0; i < numStarsPerSide; i++) {
-    stars.push({
-      ...baseEmbellishment,
-      width: getRandomInt(1, 3) + "rem",
-      top: getRandomInt(40, 95) + "%",
-      left: getRandomInt(30, 70) + "%",
-    });
-  }
-
-  return stars;
+  return snowflakes;
 }
 
 const winterScheduleStyles = {
@@ -76,6 +74,7 @@ const winterScheduleStyles = {
     background: "linear-gradient(to bottom, #806898 0% 20%, #b5a2c8)",
     padding: SECTION_PADDING,
     position: "relative",
+    overflow: "clip",
   },
   contentContainer: {
     // Make sure content is in front of the embellishments
@@ -103,7 +102,12 @@ const winterScheduleStyles = {
     eventCard: {
       ...baseEventCard,
       backgroundColor: "#3c1564",
-      boxShadow: BOX_SHADOW_2,
+      boxShadow: "0px 0px 8px #00000088",
+      transition: "0.5s",
+      "&:hover": {
+        boxShadow: "0px 2px 16px #000000aa",
+        transform: "translateY(-2px)",
+      },
     },
     thursday: {
       ...baseThursday,
@@ -118,6 +122,10 @@ const winterScheduleStyles = {
       color: "#64bbff",
       fontSize: "1.25rem",
       fontWeight: "700",
+      transition: "0.5s",
+      "&:hover": {
+        color: "#b5deff",
+      },
     },
   },
   noDyos: {
@@ -147,7 +155,7 @@ const winterScheduleStyles = {
     width: "min(50vw, 32rem)",
     left: "calc(50% - min(50vw, 32rem) / 2)",
   },
-  snowflakes: generateStars(10),
+  snowflakes: generateSnowflakes(),
 };
 
 export default winterScheduleStyles;
