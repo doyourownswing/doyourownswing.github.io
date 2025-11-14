@@ -67,7 +67,7 @@ const DATA_STATE = {
 };
 
 function PersonInput(props) {
-  const [data, setData] = useState(null);
+  const [data, setData] = useState([]);
   const [dataState, setDataState] = useState(DATA_STATE.NOT_LOADED);
 
   useEffect(() => {
@@ -107,6 +107,7 @@ function PersonInput(props) {
   // TODO add support for additional people
   // TODO upon selecting sponsor / volunteer, autopopulate fields
   // TODO include data like whether someone is already checked in today
+  // TODO add a section below the input showing person details, if any
 
   return (
     <Box sx={signInStyles.inputContainer}>
@@ -134,14 +135,15 @@ function PersonInput(props) {
         </Typography>
       )}
       <Autocomplete
+        multiple
         options={data}
         sx={signInStyles.input}
         renderInput={(params) => (
-          <TextField {...params} label="Name" required />
+          <TextField {...params} label="Dancer(s)" required />
         )}
         disabled={!isLoaded}
-        value={props.selectedPerson}
-        onChange={(_, newValue) => props.onPersonSelected(newValue)}
+        value={props.selectedPeople}
+        onChange={(_, newValue) => props.onPeopleSelected(newValue)}
       />
     </Box>
   );
@@ -350,10 +352,10 @@ function NotesInput(props) {
 
 // TODO add validation for someone who has already been entered today
 function SignIn() {
-  const [person, setPerson] = useState(null);
+  const [people, setPeople] = useState([]);
   const [exemption, setExemption] = useState(EXEMPTION.NONE);
   const [buyingMask, setBuyingMask] = useState(false);
-  const [paymentMethod, setPaymentMethod] = useState(null);
+  const [paymentMethod, setPaymentMethod] = useState("");
   const [paymentAmount, setPaymentAmount] = useState("");
   const [additionalNotes, setAdditionalNotes] = useState("");
   const [eventsAttending, setEventsAttending] = useState([]);
@@ -406,7 +408,7 @@ function SignIn() {
     buyingMask;
 
   let formValid =
-    person !== null &&
+    people.length > 0 &&
     (!shouldShowPayment ||
       (paymentMethod !== null && isPaymentAmountValid())) &&
     eventsAttending.length > 0;
@@ -429,8 +431,7 @@ function SignIn() {
           </Box>
           <Box sx={signInStyles.section}>
             <Typography variant="h5">Check In</Typography>
-            {/* TODO add refresh data button */}
-            <PersonInput selectedPerson={person} onPersonSelected={setPerson} />
+            <PersonInput selectedPeople={people} onPeopleSelected={setPeople} />
             <Stack direction={{ lg: "row" }} gap={{ xs: 4, lg: 8 }}>
               <Box sx={signInStyles.formLeft}>
                 <ExemptionInput
@@ -465,7 +466,6 @@ function SignIn() {
               <Button
                 variant="contained"
                 sx={signInStyles.submitButton}
-                color={theme.palette.buttonBlue.name}
                 onClick={onSubmit}
                 disabled={!formValid}
               >
