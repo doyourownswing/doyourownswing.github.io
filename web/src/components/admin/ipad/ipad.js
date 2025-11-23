@@ -20,7 +20,6 @@ function Ipad() {
   return (
     <Box sx={ipadStyles.container}>
       <Container>
-        <Typography>test</Typography>
         <TabContext value={selectedTab}>
           <TabList onChange={onTabChange}>
             {Object.keys(TABS).map((tab) => (
