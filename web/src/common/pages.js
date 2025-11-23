@@ -21,6 +21,7 @@ const StartHere = new Page("#/start-here");
 
 // todo - update this link once we have a full admin portal
 const SignIn = new Page("#/admin");
+const Ipad = new Page("#/ipad");
 
 // Catch-all page for any 404 not found issues.
 const NotFound = new Page("/*");
@@ -34,5 +35,6 @@ export {
   Contact,
   StartHere,
   SignIn,
+  Ipad,
   NotFound,
 };

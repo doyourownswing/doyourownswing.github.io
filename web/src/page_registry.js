@@ -9,6 +9,7 @@ import Schedule from "components/schedule/schedule";
 import StartHere from "components/start_here/start_here";
 import NotFound from "components/not_found/not_found";
 import SignIn from "components/admin/sign_in/sign_in";
+import Ipad from "components/admin/ipad/ipad";
 
 class PageRegistrationInfo {
   constructor(page, isVisible, element) {
@@ -48,6 +49,7 @@ const pageRegistry = [
     <StartHere />
   ),
   new PageRegistrationInfo(pages.SignIn, true, <SignIn />),
+  new PageRegistrationInfo(pages.Ipad, true, <Ipad />),
 ];
 
 // HashRouter automatically handles the hash so we can't have it as a part of the URL
