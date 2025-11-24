@@ -125,11 +125,18 @@ function MenuIconOptions() {
 }
 
 /** Navigation bar to be rendered at the top of the page containing tabs to other pages. */
-function NavBar() {
+function NavBar(props) {
+  // The app bar floats, and hovers over content. Allow rendering a placeholder version that's not floating
+  // and doesn't display anything, including announcement. This is per the documentation's suggestion.
+  let position = !!props.placeholder ? "sticky" : "fixed";
+  let appBarStyle = !!props.placeholder
+    ? { ...navBarStyles.appBar, ...navBarStyles.invisible }
+    : navBarStyles.appBar;
+
   let announcement = getCurrentAnnouncement();
 
   return (
-    <AppBar position="fixed" id="NavBar" sx={navBarStyles.appBar}>
+    <AppBar position={position} id="NavBar" sx={appBarStyle}>
       {!!announcement && (
         <Announcement announcement={announcement}></Announcement>
       )}

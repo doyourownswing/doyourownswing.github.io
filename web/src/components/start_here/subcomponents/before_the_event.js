@@ -11,6 +11,7 @@ import startHereStyles from "../start_here.styles";
 import FeatureFlags from "infra/feature_flags";
 import { Text, Space } from "components/common/typography";
 import DyosLink from "components/common/link";
+import { REGISTRATION_FORM_LINK } from "common/constants";
 
 function Review() {
   let showCodeOfConduct = FeatureFlags.showCodeOfConductTab;
@@ -44,7 +45,7 @@ function RegistrationForm() {
     <Box>
       <Text>{messages.beforeTheEvent.registration.fillOut}</Text>
       <Space />
-      <DyosLink href="https://forms.gle/2kbGxh399PQ2seEe7">
+      <DyosLink href={REGISTRATION_FORM_LINK}>
         <Text>{messages.beforeTheEvent.registration.registrationForm}</Text>
       </DyosLink>
       <Space />

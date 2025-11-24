@@ -1,7 +1,3 @@
-const indexStyles = {
-  mainContent: {
-    paddingTop: { xs: "56px", sm: "64px", md: "68.5px" },
-  },
-};
+const indexStyles = {};
 
 export default indexStyles;
