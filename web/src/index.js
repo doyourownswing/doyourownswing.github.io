@@ -6,16 +6,11 @@ import NavBar from "components/nav_bar/nav_bar";
 import ThemeProvider from "@mui/material/styles/ThemeProvider";
 import theme from "common/theme";
 import "index.css";
-import indexStyles from "index.styles";
 import { Box } from "@mui/material";
-import generatedRoutes from "./page_registry";
-import Announcement from "components/nav_bar/announcement";
+import { generatedRoutes, Overrides } from "./page_registry";
 import { getCurrentAnnouncement } from "data/announcements";
 
 const routes = generatedRoutes;
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
-
 let announcement = getCurrentAnnouncement();
 
 // HashRouter preserves scroll location between pages which is wonky as heck.
@@ -32,15 +27,39 @@ function ScrollResetContainer(props) {
   return props.children;
 }
 
+function NavBarAndAnnouncements() {
+  const [, updateState] = React.useState();
+  const forceUpdate = React.useCallback(() => updateState({}), []);
+
+  React.useEffect(() => {
+    const onHashChange = () => forceUpdate();
+    window.addEventListener("hashchange", onHashChange);
+
+    return () => {
+      window.removeEventListener("hashchange", onHashChange);
+    };
+  });
+
+  let currentRoute = routes.find((r) => r.page.isCurrentPage());
+  let showNavBar =
+    !currentRoute || Overrides.shouldShowNavBar(currentRoute.overrides);
+
+  return (
+    <Box>
+      {/* Render an invisible placeholder nav bar underneath the floating fixed real 
+      nav bar to avoiding overlapping real content */}
+      {showNavBar && <NavBar placeholder />}
+      {showNavBar && <NavBar />}
+    </Box>
+  );
+}
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
-      {!!announcement && (
-        // Hack to render a placeholder since our nav bar is sticky and our styling assumes nav bar height
-        <Announcement announcement={announcement} invisible />
-      )}
-      <NavBar />
-      <Box sx={indexStyles.mainContent}>
+      <NavBarAndAnnouncements />
+      <Box>
         <HashRouter>
           <ScrollResetContainer>
             <Routes>

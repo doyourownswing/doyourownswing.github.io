@@ -12,10 +12,11 @@ import SignIn from "components/admin/sign_in/sign_in";
 import Ipad from "components/admin/ipad/ipad";
 
 class PageRegistrationInfo {
-  constructor(page, isVisible, element) {
+  constructor(page, isVisible, element, overrides) {
     this.page = page;
     this.isVisible = isVisible;
     this.element = element;
+    this.overrides = overrides;
   }
 }
 
@@ -48,8 +49,16 @@ const pageRegistry = [
     FeatureFlags.showStartHerePage,
     <StartHere />
   ),
-  new PageRegistrationInfo(pages.SignIn, true, <SignIn />),
-  new PageRegistrationInfo(pages.Ipad, true, <Ipad />),
+  new PageRegistrationInfo(pages.SignIn, true, <SignIn />, {
+    navBarOverrides: {
+      showNavBar: false,
+    },
+  }),
+  new PageRegistrationInfo(pages.Ipad, true, <Ipad />, {
+    navBarOverrides: {
+      showNavBar: false,
+    },
+  }),
 ];
 
 // HashRouter automatically handles the hash so we can't have it as a part of the URL
@@ -65,8 +74,21 @@ const parseUrl = function (url) {
 const generatedRoutes = pageRegistry
   .filter((p) => p.isVisible)
   .map((p) => ({
+    // Fields used by router
     path: parseUrl(p.page.url),
     element: p.element,
+    // Fields not used by router
+    page: p.page,
+    overrides: p.overrides,
   }));
 
-export default generatedRoutes;
+class Overrides {
+  static shouldShowNavBar(overrides) {
+    // default to showing nav bar
+    if (!overrides || !overrides.navBarOverrides) return true;
+
+    return overrides.navBarOverrides.showNavBar ?? true;
+  }
+}
+
+export { generatedRoutes, Overrides };

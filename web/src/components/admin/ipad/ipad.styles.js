@@ -2,7 +2,7 @@ import { SECTION_PADDING } from "common/constants";
 
 const ipadStyles = {
   container: {
-    padding: SECTION_PADDING,
+    padding: "2rem",
     background: "radial-gradient(#753375, #301930 70%)",
     minHeight: "90vh",
   },
