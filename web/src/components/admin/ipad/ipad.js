@@ -2,6 +2,9 @@ import { Box, Container, Tab, Typography } from "@mui/material";
 import ipadStyles from "./ipad.styles";
 import { TabContext, TabList, TabPanel } from "@mui/lab";
 import { useState } from "react";
+import ClassDetails from "components/schedule/subcomponents/classes/classes_details";
+import SuggestedPricingTable from "components/schedule/subcomponents/suggested_pricing/suggested_pricing_table";
+import PaymentOptionDetails from "components/schedule/subcomponents/payment/payment_option_details";
 
 const TABS = {
   REGISTRATION_FORM: "Registration Form",
@@ -27,9 +30,15 @@ function Ipad() {
             ))}
           </TabList>
           <TabPanel value={TABS.REGISTRATION_FORM}>Registration form</TabPanel>
-          <TabPanel value={TABS.CLASSES}>Classes</TabPanel>
-          <TabPanel value={TABS.PRICING}>Pricing</TabPanel>
-          <TabPanel value={TABS.PAYMENT}>Payment</TabPanel>
+          <TabPanel value={TABS.CLASSES}>
+            <ClassDetails />
+          </TabPanel>
+          <TabPanel value={TABS.PRICING}>
+            <SuggestedPricingTable />
+          </TabPanel>
+          <TabPanel value={TABS.PAYMENT}>
+            <PaymentOptionDetails />
+          </TabPanel>
         </TabContext>
       </Container>
     </Box>

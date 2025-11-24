@@ -40,8 +40,10 @@ const paymentStyles = {
   subSubTitle: {
     paddingBottom: { xs: "1rem", md: "2rem" },
   },
-  cardsContainer: {
+  paymentOptionsContainer: {
     background: "radial-gradient(#5a7db561 0%, #5a7db561 30%, transparent 50%)",
+  },
+  cardsContainer: {
     display: "inline-grid",
     gap: "2rem",
   },
