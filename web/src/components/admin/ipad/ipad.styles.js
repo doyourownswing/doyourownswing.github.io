@@ -1,10 +1,8 @@
-import { SECTION_PADDING } from "common/constants";
-
 const ipadStyles = {
   container: {
     padding: "2rem",
     background: "radial-gradient(#753375, #301930 70%)",
-    minHeight: "90vh",
+    minHeight: "calc(100vh - 4rem)",
   },
   tabList: {
     paddingBottom: "2rem",
@@ -27,7 +25,7 @@ const ipadStyles = {
     backgroundColor: "#edcdff",
     borderRadius: "2rem",
     padding: "2rem 0rem",
-    height: "80vh",
+    height: "70vh",
   },
 };
 
