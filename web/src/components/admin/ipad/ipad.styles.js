@@ -1,6 +1,6 @@
 const ipadStyles = {
   container: {
-    padding: "2rem",
+    padding: "2rem 0rem",
     background: "radial-gradient(#753375, #301930 70%)",
     minHeight: "calc(100vh - 4rem)",
   },
@@ -14,12 +14,15 @@ const ipadStyles = {
     color: "#dcdcdc",
     textTransform: "none",
     fontFamily: "Poppins",
-    fontSize: "1.15rem",
+    fontSize: { xs: "0.85rem", sm: "1rem", md: "1.15rem" },
     fontShadow: "0px 0px 2px black",
     "&.Mui-selected": {
       color: "#edcdff",
       fontWeight: "600",
     },
+  },
+  tabPanel: {
+    padding: "2rem 0rem",
   },
   formContainer: {
     backgroundColor: "#edcdff",
