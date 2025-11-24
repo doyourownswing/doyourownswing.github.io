@@ -51,16 +51,16 @@ function Ipad() {
               <Tab label={TABS[tab]} value={TABS[tab]} sx={ipadStyles.tab} />
             ))}
           </TabList>
-          <TabPanel value={TABS.REGISTRATION_FORM}>
+          <TabPanel value={TABS.REGISTRATION_FORM} sx={ipadStyles.tabPanel}>
             <EmbeddedRegistrationForm />
           </TabPanel>
-          <TabPanel value={TABS.CLASSES}>
+          <TabPanel value={TABS.CLASSES} sx={ipadStyles.tabPanel}>
             <ClassDetails />
           </TabPanel>
-          <TabPanel value={TABS.PRICING}>
+          <TabPanel value={TABS.PRICING} sx={ipadStyles.tabPanel}>
             <SuggestedPricingTable />
           </TabPanel>
-          <TabPanel value={TABS.PAYMENT}>
+          <TabPanel value={TABS.PAYMENT} sx={ipadStyles.tabPanel}>
             <PaymentOptionDetails />
           </TabPanel>
         </TabContext>
