@@ -8,10 +8,8 @@ import theme from "common/theme";
 import "index.css";
 import { Box } from "@mui/material";
 import { generatedRoutes, Overrides } from "./page_registry";
-import { getCurrentAnnouncement } from "data/announcements";
 
 const routes = generatedRoutes;
-let announcement = getCurrentAnnouncement();
 
 // HashRouter preserves scroll location between pages which is wonky as heck.
 //
@@ -27,7 +25,7 @@ function ScrollResetContainer(props) {
   return props.children;
 }
 
-function NavBarAndAnnouncements() {
+function NavBarAndAnnouncementsRenderer() {
   const [, updateState] = React.useState();
   const forceUpdate = React.useCallback(() => updateState({}), []);
 
@@ -54,11 +52,31 @@ function NavBarAndAnnouncements() {
   );
 }
 
+function FooterRenderer() {
+  const [, updateState] = React.useState();
+  const forceUpdate = React.useCallback(() => updateState({}), []);
+
+  React.useEffect(() => {
+    const onHashChange = () => forceUpdate();
+    window.addEventListener("hashchange", onHashChange);
+
+    return () => {
+      window.removeEventListener("hashchange", onHashChange);
+    };
+  });
+
+  let currentRoute = routes.find((r) => r.page.isCurrentPage());
+  let showFooter =
+    !currentRoute || Overrides.shouldShowFooter(currentRoute.overrides);
+
+  return <Box>{showFooter && <Footer />}</Box>;
+}
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
-      <NavBarAndAnnouncements />
+      <NavBarAndAnnouncementsRenderer />
       <Box>
         <HashRouter>
           <ScrollResetContainer>
@@ -70,7 +88,7 @@ root.render(
           </ScrollResetContainer>
         </HashRouter>
       </Box>
-      <Footer />
+      <FooterRenderer />
     </ThemeProvider>
   </React.StrictMode>
 );

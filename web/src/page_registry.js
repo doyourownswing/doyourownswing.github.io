@@ -58,6 +58,7 @@ const pageRegistry = [
     navBarOverrides: {
       showNavBar: false,
     },
+    showFooter: false,
   }),
 ];
 
@@ -88,6 +89,13 @@ class Overrides {
     if (!overrides || !overrides.navBarOverrides) return true;
 
     return overrides.navBarOverrides.showNavBar ?? true;
+  }
+
+  static shouldShowFooter(overrides) {
+    // default to showing footer
+    if (!overrides) return true;
+
+    return overrides.showFooter ?? true;
   }
 }
 
