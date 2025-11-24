@@ -1,10 +1,11 @@
-import { Box, Container, Tab, Typography } from "@mui/material";
+import { Box, Container, Tab } from "@mui/material";
 import ipadStyles from "./ipad.styles";
 import { TabContext, TabList, TabPanel } from "@mui/lab";
 import { useState } from "react";
 import ClassDetails from "components/schedule/subcomponents/classes/classes_details";
 import SuggestedPricingTable from "components/schedule/subcomponents/suggested_pricing/suggested_pricing_table";
 import PaymentOptionDetails from "components/schedule/subcomponents/payment/payment_option_details";
+import { REGISTRATION_FORM_LINK_EMBEDDABLE } from "common/constants";
 
 const TABS = {
   REGISTRATION_FORM: "Registration Form",
@@ -12,6 +13,23 @@ const TABS = {
   PRICING: "Pricing",
   PAYMENT: "Payment",
 };
+
+function EmbeddedRegistrationForm() {
+  return (
+    <Box sx={ipadStyles.formContainer}>
+      <iframe
+        src={REGISTRATION_FORM_LINK_EMBEDDABLE}
+        width="100%"
+        height="100%"
+        frameborder="0"
+        marginheight="0"
+        marginwidth="0"
+      >
+        Loading…
+      </iframe>
+    </Box>
+  );
+}
 
 function Ipad() {
   const [selectedTab, setSelectedTab] = useState(TABS.REGISTRATION_FORM);
@@ -24,12 +42,18 @@ function Ipad() {
     <Box sx={ipadStyles.container}>
       <Container>
         <TabContext value={selectedTab}>
-          <TabList onChange={onTabChange}>
+          <TabList
+            onChange={onTabChange}
+            variant="fullWidth"
+            sx={ipadStyles.tabList}
+          >
             {Object.keys(TABS).map((tab) => (
-              <Tab label={TABS[tab]} value={TABS[tab]} />
+              <Tab label={TABS[tab]} value={TABS[tab]} sx={ipadStyles.tab} />
             ))}
           </TabList>
-          <TabPanel value={TABS.REGISTRATION_FORM}>Registration form</TabPanel>
+          <TabPanel value={TABS.REGISTRATION_FORM}>
+            <EmbeddedRegistrationForm />
+          </TabPanel>
           <TabPanel value={TABS.CLASSES}>
             <ClassDetails />
           </TabPanel>

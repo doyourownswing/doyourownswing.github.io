@@ -34,6 +34,7 @@ import theme from "common/theme";
 import SignInService from "./sign_in_service";
 import { Refresh } from "@mui/icons-material";
 import { sortPeopleAlphabetically } from "./utils";
+import { REGISTRATION_FORM_LINK } from "common/constants";
 
 const EXEMPTION = {
   NONE: "N/A",
@@ -425,7 +426,7 @@ function SignIn() {
               Have they filled out the registration form?
             </Typography>
             <Typography>If not, have them fill out this form</Typography>
-            <DyosLink href="https://forms.gle/2kbGxh399PQ2seEe7" openInNewTab>
+            <DyosLink href={REGISTRATION_FORM_LINK} openInNewTab>
               One time-registration form
             </DyosLink>
           </Box>

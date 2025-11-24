@@ -26,3 +26,7 @@ export const BOX_SHADOW_TOP = "0px 16px 16px 0px " + theme.palette.card.shadow;
 
 export const BOX_SHADOW_GLOW =
   "0px 0px 16px 0px " + theme.palette.border.emphasisGlow;
+
+export const REGISTRATION_FORM_LINK = "https://forms.gle/2kbGxh399PQ2seEe7";
+export const REGISTRATION_FORM_LINK_EMBEDDABLE =
+  "https://docs.google.com/forms/d/e/1FAIpQLSd64xdGeeme_Vu_MiaFWzGI-ZSms4MXkfnoDHsA_PDcJ7-5FA/viewform?embedded=true";
