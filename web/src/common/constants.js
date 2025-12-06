@@ -30,3 +30,10 @@ export const BOX_SHADOW_GLOW =
 export const REGISTRATION_FORM_LINK = "https://forms.gle/2kbGxh399PQ2seEe7";
 export const REGISTRATION_FORM_LINK_EMBEDDABLE =
   "https://docs.google.com/forms/d/e/1FAIpQLSd64xdGeeme_Vu_MiaFWzGI-ZSms4MXkfnoDHsA_PDcJ7-5FA/viewform?embedded=true";
+
+export const DYOS_EMAIL = "doyourownswing@gmail.com";
+export const MAILTO_DYOS_EMAIL = "mailto:doyourownswing@gmail.com";
+
+export const DYOS_DISCORD_LINK = "https://discord.gg/EwXq7EYS7e";
+export const DYOS_FACEBOOK_LINK = "https://www.facebook.com/doyourownswing";
+export const DYOS_INSTAGRAM_LINK = "https://www.instagram.com/doyourownswing";

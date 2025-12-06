@@ -5,25 +5,31 @@ import EmailIcon from "@mui/icons-material/Email";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import { SvgIcon } from "@mui/material";
+import {
+  DYOS_DISCORD_LINK,
+  DYOS_FACEBOOK_LINK,
+  DYOS_INSTAGRAM_LINK,
+  MAILTO_DYOS_EMAIL,
+} from "common/constants";
 
 const contactOptions = [
   {
-    href: "https://discord.gg/EwXq7EYS7e",
+    href: DYOS_DISCORD_LINK,
     displayText: "Discord",
     icon: DiscordIcon,
   },
   {
-    href: "mailto:doyourownswing@gmail.com",
+    href: MAILTO_DYOS_EMAIL,
     displayText: "Email us",
     icon: EmailIcon,
   },
   {
-    href: "https://www.facebook.com/doyourownswing",
+    href: DYOS_FACEBOOK_LINK,
     displayText: "Facebook",
     icon: FacebookIcon,
   },
   {
-    href: "https://www.instagram.com/doyourownswing",
+    href: DYOS_INSTAGRAM_LINK,
     displayText: "Instagram",
     icon: InstagramIcon,
   },

@@ -28,6 +28,40 @@ const baseLinkButton = {
   padding: "1rem 3rem",
 };
 
+const colors = {
+  // Official discord blurple
+  discord: "#5865F2",
+  // DIY darker discord color for accent
+  discordDarker: "#3141ec",
+  // DIY nearly white color for button
+  discordOffWhite: "#e7f1ff",
+  // DIY nearly white color for button hover
+  discordOffWhiteDarker: "#cfd4ff",
+
+  // Official facebook blue
+  facebook: "#1877F2",
+  // DIY darker facebook blue for accent
+  facebookDarker: "#005dd7",
+  // DIY nearly white color for button
+  facebookOffWhite: "#e7f1ff",
+  // DIY nearly white color for button hover
+  facebookdOffWhiteDarker: "#c5ddff",
+
+  // Cool link: https://about.instagram.com/brand/gradient?subpath=gradient
+  // Official instagram red color
+  instagram: "#FF0069",
+  // DIY darker instagram color for accent
+  instagramDarker: "#d40259",
+  // DIY nearly white color for button
+  instagramOffWhite: "#ffe6f0",
+  // DIY nearly white color for button hover
+  instagramOffWhiteDarker: "#ffb8d4",
+};
+
+function buildLinearGradient(color1, color2) {
+  return `linear-gradient(to bottom, ${color1},  ${color2})`;
+}
+
 const contactStyles = {
   container: {
     padding: SECTION_PADDING,
@@ -53,7 +87,11 @@ const contactStyles = {
   emailCard: {
     ...baseCard,
     // TODO figure this color out
-    backgroundColor: theme.palette.background.darkPurple,
+    // backgroundColor: theme.palette.background.darkPurple,
+    background: buildLinearGradient(
+      theme.palette.background.lessDarkPurple,
+      theme.palette.background.darkPurple
+    ),
   },
   emailCtaContainer: {
     display: "flex",
@@ -83,49 +121,51 @@ const contactStyles = {
   },
   emailCopyButton: {
     textTransform: "none",
-    // fontFamily: "Nunito",
     fontWeight: "700",
-    // letterSpacing: "0.2px",
     fontSize: "1.05rem",
     padding: "0.25rem 1rem",
   },
   discordCard: {
     ...baseCard,
-    // Discord blurple
-    backgroundColor: "#5865F2",
+    // backgroundColor: colors.discord,
+    background: buildLinearGradient(colors.discord, colors.discordDarker),
   },
   facebookCard: {
     ...baseCard,
-    backgroundColor: "#1877F2",
+    // backgroundColor: "#1877F2",
+    background: buildLinearGradient(colors.facebook, colors.facebookDarker),
   },
   instagramCard: {
     ...baseCard,
     // Instagram Red
-    // Cool link: https://about.instagram.com/brand/gradient?subpath=gradient
-    backgroundColor: "#FF0069",
+    // backgroundColor: "#FF0069",
+    background: buildLinearGradient(colors.instagram, colors.instagramDarker),
   },
   discordButton: {
     ...baseLinkButton,
-    color: "#5865F2",
-    backgroundColor: "#e4e7ff",
+    color: colors.discord,
+    backgroundColor: colors.discordOffWhite,
     "&:hover": {
-      backgroundColor: "#cfd4ff",
+      color: colors.discordDarker,
+      backgroundColor: colors.discordOffWhiteDarker,
     },
   },
   facebookButton: {
     ...baseLinkButton,
-    color: "#1877F2",
-    backgroundColor: "#e7f1ff",
+    color: colors.facebook,
+    backgroundColor: colors.facebookOffWhite,
     "&:hover": {
-      backgroundColor: "#d4e6ff",
+      color: colors.facebookDarker,
+      backgroundColor: colors.facebookdOffWhiteDarker,
     },
   },
   instagramButton: {
     ...baseLinkButton,
-    color: "#FF0069",
-    backgroundColor: "#ffe6f0",
+    color: colors.instagram,
+    backgroundColor: colors.instagramOffWhite,
     "&:hover": {
-      backgroundColor: "#ffb8d4",
+      color: colors.instagramDarker,
+      backgroundColor: colors.instagramOffWhiteDarker,
     },
   },
 };

@@ -12,6 +12,14 @@ import { ContentCopy, Facebook, Instagram } from "@mui/icons-material";
 import EmailIcon from "@mui/icons-material/Email";
 import DiscordIcon from "components/common/icons/discord";
 import { useState } from "react";
+import {
+  DYOS_DISCORD_LINK,
+  DYOS_EMAIL,
+  DYOS_FACEBOOK_LINK,
+  DYOS_INSTAGRAM_LINK,
+  MAILTO_DYOS_EMAIL,
+} from "common/constants";
+import messages from "./messages";
 
 function SocialsButton(props) {
   return (
@@ -55,17 +63,14 @@ function Contact() {
           <Box sx={contactStyles.emailCard}>
             <EmailIcon sx={contactStyles.embellishment} />
             <Typography variant="h4" sx={contactStyles.hook}>
-              Want to get in touch?
+              {messages.emailHook}
             </Typography>
             <Box sx={contactStyles.emailCtaContainer}>
               <Typography display="inline" sx={contactStyles.emailCtaText}>
-                Send us an email at
+                {messages.emailCta}
               </Typography>
-              <DyosLink
-                href="mailto:doyourownswing@gmail.com"
-                sx={contactStyles.email}
-              >
-                doyourownswing@gmail.com
+              <DyosLink href={MAILTO_DYOS_EMAIL} sx={contactStyles.email}>
+                {DYOS_EMAIL}
               </DyosLink>
               <Button
                 variant="contained"
@@ -73,7 +78,7 @@ function Contact() {
                 sx={contactStyles.emailCopyButton}
                 onClick={handleCopyEmail}
               >
-                Copy
+                {messages.copy}
               </Button>
               <Snackbar
                 anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
@@ -92,13 +97,13 @@ function Contact() {
               </SvgIcon>
             </Box>
             <Typography variant="h4" sx={contactStyles.hook}>
-              Want to get the latest updates?
+              {messages.discordHook}
             </Typography>
             <SocialsButton
               sx={contactStyles.discordButton}
-              href="https://discord.gg/EwXq7EYS7e"
+              href={DYOS_DISCORD_LINK}
             >
-              Join the DYOS Discord
+              {messages.discordCta}
             </SocialsButton>
           </Box>
 
@@ -107,13 +112,13 @@ function Contact() {
               <Facebook sx={contactStyles.embellishment} />
             </Box>
             <Typography variant="h4" sx={contactStyles.hook}>
-              Want to know about special events?
+              {messages.facebookHook}
             </Typography>
             <SocialsButton
               sx={contactStyles.facebookButton}
-              href="https://www.facebook.com/doyourownswing"
+              href={DYOS_FACEBOOK_LINK}
             >
-              Follow us on Facebook
+              {messages.facebookCta}
             </SocialsButton>
           </Box>
 
@@ -122,13 +127,13 @@ function Contact() {
               <Instagram sx={contactStyles.embellishment} />
             </Box>
             <Typography variant="h4" sx={contactStyles.hook}>
-              Want to see what we're up to?
+              {messages.instagramHook}
             </Typography>
             <SocialsButton
               sx={contactStyles.instagramButton}
-              href="https://www.instagram.com/doyourownswing"
+              href={DYOS_INSTAGRAM_LINK}
             >
-              Follow us on Instagram
+              {messages.instagramCta}
             </SocialsButton>
           </Box>
         </Box>

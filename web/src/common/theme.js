@@ -76,6 +76,7 @@ const theme = responsiveFontSizes(
         lightPurple: basePalette.purple400,
         barelyPurple: basePalette.purple100,
         palePurple: basePalette.purple200,
+        lessDarkPurple: basePalette.purple700,
         darkPurple: basePalette.purple800,
         darkerPurple: basePalette.purple900,
         purpleDivider: basePalette.purple700,
