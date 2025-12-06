@@ -43,10 +43,10 @@ function Contact() {
     try {
       setCopiedSnackbarOpen(false);
 
-      await navigator.clipboard.writeText("doyourownswing@gmail.com");
-      setCopiedSnackbarMessage("Copied!");
+      await navigator.clipboard.writeText(DYOS_EMAIL);
+      setCopiedSnackbarMessage(messages.copied);
     } catch (err) {
-      setCopiedSnackbarMessage("Error copying email");
+      setCopiedSnackbarMessage(messages.copiedError);
     }
 
     setCopiedSnackbarOpen(true);

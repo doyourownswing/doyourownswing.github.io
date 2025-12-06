@@ -86,8 +86,6 @@ const contactStyles = {
   },
   emailCard: {
     ...baseCard,
-    // TODO figure this color out
-    // backgroundColor: theme.palette.background.darkPurple,
     background: buildLinearGradient(
       theme.palette.background.lessDarkPurple,
       theme.palette.background.darkPurple
@@ -127,18 +125,14 @@ const contactStyles = {
   },
   discordCard: {
     ...baseCard,
-    // backgroundColor: colors.discord,
     background: buildLinearGradient(colors.discord, colors.discordDarker),
   },
   facebookCard: {
     ...baseCard,
-    // backgroundColor: "#1877F2",
     background: buildLinearGradient(colors.facebook, colors.facebookDarker),
   },
   instagramCard: {
     ...baseCard,
-    // Instagram Red
-    // backgroundColor: "#FF0069",
     background: buildLinearGradient(colors.instagram, colors.instagramDarker),
   },
   discordButton: {
