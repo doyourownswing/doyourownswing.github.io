@@ -20,6 +20,7 @@ import {
   MAILTO_DYOS_EMAIL,
 } from "common/constants";
 import messages from "./messages";
+import "./contact.css";
 
 function SocialsButton(props) {
   return (
@@ -56,8 +57,15 @@ function Contact() {
     setCopiedSnackbarOpen(false);
   };
 
+  const backgroundSplotches = [
+    contactStyles.splotches.map((splotch) => (
+      <Box sx={splotch} className="splotch"></Box>
+    )),
+  ];
+
   return (
     <Box sx={contactStyles.container}>
+      {backgroundSplotches}
       <Container>
         <Box sx={contactStyles.contentContainer}>
           <Box sx={contactStyles.emailCard}>

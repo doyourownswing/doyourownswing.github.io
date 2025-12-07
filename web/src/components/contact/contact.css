@@ -1,0 +1,12 @@
+@keyframes wink-and-grow {
+  0% {
+    scale: 0.8;
+    opacity: 50%;
+    transform: translateY(-4rem);
+  }
+  100% {
+    scale: 1.2;
+    opacity: 100%;
+    transform: translateY(4rem);
+  }
+}

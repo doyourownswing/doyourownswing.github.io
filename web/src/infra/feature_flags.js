@@ -16,7 +16,7 @@ const FeatureFlags = {
   showAboutTab: isDevel(),
   showHealthTab: isDevel(),
   showCodeOfConductTab: isDevel(),
-  showContactTab: isDevel(),
+  showContactTab: true,
   showStartHerePage: true,
   useHeroV2: true,
   // Enable the merch section once the initial set of shirts are added to https://doyourownswing.printful.me/

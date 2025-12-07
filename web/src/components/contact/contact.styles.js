@@ -1,5 +1,6 @@
 import { BOX_SHADOW, SECTION_PADDING } from "common/constants";
 import theme from "common/theme";
+import { getRandomInt, getRandomSigmoidInt } from "utils/random";
 
 const baseCard = {
   boxShadow: BOX_SHADOW,
@@ -31,17 +32,17 @@ const baseLinkButton = {
 const colors = {
   // Official discord blurple
   discord: "#5865F2",
-  // DIY darker discord color for accent
-  discordDarker: "#3141ec",
+  // Official dark blurple
+  discordDarker: "#19175c",
   // DIY nearly white color for button
   discordOffWhite: "#e7f1ff",
   // DIY nearly white color for button hover
   discordOffWhiteDarker: "#cfd4ff",
 
   // Official facebook blue
-  facebook: "#1877F2",
-  // DIY darker facebook blue for accent
-  facebookDarker: "#005dd7",
+  facebook: "#0766fe",
+  // Official facebook navy for accent
+  facebookDarker: "#003ab8",
   // DIY nearly white color for button
   facebookOffWhite: "#e7f1ff",
   // DIY nearly white color for button hover
@@ -51,7 +52,7 @@ const colors = {
   // Official instagram red color
   instagram: "#FF0069",
   // DIY darker instagram color for accent
-  instagramDarker: "#d40259",
+  instagramDarker: "#D300C5",
   // DIY nearly white color for button
   instagramOffWhite: "#ffe6f0",
   // DIY nearly white color for button hover
@@ -62,9 +63,48 @@ function buildLinearGradient(color1, color2) {
   return `linear-gradient(to bottom, ${color1},  ${color2})`;
 }
 
+const splotchColors = [
+  theme.palette.background.lessDarkPurple,
+  theme.palette.background.lessDarkPurple,
+  "#F40000",
+  "#FFD600",
+  "#FF7A00",
+  "#FF0069",
+  "#D300C5",
+];
+
+function buildSplotch(color) {
+  let sizeVal = getRandomInt(20, 60);
+  let cssSize = `min(${sizeVal}vw, ${sizeVal}rem)`;
+  // Location of the splotch within the container.
+  // Vertical distribution is linear, whereas horizontal should favor
+  // the edges, hence the sigmoid / logistic random distribution.
+  let top = getRandomInt(-20, 110);
+  let left = getRandomSigmoidInt(-20, 110, 2);
+
+  return {
+    position: "absolute",
+    filter: "blur(4rem)",
+    top: `${top}%`,
+    left: `${left}%`,
+    width: cssSize,
+    height: cssSize,
+    borderRadius: `${sizeVal / 2}rem`,
+    background: `radial-gradient(${color}30 10%, transparent 80%)`,
+    filter: "blur(4rem)",
+    animation: "wink-and-grow 8s ease-in-out",
+    animationDirection: "alternate",
+    animationIterationCount: "infinite",
+    animationDelay: `-${getRandomInt(1, 7)}s`,
+  };
+}
+
 const contactStyles = {
   container: {
     padding: SECTION_PADDING,
+    position: "relative",
+    overflow: "clip",
+    backgroundColor: theme.palette.background.barelyPurple,
   },
   contentContainer: {
     display: "flex",
@@ -162,6 +202,10 @@ const contactStyles = {
       backgroundColor: colors.instagramOffWhiteDarker,
     },
   },
+  splotches: [
+    ...splotchColors.map((c) => buildSplotch(c)),
+    ...splotchColors.map((c) => buildSplotch(c)),
+  ],
 };
 
 export default contactStyles;
