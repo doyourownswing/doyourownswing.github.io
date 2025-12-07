@@ -1,5 +1,6 @@
-import { BOX_SHADOW_2, SECTION_PADDING } from "common/constants";
+import { SECTION_PADDING } from "common/constants";
 import theme from "common/theme";
+import { getRandomInt } from "utils/random";
 
 // NOTE: Not canonicalizing this because it's a temporary thing for nowww
 
@@ -31,10 +32,6 @@ const baseEmbellishment = {
   zIndex: "0",
 };
 
-function getRandomInt(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
 const snowflakeCounts = [
   { size: 1, count: 40, duration: 100 },
   { size: 2, count: 25, duration: 80 },
@@ -46,9 +43,9 @@ const snowflakeCounts = [
 function createBaseSnowflake(config) {
   return {
     ...baseEmbellishment,
-    width: config.size / 2 + 0.5 + "rem",
-    left: getRandomInt(2, 98) + "%",
-    animation: "falling-snowflake " + config.duration + "s ease-in",
+    width: `${config.size / 2 + 0.5}rem`,
+    left: `${getRandomInt(2, 98)}%`,
+    animation: `falling-snowflake ${config.duration}s ease-in`,
     animationIterationCount: "infinite",
   };
 }
@@ -61,7 +58,7 @@ function generateSnowflakes() {
       snowflakes.push({
         ...createBaseSnowflake(config),
         // This makes each snowflake start at a random location / time during the animation.
-        animationDelay: "-" + getRandomInt(1, config.duration) + "s",
+        animationDelay: `-${getRandomInt(1, config.duration)}s`,
       });
     }
   }
