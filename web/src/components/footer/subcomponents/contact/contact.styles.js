@@ -10,9 +10,9 @@ const contactStyles = {
     marginTop: "8px",
     width: "fit-content",
 
-    color: theme.palette.text.linkLight,
+    color: theme.palette.text.secondaryLink,
     "&:hover": {
-      color: theme.palette.text.linkLightHover,
+      color: theme.palette.text.secondaryLinkHover,
     },
   },
   icon: {

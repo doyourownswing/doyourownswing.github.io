@@ -11,10 +11,10 @@ const policiesStyles = {
   },
   link: {
     display: "block",
-    color: theme.palette.text.linkLight,
+    color: theme.palette.text.secondaryLink,
     marginTop: "8px",
     "&:hover": {
-      color: theme.palette.text.linkLightHover,
+      color: theme.palette.text.secondaryLinkHover,
     },
   },
 };

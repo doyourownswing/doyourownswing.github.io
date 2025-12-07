@@ -11,9 +11,9 @@ const locationStyles = {
   },
   address: {
     display: "block",
-    color: theme.palette.text.linkLight,
+    color: theme.palette.text.secondaryLink,
     "&:hover": {
-      color: theme.palette.text.linkLightHover,
+      color: theme.palette.text.secondaryLinkHover,
     },
   },
 };

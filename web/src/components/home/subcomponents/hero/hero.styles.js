@@ -126,9 +126,9 @@ const heroStyles = {
     fontWeight: "600",
     textWrap: "balance",
     letterSpacing: "0.025rem",
-    color: theme.palette.text.linkLight,
+    color: theme.palette.text.secondaryLink,
     "&:hover": {
-      color: theme.palette.text.linkLightHover,
+      color: theme.palette.text.secondaryLinkHover,
     },
     textDecoration: "underline",
     textUnderlineOffset: "0.2rem",

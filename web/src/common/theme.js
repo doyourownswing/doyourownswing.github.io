@@ -25,8 +25,15 @@ const basePalette = {
   white: "#FFFFFF",
 
   // blues
+  blue900: "#002243",
+  blue800: "#043060",
+  blue700: "#083D7C",
+  blue600: "#0C4B99",
   blue500: "#1058B5",
-  blue400: "#1976d2",
+  blue400: "#1976D2",
+  blue300: "#539AE1",
+  blue200: "#8CBFF0",
+  blue100: "#C6E3FF",
 };
 
 // Responsive Font Sizes only affects header styles, h1-h6, for sm, md, and lg breakpoints
@@ -109,13 +116,17 @@ const theme = responsiveFontSizes(
         textButton: basePalette.purple500,
         activeSelection: basePalette.purple500,
         textLight: basePalette.white,
-        linkLight: basePalette.gray300,
-        linkLightHover: basePalette.white,
-        lightPurple: basePalette.purple400,
-        headerPurple: basePalette.purple700,
         link: "#0F65D7",
         linkActive: "#174ea6",
         linkVisited: basePalette.purple600,
+        // For use on dark backgrounds (ie footer)
+        secondaryLink: basePalette.gray300,
+        secondaryLinkHover: basePalette.white,
+        // For use on dark backgrounds but a primary link
+        accentLink: basePalette.blue300,
+        accentLinkHover: basePalette.blue200,
+        lightPurple: basePalette.purple400,
+        headerPurple: basePalette.purple700,
         glow: alpha(basePalette.purple300, 0.66),
         quote: basePalette.purple100,
       },

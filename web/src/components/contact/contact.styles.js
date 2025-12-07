@@ -26,7 +26,8 @@ const baseLinkButton = {
   fontSize: "1.15rem",
   fontWeight: "700",
   borderRadius: "2rem",
-  padding: "1rem 3rem",
+  padding: "1rem 0rem",
+  width: "min(100%, 20rem)",
 };
 
 const colors = {
@@ -144,17 +145,18 @@ const contactStyles = {
   },
   email: {
     fontSize: "1.15rem",
-    color: theme.palette.text.linkLight,
+    color: theme.palette.text.accentLink,
     textDecoration: "underline",
+    fontWeight: "700",
     "&:visited": {
-      color: theme.palette.text.linkLight,
+      color: theme.palette.text.accentLink,
     },
     "&:hover": {
       textDecoration: "underline",
-      color: theme.palette.text.linkLightHover,
+      color: theme.palette.text.accentLinkHover,
     },
     "&:active": {
-      color: theme.palette.text.linkLightHover,
+      color: theme.palette.text.accentLinkHover,
     },
   },
   emailCopyButton: {
