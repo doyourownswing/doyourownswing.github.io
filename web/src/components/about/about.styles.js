@@ -9,6 +9,7 @@ const aboutStyles = {
   splash: {
     width: "100%",
     maxHeight: "max(32rem,80vh)",
+    minHeight: "24rem",
     objectFit: "cover",
     mask: "linear-gradient(to bottom, rgb(0 0 0 / 20%) 0%, rgb(0 0 0 / 100%) 100%)",
   },
