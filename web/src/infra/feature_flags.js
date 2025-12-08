@@ -13,7 +13,7 @@ const FeatureFlags = {
   // We should only set this to true when we are showing at least one other page.
   showMenuOptions: true,
   showScheduleTab: true,
-  showAboutTab: isDevel(),
+  showAboutTab: isDevel() || window.location.href.includes("about"),
   showHealthTab: isDevel(),
   showCodeOfConductTab: isDevel(),
   showContactTab: true,

@@ -1,4 +1,4 @@
-import { Box, Container, Typography } from "@mui/material";
+import { Box, Container, Fade, Typography } from "@mui/material";
 import AboutUsSplash from "assets/images/about-us-splash.jpg";
 import ImageOfRiley from "assets/images/riley-headshot.jpg";
 import aboutStyles from "./about.styles";
@@ -77,14 +77,16 @@ function About() {
           sx={aboutStyles.splash}
           alt={messages.aboutUsSplashDescription}
         />
-        <Box sx={aboutStyles.splashTextOverlayContainer}>
-          <Typography variant="h2" sx={aboutStyles.title}>
-            {messages.title}
-          </Typography>
-          <Typography variant="subtitle" sx={aboutStyles.subtitle}>
-            {messages.subtitle}
-          </Typography>
-        </Box>
+        <Fade in timeout={500}>
+          <Box sx={aboutStyles.splashTextOverlayContainer}>
+            <Typography variant="h2" sx={aboutStyles.title}>
+              {messages.title}
+            </Typography>
+            <Typography variant="subtitle" sx={aboutStyles.subtitle}>
+              {messages.subtitle}
+            </Typography>
+          </Box>
+        </Fade>
       </Box>
       <Box sx={aboutStyles.contentContainer}>
         <Container>
