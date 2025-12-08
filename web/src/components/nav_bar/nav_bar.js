@@ -8,6 +8,7 @@ import {
   MenuItem,
   Toolbar,
   Typography,
+  useMediaQuery,
 } from "@mui/material";
 import React from "react";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -18,6 +19,7 @@ import navBarStyles from "./nav_bar.styles";
 import purpleLogo from "assets/svgs/purple-logo.svg";
 import Announcement from "./announcement";
 import { getCurrentAnnouncement } from "data/announcements";
+import theme from "common/theme";
 
 /** Nav bar options for large screens.
  *
@@ -108,7 +110,7 @@ function MenuIconOptions() {
         {NavOptions.map((option) => (
           <Link
             href={option.url}
-            sx={navBarStyles.menuItem}
+            sx={navBarStyles.menuItemLink}
             key={option.displayName}
           >
             <MenuItem onClick={handleCloseNavMenu}>
@@ -168,6 +170,9 @@ function NavBar(props) {
 
   let announcement = getCurrentAnnouncement();
 
+  // For smaller screen sizes, put the options in a hamburger menu.
+  const useHamburgerMenu = useMediaQuery(theme.breakpoints.down("md"));
+
   return (
     <AppBar position={position} id="NavBar" sx={appBarStyle}>
       {!!announcement && (
@@ -176,8 +181,8 @@ function NavBar(props) {
       <Toolbar disableGutters sx={navBarStyles.toolbar}>
         <Box sx={navBarStyles.toolbarContentContainer}>
           <Logo />
-          <ExpandedMenuOptions />
-          <MenuIconOptions />
+          {!useHamburgerMenu && <ExpandedMenuOptions />}
+          {useHamburgerMenu && <MenuIconOptions />}
         </Box>
       </Toolbar>
     </AppBar>

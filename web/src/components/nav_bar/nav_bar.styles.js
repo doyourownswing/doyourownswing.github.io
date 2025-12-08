@@ -22,23 +22,20 @@ const navBarStyles = {
   },
   expandedOptionsContainer: {
     flex: 2,
-    display: {
-      xs: "none",
-      md: "flex",
-    },
+    display: "flex",
     justifyContent: "flex-end",
     gap: "min(2rem, 1.5vw)",
   },
   menuIcon: {
-    display: {
-      sm: "flex",
-      md: "none",
-    },
+    display: "flex",
     justifyContent: "flex-end",
   },
   menuItem: {
     ...baseOptionItem,
     padding: "0.5rem",
+  },
+  menuItemLink: {
+    textDecoration: "none",
   },
   logoImage: {
     maxHeight: "2.5rem",
