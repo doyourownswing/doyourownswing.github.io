@@ -1,21 +1,21 @@
 import theme from "./theme";
 
 export const SECTION_PADDING = {
-  xs: "48px 16px",
-  md: "80px 0px",
+  xs: "3rem 1rem",
+  md: "5rem 2rem",
 };
 
 export const SUB_SECTION_PADDING = {
-  xs: "8px 0px",
-  md: "16px 0px",
+  xs: "0.5rem 0rem",
+  md: "1rem 0rem",
 };
 
 export const SUB_SECTION_WRAPPER_PADDING = {
-  xs: "16px 0px",
-  md: "32px 0px",
+  xs: "1rem 0rem",
+  md: "2rem 0rem",
 };
 
-export const FOOTER_PADDING = "24px 0px";
+export const FOOTER_PADDING = "1.5rem 0rem";
 
 export const BOX_SHADOW = "rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;";
 
