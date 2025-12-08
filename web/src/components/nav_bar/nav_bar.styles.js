@@ -5,8 +5,9 @@ const baseOptionItem = {
   textDecoration: "none",
   fontFamily: "Poppins",
   color: theme.palette.text.navigationOptions,
-  lineHeight: "1.15rem",
   fontWeight: "600",
+  // Defaults to much more - when in md (see width setting below), the stack is quite large. This fixes it.
+  lineHeight: "1.15rem",
   // In the md range, min-content will stack the multi-word options which gives us more space
   width: { md: "min-content", lg: "unset" },
 };
