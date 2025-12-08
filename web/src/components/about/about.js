@@ -5,8 +5,35 @@ import aboutStyles from "./about.styles";
 import messages from "./messages";
 import DyosLink from "components/common/link";
 import { styled } from "@mui/material/styles";
+import { useState } from "react";
 
 const Paragraph = styled("p")(({ _ }) => aboutStyles.paragraph);
+
+function Splash() {
+  const [loaded, setLoaded] = useState(false);
+
+  return (
+    <Box sx={aboutStyles.splashContainer}>
+      <Box
+        component="img"
+        src={AboutUsSplash}
+        sx={aboutStyles.splash}
+        alt={messages.aboutUsSplashDescription}
+        onLoad={() => setLoaded(true)}
+      />
+      <Fade in={loaded} timeout={500}>
+        <Box sx={aboutStyles.splashTextOverlayContainer}>
+          <Typography variant="h2" sx={aboutStyles.title}>
+            {messages.title}
+          </Typography>
+          <Typography variant="subtitle" sx={aboutStyles.subtitle}>
+            {messages.subtitle}
+          </Typography>
+        </Box>
+      </Fade>
+    </Box>
+  );
+}
 
 function BioText() {
   function createPiece(piece) {
@@ -70,24 +97,7 @@ function CliftonStrengths() {
 function About() {
   return (
     <Box>
-      <Box sx={aboutStyles.splashContainer}>
-        <Box
-          component="img"
-          src={AboutUsSplash}
-          sx={aboutStyles.splash}
-          alt={messages.aboutUsSplashDescription}
-        />
-        <Fade in timeout={500}>
-          <Box sx={aboutStyles.splashTextOverlayContainer}>
-            <Typography variant="h2" sx={aboutStyles.title}>
-              {messages.title}
-            </Typography>
-            <Typography variant="subtitle" sx={aboutStyles.subtitle}>
-              {messages.subtitle}
-            </Typography>
-          </Box>
-        </Fade>
-      </Box>
+      <Splash />
       <Box sx={aboutStyles.contentContainer}>
         <Container>
           <Box
