@@ -10,7 +10,6 @@ function isDevel() {
 }
 
 const FeatureFlags = {
-  // We should only set this to true when we are showing at least one other page.
   showMenuOptions: true,
   showScheduleTab: true,
   showAboutTab: isDevel() || window.location.href.includes("about"),
@@ -19,8 +18,8 @@ const FeatureFlags = {
   showContactTab: true,
   showStartHerePage: true,
   useHeroV2: true,
-  // Enable the merch section once the initial set of shirts are added to https://doyourownswing.printful.me/
   showMerchSection: true,
+  showBlog: isDevel(),
 };
 
 export default FeatureFlags;

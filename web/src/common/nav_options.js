@@ -5,6 +5,7 @@ const BrowseOptions = cleanUpOptionsList([
   FeatureFlags.showMenuOptions && pages.Home,
   FeatureFlags.showScheduleTab && pages.Schedule,
   FeatureFlags.showAboutTab && pages.About,
+  FeatureFlags.showBlog && pages.Blog,
 ]);
 
 const PolicyOptions = cleanUpOptionsList([

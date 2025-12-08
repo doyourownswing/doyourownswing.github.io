@@ -103,7 +103,7 @@ const theme = responsiveFontSizes(
         announcement: basePalette.white,
         title: basePalette.purple500,
         titleNotQuiteBlack: basePalette.purple800,
-        navigationOptions: basePalette.gray600,
+        navigationOptions: basePalette.gray500,
         subtitle: basePalette.gray500,
         subtitleLight: basePalette.gray300,
         // For less essential body text that we don't want to stand out as much.

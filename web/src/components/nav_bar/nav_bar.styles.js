@@ -5,6 +5,10 @@ const baseOptionItem = {
   textDecoration: "none",
   fontFamily: "Poppins",
   color: theme.palette.text.navigationOptions,
+  lineHeight: "1.15rem",
+  fontWeight: "700",
+  // In the md range, min-content will stack the multi-word options which gives us more spacce
+  width: { md: "min-content", lg: "unset" },
 };
 
 const navBarStyles = {
@@ -14,7 +18,6 @@ const navBarStyles = {
   },
   selectedOption: {
     color: theme.palette.text.activeSelection,
-    fontWeight: "700",
     textAlign: "center",
   },
   expandedOptionsContainer: {
@@ -24,7 +27,7 @@ const navBarStyles = {
       md: "flex",
     },
     justifyContent: "flex-end",
-    gap: "2rem",
+    gap: "min(2rem, 1.5vw)",
   },
   menuIcon: {
     display: {
@@ -56,7 +59,7 @@ const navBarStyles = {
     textDecoration: "none",
   },
   logoContainer: {
-    flex: 1,
+    paddingRight: "2rem",
   },
   appBar: {
     backgroundColor: theme.palette.background.light,
@@ -66,6 +69,23 @@ const navBarStyles = {
   },
   invisible: {
     opacity: 0,
+  },
+  toolbar: {
+    width: "100%",
+  },
+  toolbarContentContainer: {
+    paddingLeft: {
+      xs: "1rem",
+      sm: "2rem",
+      md: "max(2rem, calc((100vw - 1200px) / 2 + 1rem))",
+    },
+    paddingRight: {
+      xs: "1rem",
+      sm: "2rem",
+    },
+    display: "flex",
+    justifyContent: "space-between",
+    width: "100%",
   },
 };
 

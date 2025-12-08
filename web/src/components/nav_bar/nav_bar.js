@@ -1,9 +1,7 @@
-import "./nav_bar.css";
 import {
   AppBar,
   Box,
   Button,
-  Container,
   IconButton,
   Link,
   Menu,
@@ -124,6 +122,40 @@ function MenuIconOptions() {
   );
 }
 
+function Logo() {
+  return (
+    <Box sx={navBarStyles.logoContainer}>
+      <Link sx={navBarStyles.logoContainerLink} href="#/">
+        <Box
+          component="img"
+          sx={navBarStyles.logoImage}
+          alt="Do Your Own Swing logo"
+          src={purpleLogo}
+        />
+        <Box>
+          <Typography
+            variant="h6"
+            noWrap
+            component="div"
+            sx={navBarStyles.logoBrandName}
+          >
+            {commonMessages.doYourOwnSwing}
+          </Typography>
+
+          <Typography
+            variant="subtitle1"
+            noWrap
+            component="div"
+            sx={navBarStyles.logoBrandQuip}
+          >
+            {messages.logoQuip}
+          </Typography>
+        </Box>
+      </Link>
+    </Box>
+  );
+}
+
 /** Navigation bar to be rendered at the top of the page containing tabs to other pages. */
 function NavBar(props) {
   // The app bar floats, and hovers over content. Allow rendering a placeholder version that's not floating
@@ -140,41 +172,13 @@ function NavBar(props) {
       {!!announcement && (
         <Announcement announcement={announcement}></Announcement>
       )}
-      <Container>
-        <Toolbar disableGutters>
-          <Box sx={navBarStyles.logoContainer}>
-            <Link sx={navBarStyles.logoContainerLink} href="#/">
-              <Box
-                component="img"
-                sx={navBarStyles.logoImage}
-                alt="Do Your Own Swing logo"
-                src={purpleLogo}
-              />
-              <Box>
-                <Typography
-                  variant="h6"
-                  noWrap
-                  component="div"
-                  sx={navBarStyles.logoBrandName}
-                >
-                  {commonMessages.doYourOwnSwing}
-                </Typography>
-
-                <Typography
-                  variant="subtitle1"
-                  noWrap
-                  component="div"
-                  sx={navBarStyles.logoBrandQuip}
-                >
-                  {messages.logoQuip}
-                </Typography>
-              </Box>
-            </Link>
-          </Box>
+      <Toolbar disableGutters sx={navBarStyles.toolbar}>
+        <Box sx={navBarStyles.toolbarContentContainer}>
+          <Logo />
           {FeatureFlags.showMenuOptions && <ExpandedMenuOptions />}
           {FeatureFlags.showMenuOptions && <MenuIconOptions />}
-        </Toolbar>
-      </Container>
+        </Box>
+      </Toolbar>
     </AppBar>
   );
 }

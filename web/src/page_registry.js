@@ -10,6 +10,7 @@ import StartHere from "components/start_here/start_here";
 import NotFound from "components/not_found/not_found";
 import SignIn from "components/admin/sign_in/sign_in";
 import Ipad from "components/admin/ipad/ipad";
+import Blog from "components/blog/blog";
 
 class PageRegistrationInfo {
   constructor(page, isVisible, element, overrides) {
@@ -49,6 +50,7 @@ const pageRegistry = [
     FeatureFlags.showStartHerePage,
     <StartHere />
   ),
+  new PageRegistrationInfo(pages.Blog, FeatureFlags.showBlog, <Blog />),
   new PageRegistrationInfo(pages.SignIn, true, <SignIn />, {
     navBarOverrides: {
       showNavBar: false,
