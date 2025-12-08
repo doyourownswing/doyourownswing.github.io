@@ -74,7 +74,9 @@ function MenuIconOptions() {
   const handleCloseNavMenu = () => setAnchorElMenu(null);
 
   const getMenuItemTextStyle = (option) =>
-    option.isCurrentPage() ? navBarStyles.selectedOption : {};
+    option.isCurrentPage()
+      ? { ...navBarStyles.menuItem, ...navBarStyles.selectedOption }
+      : navBarStyles.menuItem;
 
   return (
     <div>
