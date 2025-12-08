@@ -11,6 +11,8 @@ const aboutStyles = {
     maxHeight: "max(32rem,80vh)",
     minHeight: "24rem",
     objectFit: "cover",
+    // Makes the top part 20% opacity and bottom part 100% opacity linearly
+    // The container's (splashContainer) background color is black which makes this work.
     mask: "linear-gradient(to bottom, rgb(0 0 0 / 20%) 0%, rgb(0 0 0 / 100%) 100%)",
   },
   splashTextOverlayContainer: {
@@ -36,7 +38,7 @@ const aboutStyles = {
     backgroundColor: theme.palette.background.barelyPurple,
   },
   rileyHeadshot: {
-    marginLeft: { xs: "", sm: "min(10vw, 8rem)" },
+    marginLeft: { xs: "unset", sm: "min(10vw, 8rem)" },
     marginBottom: { xs: "2rem", sm: "min(6vw, 4rem)" },
     float: { xs: "unset", sm: "right" },
     width: { xs: "100%", sm: "min(40vw, 34rem)" },

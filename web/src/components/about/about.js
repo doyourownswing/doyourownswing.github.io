@@ -52,9 +52,7 @@ function BioText() {
   }
 
   function createParagraph(paragraph) {
-    return (
-      <Paragraph variant="body1">{paragraph.pieces.map(createPiece)}</Paragraph>
-    );
+    return <Paragraph>{paragraph.pieces.map(createPiece)}</Paragraph>;
   }
 
   return <Box>{messages.rileyBio.paragraphs.map(createParagraph)}</Box>;
@@ -94,35 +92,41 @@ function CliftonStrengths() {
   );
 }
 
+function RileyBio() {
+  return (
+    <Box sx={aboutStyles.contentContainer}>
+      <Container>
+        <Box
+          component="img"
+          src={ImageOfRiley}
+          sx={aboutStyles.rileyHeadshot}
+          alt={messages.rileyHeadshotDescription}
+        />
+        <Box>
+          <Box sx={aboutStyles.rileySectionTitleContainer}>
+            <Typography variant="h3" sx={aboutStyles.rileySectionTitle}>
+              {messages.rileySectionTitle}
+            </Typography>
+            <Typography
+              variant="subtitle1"
+              sx={aboutStyles.rileySectionSubtitle}
+            >
+              {messages.rileySectionSubtitle}
+            </Typography>
+          </Box>
+          <BioText />
+          <CliftonStrengths />
+        </Box>
+      </Container>
+    </Box>
+  );
+}
+
 function About() {
   return (
     <Box>
       <Splash />
-      <Box sx={aboutStyles.contentContainer}>
-        <Container>
-          <Box
-            component="img"
-            src={ImageOfRiley}
-            sx={aboutStyles.rileyHeadshot}
-            alt={messages.rileyHeadshotDescription}
-          />
-          <Box>
-            <Box sx={aboutStyles.rileySectionTitleContainer}>
-              <Typography variant="h3" sx={aboutStyles.rileySectionTitle}>
-                {messages.rileySectionTitle}
-              </Typography>
-              <Typography
-                variant="subtitle1"
-                sx={aboutStyles.rileySectionSubtitle}
-              >
-                {messages.rileySectionSubtitle}
-              </Typography>
-            </Box>
-            <BioText />
-            <CliftonStrengths />
-          </Box>
-        </Container>
-      </Box>
+      <RileyBio />
     </Box>
   );
 }
