@@ -108,7 +108,7 @@ function MenuIconOptions() {
         {NavOptions.map((option) => (
           <Link
             href={option.url}
-            sx={navBarStyles.menuItem}
+            sx={navBarStyles.menuItemLink}
             key={option.displayName}
           >
             <MenuItem onClick={handleCloseNavMenu}>

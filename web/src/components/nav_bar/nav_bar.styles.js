@@ -40,6 +40,9 @@ const navBarStyles = {
     ...baseOptionItem,
     padding: "0.5rem",
   },
+  menuItemLink: {
+    textDecoration: "none",
+  },
   logoImage: {
     maxHeight: "2.5rem",
     maxWidth: "2.5rem",
