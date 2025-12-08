@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.13e0c854.css",
-    "main.js": "/static/js/main.411e1266.js",
+    "main.js": "/static/js/main.86a0dfd4.js",
     "static/media/birds-eye-social.jpg": "/static/media/birds-eye-social.00d43d29d75a219a7ce8.jpg",
     "static/media/classes1.jpg": "/static/media/classes1.21b57efc3893b1cc800b.jpg",
     "static/media/riley-teaching.jpg": "/static/media/riley-teaching.c9414c71478442f0acc9.jpg",
@@ -28,10 +28,10 @@
     "static/media/color-logo.svg": "/static/media/color-logo.5e889ebd6d8c107050e3f0b5035af4cb.svg",
     "index.html": "/index.html",
     "main.13e0c854.css.map": "/static/css/main.13e0c854.css.map",
-    "main.411e1266.js.map": "/static/js/main.411e1266.js.map"
+    "main.86a0dfd4.js.map": "/static/js/main.86a0dfd4.js.map"
   },
   "entrypoints": [
     "static/css/main.13e0c854.css",
-    "static/js/main.411e1266.js"
+    "static/js/main.86a0dfd4.js"
   ]
 }
