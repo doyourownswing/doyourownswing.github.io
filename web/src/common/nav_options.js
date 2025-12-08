@@ -2,7 +2,7 @@ import FeatureFlags from "infra/feature_flags";
 import * as pages from "./pages";
 
 const BrowseOptions = cleanUpOptionsList([
-  FeatureFlags.showMenuOptions && pages.Home,
+  pages.Home,
   FeatureFlags.showScheduleTab && pages.Schedule,
   FeatureFlags.showAboutTab && pages.About,
   FeatureFlags.showBlog && pages.Blog,

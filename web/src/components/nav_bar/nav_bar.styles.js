@@ -6,7 +6,7 @@ const baseOptionItem = {
   fontFamily: "Poppins",
   color: theme.palette.text.navigationOptions,
   lineHeight: "1.15rem",
-  fontWeight: "700",
+  fontWeight: "600",
   // In the md range, min-content will stack the multi-word options which gives us more space
   width: { md: "min-content", lg: "unset" },
 };
