@@ -5,6 +5,11 @@ const baseOptionItem = {
   textDecoration: "none",
   fontFamily: "Poppins",
   color: theme.palette.text.navigationOptions,
+  fontWeight: "600",
+  // Defaults to much more - when in md (see width setting below), the stack is quite large. This fixes it.
+  lineHeight: "1.15rem",
+  // In the md range, min-content will stack the multi-word options which gives us more space
+  width: { md: "min-content", lg: "unset" },
 };
 
 const navBarStyles = {
@@ -14,8 +19,6 @@ const navBarStyles = {
   },
   selectedOption: {
     color: theme.palette.text.activeSelection,
-    fontWeight: "700",
-    textAlign: "center",
   },
   expandedOptionsContainer: {
     flex: 2,
@@ -24,7 +27,7 @@ const navBarStyles = {
       md: "flex",
     },
     justifyContent: "flex-end",
-    gap: "2rem",
+    gap: "min(2rem, 1.5vw)",
   },
   menuIcon: {
     display: {
@@ -35,6 +38,7 @@ const navBarStyles = {
   },
   menuItem: {
     ...baseOptionItem,
+    padding: "0.5rem",
   },
   logoImage: {
     maxHeight: "2.5rem",
@@ -56,7 +60,7 @@ const navBarStyles = {
     textDecoration: "none",
   },
   logoContainer: {
-    flex: 1,
+    paddingRight: "2rem",
   },
   appBar: {
     backgroundColor: theme.palette.background.light,
@@ -66,6 +70,29 @@ const navBarStyles = {
   },
   invisible: {
     opacity: 0,
+  },
+  toolbar: {
+    width: "100%",
+  },
+  toolbarContentContainer: {
+    paddingLeft: {
+      xs: "1rem",
+      sm: "2rem",
+      // Simulates the placement of the site content.
+      // We use the `Container` component a lot, which is 1200px, and has 1rem of padding, and aligned center.
+      // This math takes the screen width, minus 1200px, to get total margins, then divide by two to get left side margins, plus the padding.
+      // At minimum, the padding should be 2rem.
+      //
+      // The reason for this logic is that we want the right side to be free to reach the end of the screen.
+      md: "max(2rem, calc((100vw - 1200px) / 2 + 1rem))",
+    },
+    paddingRight: {
+      xs: "1rem",
+      sm: "2rem",
+    },
+    display: "flex",
+    justifyContent: "space-between",
+    width: "100%",
   },
 };
 

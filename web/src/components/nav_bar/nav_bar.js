@@ -1,9 +1,7 @@
-import "./nav_bar.css";
 import {
   AppBar,
   Box,
   Button,
-  Container,
   IconButton,
   Link,
   Menu,
@@ -11,7 +9,6 @@ import {
   Toolbar,
   Typography,
 } from "@mui/material";
-import FeatureFlags from "infra/feature_flags";
 import React from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import { default as commonMessages } from "common/messages";
@@ -76,7 +73,9 @@ function MenuIconOptions() {
   const handleCloseNavMenu = () => setAnchorElMenu(null);
 
   const getMenuItemTextStyle = (option) =>
-    option.isCurrentPage() ? navBarStyles.selectedOption : {};
+    option.isCurrentPage()
+      ? { ...navBarStyles.menuItem, ...navBarStyles.selectedOption }
+      : navBarStyles.menuItem;
 
   return (
     <div>
@@ -124,6 +123,40 @@ function MenuIconOptions() {
   );
 }
 
+function Logo() {
+  return (
+    <Box sx={navBarStyles.logoContainer}>
+      <Link sx={navBarStyles.logoContainerLink} href="#/">
+        <Box
+          component="img"
+          sx={navBarStyles.logoImage}
+          alt="Do Your Own Swing logo"
+          src={purpleLogo}
+        />
+        <Box>
+          <Typography
+            variant="h6"
+            noWrap
+            component="div"
+            sx={navBarStyles.logoBrandName}
+          >
+            {commonMessages.doYourOwnSwing}
+          </Typography>
+
+          <Typography
+            variant="subtitle1"
+            noWrap
+            component="div"
+            sx={navBarStyles.logoBrandQuip}
+          >
+            {messages.logoQuip}
+          </Typography>
+        </Box>
+      </Link>
+    </Box>
+  );
+}
+
 /** Navigation bar to be rendered at the top of the page containing tabs to other pages. */
 function NavBar(props) {
   // The app bar floats, and hovers over content. Allow rendering a placeholder version that's not floating
@@ -140,41 +173,13 @@ function NavBar(props) {
       {!!announcement && (
         <Announcement announcement={announcement}></Announcement>
       )}
-      <Container>
-        <Toolbar disableGutters>
-          <Box sx={navBarStyles.logoContainer}>
-            <Link sx={navBarStyles.logoContainerLink} href="#/">
-              <Box
-                component="img"
-                sx={navBarStyles.logoImage}
-                alt="Do Your Own Swing logo"
-                src={purpleLogo}
-              />
-              <Box>
-                <Typography
-                  variant="h6"
-                  noWrap
-                  component="div"
-                  sx={navBarStyles.logoBrandName}
-                >
-                  {commonMessages.doYourOwnSwing}
-                </Typography>
-
-                <Typography
-                  variant="subtitle1"
-                  noWrap
-                  component="div"
-                  sx={navBarStyles.logoBrandQuip}
-                >
-                  {messages.logoQuip}
-                </Typography>
-              </Box>
-            </Link>
-          </Box>
-          {FeatureFlags.showMenuOptions && <ExpandedMenuOptions />}
-          {FeatureFlags.showMenuOptions && <MenuIconOptions />}
-        </Toolbar>
-      </Container>
+      <Toolbar disableGutters sx={navBarStyles.toolbar}>
+        <Box sx={navBarStyles.toolbarContentContainer}>
+          <Logo />
+          <ExpandedMenuOptions />
+          <MenuIconOptions />
+        </Box>
+      </Toolbar>
     </AppBar>
   );
 }
