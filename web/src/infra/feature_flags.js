@@ -10,7 +10,6 @@ function isDevel() {
 }
 
 const FeatureFlags = {
-  showMenuOptions: true,
   showScheduleTab: true,
   showAboutTab: isDevel() || window.location.href.includes("about"),
   showHealthTab: isDevel(),

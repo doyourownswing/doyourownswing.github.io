@@ -9,7 +9,6 @@ import {
   Toolbar,
   Typography,
 } from "@mui/material";
-import FeatureFlags from "infra/feature_flags";
 import React from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import { default as commonMessages } from "common/messages";
@@ -177,8 +176,8 @@ function NavBar(props) {
       <Toolbar disableGutters sx={navBarStyles.toolbar}>
         <Box sx={navBarStyles.toolbarContentContainer}>
           <Logo />
-          {FeatureFlags.showMenuOptions && <ExpandedMenuOptions />}
-          {FeatureFlags.showMenuOptions && <MenuIconOptions />}
+          <ExpandedMenuOptions />
+          <MenuIconOptions />
         </Box>
       </Toolbar>
     </AppBar>
