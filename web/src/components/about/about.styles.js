@@ -36,6 +36,34 @@ const aboutStyles = {
   contentContainer: {
     padding: SECTION_PADDING,
     backgroundColor: theme.palette.background.barelyPurple,
+    backgroundImage:
+      `radial-gradient(circle at top right, ${theme.palette.background.lightPurple}, transparent 30%),` +
+      `radial-gradient(circle at bottom left, ${theme.palette.background.palePurple}, transparent 30%)`,
+    position: "relative",
+  },
+  logoEmbellishmentContainer1: {
+    position: "absolute",
+    top: { xs: "100vw", sm: "4rem" },
+    left: "6%",
+  },
+  logoEmbellishment1: {
+    pointerEvents: "none",
+    userSelect: "none",
+    width: "clamp(8rem, 20vw, 12rem)",
+    opacity: "8%",
+    transform: "rotate(-24deg)",
+  },
+  logoEmbellishmentContainer2: {
+    position: "absolute",
+    top: "80%",
+    left: "clamp(48rem, 80vw, 96rem)",
+  },
+  logoEmbellishment2: {
+    pointerEvents: "none",
+    userSelect: "none",
+    width: "clamp(12rem, 24vw, 16rem)",
+    opacity: "6%",
+    transform: "rotate(24deg)",
   },
   rileyHeadshot: {
     marginLeft: { xs: "unset", sm: "min(10vw, 8rem)" },

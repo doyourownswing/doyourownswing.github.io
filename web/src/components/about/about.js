@@ -6,6 +6,7 @@ import messages from "./messages";
 import DyosLink from "components/common/link";
 import { styled } from "@mui/material/styles";
 import { useState } from "react";
+import PurpleLogo from "assets/svgs/purple-logo.svg";
 
 const Paragraph = styled("p")(({ _ }) => aboutStyles.paragraph);
 
@@ -95,6 +96,20 @@ function CliftonStrengths() {
 function RileyBio() {
   return (
     <Box sx={aboutStyles.contentContainer}>
+      <Box sx={aboutStyles.logoEmbellishmentContainer1}>
+        <Box
+          component="img"
+          sx={aboutStyles.logoEmbellishment1}
+          src={PurpleLogo}
+        />
+      </Box>
+      <Box sx={aboutStyles.logoEmbellishmentContainer2}>
+        <Box
+          component="img"
+          sx={aboutStyles.logoEmbellishment2}
+          src={PurpleLogo}
+        />
+      </Box>
       <Container>
         <Box
           component="img"

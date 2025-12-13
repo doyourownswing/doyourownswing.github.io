@@ -11,7 +11,7 @@ function isDevel() {
 
 const FeatureFlags = {
   showScheduleTab: true,
-  showAboutTab: isDevel() || window.location.href.includes("about"),
+  showAboutTab: true,
   showHealthTab: isDevel(),
   showCodeOfConductTab: isDevel(),
   showContactTab: true,
