@@ -40,6 +40,7 @@ const aboutStyles = {
       `radial-gradient(circle at top right, ${theme.palette.background.lightPurple}, transparent 30%),` +
       `radial-gradient(circle at bottom left, ${theme.palette.background.palePurple}, transparent 30%)`,
     position: "relative",
+    overflow: "hidden",
   },
   logoEmbellishmentContainer1: {
     position: "absolute",
