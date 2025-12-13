@@ -16,11 +16,15 @@ const messages = {
           {
             text:
               "I started my West Coast Swing journey 16 years ago, " +
-              "when I fell in love with the dance at my first class taught " +
-              "by the Joel Gibson in New Zealand. I'm lucky to have watched " +
-              "this dance evolve over the years, with a front " +
-              "row seat as a competitor, and as a teacher. I'm so excited " +
-              "to be able to share my passion for West Coast Swing with you all.",
+              "when I fell in love with the dance while working as a " +
+              "janitor at my local dance studio. I would watch the West " +
+              "Coast Swing classes while I was cleaning, and eventually " +
+              "gave it a try! Since then, West Coast Swing has given me " +
+              "opportunities to pursue my passion for learning, teaching, " +
+              "and cultivating community spaces. I'm lucky to have watched " +
+              "this dance evolve over the years as a competitor, choreographer, " +
+              "coach, and teacher. I'm so excited to be able to share my " +
+              "passion for West Coast Swing with you all!",
           },
         ],
       },
@@ -29,13 +33,14 @@ const messages = {
         pieces: [
           {
             text:
-              "I founded Do Your Own Swing in 2016, though I never expected " +
-              "to see it grow into such a tight knit and warm community. When " +
-              "I started the class and social, I wanted to create a welcoming " +
-              "environment where everyone felt like they belonged, something " +
-              "that a young Riley would love to have been a part of. Fast forward " +
-              "to today, the class and social are still going strong, and DYOS is " +
-              "a pillar of West Coast Swing in the Bay Area.",
+              "I founded Do Your Own Swing in 2016 with the goal of creating " +
+              "the sort of welcoming environment I would want to be a part of. " +
+              "The DYOS space quickly fulfilled and exceeded my vision. I've " +
+              "learned so much about how warm and intentional a community " +
+              "can be from the people who attend, much than I ever could have imagined " +
+              "when I first started hosting the space. Fast forward to today, the " +
+              "class, social, and sense of community are still going strong, and " +
+              "DYOS continues to stand as a pillar of West Coast Swing in the Bay Area.",
           },
         ],
       },
@@ -54,9 +59,9 @@ const messages = {
 
           {
             text:
-              " in Oakland on Mondays. On the weekends when I go to conventions, I " +
-              "still continue to compete in the improvised and routine divisions, " +
-              "teach workshops, and give private lessons. But you'll often see me running the ",
+              " in Oakland on Mondays. On the weekends that I go to West Coast Swing conventions, I " +
+              "continue to compete in the improvised and routine divisions, teach workshops, and give " +
+              "private lessons. In addition to all of that, you'll often also see me running the ",
           },
           {
             text: "Swing Reports and Restorations program",
@@ -64,9 +69,10 @@ const messages = {
           },
           {
             text:
-              ", which I started and designed to increase safety at West Coast " +
-              "Swing events by providing policy consultation and development along " +
-              "with incident response plans.",
+              ", another passion project of mine. I started and designed the program to " +
+              "increase safety at West Coast Swing events by providing policy consultation " +
+              "and development, along with incident response plans when something occurs that " +
+              "could impact a person's sense of safety and belonging.",
           },
         ],
       },
