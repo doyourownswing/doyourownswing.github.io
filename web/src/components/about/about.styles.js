@@ -44,8 +44,9 @@ const aboutStyles = {
   },
   logoEmbellishmentContainer1: {
     position: "absolute",
+    // Top left ish, to the left of text if possible
     top: { xs: "100vw", sm: "4rem" },
-    left: "6%",
+    left: "max(6%, calc(50vw - 800px))",
   },
   logoEmbellishment1: {
     pointerEvents: "none",
@@ -56,8 +57,9 @@ const aboutStyles = {
   },
   logoEmbellishmentContainer2: {
     position: "absolute",
+    // Bottom right ish, to the right of text if possible
     top: "80%",
-    left: "clamp(48rem, 80vw, 96rem)",
+    left: "clamp(48rem, 80vw, calc(50vw + 600px))",
   },
   logoEmbellishment2: {
     pointerEvents: "none",
