@@ -8,6 +8,9 @@ function DyosLink(props) {
   let myProps = { ...props };
   let openInNewTab = myProps.openInNewTab;
 
+  // Remove the prop otherwise react complains
+  delete myProps.openInNewTab;
+
   if (openInNewTab) {
     myProps.target = "__blank";
     myProps.rel = "noopener noreferrer";

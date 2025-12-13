@@ -37,38 +37,55 @@ function Splash() {
 }
 
 function BioText() {
-  function createPiece(piece) {
+  function createPiece(piece, i) {
     if (!!piece.link) {
       return (
-        <DyosLink href={piece.link} sx={aboutStyles.textLink} openInNewTab>
+        <DyosLink
+          href={piece.link}
+          sx={aboutStyles.textLink}
+          openInNewTab
+          key={i}
+        >
           {piece.text}
         </DyosLink>
       );
     }
     return (
-      <Typography display="inline" sx={aboutStyles.text}>
+      <Typography
+        display="inline"
+        component="span"
+        sx={aboutStyles.text}
+        key={i}
+      >
         {piece.text}
       </Typography>
     );
   }
 
-  function createParagraph(paragraph) {
-    return <Paragraph>{paragraph.pieces.map(createPiece)}</Paragraph>;
+  function createParagraph(paragraph, i) {
+    return <Paragraph key={i}>{paragraph.pieces.map(createPiece)}</Paragraph>;
   }
 
   return <Box>{messages.rileyBio.paragraphs.map(createParagraph)}</Box>;
 }
 
 function CliftonStrengths() {
-  let comma = (
-    <Typography display="inline" sx={aboutStyles.textLink}>
-      {messages.strengthsDelimiter}
-    </Typography>
-  );
+  function createComma(i) {
+    return (
+      <Typography display="inline" sx={aboutStyles.textLink} key={i}>
+        {messages.strengthsDelimiter}
+      </Typography>
+    );
+  }
 
   function createStrength(strength) {
     return (
-      <DyosLink href={strength.link} openInNewTab sx={aboutStyles.textLink}>
+      <DyosLink
+        href={strength.link}
+        openInNewTab
+        sx={aboutStyles.textLink}
+        key={strength.name}
+      >
         {strength.name}
       </DyosLink>
     );
@@ -81,7 +98,7 @@ function CliftonStrengths() {
     strengthsSection.push(createStrength(strengths[i]));
 
     if (i < strengths.length - 1) {
-      strengthsSection.push(comma);
+      strengthsSection.push(createComma(i));
     }
   }
 
