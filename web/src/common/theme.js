@@ -22,6 +22,7 @@ const basePalette = {
   gray300: "#B7B7B7",
   gray200: "#D1D1D1",
   gray100: "#EBEBEB",
+  gray050: "#F5F5F5",
   white: "#FFFFFF",
 
   // blues
@@ -34,6 +35,7 @@ const basePalette = {
   blue300: "#539AE1",
   blue200: "#8CBFF0",
   blue100: "#C6E3FF",
+  blue025: "#F1F8FF",
 };
 
 // Responsive Font Sizes only affects header styles, h1-h6, for sm, md, and lg breakpoints
@@ -79,8 +81,9 @@ const theme = responsiveFontSizes(
         // a richer more vibrant purple for attention catching
         announcement: "#b400d9",
         light: basePalette.white,
-        lightGray: basePalette.gray100,
+        lightGray: basePalette.gray050,
         lightPurple: basePalette.purple400,
+        barelyBlue: basePalette.blue025,
         barelyPurple: basePalette.purple100,
         palePurple: basePalette.purple200,
         lessDarkPurple: basePalette.purple700,
@@ -94,12 +97,14 @@ const theme = responsiveFontSizes(
         gray: basePalette.gray200,
         emphasis: basePalette.purple400,
         emphasisGlow: basePalette.purple300,
+        leftAccentBlue: basePalette.blue400,
+        leftAccentPurple: basePalette.purple500,
       },
       card: {
         shadow: basePalette.gray400,
       },
       text: {
-        titleLight: basePalette.white,
+        titleLight: basePalette.gray100,
         announcement: basePalette.white,
         title: basePalette.purple500,
         titleNotQuiteBlack: basePalette.purple800,
