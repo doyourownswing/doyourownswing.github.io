@@ -13,7 +13,7 @@ const FeatureFlags = {
   showScheduleTab: true,
   showAboutTab: true,
   showHealthTab: isDevel(),
-  showCodeOfConductTab: isDevel(),
+  showCodeOfConductTab: true,
   showContactTab: true,
   showStartHerePage: true,
   useHeroV2: true,
