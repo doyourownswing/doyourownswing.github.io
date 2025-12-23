@@ -1,4 +1,4 @@
-import theme from "common/theme";
+import theme from "@/common/theme";
 
 const quoteAttributionStyles = {
   quoteAttributionContainer: { display: "flex", alignItems: "center" },

@@ -1,5 +1,5 @@
-import { SECTION_PADDING } from "common/constants";
-import theme from "common/theme";
+import { SECTION_PADDING } from "@/common/constants";
+import theme from "@/common/theme";
 
 const baseBackgroundColor = theme.palette.background.darkPurple;
 const darkBackgroundColor = theme.palette.background.darkerPurple;

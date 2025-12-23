@@ -1,5 +1,5 @@
-import { SECTION_PADDING } from "common/constants";
-import theme from "common/theme";
+import { SECTION_PADDING } from "@/common/constants";
+import theme from "@/common/theme";
 
 const baseButton = {
   textTransform: "none",

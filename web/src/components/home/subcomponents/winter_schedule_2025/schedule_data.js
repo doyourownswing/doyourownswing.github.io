@@ -1,4 +1,4 @@
-import { createDate } from "utils/date_utils";
+import { createDate } from "@/utils/date_utils";
 
 const data = [
   {

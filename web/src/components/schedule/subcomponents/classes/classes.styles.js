@@ -1,5 +1,5 @@
-import { BOX_SHADOW_2, SECTION_PADDING } from "common/constants";
-import theme from "common/theme";
+import { BOX_SHADOW_2, SECTION_PADDING } from "@/common/constants";
+import theme from "@/common/theme";
 
 const classesStyles = {
   container: {

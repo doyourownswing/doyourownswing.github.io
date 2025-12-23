@@ -1,7 +1,6 @@
-import { createDate } from "utils/date_utils";
-import RileyHeadshot from "assets/images/riley.jpg";
-
-const dayjs = require("dayjs");
+import { createDate } from "@/utils/date_utils";
+import RileyHeadshot from "@/assets/images/riley.jpg";
+import dayjs from "dayjs";
 
 class SongOfTheWeek {
   constructor(startDate, quoteInfo, songInfo, songLinks) {

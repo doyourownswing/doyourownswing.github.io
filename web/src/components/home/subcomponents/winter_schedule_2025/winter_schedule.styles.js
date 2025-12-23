@@ -1,6 +1,6 @@
-import { SECTION_PADDING } from "common/constants";
-import theme from "common/theme";
-import { getRandomInt } from "utils/random";
+import { SECTION_PADDING } from "@/common/constants";
+import theme from "@/common/theme";
+import { getRandomInt } from "@/utils/random";
 
 // NOTE: Not canonicalizing this because it's a temporary thing for nowww
 
