@@ -8,19 +8,17 @@ import Faqs from "./subcomponents/faqs";
 function StartHere() {
   return (
     <Box>
-      <Box sx={startHereStyles.partOneContainer}>
-        <Box sx={startHereStyles.subSectionContainer}>
-          <Container>
-            <Typography variant="h4">{messages.firstTimeHere}</Typography>
-            <Typography variant="h3" sx={startHereStyles.welcome}>
-              {messages.welcomeToDyos}
-            </Typography>
-            <Typography variant="subtitle1">{messages.subtitle}</Typography>
-          </Container>
-        </Box>
-        <BeforeTheEvent />
-        <WhenYouArrive />
+      <Box sx={startHereStyles.titleSection}>
+        <Container>
+          <Typography variant="h4">{messages.firstTimeHere}</Typography>
+          <Typography variant="h3" sx={startHereStyles.welcome}>
+            {messages.welcomeToDyos}
+          </Typography>
+          <Typography variant="subtitle1">{messages.subtitle}</Typography>
+        </Container>
       </Box>
+      <BeforeTheEvent />
+      <WhenYouArrive />
       <Faqs />
     </Box>
   );

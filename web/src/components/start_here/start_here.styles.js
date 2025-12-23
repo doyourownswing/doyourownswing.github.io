@@ -1,19 +1,15 @@
-import {
-  SECTION_PADDING,
-  SUB_SECTION_PADDING,
-  SUB_SECTION_WRAPPER_PADDING,
-} from "common/constants";
+import { SECTION_PADDING } from "common/constants";
 import theme from "common/theme";
 
 const startHereStyles = {
   welcome: {
     color: theme.palette.text.title,
   },
-  partOneContainer: {
-    padding: SUB_SECTION_WRAPPER_PADDING,
+  titleSection: {
+    paddingBottom: "2rem",
   },
   subSectionContainer: {
-    padding: SUB_SECTION_PADDING,
+    paddingBottom: "2rem",
   },
   sectionTitle: {
     color: theme.palette.text.headerPurple,
