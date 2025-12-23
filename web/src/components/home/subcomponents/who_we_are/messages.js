@@ -1,4 +1,4 @@
-import { default as commonMessages } from "common/messages";
+import { default as commonMessages } from "@/common/messages";
 
 const messages = {
   title: "Who we are",

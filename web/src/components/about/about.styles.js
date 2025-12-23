@@ -1,5 +1,5 @@
-import { BOX_SHADOW, SECTION_PADDING } from "common/constants";
-import theme from "common/theme";
+import { BOX_SHADOW, SECTION_PADDING } from "@/common/constants";
+import theme from "@/common/theme";
 
 const aboutStyles = {
   splashContainer: {

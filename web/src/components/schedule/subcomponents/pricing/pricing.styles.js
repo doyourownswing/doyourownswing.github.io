@@ -3,8 +3,8 @@ import {
   BOX_SHADOW_GLOW,
   BOX_SHADOW_TOP,
   SECTION_PADDING,
-} from "common/constants";
-import theme from "common/theme";
+} from "@/common/constants";
+import theme from "@/common/theme";
 
 const baseCard = {
   padding: { xs: "2rem", lg: "3rem" },

@@ -1,4 +1,4 @@
-import FeatureFlags from "infra/feature_flags";
+import FeatureFlags from "@/infra/feature_flags";
 import * as pages from "./pages";
 
 const BrowseOptions = cleanUpOptionsList([

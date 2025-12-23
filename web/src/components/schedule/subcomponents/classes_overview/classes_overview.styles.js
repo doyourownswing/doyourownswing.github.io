@@ -1,5 +1,5 @@
-import theme from "common/theme";
-import bubbles from "assets/images/bubbles-bw-min.jpg";
+import theme from "@/common/theme";
+import bubbles from "@/assets/images/bubbles-bw-min.jpg";
 import { alpha } from "@mui/material";
 
 const classesOverviewStyles = {

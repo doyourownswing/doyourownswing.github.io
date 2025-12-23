@@ -1,4 +1,4 @@
-import theme from "common/theme";
+import theme from "@/common/theme";
 
 const linkStyles = {
   color: theme.palette.text.link,

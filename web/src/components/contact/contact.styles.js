@@ -1,6 +1,6 @@
-import { BOX_SHADOW, SECTION_PADDING } from "common/constants";
-import theme from "common/theme";
-import { getRandomInt, getRandomSigmoidInt } from "utils/random";
+import { BOX_SHADOW, SECTION_PADDING } from "@/common/constants";
+import theme from "@/common/theme";
+import { getRandomInt, getRandomSigmoidInt } from "@/utils/random";
 
 const baseCard = {
   boxShadow: BOX_SHADOW,

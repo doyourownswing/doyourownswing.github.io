@@ -1,5 +1,5 @@
-import { BOX_SHADOW } from "common/constants";
-import theme from "common/theme";
+import { BOX_SHADOW } from "@/common/constants";
+import theme from "@/common/theme";
 
 const songCardStyles = {
   songCardContainer: {

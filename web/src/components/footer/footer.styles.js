@@ -1,5 +1,5 @@
-import { FOOTER_PADDING } from "common/constants";
-import theme from "common/theme";
+import { FOOTER_PADDING } from "@/common/constants";
+import theme from "@/common/theme";
 
 const footerStyles = {
   footerContainer: {

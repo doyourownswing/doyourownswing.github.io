@@ -7,8 +7,8 @@
  * etc.) And should be handled be the caller to be rendered properly.
  */
 import messages from "../common/messages";
-import { createDate, getBeginningOfTodayDate } from "utils/date_utils";
-import EventTypes from "common/event_types";
+import { createDate, getBeginningOfTodayDate } from "@/utils/date_utils";
+import EventTypes from "@/common/event_types";
 
 const DEFAULT_LOCATION = "Studio M Ballroom, San Jose, CA";
 const DEFAULT_PRICE = "$10 - 40";

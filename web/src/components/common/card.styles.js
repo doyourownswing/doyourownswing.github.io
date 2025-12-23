@@ -1,4 +1,4 @@
-import { BOX_SHADOW } from "common/constants";
+import { BOX_SHADOW } from "@/common/constants";
 
 const cardStyles = {
   card: {

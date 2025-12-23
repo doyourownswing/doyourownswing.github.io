@@ -1,4 +1,4 @@
-const { createDate, getBeginningOfTodayDate } = require("utils/date_utils");
+import { createDate, getBeginningOfTodayDate } from "@/utils/date_utils";
 
 const announcements = [
   {
