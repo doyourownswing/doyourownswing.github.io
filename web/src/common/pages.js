@@ -18,7 +18,9 @@ const Health = new Page("#/health", "Health protocol");
 const Code = new Page("#/code", "Code of conduct");
 const Contact = new Page("#/contact", "Contact");
 const StartHere = new Page("#/start-here");
-const Blog = new Page("#/blog", "Blog");
+const Blog = new Page("#/blog", "Blog", () =>
+  window.location.hash.startsWith("#/blog")
+);
 
 // todo - update this link once we have a full admin portal
 const SignIn = new Page("#/admin");
