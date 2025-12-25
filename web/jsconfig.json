@@ -1,0 +1,14 @@
+// This is used primarily by VS Code for javascript language features.
+//
+// Currently configured to autoimport with our configured webpack alias.
+
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+    }
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"]
+}
