@@ -3,10 +3,10 @@
 export default class ArticleManifestBuilder {
   #articleId;
   #title;
+  #subtitle;
   #author;
   #publishDate;
   #tags;
-  #previewText;
   #component;
 
   setArticleId(articleId) {
@@ -34,8 +34,8 @@ export default class ArticleManifestBuilder {
     return this;
   }
 
-  setPreviewText(previewText) {
-    this.#previewText = previewText;
+  setSubtitle(subtitle) {
+    this.#subtitle = subtitle;
     return this;
   }
 
@@ -48,10 +48,10 @@ export default class ArticleManifestBuilder {
     if (
       !this.#articleId ||
       !this.#title ||
+      !this.#subtitle ||
       !this.#author ||
       !this.#publishDate ||
       !this.#tags ||
-      !this.#previewText ||
       !this.#component
     ) {
       throw new Error("Article manifest missing field(s)");
@@ -64,10 +64,10 @@ export default class ArticleManifestBuilder {
     return {
       articleId: this.#articleId,
       title: this.#title,
+      subtitle: this.#subtitle,
       author: this.#author,
       publishDate: this.#publishDate,
       tags: this.#tags,
-      previewText: this.#previewText,
       component: this.#component,
     };
   }

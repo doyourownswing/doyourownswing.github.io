@@ -1,9 +1,9 @@
-export const misc = { displayText: "Misc" };
+export const misc = { displayName: "Misc" };
 
-export const connection = { displayText: "Connection" };
+export const connection = { displayName: "Connection" };
 
-export const musicality = { displayText: "Musicality" };
+export const musicality = { displayName: "Musicality" };
 
-export const leading = { displayText: "Leading" };
+export const leading = { displayName: "Leading" };
 
-export const following = { displayText: "Following" };
+export const following = { displayName: "Following" };
