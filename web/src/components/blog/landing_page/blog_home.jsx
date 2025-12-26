@@ -44,7 +44,7 @@ function BlogHomePage() {
         <Typography variant="h4" sx={blogHomeStyles.sectionHeader}>
           Featured Articles
         </Typography>
-        {registry.articles.map((a) => (
+        {registry.featuredArticles.map((a) => (
           <ArticlePreview
             onClick={() => onArticleClick(a.articleId)}
             article={a}
