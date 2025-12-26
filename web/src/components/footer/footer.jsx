@@ -36,12 +36,7 @@ function GridItem(props) {
   let section = props.section;
 
   return section.visible ? (
-    <Grid
-      xs={section.size.xs}
-      sm={section.size.sm}
-      md={section.size.md}
-      sx={footerStyles.gridItem}
-    >
+    <Grid size={section.size} sx={footerStyles.gridItem}>
       <section.component />
     </Grid>
   ) : null;
@@ -57,7 +52,12 @@ function Footer() {
         >
           <Brand />
           <Box sx={footerStyles.footerLinksGridContainer}>
-            <Grid container rowGap={2} sx={footerStyles.footerLinksGrid}>
+            <Grid
+              container
+              rowGap={2}
+              sx={footerStyles.footerLinksGrid}
+              size={12}
+            >
               {sections.map((s) => (
                 <GridItem section={s} />
               ))}
