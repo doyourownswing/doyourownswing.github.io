@@ -184,7 +184,7 @@ const theme = responsiveFontSizes(
         letterSpacing: "0.2px",
       },
       title: {
-        paddingBottom: "16px",
+        paddingBottom: "1rem",
         fontWeight: "600",
         fontFamily: "Poppins",
         color: basePalette.purple800,

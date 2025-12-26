@@ -7,7 +7,12 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"],
-    }
+    },
+    "module": "es2022",
+    "jsx": "react-jsx",
+    "moduleResolution": "node",
+    "esModuleInterop": true, // force import
+    "allowSyntheticDefaultImports": true, // force import
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "dist"]
