@@ -11,6 +11,7 @@ function BlogHomePage() {
 
   const onArticleClick = (id) => {
     setSearchParams({ articleid: id });
+    // Scroll to top since staying on the same page means preserving the scroll position.
     window.scrollTo({ top: 0, left: 0, behavior: "instant" });
   };
 
