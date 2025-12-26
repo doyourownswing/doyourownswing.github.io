@@ -7,7 +7,7 @@ import { dateToHumanReadableString } from "@/utils/date_utils";
 import TagsList from "@/components/blog/tags/tags_list";
 
 function getMatchingArticle(id) {
-  return registry.articles.find((a) => a.articleId === id);
+  return registry.articles.find((a) => a.manifest.articleId === id);
 }
 
 function ArticleRenderer(props) {
@@ -52,14 +52,14 @@ function Blog() {
 
   let [searchParams, _] = useSearchParams();
 
-  let manifest = searchParams.has("articleid")
+  let article = searchParams.has("articleid")
     ? getMatchingArticle(searchParams.get("articleid"))
     : null;
 
   return (
     <Box>
-      {!manifest && <BlogHomePage />}
-      {!!manifest && <ArticleRenderer manifest={manifest} />}
+      {!article && <BlogHomePage />}
+      {!!article && <ArticleRenderer manifest={article.manifest} />}
     </Box>
   );
 }

@@ -11,6 +11,7 @@ function BlogHomePage() {
 
   const onArticleClick = (id) => {
     setSearchParams({ articleid: id });
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
   };
 
   return (
@@ -44,12 +45,14 @@ function BlogHomePage() {
         <Typography variant="h4" sx={blogHomeStyles.sectionHeader}>
           Featured Articles
         </Typography>
-        {registry.featuredArticles.map((a) => (
-          <ArticlePreview
-            onClick={() => onArticleClick(a.articleId)}
-            article={a}
-          />
-        ))}
+        {registry.articles
+          .filter((a) => a.featured)
+          .map((a) => (
+            <ArticlePreview
+              onClick={() => onArticleClick(a.manifest.articleId)}
+              article={a.manifest}
+            />
+          ))}
       </Container>
     </Box>
   );
