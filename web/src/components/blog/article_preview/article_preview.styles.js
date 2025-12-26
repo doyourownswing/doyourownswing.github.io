@@ -5,7 +5,6 @@ const articlePreviewStyles = {
   container: {
     backgroundColor: "white",
     cursor: "pointer",
-    maxWidth: "60rem",
     padding: "2rem 3rem",
     boxShadow: BOX_SHADOW,
     borderRadius: "1rem",
