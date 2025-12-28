@@ -2,7 +2,8 @@ import { BOX_SHADOW_2, SECTION_PADDING } from "@/common/constants";
 import theme from "@/common/theme";
 
 const baseSectionContainer = {
-  padding: SECTION_PADDING,
+  paddingTop: "2rem",
+  paddingBottom: "2rem",
 };
 
 const baseListItem = {
@@ -23,7 +24,7 @@ function baseOutlinedItem(color) {
 
 const codeOfConductStyles = {
   titleSectionContainer: {
-    ...baseSectionContainer,
+    padding: SECTION_PADDING,
     background: theme.palette.background.palePurple,
   },
   title: {
@@ -49,7 +50,7 @@ const codeOfConductStyles = {
     paddingBottom: "2rem",
   },
   missionStatementSectionContainer: {
-    background: theme.palette.background.palePurple,
+    background: `linear-gradient(to top, white 0%, ${theme.palette.background.palePurple} 2rem 100%)`,
     paddingBottom: "6rem",
   },
   missionStatementCard: {
@@ -70,7 +71,6 @@ const codeOfConductStyles = {
   },
   agreementsSectionContainer: {
     ...baseSectionContainer,
-    background: `linear-gradient(to bottom, ${theme.palette.background.palePurple} 0%, ${theme.palette.background.barelyBlue} 2rem 100%)`,
   },
   agreementBehavior: {
     ...baseOutlinedItem(theme.palette.border.leftAccentBlue),
@@ -80,14 +80,12 @@ const codeOfConductStyles = {
   },
   praxisSectionContainer: {
     ...baseSectionContainer,
-    background: `linear-gradient(to bottom, ${theme.palette.background.barelyBlue} 0%, ${theme.palette.background.barelyPurple} 2rem 100%)`,
   },
   praxis: {
     ...baseOutlinedItem(theme.palette.border.leftAccentPurple),
   },
   responseSectionContainer: {
     ...baseSectionContainer,
-    background: `linear-gradient(to bottom, ${theme.palette.background.barelyPurple} 0%, ${theme.palette.background.lightGray} 2rem 100%)`,
   },
   reportIncidentButtonContainer: {
     paddingBottom: "2rem",
