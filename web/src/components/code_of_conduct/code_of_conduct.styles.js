@@ -50,7 +50,7 @@ const codeOfConductStyles = {
     paddingBottom: "2rem",
   },
   missionStatementSectionContainer: {
-    background: `linear-gradient(to top, white 0%, ${theme.palette.background.palePurple} 2rem 100%)`,
+    background: `linear-gradient(to top, white 0%, ${theme.palette.background.palePurple} 4rem 100%)`,
     paddingBottom: "6rem",
   },
   missionStatementCard: {
