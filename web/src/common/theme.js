@@ -99,6 +99,7 @@ const theme = responsiveFontSizes(
         emphasisGlow: basePalette.purple300,
         leftAccentBlue: basePalette.blue400,
         leftAccentPurple: basePalette.purple500,
+        leftAccentLightPurple: basePalette.purple300,
       },
       card: {
         shadow: basePalette.gray400,
@@ -174,9 +175,9 @@ const theme = responsiveFontSizes(
       ].join(","),
       h1: { fontFamily: "Poppins" },
       h2: { fontFamily: "Poppins" },
-      h3: { fontFamily: "Poppins" },
-      h4: { fontFamily: "Poppins" },
-      h5: { fontFamily: "Poppins" },
+      h3: { fontFamily: "Poppins", fontWeight: "600" },
+      h4: { fontFamily: "Poppins", fontWeight: "600" },
+      h5: { fontFamily: "Poppins", fontWeight: "600" },
       h6: { fontFamily: "Poppins" },
       body1: {
         lineHeight: "1.5",
