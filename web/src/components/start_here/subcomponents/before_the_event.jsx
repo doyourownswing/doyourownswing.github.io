@@ -22,7 +22,11 @@ function Review() {
       <Text>{messages.beforeTheEvent.review.our}</Text>
       {!!showCodeOfConduct && [
         <Space />,
-        <Link href="#/code" target="__blank" rel="noopener noreferrer">
+        <Link
+          href="#/code-of-conduct"
+          target="__blank"
+          rel="noopener noreferrer"
+        >
           <Text>{messages.beforeTheEvent.review.codeOfConduct}</Text>
         </Link>,
       ]}
