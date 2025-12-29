@@ -1,6 +1,7 @@
 import theme from "@/common/theme";
 import DyosCard from "@/components/common/card";
 import eventCardStyles from "@/components/home/subcomponents/upcoming_events_v2/event_card.styles";
+import messages from "@/components/home/subcomponents/upcoming_events_v2/messages";
 import { formatDate } from "@/utils/date_utils";
 import { Apple, Google, Microsoft } from "@mui/icons-material";
 import {
@@ -62,7 +63,7 @@ function AddToCalendar(props) {
       aria-expanded={isMenuOpen ? "true" : undefined}
       onClick={handleClick}
     >
-      Add to calendar
+      {messages.addToCalendar}
     </Button>,
     <Menu
       id="add-to-cal-menu"
@@ -79,19 +80,19 @@ function AddToCalendar(props) {
         <ListItemIcon>
           <Google fontSize="small" />
         </ListItemIcon>
-        Google
+        {messages.google}
       </MenuItem>
       <MenuItem onClick={handleClose} sx={eventCardStyles.addToCalItem}>
         <ListItemIcon>
           <Apple fontSize="small" />
         </ListItemIcon>
-        Apple
+        {messages.apple}
       </MenuItem>
       <MenuItem onClick={handleClose} sx={eventCardStyles.addToCalItem}>
         <ListItemIcon>
           <Microsoft fontSize="small" />
         </ListItemIcon>
-        Outlook
+        {messages.outlook}
       </MenuItem>
     </Menu>,
   ];
@@ -124,16 +125,16 @@ function EventCard(props) {
 
             {!!event.advanceTopic && (
               <EventCardDetail
-                detail="L3/L4 class topic: "
+                detail={messages.advanceTopicHeader}
                 description={event.advanceTopic}
               />
             )}
             <EventCardDetail
-              detail="Intro class topic: "
+              detail={messages.levelOneTopicHeader}
               description={event.levelOneTopic}
             />
             <EventCardDetail
-              detail="Social Dance DJ: "
+              detail={messages.djHeader}
               description={!!event.dj ? event.dj : "DJ Riley"}
             />
           </Box>
@@ -147,7 +148,7 @@ function EventCard(props) {
               rel="noopener noreferrer"
               sx={eventCardStyles.button}
             >
-              RSVP on Facebook
+              {messages.rsvpOnFacebook}
             </Button>
           )}
           <AddToCalendar event={event} />

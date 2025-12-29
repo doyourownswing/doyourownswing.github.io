@@ -14,40 +14,8 @@ import { LocationPin, WatchLater } from "@mui/icons-material";
 import theme from "@/common/theme";
 import EventCard from "@/components/home/subcomponents/upcoming_events_v2/event_card";
 import getThisMonthsEvents from "@/data/events_v2";
-import { formatDate, getNextThursday } from "@/utils/date_utils";
-
-// TODO put these details in a common location
-const classDetails = {
-  level1: {
-    level: "Level 1",
-    displayName: "West Coast Swing Foundations",
-    location: "Sky Ballroom (second floor, use of stairs required)",
-    time: "8:30pm - 9:15pm",
-  },
-  level2: {
-    level: "Level 2",
-    displayName: "Beyond the Basics",
-    location: "Spotlight Ballroom",
-    time: "7:30pm - 8:00pm",
-  },
-  level3: {
-    level: "Level 3",
-    displayName: "Skills and Drills",
-    location: "Spotlight Ballroom",
-    time: "8:05pm - 8:35pm",
-  },
-  level4: {
-    level: "Level 4",
-    displayName: "Artistic Application",
-    location: "Spotlight Ballroom",
-    time: "8:40pm - 9:10pm",
-  },
-  social: {
-    displayName: "Social Dancing!",
-    location: "Main Ballroom",
-    time: "9:15pm - 11:30pm",
-  },
-};
+import { getNextThursday } from "@/utils/date_utils";
+import messages from "@/components/home/subcomponents/upcoming_events_v2/messages";
 
 function ScheduleEvent(props) {
   let details = props.details;
@@ -96,24 +64,24 @@ function ScheduleQuickView() {
   return (
     <Box sx={upcomingEventsV2Styles.scheduleQuickViewContainer}>
       <Typography variant="h4" sx={upcomingEventsV2Styles.quickScheduleTitle}>
-        Join us on Thursday
+        {messages.joinUs}
       </Typography>
       <Typography sx={upcomingEventsV2Styles.locationText}>
-        Studio M Ballroom Club in San Jose, CA
+        {messages.studioM}
       </Typography>
       <Box sx={upcomingEventsV2Styles.classScheduleContainer}>
         <Typography
           variant="h6"
           sx={upcomingEventsV2Styles.quickScheduleHeader}
         >
-          Schedule
+          {messages.thursdayScheduleHeader}
         </Typography>
         <Box sx={upcomingEventsV2Styles.classScheduleEventsContainer}>
-          <ScheduleEvent details={classDetails.level2} />
-          <ScheduleEvent details={classDetails.level3} />
-          <ScheduleEvent details={classDetails.level4} />
-          <ScheduleEvent details={classDetails.level1} />
-          <ScheduleEvent details={classDetails.social} />
+          <ScheduleEvent details={messages.classDetails.level2} />
+          <ScheduleEvent details={messages.classDetails.level3} />
+          <ScheduleEvent details={messages.classDetails.level4} />
+          <ScheduleEvent details={messages.classDetails.level1} />
+          <ScheduleEvent details={messages.classDetails.social} />
         </Box>
       </Box>
       <Box sx={upcomingEventsV2Styles.buttonsContainer}>
@@ -123,7 +91,7 @@ function ScheduleQuickView() {
           size="large"
           href="#/classes"
         >
-          Learn more about our classes
+          {messages.classesCta}
         </Button>
         <Button
           sx={upcomingEventsV2Styles.knowBeforeYouGoButton}
@@ -131,7 +99,7 @@ function ScheduleQuickView() {
           size="large"
           href="#/start-here"
         >
-          Read the know-before-you-go guide
+          {messages.startHereCta}
         </Button>
       </Box>
     </Box>
@@ -185,7 +153,7 @@ function CurrentMonthEvents() {
             variant="h4"
             sx={upcomingEventsV2Styles.monthScheduleTitle}
           >
-            {`${formatDate(nextThursday, "MMMM")} Schedule`}
+            {messages.getMonthEventsHeader(nextThursday)}
           </Typography>
         </Box>
         <Box sx={upcomingEventsV2Styles.eventCardsContainer}>
@@ -203,7 +171,7 @@ const UpcomingEventsV2 = forwardRef(function UpcomingEventsV2(_, ref) {
     <Box ref={ref} sx={upcomingEventsV2Styles.container}>
       <Container>
         <Typography variant="h3" sx={upcomingEventsV2Styles.title}>
-          Upcoming Events
+          {messages.title}
         </Typography>
         <ScheduleAndImage />
         <CurrentMonthEvents />
