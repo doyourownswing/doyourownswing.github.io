@@ -15,7 +15,7 @@ const Home = new Page(
 const Schedule = new Page("#/classes", "Classes");
 const About = new Page("#/about", "About us");
 const Health = new Page("#/health", "Health protocol");
-const Code = new Page("#/code", "Code of conduct");
+const Code = new Page("#/code-of-conduct", "Code of conduct");
 const Contact = new Page("#/contact", "Contact");
 const StartHere = new Page("#/start-here");
 const Blog = new Page("#/blog", "Blog", () =>

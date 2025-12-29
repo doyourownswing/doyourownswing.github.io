@@ -96,7 +96,7 @@ function Behavior(props) {
   );
 }
 
-const Agreements = forwardRef(function Agreements(_, ref) {
+const AgreementsSection = forwardRef(function Agreements(_, ref) {
   return (
     <Box sx={codeOfConductStyles.agreementsSectionContainer} ref={ref}>
       <Container>
@@ -119,7 +119,25 @@ const Agreements = forwardRef(function Agreements(_, ref) {
   );
 });
 
-const Praxis = forwardRef(function Praxis(_, ref) {
+function Praxis(props) {
+  let praxis = props.praxis;
+
+  return (
+    <Box sx={codeOfConductStyles.praxis}>
+      {praxis.pieces.map((p, i) => (
+        <Typography
+          sx={{ fontWeight: p.isBold ? "bold" : "regular" }}
+          key={i}
+          display="inline"
+        >
+          {p.text}
+        </Typography>
+      ))}
+    </Box>
+  );
+}
+
+const PraxisSection = forwardRef(function PraxisSection(_, ref) {
   return (
     <Box sx={codeOfConductStyles.praxisSectionContainer} ref={ref}>
       <Container>
@@ -131,10 +149,8 @@ const Praxis = forwardRef(function Praxis(_, ref) {
         </Box>
         <Box>
           <Typography variant="h6">{messages.praxis.praxesHeader}</Typography>
-          {messages.praxis.praxes.map((p) => (
-            <Box key={p} sx={codeOfConductStyles.praxis}>
-              <Typography>{p}</Typography>
-            </Box>
+          {messages.praxis.praxes.map((p, i) => (
+            <Praxis praxis={p} key={i} />
           ))}
         </Box>
       </Container>
@@ -142,7 +158,7 @@ const Praxis = forwardRef(function Praxis(_, ref) {
   );
 });
 
-const Response = forwardRef(function Response(_, ref) {
+const ResponseSection = forwardRef(function Response(_, ref) {
   return (
     <Box sx={codeOfConductStyles.responseSectionContainer} ref={ref}>
       <Container>
@@ -218,9 +234,9 @@ function CodeOfConduct() {
     <Box>
       <TitleSection tableOfContents={tableOfContents} />
       <MissionStatement ref={missionStatementRef} />
-      <Agreements ref={agreementsRef} />
-      <Praxis ref={praxisRef} />
-      <Response ref={reponseMethodsRef} />
+      <AgreementsSection ref={agreementsRef} />
+      <PraxisSection ref={praxisRef} />
+      <ResponseSection ref={reponseMethodsRef} />
     </Box>
   );
 }
