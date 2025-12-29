@@ -1,7 +1,6 @@
 // Events to be consumed by the UpcomingEventsV2 component
 
 import { createDate, getNextThursday } from "@/utils/date_utils";
-import dayjs from "dayjs";
 
 const L1_TOPICS = {
   week1: "Left side pass, underarm pass, sugar push",
@@ -63,6 +62,16 @@ const events = [
     subtitle: "See you next week!",
   },
 ];
+
+// Example no DYOS item:
+// Date, title, and subtitle are visible
+//
+// {
+//   date: createDate("01/09/2026"),
+//   noDyos: true,
+//   title: "No DYOS",
+//   subtitle: "See you next week",
+// },
 
 // TODO support specifying a particular month
 function getThisMonthsEvents() {

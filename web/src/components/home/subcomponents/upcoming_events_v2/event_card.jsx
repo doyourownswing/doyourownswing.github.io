@@ -3,17 +3,45 @@ import DyosCard from "@/components/common/card";
 import eventCardStyles from "@/components/home/subcomponents/upcoming_events_v2/event_card.styles";
 import messages from "@/components/home/subcomponents/upcoming_events_v2/messages";
 import { formatDate } from "@/utils/date_utils";
-import { Apple, Google, Microsoft } from "@mui/icons-material";
+import {
+  Apple as AppleIcon,
+  Google as GoogleIcon,
+  Microsoft as MicrosoftIcon,
+} from "@mui/icons-material";
 import {
   Box,
   Button,
+  Link,
   ListItemIcon,
   Menu,
   MenuItem,
   Typography,
   useMediaQuery,
 } from "@mui/material";
+import {
+  google as createGoogleEvent,
+  ics as createAppleEvent,
+  outlook as createOutlookEvent,
+} from "calendar-link";
 import { useState } from "react";
+
+const addToCalendarOptions = [
+  {
+    text: messages.google,
+    icon: GoogleIcon,
+    eventCreator: createGoogleEvent,
+  },
+  {
+    text: messages.apple,
+    icon: AppleIcon,
+    eventCreator: createAppleEvent,
+  },
+  {
+    text: messages.outlook,
+    icon: MicrosoftIcon,
+    eventCreator: createOutlookEvent,
+  },
+];
 
 function EventCardDetail(props) {
   let { detail, description } = props;
@@ -38,6 +66,37 @@ function EventCardDetail(props) {
   );
 }
 
+function createCalendarEvent(event) {
+  let dyosStart = event.date.clone().hour(19).minute(30);
+  let dyosEnd = event.date.clone().hour(23).minute(30);
+
+  let eventsText = Object.values(messages.classDetails)
+    .map((e) => {
+      let levelOrEmptyString = !!e.level ? `${e.level} - ` : "";
+
+      return (
+        `${levelOrEmptyString}${e.displayName}\n` +
+        `    ${e.time} @ ${e.location}`
+      );
+    })
+    .join("\n\n");
+
+  return {
+    title: "Do Your Own Swing",
+    location: "3550 Stevens Creek Blvd #130, San Jose, CA 95117",
+    start: formatDate(dyosStart),
+    end: formatDate(dyosEnd),
+    description:
+      `<b>${event.title}</b>\n` +
+      `${event.subtitle}\n\n` +
+      "<b>Schedule</b>\n" +
+      eventsText +
+      "\n\n" +
+      "For more details, visit https://doyourownswing.com\n\n" +
+      "See you soon!",
+  };
+}
+
 function AddToCalendar(props) {
   const [anchorEl, setAnchorEl] = useState(null);
   const isMenuOpen = Boolean(anchorEl);
@@ -50,8 +109,30 @@ function AddToCalendar(props) {
 
   let event = props.event;
 
+  const calendarEvent = createCalendarEvent(event);
+
   // TODO MAKE THESE DO SOMETHING
   // https://www.npmjs.com/package/calendar-link
+
+  function createMenuItem(option) {
+    let IconComponent = option.icon;
+
+    return (
+      <MenuItem onClick={handleClose} sx={eventCardStyles.addToCalItem}>
+        <Link
+          href={option.eventCreator(calendarEvent)}
+          target="_blank"
+          rel="noreferrer"
+          sx={eventCardStyles.addToCalItemLink}
+        >
+          <ListItemIcon>
+            <IconComponent fontSize="small" />
+          </ListItemIcon>
+          {option.text}
+        </Link>
+      </MenuItem>
+    );
+  }
 
   return [
     <Button
@@ -76,24 +157,7 @@ function AddToCalendar(props) {
         },
       }}
     >
-      <MenuItem onClick={handleClose} sx={eventCardStyles.addToCalItem}>
-        <ListItemIcon>
-          <Google fontSize="small" />
-        </ListItemIcon>
-        {messages.google}
-      </MenuItem>
-      <MenuItem onClick={handleClose} sx={eventCardStyles.addToCalItem}>
-        <ListItemIcon>
-          <Apple fontSize="small" />
-        </ListItemIcon>
-        {messages.apple}
-      </MenuItem>
-      <MenuItem onClick={handleClose} sx={eventCardStyles.addToCalItem}>
-        <ListItemIcon>
-          <Microsoft fontSize="small" />
-        </ListItemIcon>
-        {messages.outlook}
-      </MenuItem>
+      {addToCalendarOptions.map(createMenuItem)}
     </Menu>,
   ];
 }
@@ -101,8 +165,12 @@ function AddToCalendar(props) {
 function EventCard(props) {
   let event = props.event;
 
+  let cardStyles = event.noDyos
+    ? eventCardStyles.cardNoDyos
+    : eventCardStyles.card;
+
   return (
-    <DyosCard contentSx={eventCardStyles.card}>
+    <DyosCard contentSx={cardStyles}>
       <Box sx={eventCardStyles.contentContainer}>
         <Box sx={eventCardStyles.contentLeftContainer}>
           <Box sx={eventCardStyles.dateContainer}>
@@ -123,36 +191,42 @@ function EventCard(props) {
               </Typography>
             </Box>
 
-            {!!event.advanceTopic && (
-              <EventCardDetail
-                detail={messages.advanceTopicHeader}
-                description={event.advanceTopic}
-              />
+            {!event.noDyos && (
+              <Box>
+                {!!event.advanceTopic && (
+                  <EventCardDetail
+                    detail={messages.advanceTopicHeader}
+                    description={event.advanceTopic}
+                  />
+                )}
+                <EventCardDetail
+                  detail={messages.levelOneTopicHeader}
+                  description={event.levelOneTopic}
+                />
+                <EventCardDetail
+                  detail={messages.djHeader}
+                  description={!!event.dj ? event.dj : "DJ Riley"}
+                />
+              </Box>
             )}
-            <EventCardDetail
-              detail={messages.levelOneTopicHeader}
-              description={event.levelOneTopic}
-            />
-            <EventCardDetail
-              detail={messages.djHeader}
-              description={!!event.dj ? event.dj : "DJ Riley"}
-            />
           </Box>
         </Box>
-        <Box sx={eventCardStyles.ctaContainer}>
-          {!!event.facebookLink && (
-            <Button
-              variant="contained"
-              href={event.facebookLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              sx={eventCardStyles.button}
-            >
-              {messages.rsvpOnFacebook}
-            </Button>
-          )}
-          <AddToCalendar event={event} />
-        </Box>
+        {!event.noDyos && (
+          <Box sx={eventCardStyles.ctaContainer}>
+            {!!event.facebookLink && (
+              <Button
+                variant="contained"
+                href={event.facebookLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                sx={eventCardStyles.button}
+              >
+                {messages.rsvpOnFacebook}
+              </Button>
+            )}
+            <AddToCalendar event={event} />
+          </Box>
+        )}
       </Box>
     </DyosCard>
   );

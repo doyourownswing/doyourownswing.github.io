@@ -4,6 +4,11 @@ const eventCardStyles = {
   card: {
     padding: "2rem 3rem",
   },
+  cardNoDyos: {
+    padding: "2rem 3rem",
+    backgroundColor: theme.palette.background.lightGray,
+    opacity: "75%",
+  },
   contentContainer: {
     display: "flex",
     flexDirection: { xs: "column", md: "row" },
@@ -70,6 +75,12 @@ const eventCardStyles = {
   },
   addToCalItem: {
     padding: "0.5rem 2rem",
+  },
+  addToCalItemLink: {
+    display: "flex",
+    alignItems: "center",
+    textDecoration: "none",
+    color: theme.palette.text.secondaryBody,
   },
 };
 
