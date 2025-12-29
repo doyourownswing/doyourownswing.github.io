@@ -28,9 +28,14 @@ function getBeginningOfTodayDate() {
   return dayjs(new Date().setHours(0, 0, 0, 0));
 }
 
+function getNextThursday() {
+  return dayjs(new Date()).day(4);
+}
+
 export {
   dateToHumanReadableString,
   formatDate,
   createDate,
   getBeginningOfTodayDate,
+  getNextThursday,
 };

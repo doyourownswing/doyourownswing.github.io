@@ -3,16 +3,22 @@ import theme from "@/common/theme";
 
 const baseImage = {
   width: "100%",
-  height: { md: "24rem" },
+  height: { md: "22rem" },
   borderRadius: "2rem",
   boxShadow: BOX_SHADOW_2,
   objectFit: "cover",
   objectPosition: "left",
 };
 
+const baseButton = {
+  textTransform: "none",
+  width: { xs: "min(20rem, 100%)", md: "100%" },
+};
+
 const upcomingEventsV2Styles = {
   container: {
     padding: SECTION_PADDING,
+    background: theme.palette.background.barelyPurple,
   },
   title: {
     ...theme.typography.title,
@@ -24,8 +30,13 @@ const upcomingEventsV2Styles = {
     paddingBottom: "2rem",
     gap: "2rem",
   },
+  imagesContainer: {
+    display: "flex",
+    flexDirection: "column",
+    gap: "2rem",
+  },
   imageContainer: {
-    maxWidth: { xs: "90vw", sm: "unset", md: "40rem" },
+    maxWidth: { xs: "100%", sm: "unset", md: "36rem" },
   },
   image: {
     ...baseImage,
@@ -34,7 +45,7 @@ const upcomingEventsV2Styles = {
     ...baseImage,
   },
   scheduleQuickViewContainer: {
-    minWidth: "min(90vw, 24rem)",
+    minWidth: "min(100%, 24rem)",
   },
   locationText: {
     color: theme.palette.text.secondaryBody,
@@ -64,6 +75,8 @@ const upcomingEventsV2Styles = {
   classLevel: {
     color: theme.palette.text.title,
     fontWeight: "700",
+    // If screen is small enough, make the class name shrink, not the level
+    flexShrink: "0",
   },
   className: {
     fontWeight: "700",
@@ -71,11 +84,13 @@ const upcomingEventsV2Styles = {
   },
   classDetailContainer: {
     display: "inline-flex",
-    alignItems: "center",
+    alignItems: "flex-start",
     gap: "0.5rem",
   },
   classDetailIcon: {
     color: theme.palette.icon.inactive,
+    // Adds a bit of padding since line height is 1.5
+    paddingTop: "0.25rem",
   },
   classDetail: {
     color: theme.palette.text.secondaryBody,
@@ -85,8 +100,12 @@ const upcomingEventsV2Styles = {
     flexDirection: "column",
     gap: "1rem",
   },
-  button: {
-    textTransform: "none",
+  classesLearnMoreButton: {
+    ...baseButton,
+  },
+  knowBeforeYouGoButton: {
+    ...baseButton,
+    backgroundColor: "white",
   },
   monthEventsContainer: {
     paddingTop: "4rem",
@@ -101,17 +120,6 @@ const upcomingEventsV2Styles = {
     display: "flex",
     flexDirection: "column",
     gap: "1rem",
-  },
-  eventCard: {
-    padding: "2rem 3rem",
-  },
-  eventCardContentContainer: {
-    display: "flex",
-    justifyContent: "space-between",
-  },
-  eventCardContentLeftContainer: {
-    display: "flex",
-    gap: "2rem",
   },
 };
 

@@ -8,19 +8,20 @@ import {
   useMediaQuery,
 } from "@mui/material";
 import { forwardRef } from "react";
-// TODO update this to use a new pic, or maybe 2
-import ClassesPic from "@/assets/images/classes1.jpg";
-import SocialPic from "@/assets/images/birds-eye-social.jpg";
+import ClassesPic from "@/assets/images/classes2.jpg";
+import SocialPic from "@/assets/images/mikaela-will-social.jpg";
 import { LocationPin, WatchLater } from "@mui/icons-material";
 import theme from "@/common/theme";
-import DyosCard from "@/components/common/card";
+import EventCard from "@/components/home/subcomponents/upcoming_events_v2/event_card";
+import getThisMonthsEvents from "@/data/events_v2";
+import { formatDate, getNextThursday } from "@/utils/date_utils";
 
 // TODO put these details in a common location
 const classDetails = {
   level1: {
     level: "Level 1",
     displayName: "West Coast Swing Foundations",
-    location: "Sky Ballroom (second floor)",
+    location: "Sky Ballroom (second floor, use of stairs required)",
     time: "8:30pm - 9:15pm",
   },
   level2: {
@@ -117,16 +118,18 @@ function ScheduleQuickView() {
       </Box>
       <Box sx={upcomingEventsV2Styles.buttonsContainer}>
         <Button
-          sx={upcomingEventsV2Styles.button}
+          sx={upcomingEventsV2Styles.classesLearnMoreButton}
           variant="contained"
           size="large"
+          href="#/classes"
         >
           Learn more about our classes
         </Button>
         <Button
-          sx={upcomingEventsV2Styles.button}
+          sx={upcomingEventsV2Styles.knowBeforeYouGoButton}
           variant="outlined"
           size="large"
+          href="#/start-here"
         >
           Read the know-before-you-go guide
         </Button>
@@ -153,7 +156,7 @@ function ScheduleAndImage() {
         <Box>
           <ScheduleQuickView />
         </Box>
-        <Box>
+        <Box sx={upcomingEventsV2Styles.imagesContainer}>
           <Box sx={upcomingEventsV2Styles.imageContainer}>
             <Box
               component="img"
@@ -169,31 +172,10 @@ function ScheduleAndImage() {
   );
 }
 
-function EventCard(props) {
-  return (
-    <DyosCard contentSx={upcomingEventsV2Styles.eventCard}>
-      <Box sx={upcomingEventsV2Styles.eventCardContentContainer}>
-        <Box sx={upcomingEventsV2Styles.eventCardContentLeftContainer}>
-          <Box>
-            <Typography>Event card!</Typography>
-          </Box>
-          <Box>
-            <Typography>Title</Typography>
-            <Typography>Subtitle?</Typography>
-            <Typography>Intro class topics</Typography>
-            <Typography>DJ during social</Typography>
-          </Box>
-        </Box>
-        <Box>
-          <Typography>RSVP on facebook</Typography>
-          <Typography>Add to calendar</Typography>
-        </Box>
-      </Box>
-    </DyosCard>
-  );
-}
-
 function CurrentMonthEvents() {
+  let events = getThisMonthsEvents();
+  let nextThursday = getNextThursday();
+
   return (
     <Box sx={upcomingEventsV2Styles.monthEventsContainer}>
       <Box>
@@ -203,14 +185,13 @@ function CurrentMonthEvents() {
             variant="h4"
             sx={upcomingEventsV2Styles.monthScheduleTitle}
           >
-            January Schedule
+            {`${formatDate(nextThursday, "MMMM")} Schedule`}
           </Typography>
         </Box>
         <Box sx={upcomingEventsV2Styles.eventCardsContainer}>
-          <EventCard />
-          <EventCard />
-          <EventCard />
-          <EventCard />
+          {events.map((e, i) => (
+            <EventCard event={e} key={i} />
+          ))}
         </Box>
       </Box>
     </Box>
