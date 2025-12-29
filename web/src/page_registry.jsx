@@ -63,22 +63,12 @@ const pageRegistry = [
     showFooter: false,
   }),
 ];
-
-// HashRouter automatically handles the hash so we can't have it as a part of the URL
-const parseUrl = function (url) {
-  if (url.startsWith("#")) {
-    return url.slice(1);
-  }
-
-  return url;
-};
-
 /** The list of routes to include in the router based on the feature eligibility. */
 const generatedRoutes = pageRegistry
   .filter((p) => p.isVisible)
   .map((p) => ({
     // Fields used by router
-    path: parseUrl(p.page.url),
+    path: p.page.url,
     element: p.element,
     // Fields not used by router
     page: p.page,
