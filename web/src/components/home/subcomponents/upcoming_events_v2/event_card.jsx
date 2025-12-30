@@ -66,6 +66,8 @@ function EventCardDetail(props) {
   );
 }
 
+// Creates the object used to generate calendar events.
+// TODO: clean up this code.
 function createCalendarEvent(event) {
   let dyosStart = event.date.clone().hour(19).minute(30);
   let dyosEnd = event.date.clone().hour(23).minute(30);
@@ -97,6 +99,7 @@ function createCalendarEvent(event) {
   };
 }
 
+// Add to calendar button with menu to add to Google, Apple, and Outlook calendars
 function AddToCalendar(props) {
   const [anchorEl, setAnchorEl] = useState(null);
   const isMenuOpen = Boolean(anchorEl);
@@ -110,9 +113,6 @@ function AddToCalendar(props) {
   let event = props.event;
 
   const calendarEvent = createCalendarEvent(event);
-
-  // TODO MAKE THESE DO SOMETHING
-  // https://www.npmjs.com/package/calendar-link
 
   function createMenuItem(option) {
     let IconComponent = option.icon;
@@ -201,7 +201,7 @@ function EventCard(props) {
                 )}
                 <EventCardDetail
                   detail={messages.levelOneTopicHeader}
-                  description={event.levelOneTopic}
+                  description={`${event.levelOneTopic}*`}
                 />
                 <EventCardDetail
                   detail={messages.djHeader}

@@ -16,6 +16,7 @@ import EventCard from "@/components/home/subcomponents/upcoming_events_v2/event_
 import getThisMonthsEvents from "@/data/events_v2";
 import { getNextThursday } from "@/utils/date_utils";
 import messages from "@/components/home/subcomponents/upcoming_events_v2/messages";
+import Callout from "@/components/common/callout";
 
 function ScheduleEvent(props) {
   let details = props.details;
@@ -161,6 +162,14 @@ function CurrentMonthEvents() {
             <EventCard event={e} key={i} />
           ))}
         </Box>
+        <Callout sx={upcomingEventsV2Styles.callout}>
+          <Typography display="inline" fontWeight="bold">
+            {messages.introCallout.prefix}
+          </Typography>
+          <Typography display="inline">
+            {messages.introCallout.message}
+          </Typography>
+        </Callout>
       </Box>
     </Box>
   );

@@ -121,6 +121,9 @@ const upcomingEventsV2Styles = {
     flexDirection: "column",
     gap: "1rem",
   },
+  callout: {
+    backgroundColor: "white",
+  },
 };
 
 export default upcomingEventsV2Styles;

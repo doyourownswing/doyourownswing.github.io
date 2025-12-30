@@ -48,6 +48,11 @@ const messages = {
   advanceTopicHeader: "L3/L4 class topic: ",
   levelOneTopicHeader: "Intro class topic: ",
   djHeader: "Social Dance DJ: ",
+  introCallout: {
+    prefix: "Note: ",
+    message:
+      "Intro class topics may change to better fit the experience levels of the attendees",
+  },
 };
 
 export default messages;
