@@ -41,6 +41,7 @@ const EXEMPTION = {
   VOLUNTEER_15: "15 min Volunteer",
   VOLUNTEER_30: "30+ min Volunteer",
   ALL_STAR: "WSDC All-Star",
+  BLACK_INDIGENOUS: "Black / Indigenous",
   OTHER: "Other",
 };
 
@@ -137,7 +138,7 @@ function PersonInput(props) {
       <Autocomplete
         multiple
         options={data}
-        sx={signInStyles.input}
+        sx={signInStyles.personInput}
         renderInput={(params) => (
           <TextField {...params} label="Dancer(s)" required />
         )}
@@ -402,16 +403,30 @@ function SignIn() {
     }
   };
 
-  let shouldShowPayment =
+  let unfilledRequiredFields = [];
+
+  if (people.length == 0) {
+    unfilledRequiredFields.push("Dancer(s)");
+  }
+
+  if (
     exemption === EXEMPTION.NONE ||
     exemption === EXEMPTION.VOLUNTEER_15 ||
-    buyingMask;
+    buyingMask
+  ) {
+    if (!paymentMethod) {
+      unfilledRequiredFields.push("Payment method");
+    }
+    if (!isPaymentAmountValid()) {
+      unfilledRequiredFields.push("Payment amount");
+    }
+  }
 
-  let formValid =
-    people.length > 0 &&
-    (!shouldShowPayment ||
-      (paymentMethod !== null && isPaymentAmountValid())) &&
-    eventsAttending.length > 0;
+  if (eventsAttending.length == 0) {
+    unfilledRequiredFields.push("Events attending");
+  }
+
+  let formValid = unfilledRequiredFields.length === 0;
 
   return (
     <Box sx={signInStyles.container}>
@@ -424,10 +439,19 @@ function SignIn() {
             <Typography variant="h5">
               Have they filled out the registration form?
             </Typography>
-            <Typography>If not, have them fill out this form</Typography>
-            <DyosLink href={REGISTRATION_FORM_LINK} openInNewTab>
+            <Typography display="inline">
+              If not, have them fill out this form:{" "}
+            </Typography>
+            <DyosLink
+              href={REGISTRATION_FORM_LINK}
+              openInNewTab
+              fontWeight="bold"
+            >
               One time-registration form
             </DyosLink>
+            <Typography display="inline">
+              . Then click the refresh button below
+            </Typography>
           </Box>
           <Box sx={signInStyles.section}>
             <Typography variant="h5">Check In</Typography>
@@ -439,14 +463,12 @@ function SignIn() {
                   onSelectExemption={onSelectExemption}
                 />
 
-                {shouldShowPayment && (
-                  <PaymentInput
-                    paymentMethodValue={paymentMethod}
-                    onSelectPaymentMethod={onSelectPaymentMethod}
-                    paymentAmountValue={paymentAmount}
-                    onPaymentAmountChange={onSetPaymentAmount}
-                  />
-                )}
+                <PaymentInput
+                  paymentMethodValue={paymentMethod}
+                  onSelectPaymentMethod={onSelectPaymentMethod}
+                  paymentAmountValue={paymentAmount}
+                  onPaymentAmountChange={onSetPaymentAmount}
+                />
 
                 <MaskInput
                   checked={buyingMask}
@@ -471,6 +493,17 @@ function SignIn() {
               >
                 Submit
               </Button>
+              {!formValid && (
+                <Box sx={{ paddingTop: "1rem" }}>
+                  <Typography display="inline" fontWeight="bold">
+                    Fill required fields:{" "}
+                  </Typography>
+
+                  <Typography display="inline">
+                    {unfilledRequiredFields.join(", ")}
+                  </Typography>
+                </Box>
+              )}
             </Box>
           </Box>
         </Box>

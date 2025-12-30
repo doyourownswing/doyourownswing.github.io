@@ -57,6 +57,9 @@ const signInStyles = {
     gap: "1rem",
     alignItems: "center",
   },
+  personInput: {
+    width: "min(90vw, 36rem)",
+  },
   loadingSpinner: {
     padding: "8px",
   },
