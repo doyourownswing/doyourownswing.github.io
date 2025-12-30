@@ -1,5 +1,5 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
+import { createRoot, hydrateRoot } from "react-dom/client";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Footer from "@/components/footer/footer";
 import NavBar from "@/components/nav_bar/nav_bar";
@@ -43,21 +43,30 @@ function FooterRenderer() {
   return <>{showFooter && <Footer />}</>;
 }
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
-  <React.StrictMode>
-    <ThemeProvider theme={theme}>
-      <Box>
-        <BrowserRouter>
-          <NavBarAndAnnouncementsRenderer />
-            <Routes>
-              {routes.map((r, i) => (
-                <Route key={i} path={r.path} element={r.element} />
-              ))}
-            </Routes>
-          <FooterRenderer />
-        </BrowserRouter>
-      </Box>
-    </ThemeProvider>
-  </React.StrictMode>
-);
+function App() {
+  return (
+    <React.StrictMode>
+      <ThemeProvider theme={theme}>
+        <Box>
+          <BrowserRouter>
+            <NavBarAndAnnouncementsRenderer />
+              <Routes>
+                {routes.map((r, i) => (
+                  <Route key={i} path={r.path} element={r.element} />
+                ))}
+              </Routes>
+            <FooterRenderer />
+          </BrowserRouter>
+        </Box>
+      </ThemeProvider>
+    </React.StrictMode>
+  );
+}
+
+const rootElement = document.getElementById("root");
+const root = createRoot(document.getElementById("root"));
+if (rootElement.hasChildNodes()) {
+  hydrateRoot(rootElement, <App />);
+} else {
+  root.render(<App />);
+}
