@@ -1,6 +1,10 @@
 import dayjs from "dayjs";
 import customParseFormat from "dayjs/plugin/customParseFormat";
+import timezone from "dayjs/plugin/timezone";
+
 dayjs.extend(customParseFormat);
+dayjs.extend(timezone);
+dayjs.tz.setDefault("America/Los_Angeles");
 
 /**
  * Converts a dayjs date into a human-readable string.
@@ -28,9 +32,14 @@ function getBeginningOfTodayDate() {
   return dayjs(new Date().setHours(0, 0, 0, 0));
 }
 
+function getNextThursday() {
+  return dayjs(new Date()).day(4);
+}
+
 export {
   dateToHumanReadableString,
   formatDate,
   createDate,
   getBeginningOfTodayDate,
+  getNextThursday,
 };
