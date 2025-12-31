@@ -28,7 +28,7 @@ import {
   Typography,
 } from "@mui/material";
 import DyosLink from "@/components/common/link";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import signInStyles from "./sign_in.styles";
 import SignInService from "./sign_in_service";
 import { Refresh } from "@mui/icons-material";
@@ -42,6 +42,7 @@ const EXEMPTION = {
   VOLUNTEER_30: "30+ min Volunteer",
   ALL_STAR: "WSDC All-Star",
   BLACK_INDIGENOUS: "Black / Indigenous",
+  PAID_BY_OTHER: "Paid for by someone else",
   OTHER: "Other",
 };
 
@@ -61,32 +62,32 @@ const EVENTS = {
 };
 
 const DATA_STATE = {
-  NOT_LOADED: "NOT_LOADED",
-  LOADING: "LOADING",
-  LOADED: "LOADED",
+  NOT_STARTED: "NOT_STARTED",
+  IN_PROGRESS: "IN_PROGRESS",
+  COMPLETE: "COMPLETE",
   ERROR: "ERROR",
 };
 
 function PersonInput(props) {
   const [data, setData] = useState([]);
-  const [dataState, setDataState] = useState(DATA_STATE.NOT_LOADED);
+  const [dataState, setDataState] = useState(DATA_STATE.NOT_STARTED);
 
   useEffect(() => {
     // If data is already being fetched, exit early
-    if (dataState !== DATA_STATE.NOT_LOADED) return;
+    if (dataState !== DATA_STATE.NOT_STARTED) return;
 
     const fetchPeopleData = async () => {
-      setDataState(DATA_STATE.LOADING);
+      setDataState(DATA_STATE.IN_PROGRESS);
 
       try {
         let people = await SignInService.fetchPeople();
 
         let peopleOptions = sortPeopleAlphabetically(people).map((p) => {
-          return { label: p.name };
+          return { label: p.name, name: p.name };
         });
 
         setData(peopleOptions);
-        setDataState(DATA_STATE.LOADED);
+        setDataState(DATA_STATE.COMPLETE);
       } catch (e) {
         console.log(e);
         setDataState(DATA_STATE.ERROR);
@@ -97,11 +98,11 @@ function PersonInput(props) {
   }, [dataState]);
 
   function onClickRefresh() {
-    setDataState(DATA_STATE.NOT_LOADED);
+    setDataState(DATA_STATE.NOT_STARTED);
   }
 
-  let isLoading = dataState === DATA_STATE.LOADING;
-  let isLoaded = dataState === DATA_STATE.LOADED;
+  let isLoading = dataState === DATA_STATE.IN_PROGRESS;
+  let isLoaded = dataState === DATA_STATE.COMPLETE;
   let hasError = dataState === DATA_STATE.ERROR;
   let canRefresh = isLoaded || hasError;
 
@@ -122,11 +123,16 @@ function PersonInput(props) {
           </Box>
         )}
         {canRefresh && (
-          <Tooltip title="Refresh options" placement="right">
-            <IconButton onClick={onClickRefresh}>
-              <Refresh />
-            </IconButton>
-          </Tooltip>
+          // <Tooltip title="Refresh options" placement="right">
+          <Button
+            onClick={onClickRefresh}
+            startIcon={<Refresh />}
+            variant="outlined"
+            size="small"
+          >
+            Refresh options
+          </Button>
+          // </Tooltip>
         )}
       </Box>
       {hasError && (
@@ -240,6 +246,7 @@ function PaymentInput(props) {
   );
 }
 
+// TODO remove social as an option and update this to be "which classes?"
 function WhichEvents(props) {
   const [events, setEvents] = useState({
     [EVENTS.L1.id]: false,
@@ -253,7 +260,7 @@ function WhichEvents(props) {
     props.onSetEventsAttendingChange(
       Object.keys(EVENTS)
         .filter((e) => newVal[EVENTS[e].id])
-        .map((e) => e.id)
+        .map((e) => EVENTS[e].id)
     );
   }
 
@@ -361,6 +368,41 @@ function SignIn() {
   const [additionalNotes, setAdditionalNotes] = useState("");
   const [eventsAttending, setEventsAttending] = useState([]);
 
+  const [submitState, setSubmitState] = useState(DATA_STATE.NOT_STARTED);
+  const [submitResults, setSubmitResults] = useState();
+
+  const onSubmit = async () => {
+    setSubmitState(DATA_STATE.IN_PROGRESS);
+
+    console.log(eventsAttending);
+    try {
+      let results = await SignInService.checkIn({
+        // Note; it's important to keep these key names aligned with the backend
+        persons: people.map((p) => p.name),
+        exemption: exemption === EXEMPTION.NONE ? null : exemption,
+        mask: buyingMask,
+        paymentMethod: paymentMethod,
+        amountPaid: paymentAmount,
+        notes: additionalNotes,
+        l1: eventsAttending.includes(EVENTS.L1.id),
+        l2: eventsAttending.includes(EVENTS.L2.id),
+        l3: eventsAttending.includes(EVENTS.L3.id),
+        l4: eventsAttending.includes(EVENTS.L4.id),
+        socialOnly: eventsAttending.includes(EVENTS.SOCIAL.id),
+      });
+
+      submitResults(results);
+      setSubmitResults(DATA_STATE.COMPLETE);
+    } catch (e) {
+      console.log(e);
+      setSubmitState(DATA_STATE.ERROR);
+    }
+  };
+
+  let isLoading = submitState === DATA_STATE.IN_PROGRESS;
+  let isLoaded = submitState === DATA_STATE.COMPLETE;
+  let hasError = submitState === DATA_STATE.ERROR;
+
   const onSelectExemption = (event) => {
     setExemption(event.target.value);
   };
@@ -379,11 +421,6 @@ function SignIn() {
 
   const onSetAddtionalNotes = (event) => {
     setAdditionalNotes(event.target.value);
-  };
-
-  const onSubmit = async () => {
-    console.log("Submitted. Add the data here to verify correctness.");
-    await SignInService.fetchPeople();
   };
 
   const isPaymentAmountValid = () => {
@@ -405,7 +442,7 @@ function SignIn() {
 
   let unfilledRequiredFields = [];
 
-  if (people.length == 0) {
+  if (people.length === 0) {
     unfilledRequiredFields.push("Dancer(s)");
   }
 
@@ -422,7 +459,7 @@ function SignIn() {
     }
   }
 
-  if (eventsAttending.length == 0) {
+  if (eventsAttending.length === 0) {
     unfilledRequiredFields.push("Events attending");
   }
 
@@ -436,7 +473,7 @@ function SignIn() {
             Admin - sign in
           </Typography>
           <Box sx={signInStyles.section}>
-            <Typography variant="h5">
+            <Typography variant="h5" sx={signInStyles.sectionHeader}>
               Have they filled out the registration form?
             </Typography>
             <Typography display="inline">
@@ -450,11 +487,14 @@ function SignIn() {
               One time-registration form
             </DyosLink>
             <Typography display="inline">
-              . Then click the refresh button below
+              . Then click the refresh button below, next to "Who is checking
+              in"
             </Typography>
           </Box>
           <Box sx={signInStyles.section}>
-            <Typography variant="h5">Check In</Typography>
+            <Typography variant="h5" sx={signInStyles.sectionHeader}>
+              Check In
+            </Typography>
             <PersonInput selectedPeople={people} onPeopleSelected={setPeople} />
             <Stack direction={{ lg: "row" }} gap={{ xs: 4, lg: 8 }}>
               <Box sx={signInStyles.formLeft}>
@@ -485,16 +525,8 @@ function SignIn() {
               </Box>
             </Stack>
             <Box sx={signInStyles.inputContainer}>
-              <Button
-                variant="contained"
-                sx={signInStyles.submitButton}
-                onClick={onSubmit}
-                disabled={!formValid}
-              >
-                Submit
-              </Button>
               {!formValid && (
-                <Box sx={{ paddingTop: "1rem" }}>
+                <Box sx={{ paddingBottom: "1rem" }}>
                   <Typography display="inline" fontWeight="bold">
                     Fill required fields:{" "}
                   </Typography>
@@ -504,6 +536,14 @@ function SignIn() {
                   </Typography>
                 </Box>
               )}
+              <Button
+                variant="contained"
+                sx={signInStyles.submitButton}
+                onClick={onSubmit}
+                disabled={!formValid}
+              >
+                Submit
+              </Button>
             </Box>
           </Box>
         </Box>

@@ -1,8 +1,10 @@
 import { BOX_SHADOW } from "@/common/constants";
+import theme from "@/common/theme";
 
 const baseHeaderText = {
-  fontWeight: "700",
+  fontWeight: "600",
   fontFamily: "Poppins",
+  color: "black",
 };
 
 const signInStyles = {
@@ -25,6 +27,10 @@ const signInStyles = {
   },
   section: {
     paddingTop: "4rem",
+  },
+  sectionHeader: {
+    ...baseHeaderText,
+    // color: theme.palette.text.title,
   },
   inputContainer: {
     paddingTop: "1.5rem",

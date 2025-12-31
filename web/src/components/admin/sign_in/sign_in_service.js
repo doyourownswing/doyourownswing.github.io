@@ -18,6 +18,22 @@ class SignInService {
       console.log(e);
     }
   }
+
+  static async checkIn(data) {
+    try {
+      let response = await fetch(URL, {
+        method: "POST",
+        body: JSON.stringify(data),
+      });
+
+      let jsonResponse = await response.json();
+
+      return jsonResponse;
+    } catch (e) {
+      console.log("we got an error");
+      console.log(e);
+    }
+  }
 }
 
 export default SignInService;
