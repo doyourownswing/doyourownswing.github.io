@@ -20,24 +20,21 @@ import purpleLogo from "@/assets/svgs/purple-logo.svg";
 import Announcement from "./announcement";
 import { getCurrentAnnouncement } from "@/data/announcements";
 import theme from "@/common/theme";
+import { useLocation } from "react-router-dom";
 
 /** Nav bar options for large screens.
  *
  * A box with all of the options as buttons.
- * Re-renders itself when the hash changes to update button styling.
+ * Re-renders itself when the URL changes to update button styling.
  */
 function ExpandedMenuOptions() {
   const [, updateState] = React.useState();
   const forceUpdate = React.useCallback(() => updateState({}), []);
+  const location = useLocation();
 
   React.useEffect(() => {
-    const onHashChange = () => forceUpdate();
-    window.addEventListener("hashchange", onHashChange);
-
-    return () => {
-      window.removeEventListener("hashchange", onHashChange);
-    };
-  });
+    forceUpdate();
+  }, [forceUpdate, location]);
 
   const getButtonStyle = (option) => {
     if (option.isCurrentPage()) {
@@ -128,7 +125,7 @@ function MenuIconOptions() {
 function Logo() {
   return (
     <Box sx={navBarStyles.logoContainer}>
-      <Link sx={navBarStyles.logoContainerLink} href="#/">
+      <Link sx={navBarStyles.logoContainerLink} href="/">
         <Box
           component="img"
           sx={navBarStyles.logoImage}

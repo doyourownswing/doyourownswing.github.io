@@ -32,7 +32,7 @@ function Welcome() {
             <Button
               variant="contained"
               sx={welcomeStyles.startHereButton}
-              href="#/start-here"
+              href="/start-here"
             >
               {messages.startHereText}
             </Button>

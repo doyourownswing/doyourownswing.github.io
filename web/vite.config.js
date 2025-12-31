@@ -8,6 +8,7 @@ export default defineConfig(() => {
   return {
     build: {
       outDir: "build",
+      target: ["es2015"],
     },
     plugins: [react(), eslint(), svgr()],
     resolve: {
