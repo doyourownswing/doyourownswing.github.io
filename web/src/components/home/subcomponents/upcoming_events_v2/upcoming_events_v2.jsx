@@ -90,7 +90,7 @@ function ScheduleQuickView() {
           sx={upcomingEventsV2Styles.classesLearnMoreButton}
           variant="contained"
           size="large"
-          href="#/classes"
+          href="/classes"
         >
           {messages.classesCta}
         </Button>
@@ -98,7 +98,7 @@ function ScheduleQuickView() {
           sx={upcomingEventsV2Styles.knowBeforeYouGoButton}
           variant="outlined"
           size="large"
-          href="#/start-here"
+          href="/start-here"
         >
           {messages.startHereCta}
         </Button>
