@@ -12,6 +12,9 @@ import { useLocation } from "react-router-dom";
 
 const routes = generatedRoutes;
 
+// React Router preserves scroll location between various routes.
+// This is undesired behavior. This wrapper listens to page change events
+// and will scroll to the top in new pages.
 function ScrollResetContainer(props) {
   const location = useLocation();
 
