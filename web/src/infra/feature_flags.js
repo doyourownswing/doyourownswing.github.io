@@ -19,7 +19,7 @@ const FeatureFlags = {
   useHeroV2: true,
   showMerchSection: true,
   showBlog: isDevel() || window.location.href.includes("blog"),
-  useUpcomingEventsV2: isDevel() || window.location.href.includes("eventsv2"),
+  useUpcomingEventsV2: true,
 };
 
 export default FeatureFlags;
