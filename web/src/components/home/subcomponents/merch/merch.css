@@ -1,5 +1,5 @@
 /* Time is also based on number of images. Advise 4 * numImages. */
-#carousel-content {
+.carousel-content {
   animation: infinite-carousel 24s linear infinite;
 }
 

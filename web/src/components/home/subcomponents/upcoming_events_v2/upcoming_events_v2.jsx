@@ -18,6 +18,8 @@ import { getNextThursday } from "@/utils/date_utils";
 import messages from "@/components/home/subcomponents/upcoming_events_v2/messages";
 import Callout from "@/components/common/callout";
 
+import { HTML_IDS } from "../constants";
+
 function ScheduleEvent(props) {
   let details = props.details;
 
@@ -146,7 +148,7 @@ function CurrentMonthEvents() {
   let nextThursday = getNextThursday();
 
   return (
-    <Box sx={upcomingEventsV2Styles.monthEventsContainer}>
+    <Box id={HTML_IDS.EVENTS} sx={upcomingEventsV2Styles.monthEventsContainer}>
       <Box>
         <Box>
           {/* TODO support paging through multiple months */}
@@ -177,7 +179,7 @@ function CurrentMonthEvents() {
 
 const UpcomingEventsV2 = forwardRef(function UpcomingEventsV2(_, ref) {
   return (
-    <Box ref={ref} sx={upcomingEventsV2Styles.container}>
+    <Box id={HTML_IDS.SCHEDULE} ref={ref} sx={upcomingEventsV2Styles.container}>
       <Container>
         <Typography variant="h3" sx={upcomingEventsV2Styles.title}>
           {messages.title}
