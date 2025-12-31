@@ -22,11 +22,7 @@ function Review() {
       <Text>{messages.beforeTheEvent.review.our}</Text>
       {!!showCodeOfConduct && [
         <Space />,
-        <Link
-          href="#/code-of-conduct"
-          target="__blank"
-          rel="noopener noreferrer"
-        >
+        <Link href="/code-of-conduct" target="__blank" rel="noopener noreferrer">
           <Text>{messages.beforeTheEvent.review.codeOfConduct}</Text>
         </Link>,
       ]}
@@ -36,7 +32,7 @@ function Review() {
       ]}
       {!!showHealthPolicy && [
         <Space />,
-        <Link href="#/health" target="__blank" rel="noopener noreferrer">
+        <Link href="/health" target="__blank" rel="noopener noreferrer">
           <Text>{messages.beforeTheEvent.review.healthPolicy}</Text>
         </Link>,
       ]}
@@ -81,7 +77,7 @@ function ChooseClass() {
       {FeatureFlags.showScheduleTab && [
         <Text>{messages.beforeTheEvent.class.moreInfo}</Text>,
         // TODO make sure we update this when we update the tab.
-        <Link href="#/schedule" target="__blank" rel="noopener noreferrer">
+        <Link href="/schedule" target="__blank" rel="noopener noreferrer">
           <Text>{messages.beforeTheEvent.class.here}</Text>
         </Link>,
         <Text>{messages.endSentence}</Text>,

@@ -18,7 +18,7 @@ function Event(props) {
     ? winterScheduleStyles.dyosDay
     : winterScheduleStyles.noDyos;
 
-  let link = details.eventLink ?? "#/classes";
+  let link = details.eventLink ?? "/classes";
 
   return (
     <Grid size={1}>

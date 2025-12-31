@@ -13,19 +13,26 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "dayjs": "^1.11.11",
+    "puppeteer": "^24.34.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-qr-code": "^2.0.18",
     "react-router-dom": "^6.23.0",
+    "react-snap": "^1.23.0",
     "react-youtube": "^10.1.0",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "vite",
     "build": "vite build",
+    "postbuild": "react-snap",
     "serve": "vite preview",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
+  },
+  "reactSnap": {
+    "skipThirdPartyRequests": true,
+    "preconnectThirdParty": false
   },
   "eslintConfig": {
     "extends": [
@@ -35,7 +42,7 @@
   },
   "browserslist": {
     "production": [
-      ">0.2%",
+      "> 0.01%",
       "not dead",
       "not op_mini all"
     ],

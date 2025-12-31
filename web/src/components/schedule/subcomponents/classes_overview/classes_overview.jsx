@@ -40,7 +40,7 @@ function ClassesOverview() {
                 <Button
                   variant="contained"
                   sx={classesOverviewStyles.startHereButton}
-                  href="#/start-here"
+                  href="/start-here"
                 >
                   {messages.getStarted}
                 </Button>

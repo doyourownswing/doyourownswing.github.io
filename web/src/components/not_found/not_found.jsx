@@ -16,7 +16,7 @@ function NotFound() {
           />
           <Box sx={notFoundStyles.rightContent}>
             <Typography variant="h3">{messages.lost}</Typography>
-            <Button variant="contained" sx={notFoundStyles.button} href="#/">
+            <Button variant="contained" sx={notFoundStyles.button} href="/">
               {messages.goHome}
             </Button>
           </Box>
