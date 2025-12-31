@@ -15,6 +15,8 @@ import "./what_is_wcs.css";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 
+import { HTML_IDS } from "../constants";
+
 // Saumya put together this doc for us:
 // https://docs.google.com/document/d/1hb9Ho3YnDe_uF4PUB-MfbJBytIC3B6heCXoBB-MPBrU/edit?tab=t.0
 
@@ -277,7 +279,7 @@ const paragraphs = [
 // The What is West Coast Swing section renderer.
 function WhatIsWcs() {
   return (
-    <Box sx={whatIsWcsStyles.whatIsWcsStylesContainer}>
+    <Box id={HTML_IDS.WHAT_IS_WCS} sx={whatIsWcsStyles.whatIsWcsStylesContainer}>
       <Container>
         <Typography variant="h3" sx={whatIsWcsStyles.header}>
           {messages.title}

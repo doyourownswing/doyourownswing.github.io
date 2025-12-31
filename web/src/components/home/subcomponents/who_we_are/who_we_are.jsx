@@ -8,6 +8,7 @@ import {
   Handshake,
 } from "@mui/icons-material";
 import Grid from '@mui/material/Grid';
+import { HTML_IDS } from "../constants";
 
 // Icons are from:
 // https://mui.com/material-ui/material-icons/
@@ -68,7 +69,7 @@ function ValuesRenderer() {
 
 function WhoWeAre() {
   return (
-    <Box sx={whoWeAreStyles.whoWeAreContainer}>
+    <Box id={HTML_IDS.ABOUT} sx={whoWeAreStyles.whoWeAreContainer}>
       <Container>
         <Typography variant="h3" sx={whoWeAreStyles.title}>
           {messages.title}
