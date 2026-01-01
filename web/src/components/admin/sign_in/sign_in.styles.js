@@ -1,8 +1,10 @@
 import { BOX_SHADOW } from "@/common/constants";
+import theme from "@/common/theme";
 
 const baseHeaderText = {
-  fontWeight: "700",
+  fontWeight: "600",
   fontFamily: "Poppins",
+  color: "black",
 };
 
 const signInStyles = {
@@ -18,7 +20,7 @@ const signInStyles = {
     borderRadius: "2rem",
     boxShadow: BOX_SHADOW,
     backgroundColor: "white",
-    padding: "3rem 4rem",
+    padding: { xs: "2rem 1rem", md: "3rem 4rem" },
   },
   title: {
     textAlign: "center",
@@ -26,14 +28,20 @@ const signInStyles = {
   section: {
     paddingTop: "4rem",
   },
+  sectionHeader: {
+    ...baseHeaderText,
+  },
+  inputSection: {
+    paddingBottom: "2rem",
+  },
   inputContainer: {
-    paddingTop: "1.5rem",
+    paddingTop: "1rem",
   },
   input: {
-    width: "20rem",
+    width: "min(80vw, 20rem)",
   },
   additionalNotesInput: {
-    width: "min(90vw, 36rem)",
+    width: "min(80vw, 36rem)",
   },
   paymentContainer: {
     display: "flex",
@@ -41,7 +49,7 @@ const signInStyles = {
     gap: "2rem",
   },
   paymentAmount: {
-    width: { xs: "20rem", md: "unset" },
+    width: { xs: "min(80vw, 20rem)", md: "unset" },
   },
   formHeader: {
     ...baseHeaderText,
@@ -57,6 +65,9 @@ const signInStyles = {
     gap: "1rem",
     alignItems: "center",
   },
+  personInput: {
+    width: "min(80vw, 36rem)",
+  },
   loadingSpinner: {
     padding: "8px",
   },
@@ -70,10 +81,18 @@ const signInStyles = {
     fontWeight: "600",
   },
   eventsCheckboxGroup: {
-    paddingLeft: "2rem",
+    paddingLeft: "1rem",
   },
   dropdownItem: {
     padding: "0.75rem 1rem",
+  },
+  successCallout: {
+    borderInlineStartColor: theme.palette.callout.successAccent,
+    backgroundColor: theme.palette.callout.successBackgroundColor,
+  },
+  errorCallout: {
+    borderInlineStartColor: theme.palette.callout.errorAccent,
+    backgroundColor: theme.palette.callout.errorBackgroundColor,
   },
 };
 
