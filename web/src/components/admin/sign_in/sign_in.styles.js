@@ -20,7 +20,7 @@ const signInStyles = {
     borderRadius: "2rem",
     boxShadow: BOX_SHADOW,
     backgroundColor: "white",
-    padding: "3rem 4rem",
+    padding: { xs: "2rem 1rem", md: "3rem 4rem" },
   },
   title: {
     textAlign: "center",
@@ -38,10 +38,10 @@ const signInStyles = {
     paddingTop: "1rem",
   },
   input: {
-    width: "20rem",
+    width: "min(80vw, 20rem)",
   },
   additionalNotesInput: {
-    width: "min(90vw, 36rem)",
+    width: "min(80vw, 36rem)",
   },
   paymentContainer: {
     display: "flex",
@@ -49,7 +49,7 @@ const signInStyles = {
     gap: "2rem",
   },
   paymentAmount: {
-    width: { xs: "20rem", md: "unset" },
+    width: { xs: "min(80vw, 20rem)", md: "unset" },
   },
   formHeader: {
     ...baseHeaderText,
@@ -66,7 +66,7 @@ const signInStyles = {
     alignItems: "center",
   },
   personInput: {
-    width: "min(90vw, 36rem)",
+    width: "min(80vw, 36rem)",
   },
   loadingSpinner: {
     padding: "8px",
