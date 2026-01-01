@@ -172,6 +172,10 @@ const theme = responsiveFontSizes(
         border: basePalette.gray200,
         accent: basePalette.purple500,
         backgroundColor: basePalette.purple100,
+        successAccent: "#008000",
+        successBackgroundColor: "#EFFFEF",
+        errorAccent: "#FF2C2C",
+        errorBackgroundColor: "#FFBFBF",
       },
       badge: {
         border: "1px solid" + basePalette.purple500,

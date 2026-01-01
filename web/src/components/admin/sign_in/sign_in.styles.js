@@ -30,10 +30,12 @@ const signInStyles = {
   },
   sectionHeader: {
     ...baseHeaderText,
-    // color: theme.palette.text.title,
+  },
+  inputSection: {
+    paddingBottom: "2rem",
   },
   inputContainer: {
-    paddingTop: "1.5rem",
+    paddingTop: "1rem",
   },
   input: {
     width: "20rem",
@@ -83,6 +85,14 @@ const signInStyles = {
   },
   dropdownItem: {
     padding: "0.75rem 1rem",
+  },
+  successCallout: {
+    borderInlineStartColor: theme.palette.callout.successAccent,
+    backgroundColor: theme.palette.callout.successBackgroundColor,
+  },
+  errorCallout: {
+    borderInlineStartColor: theme.palette.callout.errorAccent,
+    backgroundColor: theme.palette.callout.errorBackgroundColor,
   },
 };
 
