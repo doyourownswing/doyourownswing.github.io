@@ -9,6 +9,7 @@ const volunteerStyles = {
   title: {
     textAlign: "center",
     paddingBottom: "4rem",
+    fontWeight: "400",
   },
   content: {
     display: "flex",
@@ -26,6 +27,7 @@ const volunteerStyles = {
   },
   roleTitle: {
     paddingBottom: "1.5rem",
+    fontWeight: "400",
   },
   discountSection: {
     paddingTop: "1.5rem",

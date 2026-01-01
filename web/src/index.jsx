@@ -1,6 +1,6 @@
 import React, { useLayoutEffect } from "react";
-import ReactDOM from "react-dom/client";
-import { HashRouter, Route, Routes, useLocation } from "react-router-dom";
+import { createRoot, hydrateRoot } from "react-dom/client";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Footer from "@/components/footer/footer";
 import NavBar from "@/components/nav_bar/nav_bar";
 import { ThemeProvider } from "@mui/material/styles";
@@ -8,12 +8,13 @@ import theme from "@/common/theme";
 import "./index.css";
 import { Box } from "@mui/material";
 import { generatedRoutes, Overrides } from "./page_registry";
+import { useLocation } from "react-router-dom";
 
 const routes = generatedRoutes;
 
-// HashRouter preserves scroll location between pages which is wonky as heck.
-//
-// Intercept page change and reset scroll between pages.
+// React Router preserves scroll location between various routes.
+// This is undesired behavior. This wrapper listens to page change events
+// and will scroll to the top in new pages.
 function ScrollResetContainer(props) {
   const location = useLocation();
 
@@ -26,69 +27,62 @@ function ScrollResetContainer(props) {
 }
 
 function NavBarAndAnnouncementsRenderer() {
-  const [, updateState] = React.useState();
-  const forceUpdate = React.useCallback(() => updateState({}), []);
-
-  React.useEffect(() => {
-    const onHashChange = () => forceUpdate();
-    window.addEventListener("hashchange", onHashChange);
-
-    return () => {
-      window.removeEventListener("hashchange", onHashChange);
-    };
-  });
-
   let currentRoute = routes.find((r) => r.page.isCurrentPage());
   let showNavBar =
     !currentRoute || Overrides.shouldShowNavBar(currentRoute.overrides);
 
   return (
-    <Box>
+    <>
       {/* Render an invisible placeholder nav bar underneath the floating fixed real 
       nav bar to avoiding overlapping real content */}
       {showNavBar && <NavBar placeholder />}
       {showNavBar && <NavBar />}
-    </Box>
+    </>
   );
 }
 
 function FooterRenderer() {
   const [, updateState] = React.useState();
   const forceUpdate = React.useCallback(() => updateState({}), []);
+  const location = useLocation();
 
   React.useEffect(() => {
-    const onHashChange = () => forceUpdate();
-    window.addEventListener("hashchange", onHashChange);
-
-    return () => {
-      window.removeEventListener("hashchange", onHashChange);
-    };
-  });
+    forceUpdate();
+  }, [forceUpdate, location]);
 
   let currentRoute = routes.find((r) => r.page.isCurrentPage());
   let showFooter =
     !currentRoute || Overrides.shouldShowFooter(currentRoute.overrides);
 
-  return <Box>{showFooter && <Footer />}</Box>;
+  return <>{showFooter && <Footer />}</>;
 }
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
-  <React.StrictMode>
-    <ThemeProvider theme={theme}>
-      <NavBarAndAnnouncementsRenderer />
-      <Box>
-        <HashRouter>
-          <ScrollResetContainer>
-            <Routes>
-              {routes.map((r, i) => (
-                <Route key={i} path={r.path} element={r.element} />
-              ))}
-            </Routes>
-          </ScrollResetContainer>
-        </HashRouter>
-      </Box>
-      <FooterRenderer />
-    </ThemeProvider>
-  </React.StrictMode>
-);
+function App() {
+  return (
+    <React.StrictMode>
+      <ThemeProvider theme={theme}>
+        <Box>
+          <BrowserRouter>
+            <NavBarAndAnnouncementsRenderer />
+            <ScrollResetContainer>
+              <Routes>
+                {routes.map((r, i) => (
+                  <Route key={i} path={r.path} element={r.element} />
+                ))}
+              </Routes>
+            </ScrollResetContainer>
+            <FooterRenderer />
+          </BrowserRouter>
+        </Box>
+      </ThemeProvider>
+    </React.StrictMode>
+  );
+}
+
+const rootElement = document.getElementById("root");
+if (rootElement.hasChildNodes()) {
+  hydrateRoot(rootElement, <App />);
+} else {
+  const root = createRoot(document.getElementById("root"));
+  root.render(<App />);
+}

@@ -5,6 +5,7 @@ import getCurrentSong from "@/data/songs_of_the_week";
 import messages from "./messages";
 import Quote from "./quote";
 import DyosLink from "@/components/common/link";
+import { HTML_IDS } from "../constants";
 
 const dyosPlaylistLink =
   "https://open.spotify.com/playlist/4pI5RuxmGMy0uyANUqGAyE?si=411919e6ece04cc7";
@@ -58,7 +59,7 @@ function SongOfTheWeek() {
   let hasQuote = !!songInfo.quoteInfo;
 
   return (
-    <Box sx={songOfTheWeekStyles.songOfTheWeekSection}>
+    <Box id={HTML_IDS.SONG} sx={songOfTheWeekStyles.songOfTheWeekSection}>
       <Container>
         <Typography variant="h3" sx={songOfTheWeekStyles.title}>
           {messages.title}

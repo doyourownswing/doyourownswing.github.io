@@ -57,6 +57,7 @@ const classesStyles = {
     transform: "rotate(15deg)",
     fontFamily: "Poppins",
     userSelect: "none",
+    pointerEvents: "none",
   },
   card: {
     height: "100%",

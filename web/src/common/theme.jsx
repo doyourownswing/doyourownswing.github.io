@@ -1,4 +1,6 @@
 import { alpha, createTheme, responsiveFontSizes } from "@mui/material/styles";
+import { Link as RouterLink } from "react-router-dom";
+import React from "react";
 
 const basePalette = {
   // purples
@@ -38,10 +40,29 @@ const basePalette = {
   blue025: "#F1F8FF",
 };
 
+const LinkBehavior = React.forwardRef((props, ref) => {
+  const { href, ...other } = props;
+  // Map href (Material UI) -> to (react-router)
+  return <RouterLink ref={ref} to={href} {...other} />;
+});
+
 // Responsive Font Sizes only affects header styles, h1-h6, for sm, md, and lg breakpoints
 // body1, body2, subtitle1, and subtitle2 require custom sizing
 const theme = responsiveFontSizes(
   createTheme({
+    // Make Material UI Links behave like react-router links
+    components: {
+      MuiLink: {
+        defaultProps: {
+          component: LinkBehavior,
+        },
+      },
+      MuiButtonBase: {
+        defaultProps: {
+          LinkComponent: LinkBehavior,
+        },
+      },
+    },
     palette: {
       /// Theme for a light button used on dark backgrounds
       buttonLight: {
@@ -99,6 +120,7 @@ const theme = responsiveFontSizes(
         emphasisGlow: basePalette.purple300,
         leftAccentBlue: basePalette.blue400,
         leftAccentPurple: basePalette.purple500,
+        leftAccentLightPurple: basePalette.purple300,
       },
       card: {
         shadow: basePalette.gray400,
@@ -174,9 +196,9 @@ const theme = responsiveFontSizes(
       ].join(","),
       h1: { fontFamily: "Poppins" },
       h2: { fontFamily: "Poppins" },
-      h3: { fontFamily: "Poppins" },
-      h4: { fontFamily: "Poppins" },
-      h5: { fontFamily: "Poppins" },
+      h3: { fontFamily: "Poppins", fontWeight: "600" },
+      h4: { fontFamily: "Poppins", fontWeight: "600" },
+      h5: { fontFamily: "Poppins", fontWeight: "600" },
       h6: { fontFamily: "Poppins" },
       body1: {
         lineHeight: "1.5",

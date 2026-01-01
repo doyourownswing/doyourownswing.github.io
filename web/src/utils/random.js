@@ -20,8 +20,6 @@ function getRandomSigmoidInt(min, max, l) {
   let x = Math.random();
   let sigmoidRandom = 1 / (1 + Math.exp(-1 * scale(x, -l, l)));
   let returnVal = scale(sigmoidRandom, min, max);
-  console.log(`debug: ${x} -> ${sigmoidRandom} -> ${returnVal}`);
-
   return returnVal;
 }
 
