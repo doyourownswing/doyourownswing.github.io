@@ -53,7 +53,6 @@ function PersonInput(props) {
   let hasError = dataState === DATA_STATE.ERROR;
   let canRefresh = isLoaded || hasError;
 
-  // TODO add support for additional people
   // TODO upon selecting sponsor / volunteer, autopopulate fields
   // TODO include data like whether someone is already checked in today
   // TODO add a section below the input showing person details, if any

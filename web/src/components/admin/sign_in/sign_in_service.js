@@ -1,5 +1,4 @@
 const URL =
-  // "https://script.google.com/macros/s/AKfycbxpbsemRgN3vjFOkuR1UoUew3CNCWTe1oy_Uimutyig3Sj5Avtg4cg8gNGHmvaQcYrl/exec";
   "https://script.google.com/macros/s/AKfycbyIJqGf3kmR0TvjWh1U-O8HA0rh_e5goenn6u-flcb8io6jqBmn25mgriD30IsJZ8-N/exec";
 
 // Note: Internal server errors are often disguised as CORS issues.
