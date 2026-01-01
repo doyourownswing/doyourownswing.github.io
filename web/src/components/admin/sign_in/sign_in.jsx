@@ -16,7 +16,6 @@ import {
   FormControlLabel,
   FormGroup,
   FormLabel,
-  IconButton,
   InputAdornment,
   InputLabel,
   MenuItem,
@@ -24,11 +23,10 @@ import {
   Select,
   Stack,
   TextField,
-  Tooltip,
   Typography,
 } from "@mui/material";
 import DyosLink from "@/components/common/link";
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import signInStyles from "./sign_in.styles";
 import SignInService from "./sign_in_service";
 import { Refresh } from "@mui/icons-material";
@@ -54,11 +52,10 @@ const PAYMENT_OPTIONS = {
 };
 
 const EVENTS = {
-  L2: { id: "L2", displayName: "7:30pm - Level 2: Beyond the Basics" },
-  L3: { id: "L3", displayName: "8:05pm - Level 3: Skill & Drills" },
-  L1: { id: "L1", displayName: "8:30pm - Level 1: Welcome to WCS" },
-  L4: { id: "L4", displayName: "8:40pm - Level 4: Artistic Application" },
-  SOCIAL: { id: "Social", displayName: "9:15pm - Social Dancing" },
+  L1: { id: "L1", displayName: "Level 1 (8:30pm)" },
+  L2: { id: "L2", displayName: "Level 2 (7:30pm)" },
+  L3: { id: "L3", displayName: "Level 3 (8:05pm)" },
+  L4: { id: "L4", displayName: "Level 4 (8:40pm)" },
 };
 
 const DATA_STATE = {
@@ -253,7 +250,6 @@ function WhichEvents(props) {
     [EVENTS.L2.id]: false,
     [EVENTS.L3.id]: false,
     [EVENTS.L4.id]: false,
-    [EVENTS.SOCIAL.id]: false,
   });
 
   function notifyParent(newVal) {
@@ -274,49 +270,12 @@ function WhichEvents(props) {
     notifyParent(newVal);
   };
 
-  function areAllSelected() {
-    return Object.values(events).every((e) => e);
-  }
-
-  function areAllDeselected() {
-    return Object.values(events).every((e) => !e);
-  }
-
-  function areSomeSelected() {
-    return !areAllSelected() && !areAllDeselected();
-  }
-
-  const handleSelectAllChange = () => {
-    let checked = !areAllSelected();
-    let newVal = {};
-
-    for (const key in events) {
-      newVal[key] = checked;
-    }
-
-    setEvents(newVal);
-    notifyParent(newVal);
-  };
-
-  let allSelected = areAllSelected();
-  let someSelected = areSomeSelected();
-
   return (
     <Box sx={signInStyles.inputContainer}>
       <FormControl component="fieldset" variant="standard" required>
         <FormLabel component="legend" sx={signInStyles.formHeader}>
-          Which events will they attend
+          Which classes do they plan to attend, if any?
         </FormLabel>
-        <FormControlLabel
-          label="Select all"
-          control={
-            <Checkbox
-              checked={allSelected}
-              indeterminate={someSelected}
-              onChange={handleSelectAllChange}
-            />
-          }
-        />
         <FormGroup sx={signInStyles.eventsCheckboxGroup}>
           {Object.values(EVENTS).map((v) => {
             return (
@@ -374,7 +333,6 @@ function SignIn() {
   const onSubmit = async () => {
     setSubmitState(DATA_STATE.IN_PROGRESS);
 
-    console.log(eventsAttending);
     try {
       let results = await SignInService.checkIn({
         // Note; it's important to keep these key names aligned with the backend
@@ -457,10 +415,6 @@ function SignIn() {
     if (!isPaymentAmountValid()) {
       unfilledRequiredFields.push("Payment amount");
     }
-  }
-
-  if (eventsAttending.length === 0) {
-    unfilledRequiredFields.push("Events attending");
   }
 
   let formValid = unfilledRequiredFields.length === 0;

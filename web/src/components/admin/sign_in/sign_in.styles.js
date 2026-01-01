@@ -79,7 +79,7 @@ const signInStyles = {
     fontWeight: "600",
   },
   eventsCheckboxGroup: {
-    paddingLeft: "2rem",
+    paddingLeft: "1rem",
   },
   dropdownItem: {
     padding: "0.75rem 1rem",
