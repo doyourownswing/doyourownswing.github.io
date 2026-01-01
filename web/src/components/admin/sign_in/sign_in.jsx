@@ -10,6 +10,7 @@ import {
   EXEMPTION,
   EVENTS,
   DATA_STATE,
+  BASE_EVENTS_VALUE,
 } from "@/components/admin/sign_in/constants";
 import PersonInput from "@/components/admin/sign_in/subcomponents/person_input";
 import ExemptionInput from "@/components/admin/sign_in/subcomponents/exemption_input";
@@ -27,7 +28,7 @@ function SignIn() {
   const [paymentMethod, setPaymentMethod] = useState("");
   const [paymentAmount, setPaymentAmount] = useState("");
   const [additionalNotes, setAdditionalNotes] = useState("");
-  const [eventsAttending, setEventsAttending] = useState({});
+  const [eventsAttending, setEventsAttending] = useState(BASE_EVENTS_VALUE);
 
   const [submitState, setSubmitState] = useState(DATA_STATE.NOT_STARTED);
 
@@ -58,7 +59,7 @@ function SignIn() {
       setPaymentMethod("");
       setPaymentAmount("");
       setAdditionalNotes("");
-      setEventsAttending("");
+      setEventsAttending(BASE_EVENTS_VALUE);
     } catch (e) {
       console.log(e);
       setSubmitState(DATA_STATE.ERROR);
@@ -161,7 +162,10 @@ function SignIn() {
                   onSetAdditionalNotes={onSetAdditionalNotes}
                 />
               </Box>
-              <WhichEvents onSetEventsAttendingChange={setEventsAttending} />
+              <WhichEvents
+                value={eventsAttending}
+                onSetEventsAttendingChange={setEventsAttending}
+              />
             </Stack>
             <Box sx={signInStyles.inputContainer}>
               {!formValid && (

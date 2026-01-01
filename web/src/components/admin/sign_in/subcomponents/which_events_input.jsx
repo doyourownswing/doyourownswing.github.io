@@ -6,28 +6,19 @@ import {
   FormGroup,
   FormLabel,
 } from "@mui/material";
-import { useState } from "react";
 import signInStyles from "../sign_in.styles";
 import { EVENTS } from "@/components/admin/sign_in/constants";
 import messages from "@/components/admin/sign_in/messages";
 
 function WhichEvents(props) {
-  const [events, setEvents] = useState({
-    [EVENTS.L1.id]: false,
-    [EVENTS.L2.id]: false,
-    [EVENTS.L3.id]: false,
-    [EVENTS.L4.id]: false,
-    [EVENTS.SOCIAL_ONLY.id]: false,
-  });
-
   // If social only is checked, uncheck all other options.
   // If any other option is check, uncheck social only
   const handleChange = (event) => {
     let didClickSocialOnly = event.target.name === EVENTS.SOCIAL_ONLY.id;
 
     let newVal = {};
-    for (const key in events) {
-      newVal[key] = didClickSocialOnly ? false : events[key];
+    for (const key in EVENTS) {
+      newVal[key] = didClickSocialOnly ? false : props.value[key];
     }
     newVal[event.target.name] = event.target.checked;
 
@@ -35,7 +26,6 @@ function WhichEvents(props) {
       newVal[EVENTS.SOCIAL_ONLY.id] = false;
     }
 
-    setEvents(newVal);
     props.onSetEventsAttendingChange(newVal);
   };
 
@@ -51,7 +41,7 @@ function WhichEvents(props) {
               <FormControlLabel
                 control={
                   <Checkbox
-                    checked={events[v.id]}
+                    checked={props.value[v.id]}
                     onChange={handleChange}
                     name={v.id}
                   />

@@ -15,7 +15,7 @@ function NotesInput(props) {
           multiline
           sx={signInStyles.additionalNotesInput}
           rows={4}
-          value={props.additionalNotes}
+          value={props.value}
           onChange={props.onSetAdditionalNotes}
         />
       </FormControl>

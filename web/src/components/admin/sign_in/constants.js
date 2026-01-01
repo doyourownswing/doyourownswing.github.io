@@ -24,6 +24,14 @@ export const EVENTS = {
   SOCIAL_ONLY: { id: "SOCIAL_ONLY", displayName: "Social only" },
 };
 
+export const BASE_EVENTS_VALUE = {
+  [EVENTS.L1.id]: false,
+  [EVENTS.L2.id]: false,
+  [EVENTS.L3.id]: false,
+  [EVENTS.L4.id]: false,
+  [EVENTS.SOCIAL_ONLY.id]: false,
+};
+
 export const DATA_STATE = {
   NOT_STARTED: "NOT_STARTED",
   IN_PROGRESS: "IN_PROGRESS",
