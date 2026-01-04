@@ -5,7 +5,7 @@ import { createDate, getNextThursday } from "@/utils/date_utils";
 const L1_TOPICS = {
   week1: "Left side pass, underarm pass, sugar push",
   week2: "Whip",
-  week3: "Underarm pass, sugar push, and sugar tuck",
+  week3: "Underarm pass, sugar push, sugar tuck",
   week4: "Left side pass, sugar push, spinning side pass",
 };
 
@@ -38,7 +38,7 @@ const events = [
     facebookLink: "https://www.facebook.com/events/1227344559457439/",
   },
   {
-    date: createDate("01/28/2026"),
+    date: createDate("01/29/2026"),
     title: "Footwork Variations week 4",
     subtitle: "Exploring classic blues patterns!",
     advanceTopic: "",
