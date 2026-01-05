@@ -1,24 +1,19 @@
-import { Box, Container, Typography } from "@mui/material";
-import messages from "./messages";
-import startHereStyles from "./start_here.styles";
-import BeforeTheEvent from "./subcomponents/before_the_event";
-import WhenYouArrive from "./subcomponents/when_you_arrive";
+import { Box, Container } from "@mui/material";
+import { startHereContainerStyles } from "./start_here.styles";
 import Faqs from "./subcomponents/faqs";
+import { MuiMarkdown } from "mui-markdown";
+import title from "./copy/title_section.md?raw";
+import beforeTheEvent from "./copy/before_the_event.md?raw";
+import whenYouArrive from "./copy/when_you_arrive.md?raw";
 
 function StartHere() {
   return (
     <Box>
-      <Box sx={startHereStyles.titleSection}>
-        <Container>
-          <Typography variant="h4">{messages.firstTimeHere}</Typography>
-          <Typography variant="h3" sx={startHereStyles.welcome}>
-            {messages.welcomeToDyos}
-          </Typography>
-          <Typography variant="subtitle1">{messages.subtitle}</Typography>
-        </Container>
-      </Box>
-      <BeforeTheEvent />
-      <WhenYouArrive />
+      <Container sx={{ ...startHereContainerStyles }}>
+        <MuiMarkdown>{title}</MuiMarkdown>
+        <MuiMarkdown>{beforeTheEvent}</MuiMarkdown>
+        <MuiMarkdown>{whenYouArrive}</MuiMarkdown>
+      </Container>
       <Faqs />
     </Box>
   );

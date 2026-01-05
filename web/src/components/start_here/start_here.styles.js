@@ -1,6 +1,23 @@
 import { SECTION_PADDING } from "@/common/constants";
 import theme from "@/common/theme";
 
+export const startHereContainerStyles = {
+  marginTop: "2rem",
+  div: {
+    marginBottom: "2rem",
+  },
+  h3: {
+    color: theme.palette.text.title,
+  },
+  h6: {
+    color: theme.palette.text.headerPurple,
+    fontWeight: "600",
+  },
+  li: {
+    padding: "4px 8px",
+  },
+};
+
 const startHereStyles = {
   welcome: {
     color: theme.palette.text.title,
