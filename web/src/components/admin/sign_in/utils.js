@@ -35,6 +35,14 @@ function validateMoneyValue(value) {
   }
 }
 
+function isPaymentRequired(exemption, buyingMask) {
+  return (
+    exemption === EXEMPTION.NONE ||
+    exemption === EXEMPTION.VOLUNTEER_15 ||
+    buyingMask
+  );
+}
+
 function validateForm(
   people,
   exemption,
@@ -49,17 +57,15 @@ function validateForm(
     unfilledRequiredFields.push("Dancer(s)");
   }
 
-  if (
-    exemption === EXEMPTION.NONE ||
-    exemption === EXEMPTION.VOLUNTEER_15 ||
-    buyingMask
-  ) {
+  if (isPaymentRequired(exemption, buyingMask)) {
     if (!paymentMethod) {
       unfilledRequiredFields.push("Payment method");
     }
     if (!validateMoneyValue(paymentAmount)) {
       unfilledRequiredFields.push("Payment amount");
     }
+  } else if (exemption === EXEMPTION.OTHER) {
+    unfilledRequiredFields.push("Additional notes");
   }
 
   if (!Object.values(eventsAttending).some((e) => e)) {
@@ -69,4 +75,13 @@ function validateForm(
   return unfilledRequiredFields;
 }
 
-export { sortPeopleAlphabetically, validateMoneyValue, validateForm };
+// if there are mixed sponsor / not sponsor
+// exemption is "other"
+//
+
+export {
+  sortPeopleAlphabetically,
+  validateMoneyValue,
+  isPaymentRequired,
+  validateForm,
+};

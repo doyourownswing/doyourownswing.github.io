@@ -10,12 +10,15 @@ import {
 import signInStyles from "../sign_in.styles";
 import { PAYMENT_OPTIONS } from "@/components/admin/sign_in/constants";
 import messages from "@/components/admin/sign_in/messages";
+import { validateMoneyValue } from "@/components/admin/sign_in/utils";
 
 function PaymentInput(props) {
+  let required = props.required;
+
   return (
     <Box sx={signInStyles.inputContainer}>
       <Box sx={signInStyles.paymentContainer}>
-        <FormControl required>
+        <FormControl required={required}>
           <InputLabel id="payment-method-label">
             {messages.paymentMethodLabel}
           </InputLabel>
@@ -35,8 +38,7 @@ function PaymentInput(props) {
           </Select>
         </FormControl>
 
-        {/* TODO add validation */}
-        <FormControl required>
+        <FormControl required={required}>
           <InputLabel htmlFor="payment-amount">
             {messages.paymentAmountLabel}
           </InputLabel>
@@ -47,6 +49,10 @@ function PaymentInput(props) {
             value={props.paymentAmountValue}
             onChange={props.onPaymentAmountChange}
             sx={signInStyles.paymentAmount}
+            error={
+              props.paymentAmountValue !== "" &&
+              !validateMoneyValue(props.paymentAmountValue)
+            }
           />
         </FormControl>
       </Box>

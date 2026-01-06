@@ -17,7 +17,10 @@ class SignInService {
   static async checkIn(data) {
     let response = await fetch(URL, {
       method: "POST",
-      body: JSON.stringify(data),
+      body: JSON.stringify({
+        ...data,
+        useProd: process.env.NODE_ENV !== "development",
+      }),
     });
 
     let jsonResponse = await response.json();
