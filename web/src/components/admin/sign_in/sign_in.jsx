@@ -3,7 +3,7 @@ import DyosLink from "@/components/common/link";
 import { useState } from "react";
 import signInStyles from "./sign_in.styles";
 import SignInService from "./sign_in_service";
-import { validateForm } from "./utils";
+import { isPaymentRequired, validateForm } from "./utils";
 import { REGISTRATION_FORM_LINK } from "@/common/constants";
 import Callout from "@/components/common/callout";
 import {
@@ -32,6 +32,16 @@ function SignIn() {
 
   const [submitState, setSubmitState] = useState(DATA_STATE.NOT_STARTED);
 
+  const reset = function () {
+    setPeople([]);
+    setExemption(EXEMPTION.NONE);
+    setBuyingMask(false);
+    setPaymentMethod("");
+    setPaymentAmount("");
+    setAdditionalNotes("");
+    setEventsAttending(BASE_EVENTS_VALUE);
+  };
+
   const onSubmit = async () => {
     setSubmitState(DATA_STATE.IN_PROGRESS);
 
@@ -52,14 +62,7 @@ function SignIn() {
       });
 
       setSubmitState(DATA_STATE.COMPLETE);
-
-      setPeople([]);
-      setExemption(EXEMPTION.NONE);
-      setBuyingMask(false);
-      setPaymentMethod("");
-      setPaymentAmount("");
-      setAdditionalNotes("");
-      setEventsAttending(BASE_EVENTS_VALUE);
+      reset();
     } catch (e) {
       console.log(e);
       setSubmitState(DATA_STATE.ERROR);
@@ -69,6 +72,19 @@ function SignIn() {
   let submitInProgress = submitState === DATA_STATE.IN_PROGRESS;
   let submittedSuccessfully = submitState === DATA_STATE.COMPLETE;
   let submitError = submitState === DATA_STATE.ERROR;
+
+  const onSelectPersons = (persons) => {
+    setPeople(persons);
+
+    // Auto-select sponsor if the only person selected is a sponsor
+    if (
+      persons.length === 1 &&
+      persons[0].sponsor &&
+      exemption === EXEMPTION.NONE
+    ) {
+      setExemption(EXEMPTION.SPONSOR);
+    }
+  };
 
   const onSelectExemption = (event) => {
     setExemption(event.target.value);
@@ -130,7 +146,7 @@ function SignIn() {
             <Box sx={signInStyles.inputSection}>
               <PersonInput
                 selectedPeople={people}
-                onPeopleSelected={setPeople}
+                onPeopleSelected={onSelectPersons}
               />
             </Box>
             <Stack
@@ -150,6 +166,7 @@ function SignIn() {
                   onSelectPaymentMethod={onSelectPaymentMethod}
                   paymentAmountValue={paymentAmount}
                   onPaymentAmountChange={onSetPaymentAmount}
+                  required={isPaymentRequired(exemption, buyingMask)}
                 />
 
                 <MaskInput
@@ -160,6 +177,7 @@ function SignIn() {
                 <NotesInput
                   value={additionalNotes}
                   onSetAdditionalNotes={onSetAdditionalNotes}
+                  required={exemption === EXEMPTION.OTHER}
                 />
               </Box>
               <WhichEvents
@@ -179,15 +197,25 @@ function SignIn() {
                   </Typography>
                 </Box>
               )}
-              <Button
-                variant="contained"
-                sx={signInStyles.submitButton}
-                onClick={onSubmit}
-                disabled={!formValid}
-                loading={submitInProgress}
-              >
-                {messages.submit}
-              </Button>
+              <Box sx={signInStyles.buttonsContainer}>
+                <Button
+                  variant="contained"
+                  sx={signInStyles.submitButton}
+                  onClick={onSubmit}
+                  disabled={!formValid}
+                  loading={submitInProgress}
+                >
+                  {messages.submit}
+                </Button>
+                <Button
+                  variant="outlined"
+                  sx={signInStyles.submitButton}
+                  onClick={reset}
+                  disabled={submitInProgress}
+                >
+                  {messages.clear}
+                </Button>
+              </Box>
             </Box>
             {submittedSuccessfully && (
               <Box sx={signInStyles.inputContainer}>

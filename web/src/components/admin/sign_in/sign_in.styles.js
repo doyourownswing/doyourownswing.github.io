@@ -74,6 +74,11 @@ const signInStyles = {
   formLeft: {
     width: "min(90vw, 44rem)",
   },
+  buttonsContainer: {
+    display: "flex",
+    gap: "1rem",
+    flexDirection: { xs: "column", sm: "row" },
+  },
   submitButton: {
     width: "min(90vw, 12rem)",
     textTransform: "none",

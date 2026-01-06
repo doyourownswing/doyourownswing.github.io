@@ -3,9 +3,11 @@ import signInStyles from "../sign_in.styles";
 import messages from "@/components/admin/sign_in/messages";
 
 function NotesInput(props) {
+  let required = props.required;
+
   return (
     <Box sx={signInStyles.inputContainer}>
-      <FormControl>
+      <FormControl required={required}>
         <InputLabel htmlFor="additional-notes">
           {messages.additionalNotesLabel}
         </InputLabel>

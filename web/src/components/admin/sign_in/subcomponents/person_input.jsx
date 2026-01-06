@@ -30,7 +30,7 @@ function PersonInput(props) {
 
         let peopleOptions = sortPeopleAlphabetically(people).map((p) => {
           let displayText = p.sponsor ? `${p.name} (sponsor)` : p.name;
-          return { label: displayText, name: p.name };
+          return { label: displayText, ...p };
         });
 
         setData(peopleOptions);

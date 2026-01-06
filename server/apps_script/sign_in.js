@@ -32,10 +32,13 @@ function getSponsors() {
   let sponsorNames = [];
 
   for (var row of values) {
-    let sponsorMonth = new Date(row[0]).getMonth();
-    let currentMonth = new Date().getMonth();
+    let sponsorMonth = new Date(row[0]);
+    let currentMonth = new Date();
 
-    if (sponsorMonth === currentMonth) {
+    if (
+      sponsorMonth.getMonth() === currentMonth.getMonth() &&
+      sponsorMonth.getFullYear() === currentMonth.getFullYear()
+    ) {
       sponsorNames.push(row[1]);
     }
   }
@@ -80,13 +83,24 @@ function doGet(e) {
   );
 }
 
+const TEST_SIGN_IN_SHEET =
+  "https://docs.google.com/spreadsheets/d/1ywyE0Bo1Jth2kKe05pMJgPEZFEf8wASZ5CGMR9MOldQ/edit";
+const TEST_SIGN_IN_TAB_ID = "609287011";
+
+const PROD_SIGN_IN_SHEET =
+  "https://docs.google.com/spreadsheets/d/1dJ_m42m3F3VjxRcw9cqQScBVN2IfwAfAc-Q3r2FjzhU/";
+const PROD_SIGN_IN_TAB_ID = "0";
+
 // TODO: Ensure no duplicates
 function doPost(e) {
-  const sheet = SpreadsheetApp.openByUrl(
-    "https://docs.google.com/spreadsheets/d/1ywyE0Bo1Jth2kKe05pMJgPEZFEf8wASZ5CGMR9MOldQ/edit"
-  );
-  let tab = sheet.getSheetById("609287011");
   let data = JSON.parse(e.postData.contents);
+
+  const sheet = SpreadsheetApp.openByUrl(
+    data.useProd ? PROD_SIGN_IN_SHEET : TEST_SIGN_IN_SHEET
+  );
+  let tab = sheet.getSheetById(
+    data.useProd ? PROD_SIGN_IN_TAB_ID : TEST_SIGN_IN_TAB_ID
+  );
 
   // Do something more sophisticated here like detect sponsors and figure out how much each person paid
   let averagePaid = (parseInt(data.amountPaid) || 0) / data.persons.length;
