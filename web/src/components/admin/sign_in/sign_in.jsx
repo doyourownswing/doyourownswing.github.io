@@ -76,6 +76,7 @@ function SignIn() {
   const onSelectPersons = (persons) => {
     setPeople(persons);
 
+    // Auto-select sponsor if the only person selected is a sponsor
     if (
       persons.length === 1 &&
       persons[0].sponsor &&

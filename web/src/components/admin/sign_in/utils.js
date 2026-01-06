@@ -75,9 +75,11 @@ function validateForm(
   return unfilledRequiredFields;
 }
 
-// if there are mixed sponsor / not sponsor
-// exemption is "other"
+// TODO: add a util function to add a callout for certain scenarios that might need
+// more prompting for the sign in volunteer:
 //
+// - if there are mixed sponsor / not sponsor
+// - exemption is "other"
 
 export {
   sortPeopleAlphabetically,
