@@ -26,22 +26,14 @@ import { HTML_IDS } from "../constants";
 
 /// A renderer for each paragraph that has a bolded "hook", and the
 /// rest has the regular body styling
-function BasicParagraphFormatter(props) {
+export function BasicParagraphFormatter({ content, hookStyle, contentStyle }) {
   return (
     <Box>
-      <Typography
-        display="inline"
-        variant="body1"
-        sx={whatIsWcsStyles.pointHook}
-      >
-        {props.content.hook}
+      <Typography display="inline" variant="body1" sx={hookStyle}>
+        {content.hook}
       </Typography>
-      <Typography
-        display="inline"
-        variant="body1"
-        sx={whatIsWcsStyles.pointContent}
-      >
-        {props.content.content}
+      <Typography display="inline" variant="body1" sx={contentStyle}>
+        {content.content}
       </Typography>
     </Box>
   );
@@ -279,7 +271,10 @@ const paragraphs = [
 // The What is West Coast Swing section renderer.
 function WhatIsWcs() {
   return (
-    <Box id={HTML_IDS.WHAT_IS_WCS} sx={whatIsWcsStyles.whatIsWcsStylesContainer}>
+    <Box
+      id={HTML_IDS.WHAT_IS_WCS}
+      sx={whatIsWcsStyles.whatIsWcsStylesContainer}
+    >
       <Container>
         <Typography variant="h3" sx={whatIsWcsStyles.header}>
           {messages.title}
@@ -291,7 +286,11 @@ function WhatIsWcs() {
               spacing={{ xs: 1, md: 4 }}
             >
               {paragraphs.map((p) => (
-                <BasicParagraphFormatter content={p} />
+                <BasicParagraphFormatter
+                  content={p}
+                  hookStyle={whatIsWcsStyles.pointHook}
+                  contentStyle={whatIsWcsStyles.pointContent}
+                />
               ))}
             </Stack>
             <VideoSection />

@@ -1,5 +1,6 @@
 import { SECTION_PADDING } from "@/common/constants";
 import theme from "@/common/theme";
+import whatIsWcsStyles from "../what_is_wcs/what_is_wcs.styles";
 
 const whoWeAreStyles = {
   whoWeAreContainer: {
@@ -15,8 +16,19 @@ const whoWeAreStyles = {
     color: theme.palette.text.bodyLight,
     fontSize: "18px",
   },
+  pointsSection: {
+    paddingTop: "24px",
+  },
+  pointHook: {
+    ...whatIsWcsStyles.pointHook,
+    color: theme.palette.text.titleLight,
+  },
+  pointContent: {
+    ...whatIsWcsStyles.pointContent,
+    color: theme.palette.text.bodyLight,
+  },
   valuesSection: {
-    paddingTop: "64px",
+    paddingTop: "32px",
   },
   valueRenderer: {
     display: "inline-flex",
@@ -31,7 +43,6 @@ const whoWeAreStyles = {
   },
   valuesContainer: {
     paddingTop: "24px",
-    paddingBottom: "24px",
   },
   valueIcon: {
     color: theme.palette.icon.lightPurple,
