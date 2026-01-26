@@ -20,6 +20,7 @@ const Blog = new Page("/blog", "Blog", () =>
 // todo - update this link once we have a full admin portal
 const SignIn = new Page("/admin");
 const Ipad = new Page("/ipad");
+const Analytics = new Page("/stats");
 
 // Catch-all page for any 404 not found issues.
 const NotFound = new Page("/*");
@@ -35,5 +36,6 @@ export {
   Blog,
   SignIn,
   Ipad,
+  Analytics,
   NotFound,
 };
