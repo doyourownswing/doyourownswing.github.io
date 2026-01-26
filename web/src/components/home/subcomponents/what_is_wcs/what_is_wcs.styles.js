@@ -35,6 +35,7 @@ const whatIsWcsStyles = {
   },
   pointContent: {
     fontSize: "1rem",
+    textWrap: "pretty",
   },
   videoContainer: {
     display: {
