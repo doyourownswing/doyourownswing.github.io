@@ -11,6 +11,7 @@ import NotFound from "@/components/not_found/not_found";
 import SignIn from "@/components/admin/sign_in/sign_in";
 import Ipad from "@/components/admin/ipad/ipad";
 import Blog from "@/components/blog/blog";
+import Analytics from "@/components/admin/analytics/analytics";
 
 class PageRegistrationInfo {
   constructor(page, isVisible, element, overrides) {
@@ -57,6 +58,12 @@ const pageRegistry = [
     },
   }),
   new PageRegistrationInfo(pages.Ipad, true, <Ipad />, {
+    navBarOverrides: {
+      showNavBar: false,
+    },
+    showFooter: false,
+  }),
+  new PageRegistrationInfo(pages.Analytics, true, <Analytics />, {
     navBarOverrides: {
       showNavBar: false,
     },

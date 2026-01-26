@@ -182,6 +182,17 @@ const theme = responsiveFontSizes(
         backgroundColor: basePalette.purple100,
         boxShadow: "0px 2px 4px " + basePalette.gray300,
       },
+      charts: {
+        l1: basePalette.purple300,
+        l2: basePalette.purple400,
+        l3: basePalette.purple500,
+        l4: basePalette.purple600,
+        socialOnly: basePalette.purple700,
+        cash: "green",
+        venmo: "#008cff",
+        paypal: "#002b87",
+        zelle: "#6534D1",
+      },
     },
     typography: {
       fontFamily: [
