@@ -147,6 +147,12 @@ function CurrentMonthEvents() {
   let events = getThisMonthsEvents();
   let nextThursday = getNextThursday();
 
+  // If events haven't been added for this month yet, don't show the schedule
+  // TODO: consider linking to FB/Instagram instead?
+  if (events.length === 0) {
+    return null;
+  }
+
   return (
     <Box id={HTML_IDS.EVENTS} sx={upcomingEventsV2Styles.monthEventsContainer}>
       <Box>

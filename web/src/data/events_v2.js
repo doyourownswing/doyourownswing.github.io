@@ -52,7 +52,7 @@ const events = [
     subtitle: "Let's level up some classic blues patterns",
     advanceTopic: "",
     levelOneTopic: L1_TOPICS.week1,
-    dj: "",
+    dj: "Jake",
     facebookLink: "https://www.facebook.com/events/877189058035030/",
   },
   {
@@ -60,6 +60,20 @@ const events = [
     noDyos: true,
     title: "Capital Swing weekend",
     subtitle: "See you next week!",
+  },
+  {
+    date: createDate("02/19/2026"),
+    advanceTopic: "",
+    levelOneTopic: L1_TOPICS.week2,
+    dj: "International Music Night!",
+    facebookLink: "https://www.facebook.com/events/2444016136031608/",
+  },
+  {
+    date: createDate("02/26/2026"),
+    advanceTopic: "",
+    levelOneTopic: L1_TOPICS.week3,
+    dj: "Saumya",
+    facebookLink: "https://www.facebook.com/events/876192111459926/",
   },
 ];
 
@@ -77,7 +91,7 @@ const events = [
 function getThisMonthsEvents() {
   let thisMonth = getNextThursday().month();
 
-  return events.filter((event) => event.date.month() == thisMonth);
+  return events.filter((event) => event.date.month() === thisMonth);
 }
 
 export default getThisMonthsEvents;
