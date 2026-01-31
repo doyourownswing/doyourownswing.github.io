@@ -33,7 +33,14 @@ function getBeginningOfTodayDate() {
 }
 
 function getNextThursday() {
-  return dayjs(new Date()).day(4);
+  // if it's Friday or Saturday, get next week'sThursday
+  const today = dayjs(new Date());
+  if (today.day() >= 5) {
+    return today.day(11);
+  }
+
+  // otherwise, get this week's Thursday
+  return today.day(4);
 }
 
 export {
