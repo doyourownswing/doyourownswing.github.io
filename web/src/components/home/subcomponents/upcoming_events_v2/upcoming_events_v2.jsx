@@ -148,7 +148,6 @@ function CurrentMonthEvents() {
   let nextThursday = getNextThursday();
 
   // If events haven't been added for this month yet, don't show the schedule
-  // TODO: consider linking to FB/Instagram instead?
   if (events.length === 0) {
     return null;
   }

@@ -62,6 +62,8 @@ const events = [
     subtitle: "See you next week!",
   },
   {
+    title: "A Deep Dive into Connection week 1",
+    subtitle: "The secret sauce behind WCS improvisation!",
     date: createDate("02/19/2026"),
     advanceTopic: "",
     levelOneTopic: L1_TOPICS.week2,
@@ -69,6 +71,8 @@ const events = [
     facebookLink: "https://www.facebook.com/events/2444016136031608/",
   },
   {
+    title: "A Deep Dive into Connection week 2",
+    subtitle: "Creating conversations through the connection",
     date: createDate("02/26/2026"),
     advanceTopic: "",
     levelOneTopic: L1_TOPICS.week3,
