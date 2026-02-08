@@ -9,6 +9,7 @@ import "./index.css";
 import { Box } from "@mui/material";
 import { generatedRoutes, Overrides } from "./page_registry";
 import { useLocation } from "react-router-dom";
+import ScrollToHashElement from "./common/ScrollToHashElement";
 
 const routes = generatedRoutes;
 
@@ -63,6 +64,7 @@ function App() {
       <ThemeProvider theme={theme}>
         <Box>
           <BrowserRouter>
+            <ScrollToHashElement />
             <NavBarAndAnnouncementsRenderer />
             <ScrollResetContainer>
               <Routes>
