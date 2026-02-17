@@ -10,11 +10,10 @@ import merch4 from "@/assets/images/merch/im_shy_tee_unisex.webp";
 import merch5 from "@/assets/images/merch/dyos_stacked_unisex.webp";
 import merch6 from "@/assets/images/merch/heart_pocket_tee.webp";
 import { Space, Text } from "@/components/common/typography";
-import { HTML_IDS } from "../constants";
+import { HTML_IDS, MERCH_STORE_LINK } from "../constants";
 
 const googleFormLink =
   "https://docs.google.com/forms/d/e/1FAIpQLSeoUWA8LICvFhxhwiYBqWAjDxOZta1LgnPzkWtaWAoXQ1UESQ/viewform?usp=header";
-export const printfulLink = "https://doyourownswing.printful.me/";
 
 // TODO: add alt text
 // maybe have each pic link to the particular listing?
@@ -43,7 +42,7 @@ export default function Merch() {
             variant="contained"
             target="_blank"
             rel="noopener noreferrer"
-            href={printfulLink}
+            href={MERCH_STORE_LINK}
             size="large"
             sx={merchStyles.orderButton}
           >

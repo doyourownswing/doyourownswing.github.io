@@ -2,15 +2,14 @@ import { Box, Button, Container, Stack, Typography } from "@mui/material";
 import MimiPic from "@/assets/images/pets/mimi_1.jpg";
 import notFoundStyles from "./not_found.styles";
 import messages from "./messages";
-import { printfulLink } from "../home/subcomponents/merch/merch";
-import { REGISTRATION_FORM_LINK } from "@/common/constants";
+import { REGISTRATION_FORM_LINK, MERCH_STORE_LINK } from "@/common/constants";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 // A map from URL segments that don't correspond to a link
 // to pages that the segment should redirect to
 const pageRedirects = {
-  merch: printfulLink,
+  merch: MERCH_STORE_LINK,
   register: REGISTRATION_FORM_LINK,
 };
 
