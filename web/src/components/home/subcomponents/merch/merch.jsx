@@ -14,7 +14,7 @@ import { HTML_IDS } from "../constants";
 
 const googleFormLink =
   "https://docs.google.com/forms/d/e/1FAIpQLSeoUWA8LICvFhxhwiYBqWAjDxOZta1LgnPzkWtaWAoXQ1UESQ/viewform?usp=header";
-const printfulLink = "https://doyourownswing.printful.me/";
+export const printfulLink = "https://doyourownswing.printful.me/";
 
 // TODO: add alt text
 // maybe have each pic link to the particular listing?
