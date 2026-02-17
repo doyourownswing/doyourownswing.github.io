@@ -1,34 +1,31 @@
-/* taken from https://ncoughlin.com/posts/react-router-v6-hash-links/ */
+/* code modified from https://ncoughlin.com/posts/react-router-v6-hash-links/ */
 
-import { useMemo, useEffect } from "react";
+import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
+// This wrapper listens to page change events for two reasons:
+// (1) React Router preserves scroll location between routes.
+//     This is undesired behavior. We want to scroll to the top for new pages.
+// (2) We want to scroll to the element indicated by the hash / anchor link,
+//     if any.
 const ScrollToHashElement = () => {
-  let location = useLocation();
-
-  let hashElement = useMemo(() => {
-    let hash = location.hash;
-    const removeHashCharacter = (str) => {
-      const result = str.slice(1);
-      return result;
-    };
-
-    if (hash) {
-      let element = document.getElementById(removeHashCharacter(hash));
-      return element;
-    } else {
-      return null;
-    }
-  }, [location]);
+  const location = useLocation();
 
   useEffect(() => {
+    // Get only the value following the # in the URL
+    const hashValue = location.hash.slice(1);
+    const hashElement = hashValue ? document.getElementById(hashValue) : null;
+
     if (hashElement) {
+      // Scroll to the element indicated by a hash
       hashElement.scrollIntoView({
         behavior: "smooth",
-        inline: "nearest",
       });
+    } else {
+      // Scroll to the top of the page when the route changes
+      window.scrollTo({ top: 0, left: 0, behavior: "instant" });
     }
-  }, [hashElement]);
+  }, [location.hash, location.pathname]);
 
   return null;
 };

@@ -1,4 +1,4 @@
-import React, { useLayoutEffect } from "react";
+import React from "react";
 import { createRoot, hydrateRoot } from "react-dom/client";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Footer from "@/components/footer/footer";
@@ -12,20 +12,6 @@ import { useLocation } from "react-router-dom";
 import ScrollToHashElement from "./common/ScrollToHashElement";
 
 const routes = generatedRoutes;
-
-// React Router preserves scroll location between various routes.
-// This is undesired behavior. This wrapper listens to page change events
-// and will scroll to the top in new pages.
-function ScrollResetContainer(props) {
-  const location = useLocation();
-
-  useLayoutEffect(() => {
-    // Scroll to the top of the page when the route changes
-    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
-  }, [location.pathname]);
-
-  return props.children;
-}
 
 function NavBarAndAnnouncementsRenderer() {
   let currentRoute = routes.find((r) => r.page.isCurrentPage());
@@ -66,13 +52,11 @@ function App() {
           <BrowserRouter>
             <ScrollToHashElement />
             <NavBarAndAnnouncementsRenderer />
-            <ScrollResetContainer>
-              <Routes>
-                {routes.map((r, i) => (
-                  <Route key={i} path={r.path} element={r.element} />
-                ))}
-              </Routes>
-            </ScrollResetContainer>
+            <Routes>
+              {routes.map((r, i) => (
+                <Route key={i} path={r.path} element={r.element} />
+              ))}
+            </Routes>
             <FooterRenderer />
           </BrowserRouter>
         </Box>
