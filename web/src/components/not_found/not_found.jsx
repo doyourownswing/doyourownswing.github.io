@@ -13,15 +13,7 @@ const pageRedirects = {
   register: REGISTRATION_FORM_LINK,
 };
 
-function NotFound() {
-  const location = useLocation();
-  useEffect(() => {
-    const pathWithoutSlashes = location.pathname.replaceAll("/", "");
-    if (pageRedirects[pathWithoutSlashes]) {
-      window.location.replace(pageRedirects[pathWithoutSlashes]);
-    }
-  }, [location.pathname]);
-
+function NotFoundMessage() {
   return (
     <Box>
       <Container>
@@ -42,6 +34,24 @@ function NotFound() {
       </Container>
     </Box>
   );
+}
+
+/**
+ * A component for unknown routes that can also handle redirecting to
+ * external sites. If the path isn't in `pageRedirects`, displays a generic
+ * 404/not found message.
+ */
+function NotFound() {
+  const location = useLocation();
+
+  useEffect(() => {
+    const pathWithoutSlashes = location.pathname.replaceAll("/", "");
+    if (pageRedirects[pathWithoutSlashes]) {
+      window.location.replace(pageRedirects[pathWithoutSlashes]);
+    }
+  }, [location.pathname]);
+
+  return <NotFoundMessage />;
 }
 
 export default NotFound;
