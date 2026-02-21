@@ -52,7 +52,8 @@ function NotFound() {
 
   useEffect(() => {
     // Note: react-snap hasn't been maintained, so as a result we have to use
-    // String.replace() with regex in place of String.replaceAll()
+    // String.replace() with regex in place of String.replaceAll(), as the latter
+    // was introduced recently as part of ES2021
     const pathWithoutSlashes = location.pathname.replace(/\//g, "");
     if (pageRedirects[pathWithoutSlashes]) {
       window.location.replace(pageRedirects[pathWithoutSlashes]);
