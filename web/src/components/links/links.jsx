@@ -39,6 +39,7 @@ import PaypalLogoIcon from "@/assets/images/payment_logos/paypal-logo-icon.svg?r
 import VenmoLogoIcon from "@/assets/images/payment_logos/venmo-logo-icon.png";
 import ZelleLogoIcon from "@/assets/images/payment_logos/zelle-logo-icon.png";
 import { useState } from "react";
+import messages from "@/components/links/messages";
 
 function Header() {
   return (
@@ -48,10 +49,10 @@ function Header() {
       </Avatar>
       <Box sx={linksStyles.titleTextContainer}>
         <Typography variant="h5" sx={linksStyles.title}>
-          Do Your Own Swing
+          {messages.doYourOwnSwing}
         </Typography>
         <Typography variant="subtitle1" sx={linksStyles.subtitle}>
-          Thursday night West Coast Swing classes and social in the Bay Area
+          {messages.subtitle}
         </Typography>
       </Box>
       <Socials />
@@ -88,6 +89,18 @@ function Socials() {
   );
 }
 
+function PaymentItemLink(props) {
+  return (
+    <Link underline="none" href={props.href}>
+      <Box sx={linksStyles.paymentLinkContainer}>
+        <Box sx={linksStyles.linkBoxSide}>{props.leftItem}</Box>
+        <Typography sx={linksStyles.linkBoxText}>{props.label}</Typography>
+        <Box sx={linksStyles.linkBoxSide}>{props.rightItem}</Box>
+      </Box>
+    </Link>
+  );
+}
+
 function Zelle() {
   return (
     <PaymentItemLink
@@ -95,7 +108,7 @@ function Zelle() {
       leftItem={
         <Box component="img" src={ZelleLogoIcon} sx={linksStyles.logoIcon} />
       }
-      label="Zelle"
+      label={messages.zelle}
     />
   );
 }
@@ -107,7 +120,7 @@ function Venmo() {
       leftItem={
         <Box component="img" src={VenmoLogoIcon} sx={linksStyles.logoIcon} />
       }
-      label="Venmo"
+      label={messages.venmo}
     />
   );
 }
@@ -119,7 +132,7 @@ function Paypal() {
       leftItem={
         <SvgIcon component={PaypalLogoIcon} viewBox="0 0 48 48"></SvgIcon>
       }
-      label="PayPal"
+      label={messages.paypal}
     />
   );
 }
@@ -138,8 +151,6 @@ function PaymentMethods() {
       <AccordionSummary
         sx={linksStyles.accordionLinkSummary}
         expandIcon={<ExpandMore />}
-        aria-controls="panel1-content"
-        id="panel1-header"
       >
         <Box sx={linksStyles.linkBoxSide}>
           <Paid sx={linksStyles.moneyIcon} />
@@ -179,18 +190,6 @@ function ItemLink(props) {
   }
 }
 
-function PaymentItemLink(props) {
-  return (
-    <Link underline="none" href={props.href}>
-      <Box sx={linksStyles.paymentLinkContainer}>
-        <Box sx={linksStyles.linkBoxSide}>{props.leftItem}</Box>
-        <Typography sx={linksStyles.linkBoxText}>{props.label}</Typography>
-        <Box sx={linksStyles.linkBoxSide}>{props.rightItem}</Box>
-      </Box>
-    </Link>
-  );
-}
-
 function Registration() {
   return (
     <ItemLink
@@ -198,14 +197,18 @@ function Registration() {
       leftItem={
         <Box component="img" src={logoIcon} sx={linksStyles.logoIcon} />
       }
-      label="One-time registration form"
+      label={messages.registrationForm}
     />
   );
 }
 
 function ClassDetails() {
   return (
-    <ItemLink href={"/classes"} leftItem={<School />} label="Find your class" />
+    <ItemLink
+      href={"/classes"}
+      leftItem={<School />}
+      label={messages.classes}
+    />
   );
 }
 
@@ -214,7 +217,7 @@ function CodeOfConduct() {
     <ItemLink
       href={"/code-of-conduct"}
       leftItem={<Gavel sx={linksStyles.gavelIcon} />}
-      label="Code of conduct"
+      label={messages.codeOfConduct}
     />
   );
 }
@@ -224,8 +227,25 @@ function Merch() {
     <ItemLink
       href={MERCH_STORE_LINK}
       leftItem={<Storefront sx={linksStyles.storeIcon} />}
-      label="Get your merch!"
+      label={messages.merch}
     />
+  );
+}
+
+function LinksCard() {
+  return (
+    <DyosCard sx={linksStyles.card}>
+      <Box sx={linksStyles.cardContent}>
+        <Header />
+        <Box sx={linksStyles.linksContainer}>
+          <Registration />
+          <PaymentMethods />
+          <ClassDetails />
+          <CodeOfConduct />
+          <Merch />
+        </Box>
+      </Box>
+    </DyosCard>
   );
 }
 
@@ -234,18 +254,7 @@ function Links() {
     <Box sx={linksStyles.container}>
       <Box sx={linksStyles.contentContainer}>
         <Container sx={linksStyles.cardContainer}>
-          <DyosCard sx={linksStyles.card}>
-            <Box sx={linksStyles.cardContent}>
-              <Header />
-              <Box sx={linksStyles.linksContainer}>
-                <Registration />
-                <PaymentMethods />
-                <ClassDetails />
-                <CodeOfConduct />
-                <Merch />
-              </Box>
-            </Box>
-          </DyosCard>
+          <LinksCard />
         </Container>
       </Box>
     </Box>
