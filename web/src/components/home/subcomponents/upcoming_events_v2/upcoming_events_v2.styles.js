@@ -19,6 +19,7 @@ const upcomingEventsV2Styles = {
   container: {
     padding: SECTION_PADDING,
     background: theme.palette.background.barelyPurple,
+    scrollMarginTop: { xs: "2rem" },
   },
   title: {
     ...theme.typography.title,

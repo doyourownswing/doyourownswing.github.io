@@ -27,7 +27,7 @@ import {
   DYOS_DISCORD_LINK,
   DYOS_FACEBOOK_LINK,
   DYOS_INSTAGRAM_LINK,
-  DYOS_MERCH_LINK,
+  MERCH_STORE_LINK,
   MAILTO_DYOS_EMAIL,
   PAYPAL_LINK,
   REGISTRATION_FORM_LINK,
@@ -222,7 +222,7 @@ function CodeOfConduct() {
 function Merch() {
   return (
     <ItemLink
-      href={DYOS_MERCH_LINK}
+      href={MERCH_STORE_LINK}
       leftItem={<Storefront sx={linksStyles.storeIcon} />}
       label="Get your merch!"
     />

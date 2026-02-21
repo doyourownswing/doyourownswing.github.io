@@ -11,7 +11,11 @@ import merch5 from "@/assets/images/merch/dyos_stacked_unisex.webp";
 import merch6 from "@/assets/images/merch/heart_pocket_tee.webp";
 import { Space, Text } from "@/components/common/typography";
 import { HTML_IDS } from "../constants";
+<<<<<<< HEAD
 import { DYOS_MERCH_LINK } from "@/common/constants";
+=======
+import { MERCH_STORE_LINK } from "@/common/constants";
+>>>>>>> main
 
 const googleFormLink =
   "https://docs.google.com/forms/d/e/1FAIpQLSeoUWA8LICvFhxhwiYBqWAjDxOZta1LgnPzkWtaWAoXQ1UESQ/viewform?usp=header";
@@ -43,7 +47,7 @@ export default function Merch() {
             variant="contained"
             target="_blank"
             rel="noopener noreferrer"
-            href={DYOS_MERCH_LINK}
+            href={MERCH_STORE_LINK}
             size="large"
             sx={merchStyles.orderButton}
           >
