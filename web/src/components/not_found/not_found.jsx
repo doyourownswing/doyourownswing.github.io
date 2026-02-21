@@ -1,4 +1,4 @@
-import { Box, Button, Container, Stack, Typography } from "@mui/material";
+import { Box, Button, Container, Fade, Stack, Typography } from "@mui/material";
 import MimiPic from "@/assets/images/pets/mimi_1.jpg";
 import notFoundStyles from "./not_found.styles";
 import messages from "./messages";
@@ -15,24 +15,30 @@ const pageRedirects = {
 
 function NotFoundMessage() {
   return (
-    <Box>
-      <Container>
-        <Stack flexDirection={{ md: "row" }}>
-          <Box
-            component="img"
-            sx={notFoundStyles.image}
-            alt="A picture of a really cute cat"
-            src={MimiPic}
-          />
-          <Box sx={notFoundStyles.rightContent}>
-            <Typography variant="h3">{messages.lost}</Typography>
-            <Button variant="contained" sx={notFoundStyles.button} href="/">
-              {messages.goHome}
-            </Button>
-          </Box>
-        </Stack>
-      </Container>
-    </Box>
+    // Adds a 1 second delay to avoid the flash of the 404 page before the next page renders
+    // This is because the client side performs a redirect which will trigger the catch-all routing
+    // prior to the network request to fetch the next page. A delay of 1s is not fool-proof,
+    // but should catch the majority of cases.
+    <Fade in={true} sx={{ transitionDelay: "1s" }}>
+      <Box>
+        <Container>
+          <Stack flexDirection={{ md: "row" }}>
+            <Box
+              component="img"
+              sx={notFoundStyles.image}
+              alt="A picture of a really cute cat"
+              src={MimiPic}
+            />
+            <Box sx={notFoundStyles.rightContent}>
+              <Typography variant="h3">{messages.lost}</Typography>
+              <Button variant="contained" sx={notFoundStyles.button} href="/">
+                {messages.goHome}
+              </Button>
+            </Box>
+          </Stack>
+        </Container>
+      </Box>
+    </Fade>
   );
 }
 
@@ -45,7 +51,10 @@ function NotFound() {
   const location = useLocation();
 
   useEffect(() => {
-    const pathWithoutSlashes = location.pathname.replaceAll("/", "");
+    // Note: react-snap hasn't been maintained, so as a result we have to use
+    // String.replace() with regex in place of String.replaceAll(), as the latter
+    // was introduced recently as part of ES2021
+    const pathWithoutSlashes = location.pathname.replace(/\//g, "");
     if (pageRedirects[pathWithoutSlashes]) {
       window.location.replace(pageRedirects[pathWithoutSlashes]);
     }
