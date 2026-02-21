@@ -16,6 +16,7 @@ const StartHere = new Page("/start-here");
 const Blog = new Page("/blog", "Blog", () =>
   window.location.pathname.includes("/blog")
 );
+const Links = new Page("/links");
 
 // todo - update this link once we have a full admin portal
 const SignIn = new Page("/admin");
@@ -34,6 +35,7 @@ export {
   Contact,
   StartHere,
   Blog,
+  Links,
   SignIn,
   Ipad,
   Analytics,

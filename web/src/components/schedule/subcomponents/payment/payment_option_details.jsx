@@ -8,16 +8,25 @@ import VenmoLogo from "@/assets/images/payment_logos/venmo-logo.png";
 import PaypalLogo from "@/assets/images/payment_logos/paypal-logo.png";
 import Callout from "@/components/common/callout";
 import QRCode from "react-qr-code";
+import {
+  PAYPAL_LINK,
+  PAYPAL_QR_LINK,
+  VENMO_LINK,
+  VENMO_QR_LINK,
+  ZELLE_LINK,
+} from "@/common/constants";
 
 const ZELLE_DATA = {
   title: ZelleLogo,
   titleAltText: messages.zelle,
   titleStyles: { height: "3.5rem" },
   isPreferred: true,
-  qrCode:
-    "https://enroll.zellepay.com/qr-codes?data=eyJuYW1lIjoiTWljaGVsbGUiLCJhY3Rpb24iOiJwYXltZW50IiwidG9rZW4iOiJzaGFyZWRzd2luZ3NwYWNlc0BnbWFpbC5jb20ifQ==",
+  qrCode: ZELLE_LINK,
   associatedAccount: messages.sharedSwingSpacesAccount,
   footer: messages.scanZelle,
+  buttonText: messages.payWithZelle,
+  buttonLink: ZELLE_LINK,
+  buttonColor: "#6D1ED4", // Zelle logo color
 };
 
 const VENMO_DATA = {
@@ -25,11 +34,10 @@ const VENMO_DATA = {
   titleAltText: messages.venmo,
   titleStyles: { height: "2.5rem" },
   isPreferred: false,
-  qrCode:
-    "https://www.paypal.com/qrcodes/venmocs/fd351a61-a82e-437a-a889-e04c33f204b9",
+  qrCode: VENMO_QR_LINK,
   associatedAccount: messages.venmoHandle,
   buttonText: messages.openVenmo,
-  buttonLink: "https://venmo.com/riley-wcs",
+  buttonLink: VENMO_LINK,
   buttonColor: "#008cff", // Venmo logo color
 };
 
@@ -38,11 +46,10 @@ const PAYPAL_DATA = {
   titleAltText: messages.paypal,
   titleStyles: { height: "3rem" },
   isPreferred: false,
-  qrCode:
-    "https://www.paypal.com/qrcodes/managed/767fb6d3-a9ce-4cd8-bb74-2e3b2760b8e8",
+  qrCode: PAYPAL_QR_LINK,
   associatedAccount: messages.sharedSwingSpacesAccount,
   buttonText: messages.openPaypal,
-  buttonLink: "https://paypal.me/sharedswingspaces",
+  buttonLink: PAYPAL_LINK,
   buttonColor: "#002b87", // PayPal logo color
 };
 
@@ -73,6 +80,9 @@ function PaymentOption(props) {
             <QRCode style={paymentStyles.qrCode} value={data.qrCode}></QRCode>
             <Typography>{data.associatedAccount}</Typography>
           </Box>
+          {!!data.footer && (
+            <Typography sx={paymentStyles.footer}>{data.footer}</Typography>
+          )}
           {!!data.buttonText && (
             <Box sx={paymentStyles.cardButton}>
               <Button
@@ -85,9 +95,6 @@ function PaymentOption(props) {
                 {data.buttonText}
               </Button>
             </Box>
-          )}
-          {!!data.footer && (
-            <Typography sx={paymentStyles.footer}>{data.footer}</Typography>
           )}
         </Stack>
       </DyosCard>
