@@ -1,4 +1,4 @@
-import { BOX_SHADOW, SECTION_PADDING } from "@/common/constants";
+import { BOX_SHADOW } from "@/common/constants";
 import SocialsColors from "@/common/socials_colors";
 import theme from "@/common/theme";
 import { alpha } from "@mui/material";
