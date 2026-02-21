@@ -176,11 +176,14 @@ const linksStyles = {
   moneyIcon: {
     color: "green",
   },
-  gavelIcon: {
+  codeOfConductIcon: {
     color: "brown",
   },
   storeIcon: {
     color: "purple",
+  },
+  flagIcon: {
+    color: "orange",
   },
   paymentOptionsContainer: {
     padding: "0rem 1rem",

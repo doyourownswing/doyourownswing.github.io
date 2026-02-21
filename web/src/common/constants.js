@@ -40,3 +40,5 @@ export const VENMO_LINK = "https://venmo.com/riley-wcs";
 export const PAYPAL_QR_LINK =
   "https://www.paypal.com/qrcodes/managed/767fb6d3-a9ce-4cd8-bb74-2e3b2760b8e8";
 export const PAYPAL_LINK = "https://paypal.me/sharedswingspaces";
+
+export const INCIDENT_REPORT_FORM = "https://forms.gle/3ueUSbcM1e8qex3r9";

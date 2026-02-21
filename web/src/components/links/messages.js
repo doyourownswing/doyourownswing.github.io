@@ -11,6 +11,7 @@ const messages = {
   classes: "Find your class",
   codeOfConduct: "Code of conduct",
   merch: "Get your merch!",
+  reportAnIncident: "Safety & Access Report Form",
 };
 
 export default messages;

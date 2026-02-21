@@ -14,14 +14,15 @@ import {
 import Logo from "@/assets/images/progress-circle-heart.png";
 import DiscordIcon from "@/components/common/icons/discord";
 import {
+  Diversity1,
   Email,
   ExpandMore,
   Facebook,
-  Gavel,
+  Flag,
   Instagram,
   Paid,
   School,
-  Storefront,
+  Store,
 } from "@mui/icons-material";
 import {
   DYOS_DISCORD_LINK,
@@ -33,6 +34,7 @@ import {
   REGISTRATION_FORM_LINK,
   VENMO_LINK,
   ZELLE_LINK,
+  INCIDENT_REPORT_FORM,
 } from "@/common/constants";
 import logoIcon from "@/assets/images/google-forms-logo.png";
 import PaypalLogoIcon from "@/assets/images/payment_logos/paypal-logo-icon.svg?react";
@@ -216,8 +218,18 @@ function CodeOfConduct() {
   return (
     <ItemLink
       href={"/code-of-conduct"}
-      leftItem={<Gavel sx={linksStyles.gavelIcon} />}
+      leftItem={<Diversity1 sx={linksStyles.codeOfConductIcon} />}
       label={messages.codeOfConduct}
+    />
+  );
+}
+
+function IncidentForm() {
+  return (
+    <ItemLink
+      href={INCIDENT_REPORT_FORM}
+      leftItem={<Flag sx={linksStyles.flagIcon} />}
+      label={messages.reportAnIncident}
     />
   );
 }
@@ -226,7 +238,7 @@ function Merch() {
   return (
     <ItemLink
       href={MERCH_STORE_LINK}
-      leftItem={<Storefront sx={linksStyles.storeIcon} />}
+      leftItem={<Store sx={linksStyles.storeIcon} />}
       label={messages.merch}
     />
   );
@@ -242,6 +254,7 @@ function LinksCard() {
           <PaymentMethods />
           <ClassDetails />
           <CodeOfConduct />
+          <IncidentForm />
           <Merch />
         </Box>
       </Box>
