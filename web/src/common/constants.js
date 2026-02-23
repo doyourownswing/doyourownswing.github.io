@@ -35,7 +35,15 @@ export const ZELLE_LINK =
 
 export const VENMO_QR_LINK =
   "https://www.paypal.com/qrcodes/venmocs/fd351a61-a82e-437a-a889-e04c33f204b9";
-export const VENMO_LINK = "https://venmo.com/riley-wcs";
+
+// Venmo's deeplinking is quite inconsistent, so try to detect the OS
+// to determine optimimal link. We don't care about desktop since we're primarily
+// concerned with deeplinking into the mobile apps.
+const VENMO_LINK_IOS = "https://venmo.com/u/riley-wcs";
+const VENMO_LINK_ANDROID = "https://venmo.com/riley-wcs";
+export const VENMO_LINK = /iOS|iPhone|iPad|iPod/i.test(navigator.userAgent)
+  ? VENMO_LINK_IOS
+  : VENMO_LINK_ANDROID;
 
 export const PAYPAL_QR_LINK =
   "https://www.paypal.com/qrcodes/managed/767fb6d3-a9ce-4cd8-bb74-2e3b2760b8e8";
