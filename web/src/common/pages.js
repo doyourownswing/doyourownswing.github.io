@@ -1,21 +1,25 @@
 class Page {
-  constructor(url, displayName) {
+  constructor(url, displayName, isCurrentPageFunction) {
     this.displayName = displayName;
     this.url = url;
-    this.isCurrentPage = () => window.location.pathname === this.url;
+    this.isCurrentPage =
+      isCurrentPageFunction ??
+      (() => window.location.pathname.includes(this.url));
   }
 }
 
-const Home = new Page("/", "Home");
+const Home = new Page(
+  "/",
+  "Home",
+  () => window.location.pathname === "" || window.location.pathname === "/"
+);
 const Schedule = new Page("/classes", "Classes");
 const About = new Page("/about", "About us");
 const Health = new Page("/health", "Health protocol");
 const Code = new Page("/code-of-conduct", "Code of conduct");
 const Contact = new Page("/contact", "Contact");
 const StartHere = new Page("/start-here");
-const Blog = new Page("/blog", "Blog", () =>
-  window.location.pathname.includes("/blog")
-);
+const Blog = new Page("/blog", "Blog");
 const Links = new Page("/links");
 
 // todo - update this link once we have a full admin portal
