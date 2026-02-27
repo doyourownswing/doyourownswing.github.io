@@ -1,4 +1,4 @@
-import { Box, Container, Typography } from "@mui/material";
+import { Box, Container, Stack, Typography } from "@mui/material";
 import whoWeAreStyles from "./who_we_are.styles";
 import messages from "./messages";
 import {
@@ -7,8 +7,9 @@ import {
   Favorite,
   Handshake,
 } from "@mui/icons-material";
-import Grid from '@mui/material/Grid';
+import Grid from "@mui/material/Grid";
 import { HTML_IDS } from "../constants";
+import { BasicParagraphFormatter } from "../what_is_wcs/what_is_wcs";
 
 // Icons are from:
 // https://mui.com/material-ui/material-icons/
@@ -77,6 +78,15 @@ function WhoWeAre() {
         <Typography variant="body" sx={whoWeAreStyles.description}>
           {messages.description}
         </Typography>
+        <Stack sx={whoWeAreStyles.pointsSection} spacing={{ xs: 1, md: 2 }}>
+          {messages.points.map((p) => (
+            <BasicParagraphFormatter
+              content={p}
+              hookStyle={whoWeAreStyles.pointHook}
+              contentStyle={whoWeAreStyles.pointContent}
+            />
+          ))}
+        </Stack>
         <Box sx={whoWeAreStyles.valuesSection}>
           <Typography variant="h6">{messages.ourCommunityValues}</Typography>
           <ValuesRenderer></ValuesRenderer>
