@@ -12,8 +12,7 @@ import messages from "./messages";
 import DyosLink from "@/components/common/link";
 import Callout from "@/components/common/callout";
 import { forwardRef, useRef } from "react";
-
-const reportLink = "https://forms.gle/3ueUSbcM1e8qex3r9";
+import { INCIDENT_REPORT_FORM } from "@/common/constants";
 
 function TitleSection(props) {
   return (
@@ -26,7 +25,7 @@ function TitleSection(props) {
           <Typography variant="inline">
             {messages.reportIncident.part1}
           </Typography>
-          <DyosLink href={reportLink} openInNewTab>
+          <DyosLink href={INCIDENT_REPORT_FORM} openInNewTab>
             <b>{messages.reportIncident.linkText}</b>
           </DyosLink>
           <Typography variant="inline">
@@ -173,7 +172,7 @@ const ResponseSection = forwardRef(function Response(_, ref) {
             variant="contained"
             sx={codeOfConductStyles.reportIncidentButton}
             size="large"
-            href={reportLink}
+            href={INCIDENT_REPORT_FORM}
             target="_blank"
             rel="noopener noreferrer"
           >

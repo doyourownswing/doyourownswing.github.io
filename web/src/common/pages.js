@@ -20,6 +20,7 @@ const Code = new Page("/code-of-conduct", "Code of conduct");
 const Contact = new Page("/contact", "Contact");
 const StartHere = new Page("/start-here");
 const Blog = new Page("/blog", "Blog");
+const Links = new Page("/links");
 
 // todo - update this link once we have a full admin portal
 const SignIn = new Page("/admin");
@@ -38,6 +39,7 @@ export {
   Contact,
   StartHere,
   Blog,
+  Links,
   SignIn,
   Ipad,
   Analytics,
