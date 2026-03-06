@@ -1,128 +1,187 @@
-const BASE_SHEET_URL =
+const SIGN_IN_DATA_SHEET =
+  "https://docs.google.com/spreadsheets/d/1dJ_m42m3F3VjxRcw9cqQScBVN2IfwAfAc-Q3r2FjzhU/edit?gid=0#gid=0";
+
+const SPONSOR_SHEET =
   "https://docs.google.com/spreadsheets/d/1FAG3d9pewQjECWRYtud4vOF5Q8e8RrYg87cnEUNuM2I/edit";
+const SPONSOR_TAB_ID = "294023538";
 
-const TAB_IDS = {
-  registeredPeople: 80689464,
-  sponsors: 294023538,
-  outputData: 0, //TODO
-};
+function getSponsorStats() {
+  const sheet =
+    SpreadsheetApp.openByUrl(SPONSOR_SHEET).getSheetById(SPONSOR_TAB_ID);
+  let lastRow = sheet.getLastRow();
+  let range = sheet.getRange(`A5:C${lastRow}`);
 
-const REGISTERED_PEOPLE_NAME_COLUMN = "J";
-const REGISTERED_PEOPLE_FIRST_ROW = 2;
+  let computedData = new Map();
 
-const SPONSOR_MONTH_COLUMN = "A";
-const SPONSOR_NAME_COLUMN = "B";
-const SPONSOR_FIRST_ROW = 5;
+  for (var row of range.getValues()) {
+    let dateTimeString = dateTimeStringToDateString(row[0]);
+    let sponsorAmountString = row[2];
 
-function openSheetWithTab(tabId) {
-  const sheet = SpreadsheetApp.openByUrl(BASE_SHEET_URL);
-  return sheet.getSheetById(tabId);
-}
-
-function getSponsors() {
-  const sheet = openSheetWithTab(TAB_IDS.sponsors);
-
-  const lastRowNum = sheet.getLastRow();
-  const values = sheet
-    .getRange(
-      `${SPONSOR_MONTH_COLUMN}${SPONSOR_FIRST_ROW}:${SPONSOR_NAME_COLUMN}${lastRowNum}`
-    )
-    .getValues();
-
-  let sponsorNames = [];
-
-  for (var row of values) {
-    let sponsorMonth = new Date(row[0]);
-    let currentMonth = new Date();
-
-    if (
-      sponsorMonth.getMonth() === currentMonth.getMonth() &&
-      sponsorMonth.getFullYear() === currentMonth.getFullYear()
-    ) {
-      sponsorNames.push(row[1]);
+    if (!!sponsorAmountString) {
+      let newValue =
+        computedData.getOrInsert(dateTimeString, 0) + sponsorAmountString;
+      computedData.set(dateTimeString, newValue);
     }
   }
 
-  return sponsorNames;
+  let structuredData = [];
+  for (const [key, value] of computedData) {
+    structuredData.push({ date: key, amount: value });
+  }
+
+  return structuredData;
 }
 
-function getRegisteredPeople() {
-  let sponsors = getSponsors();
+function dateTimeStringToDateString(dateTimeString) {
+  let dateTime = new Date(dateTimeString);
+  let date = new Date(
+    dateTime.getFullYear(),
+    dateTime.getMonth(),
+    dateTime.getDate()
+  );
+  return date.toDateString();
+}
 
-  let sheet = openSheetWithTab(TAB_IDS.registeredPeople);
+function divideRawDataByDays(range) {
+  let dividedData = [];
 
-  let lastRowNum = sheet.getLastRow();
-  let values = sheet
-    .getRange(
-      `${REGISTERED_PEOPLE_NAME_COLUMN}${REGISTERED_PEOPLE_FIRST_ROW}:${REGISTERED_PEOPLE_NAME_COLUMN}${lastRowNum}`
-    )
-    .getValues();
+  for (var row of range.getValues()) {
+    let rowDate = dateTimeStringToDateString(row[0]);
+    var dailyRawData = dividedData.find((d) => d.date == rowDate);
 
-  let people = [];
+    if (!dailyRawData) {
+      dailyRawData = { date: rowDate, values: [] };
+      dividedData.push(dailyRawData);
+    }
 
-  for (var row of values) {
-    let name = row[0];
-
-    people.push({
-      name: name,
-      sponsor: sponsors.includes(name),
+    dailyRawData.values.push({
+      dateTime: row[0],
+      l1: row[2],
+      l2: row[3],
+      l3: row[4],
+      l4: row[5],
+      socialOnly: row[6],
+      amountPaid: row[8],
+      paymentMethod: row[9],
+      exemption: row[10],
     });
   }
 
-  return people;
+  return dividedData;
+}
+
+function computeWeeklyStats(dividedData) {
+  let stats = [];
+
+  for (let dailyData of dividedData) {
+    stats.push(computeStatsForDay(dailyData));
+  }
+
+  return stats;
+}
+
+function computeStatsForDay(dailyData) {
+  return {
+    date: dailyData.date,
+    attendance: calculateAttendanceStats(dailyData.values),
+    payment: calculatePaymentStats(dailyData.values),
+    exemptions: calculateExemptionStats(dailyData.values),
+  };
+}
+
+function calculateAttendanceStats(rawData) {
+  return {
+    totalAttendees: rawData.length,
+    numL1Attendees: rawData.filter((r) => r.l1).length,
+    numL2Attendees: rawData.filter((r) => r.l2).length,
+    numL3Attendees: rawData.filter((r) => r.l3).length,
+    numL4Attendees: rawData.filter((r) => r.l4).length,
+    numSocialOnlyAttendees: rawData.filter((r) => r.socialOnly).length,
+  };
+}
+
+function calculatePaymentStats(rawData) {
+  const getTotalPayment = (data) =>
+    data.reduce((total, current) => total + current.amountPaid, 0);
+
+  // Venmo charges 1.9% + $0.10 per transaction over $1
+  const getVenmoTotalAfterFees = (data) =>
+    data.reduce(
+      (total, current) => total + (current.amountPaid * 0.981 - 0.1),
+      0
+    );
+
+  let paymentStats = {
+    totalAmountPaid: getTotalPayment(rawData),
+    totalPaidByVenmo: getTotalPayment(
+      rawData.filter((r) => r.paymentMethod === "Venmo")
+    ),
+    totalPaidByVenmoAfterFees: getVenmoTotalAfterFees(
+      rawData.filter((r) => r.paymentMethod === "Venmo")
+    ),
+    totalPaidByZelle: getTotalPayment(
+      rawData.filter((r) => r.paymentMethod === "Zelle")
+    ),
+    totalPaidByPayPal: getTotalPayment(
+      rawData.filter((r) => r.paymentMethod === "PayPal")
+    ),
+    totalPaidByCash: getTotalPayment(
+      rawData.filter((r) => r.paymentMethod === "Cash")
+    ),
+  };
+
+  // TODO: verify that there aren't any other fees.
+  paymentStats.totalAmountPaidAfterFees =
+    paymentStats.totalPaidByCash +
+    paymentStats.totalPaidByZelle +
+    paymentStats.totalPaidByVenmoAfterFees +
+    paymentStats.totalPaidByPayPal;
+
+  return paymentStats;
+}
+
+function calculateExemptionStats(rawData) {
+  return {
+    totalExemptions: rawData.filter((r) => r.exemption).length,
+    numSponsorsAttended: rawData.filter((r) => r.exemption === "Sponsor")
+      .length,
+    numVolunteers: rawData.filter(
+      (r) =>
+        r.exemption === "30+ min Volunteer" ||
+        r.exemption === "15 min Volunteer"
+    ).length,
+  };
+}
+
+function getColumnValues(range, column) {
+  let columnValues = [];
+
+  for (var row of range.getValues()) {
+    columnValues.push(row[0]);
+  }
+
+  return columnValues;
+}
+
+function getWeeklyStats() {
+  let sheet = SpreadsheetApp.openByUrl(SIGN_IN_DATA_SHEET);
+  let lastRow = sheet.getLastRow();
+
+  let allValues = sheet.getRange(`A2:L${lastRow}`);
+  let rawData = divideRawDataByDays(allValues);
+
+  return computeWeeklyStats(rawData);
+}
+
+function getAnalytics() {
+  return {
+    weeklyStats: getWeeklyStats(),
+    sponsorStats: getSponsorStats(),
+  };
 }
 
 function doGet(e) {
-  let myData = {
-    people: getRegisteredPeople(),
-  };
-
-  let jsonOutput = JSON.stringify(myData);
-  return ContentService.createTextOutput(jsonOutput).setMimeType(
-    ContentService.MimeType.JSON
-  );
-}
-
-const TEST_SIGN_IN_SHEET =
-  "https://docs.google.com/spreadsheets/d/1ywyE0Bo1Jth2kKe05pMJgPEZFEf8wASZ5CGMR9MOldQ/edit";
-const TEST_SIGN_IN_TAB_ID = "609287011";
-
-const PROD_SIGN_IN_SHEET =
-  "https://docs.google.com/spreadsheets/d/1dJ_m42m3F3VjxRcw9cqQScBVN2IfwAfAc-Q3r2FjzhU/";
-const PROD_SIGN_IN_TAB_ID = "0";
-
-// TODO: Ensure no duplicates
-function doPost(e) {
-  let data = JSON.parse(e.postData.contents);
-
-  const sheet = SpreadsheetApp.openByUrl(
-    data.useProd ? PROD_SIGN_IN_SHEET : TEST_SIGN_IN_SHEET
-  );
-  let tab = sheet.getSheetById(
-    data.useProd ? PROD_SIGN_IN_TAB_ID : TEST_SIGN_IN_TAB_ID
-  );
-
-  // Do something more sophisticated here like detect sponsors and figure out how much each person paid
-  let averagePaid = (parseInt(data.amountPaid) || 0) / data.persons.length;
-
-  for (var person of data.persons) {
-    tab.appendRow([
-      new Date(),
-      person,
-      data.l1,
-      data.l2,
-      data.l3,
-      data.l4,
-      data.socialOnly,
-      data.mask,
-      averagePaid,
-      data.paymentMethod,
-      data.exemption,
-      data.notes,
-    ]);
-  }
-
-  let jsonOutput = JSON.stringify({ success: true });
+  let jsonOutput = JSON.stringify(getAnalytics());
   return ContentService.createTextOutput(jsonOutput).setMimeType(
     ContentService.MimeType.JSON
   );
