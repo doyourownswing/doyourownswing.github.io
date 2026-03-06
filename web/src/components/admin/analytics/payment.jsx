@@ -150,12 +150,14 @@ function MonthlyProfit(props) {
 
   let monthlyProfit = new Map();
 
+  // Aggregate weekly totals into monthly
   for (let week of data.weeklyStats) {
     let monthString = formatDate(dayjs(week.date).date(1), "MMM, YYYY");
 
     let newValue =
       monthlyProfit.getOrInsert(monthString, 0) +
-      week.payment.totalAmountPaidAfterFees;
+      week.payment.totalAmountPaidAfterFees -
+      WEEKLY_COST;
     monthlyProfit.set(monthString, newValue);
   }
 
@@ -170,15 +172,12 @@ function MonthlyProfit(props) {
     });
 
     let sponsorAmount = sponsorStats ? sponsorStats.amount : 0;
-
-    let newValue =
-      value -
-      getNumThursdaysInMonth(monthDate.month(), monthDate.year()) *
-        WEEKLY_COST +
-      sponsorAmount;
+    let newValue = value + sponsorAmount;
 
     monthlyProfit.set(key, newValue);
   }
+
+  // note: we don't get charged for the weeks we don't have DYOS
 
   const xLabels = [...monthlyProfit.keys()];
   const monthlyTotals = [...monthlyProfit.values()];
