@@ -27,3 +27,4 @@ export const MAILTO_DYOS_EMAIL = "mailto:doyourownswing@gmail.com";
 export const DYOS_DISCORD_LINK = "https://discord.gg/EwXq7EYS7e";
 export const DYOS_FACEBOOK_LINK = "https://www.facebook.com/doyourownswing";
 export const DYOS_INSTAGRAM_LINK = "https://www.instagram.com/doyourownswing";
+export const MERCH_STORE_LINK = "https://doyourownswing.printful.me/";

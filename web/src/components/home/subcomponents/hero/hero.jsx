@@ -15,6 +15,8 @@ import { StartHere } from "@/common/pages";
 import messages from "./messages";
 import heroStyles from "./hero.styles";
 import "./hero.css";
+import { HTML_IDS } from "../constants";
+import { useNavigate } from "react-router-dom";
 
 const newYorkTimesLink =
   "https://www.removepaywall.com/search?url=https://www.nytimes.com/2024/12/23/arts/dance/west-coast-swing-dance.html";
@@ -23,7 +25,9 @@ const animationIterationEventName = "animationiteration";
 
 const adjectiveContainerId = "adjective-container";
 
-function Hero(props) {
+function Hero() {
+  const navigate = useNavigate();
+
   const smallestScreenSize = useMediaQuery(theme.breakpoints.down("sm"));
   const adjectiveContainerClass = smallestScreenSize
     ? "adjective-xs"
@@ -86,7 +90,7 @@ function Hero(props) {
                 sx={heroStyles.primaryButton}
                 variant="contained"
                 color={theme.palette.buttonLight.name}
-                onClick={props.onClickPrimaryButton}
+                onClick={() => navigate("#" + HTML_IDS.SCHEDULE)}
               >
                 {messages.primaryButton}
               </Button>

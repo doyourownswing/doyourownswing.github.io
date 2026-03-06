@@ -52,7 +52,7 @@ const events = [
     subtitle: "Let's level up some classic blues patterns",
     advanceTopic: "",
     levelOneTopic: L1_TOPICS.week1,
-    dj: "",
+    dj: "Jake",
     facebookLink: "https://www.facebook.com/events/877189058035030/",
   },
   {
@@ -60,6 +60,54 @@ const events = [
     noDyos: true,
     title: "Capital Swing weekend",
     subtitle: "See you next week!",
+  },
+  {
+    title: "A Deep Dive into Connection week 1",
+    subtitle: "The secret sauce behind WCS improvisation!",
+    date: createDate("02/19/2026"),
+    advanceTopic: "",
+    levelOneTopic: L1_TOPICS.week2,
+    dj: "International Music Night!",
+    facebookLink: "https://www.facebook.com/events/2444016136031608/",
+  },
+  {
+    title: "A Deep Dive into Connection week 2",
+    subtitle: "Creating conversations through the connection",
+    date: createDate("02/26/2026"),
+    advanceTopic: "",
+    levelOneTopic: L1_TOPICS.week3,
+    dj: "Saumya",
+    facebookLink: "https://www.facebook.com/events/876192111459926/",
+  },
+  {
+    title: "How to dance to slow music",
+    subtitle: "Learn how to fill the space between beats with dance",
+    date: createDate("03/05/2026"),
+    advanceTopic: "",
+    levelOneTopic: L1_TOPICS.week1,
+    dj: "DJ Andy",
+  },
+  {
+    title: "How to dance to REALLY slow music",
+    subtitle: "Using the tempo to your advantage to create art",
+    date: createDate("03/12/2026"),
+    advanceTopic: "",
+    levelOneTopic: L1_TOPICS.week2,
+    dj: "DJ Preston",
+  },
+  {
+    title: "How to dance to fast music",
+    subtitle: "Learn the technique required to keep up with faster songs",
+    date: createDate("03/19/2026"),
+    advanceTopic: "",
+    levelOneTopic: L1_TOPICS.week3,
+  },
+  {
+    title: "How to dance to REALLY fast music",
+    subtitle: "How to enjoy those super high tempos",
+    date: createDate("03/26/2026"),
+    advanceTopic: "",
+    levelOneTopic: L1_TOPICS.week4,
   },
 ];
 
@@ -73,11 +121,16 @@ const events = [
 //   subtitle: "See you next week",
 // },
 
+// Intro Class Scheduling doc: https://docs.google.com/spreadsheets/d/1JN8aU4991QY5T3iG_sc1WaUgN2MB8FN1t2rTakj4WOA/edit?gid=732299169#gid=732299169
+//   Specifies the class topics
+// Volunteer Sign Up Sheet: https://docs.google.com/spreadsheets/d/1xShbXzthXebT5oTHvB77HGHUBHOC3EyrIx05clzhVzI/edit?gid=0#gid=0
+//   Usually has DJ details
+
 // TODO support specifying a particular month
 function getThisMonthsEvents() {
   let thisMonth = getNextThursday().month();
 
-  return events.filter((event) => event.date.month() == thisMonth);
+  return events.filter((event) => event.date.month() === thisMonth);
 }
 
 export default getThisMonthsEvents;
