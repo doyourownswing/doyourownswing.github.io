@@ -45,11 +45,11 @@ const signInStyles = {
   },
   paymentContainer: {
     display: "flex",
-    flexDirection: { xs: "column", md: "row" },
+    flexDirection: "column",
     gap: "2rem",
   },
   paymentAmount: {
-    width: { xs: "min(80vw, 20rem)", md: "unset" },
+    width: { xs: "min(80vw, 20rem)", md: "25rem" },
   },
   formHeader: {
     ...baseHeaderText,

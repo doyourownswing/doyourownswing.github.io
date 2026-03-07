@@ -17,7 +17,7 @@ const messages = {
   additionalNotesLabel: "Additional notes",
   paymentMethodLabel: "Payment method",
   none: "None",
-  paymentAmountLabel: "Payment amount",
+  paymentAmountLabel: "Amount paid (include cost of mask if they bought one)",
   personsCheckinHeader: "Who is checking in",
   refreshOptions: "Refresh",
   refreshError:
