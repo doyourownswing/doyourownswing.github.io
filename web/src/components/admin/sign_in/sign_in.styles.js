@@ -55,6 +55,9 @@ const signInStyles = {
     ...baseHeaderText,
     paddingBottom: "1rem",
   },
+  formExplainer: {
+    paddingBottom: "1rem",
+  },
   personSectionHeaderText: {
     ...baseHeaderText,
     paddingTop: "1rem",

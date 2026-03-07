@@ -24,6 +24,8 @@ const messages = {
     "Something is wrong, please try again. Get Jessee if it still won't work.",
   personsLabel: "Dancer(s)",
   whichClassesHeader: "Which classes do they plan to attend, if any?",
+  whichClassesExplainer:
+    "Only count students. In other words, if someone is teaching a class, don't count them as an attendee for that class.",
 };
 
 export default messages;

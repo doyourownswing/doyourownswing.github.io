@@ -21,7 +21,10 @@ export const EVENTS = {
   L2: { id: "L2", displayName: "Level 2 (7:30pm)" },
   L3: { id: "L3", displayName: "Level 3 (8:05pm)" },
   L4: { id: "L4", displayName: "Level 4 (8:40pm)" },
-  SOCIAL_ONLY: { id: "SOCIAL_ONLY", displayName: "Social only" },
+  SOCIAL_ONLY: {
+    id: "SOCIAL_ONLY",
+    displayName: "Social only / teaching only",
+  },
 };
 
 export const BASE_EVENTS_VALUE = {
