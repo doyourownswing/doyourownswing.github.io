@@ -50,6 +50,7 @@ function validateForm(
   paymentAmount,
   paymentMethod,
   eventsAttending,
+  additionalNotes,
 ) {
   let unfilledRequiredFields = [];
 
@@ -64,7 +65,7 @@ function validateForm(
     if (!validateMoneyValue(paymentAmount)) {
       unfilledRequiredFields.push("Payment amount");
     }
-  } else if (exemption === EXEMPTION.OTHER) {
+  } else if (exemption === EXEMPTION.OTHER && additionalNotes === "") {
     unfilledRequiredFields.push("Additional notes");
   }
 

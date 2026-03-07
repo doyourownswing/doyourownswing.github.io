@@ -112,7 +112,8 @@ function SignIn() {
     buyingMask,
     paymentAmount,
     paymentMethod,
-    eventsAttending
+    eventsAttending,
+    additionalNotes,
   );
   let formValid = unfilledRequiredFields.length === 0;
 
