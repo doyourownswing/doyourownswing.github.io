@@ -1,5 +1,5 @@
 const messages = {
-  title: "Admin - sign in",
+  title: "DYOS Front Desk Sign-In",
   registrationHeader: "Have they filled out the registration form?",
   fillOutThisForm: "If not, have them fill out this form: ",
   registrationForm: "One-time registration form",
