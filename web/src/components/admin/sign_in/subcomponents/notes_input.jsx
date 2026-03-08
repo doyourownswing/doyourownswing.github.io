@@ -16,7 +16,7 @@ function NotesInput(props) {
           label={messages.additionalNotesLabel}
           multiline
           sx={signInStyles.additionalNotesInput}
-          rows={4}
+          rows={2}
           value={props.value}
           onChange={props.onSetAdditionalNotes}
         />

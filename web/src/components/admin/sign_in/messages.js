@@ -1,12 +1,12 @@
 const messages = {
   title: "DYOS Front Desk",
-  checkInTitle: "DYOS Check-In",
+  checkInTitle: "Check-in form",
   requiredFieldsUnset: "Fill required fields: ",
   submit: "Submit",
   clear: "Clear form",
   submitSuccess: "Successfully checked in",
   submitError:
-    "Something went wrong, please try again (and get Jessee if it still doesn't work)",
+    "Something went wrong, please try again. If it still doesn't work, please collect their information by hand.",
   exemptionLabel: "Payment exemption",
   maskLabel: "Purchased a mask (extra $1)",
   additionalNotesLabel: "Notes",
@@ -20,17 +20,17 @@ const messages = {
     "If someone doesn't appear in this list, ask them to fill out the 2026 registration form. Once they're done, click Refresh.",
   refreshOptions: "Refresh",
   refreshError:
-    "Something is wrong, please try again. If it still won't work, please collect this information some other way, and we'll enter it later.",
+    "Something is wrong, please try again. If it still doesn't work, please collect their information by hand.",
   personsLabel: "Dancer(s)",
   whichClassesHeader: "Which classes do they plan to attend, if any?",
   whichClassesExplainer:
-    "Only count students. In other words, if someone is teaching a class, don't count them as an attendee for that class.",
+    "Only count students. In other words, if someone is teaching a class, don't mark them as an attendee for that class.",
 
-  volunteerInstructionsHeader: "How to use this page",
+  volunteerInstructionsHeader: "How to run the front desk",
   volunteerInstructions: [
-    "Fill in the form below for every DYOS attendee",
-    "Collect cash payment, or confirm payment via app",
-    "Make sure everyone attending class or mask-required spaces has a mask (check with Riley if you're not sure about this week's mask policy)",
+    "For every DYOS attendee, fill in the form below",
+    "Confirm that they paid via Venmo or Zelle, or collect cash payment in the cash pouch",
+    "Make sure that everyone has a mask for classes (and, if masks are required tonight, for social dancing)",
   ],
   volunteerInstructionsThankYou:
     "Thank you for volunteering! Volunteers help keep DYOS running! 💜",
