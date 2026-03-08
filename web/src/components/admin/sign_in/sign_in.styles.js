@@ -26,10 +26,13 @@ const signInStyles = {
     textAlign: "center",
   },
   section: {
-    paddingTop: "4rem",
+    paddingTop: "3rem",
   },
   sectionHeader: {
     ...baseHeaderText,
+  },
+  volunteerInstructionsContainer: {
+    marginTop: "1rem",
   },
   inputSection: {
     paddingBottom: "2rem",
@@ -46,6 +49,7 @@ const signInStyles = {
   paymentContainer: {
     display: "flex",
     flexDirection: { xs: "column", md: "row" },
+    alignItems: "flex-end",
     gap: "2rem",
   },
   paymentAmount: {
@@ -53,6 +57,9 @@ const signInStyles = {
   },
   formHeader: {
     ...baseHeaderText,
+    paddingBottom: "1rem",
+  },
+  formExplainer: {
     paddingBottom: "1rem",
   },
   personSectionHeaderText: {

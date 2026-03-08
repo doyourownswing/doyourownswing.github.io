@@ -29,7 +29,7 @@ function validateMoneyValue(value) {
 
     let number = parseFloat(value);
 
-    return number > 0;
+    return number >= 0;
   } catch {
     return false;
   }
@@ -49,7 +49,8 @@ function validateForm(
   buyingMask,
   paymentAmount,
   paymentMethod,
-  eventsAttending
+  eventsAttending,
+  additionalNotes,
 ) {
   let unfilledRequiredFields = [];
 
@@ -64,7 +65,7 @@ function validateForm(
     if (!validateMoneyValue(paymentAmount)) {
       unfilledRequiredFields.push("Payment amount");
     }
-  } else if (exemption === EXEMPTION.OTHER) {
+  } else if (exemption === EXEMPTION.OTHER && additionalNotes === "") {
     unfilledRequiredFields.push("Additional notes");
   }
 
