@@ -26,10 +26,13 @@ const signInStyles = {
     textAlign: "center",
   },
   section: {
-    paddingTop: "4rem",
+    paddingTop: "3rem",
   },
   sectionHeader: {
     ...baseHeaderText,
+  },
+  volunteerInstructionsContainer: {
+    marginTop: "1rem",
   },
   inputSection: {
     paddingBottom: "2rem",

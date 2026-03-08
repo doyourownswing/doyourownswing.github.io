@@ -142,7 +142,9 @@ function SignIn() {
               sx={signInStyles.inputSection}
             >
               <Box sx={signInStyles.formLeft}>
-                <Typography sx={signInStyles.formHeader}>Payment</Typography>
+                <Typography sx={signInStyles.formHeader}>
+                  {messages.paymentHeader}
+                </Typography>
                 <ExemptionInput
                   value={exemption}
                   onSelectExemption={onSelectExemption}

@@ -80,6 +80,9 @@ function PersonInput(props) {
         )}
       </Box>
       {hasError && <Typography>{messages.refreshError}</Typography>}
+      <Typography sx={signInStyles.formExplainer}>
+        {messages.personsCheckInExplainer}
+      </Typography>
       <Autocomplete
         multiple
         options={data}
