@@ -145,10 +145,10 @@ function SignIn() {
                 <Typography sx={signInStyles.formHeader}>
                   {messages.paymentHeader}
                 </Typography>
-                <ExemptionInput
-                  value={exemption}
-                  onSelectExemption={onSelectExemption}
-                />
+
+                <Typography sx={signInStyles.formExplainer}>
+                  {messages.paymentExplainer}
+                </Typography>
 
                 <PaymentInput
                   paymentMethodValue={paymentMethod}
@@ -158,16 +158,27 @@ function SignIn() {
                   required={isPaymentRequired(exemption, buyingMask)}
                 />
 
-                <MaskInput
-                  checked={buyingMask}
-                  onMaskPurchaseChange={onMaskPurchaseChange}
-                />
+                <Box sx={signInStyles.section}>
+                  <Typography sx={signInStyles.formHeader}>
+                    Additional information
+                  </Typography>
 
-                <NotesInput
-                  value={additionalNotes}
-                  onSetAdditionalNotes={onSetAdditionalNotes}
-                  required={exemption === EXEMPTION.OTHER}
-                />
+                  <ExemptionInput
+                    value={exemption}
+                    onSelectExemption={onSelectExemption}
+                  />
+
+                  <MaskInput
+                    checked={buyingMask}
+                    onMaskPurchaseChange={onMaskPurchaseChange}
+                  />
+
+                  <NotesInput
+                    value={additionalNotes}
+                    onSetAdditionalNotes={onSetAdditionalNotes}
+                    required={exemption === EXEMPTION.OTHER}
+                  />
+                </Box>
               </Box>
               <WhichEvents
                 value={eventsAttending}

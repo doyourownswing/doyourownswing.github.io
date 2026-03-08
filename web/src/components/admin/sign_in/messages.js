@@ -7,13 +7,14 @@ const messages = {
   submitSuccess: "Successfully checked in",
   submitError:
     "Something went wrong, please try again (and get Jessee if it still doesn't work)",
-  exemptionLabel: "Exemption",
+  exemptionLabel: "Payment exemption",
   maskLabel: "Purchased a mask (extra $1)",
-  additionalNotesLabel: "Additional notes",
+  additionalNotesLabel: "Notes",
   paymentMethodLabel: "Payment method",
   paymentHeader: "How are they paying?",
-  paymentAmountLabel:
-    "Full amount paid (include cost of mask if they bought one)",
+  paymentExplainer:
+    "Record the full amount they paid, including the cost of any mask(s) purchased. If they are not paying, record their exemption below to skip this section.",
+  paymentAmountLabel: "Payment amount",
   personsCheckinHeader: "Who is checking in?",
   personsCheckInExplainer:
     "If someone doesn't appear in this list, ask them to fill out the 2026 registration form. Once they're done, click Refresh.",

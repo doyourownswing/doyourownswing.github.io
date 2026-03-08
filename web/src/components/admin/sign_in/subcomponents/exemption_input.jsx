@@ -19,7 +19,7 @@ function ExemptionInput(props) {
         <Select
           labelId="exemption-label"
           value={props.value}
-          label="Exemption"
+          label={messages.exemptionLabel}
           onChange={props.onSelectExemption}
           sx={signInStyles.input}
         >
