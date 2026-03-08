@@ -11,7 +11,6 @@ const messages = {
   maskLabel: "Purchased a mask (extra $1)",
   additionalNotesLabel: "Additional notes",
   paymentMethodLabel: "Payment method",
-  none: "None",
   paymentHeader: "How are they paying?",
   paymentAmountLabel:
     "Full amount paid (include cost of mask if they bought one)",
