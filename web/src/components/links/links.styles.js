@@ -16,12 +16,12 @@ const baseSocialIcon = {
 
 const baseLinkContainer = {
   borderRadius: "2rem",
-  background: alpha("#e9e9e9", 0.8),
+  background: alpha(theme.palette.background.lightGray, 0.8),
   boxShadow: BOX_SHADOW,
   transition: transitionTime,
   "&:hover": {
     transform: "translateY(-2px)",
-    background: "#e9e9e9",
+    background: theme.palette.background.lightGray,
   },
 };
 
@@ -50,6 +50,7 @@ const linksStyles = {
   },
   card: {
     boxShadow: "#00000044 0px 2px 16px 0px;",
+    borderRadius: { xs: "unset", sm: "2rem" },
 
     backgroundColor: theme.palette.background.palePurple,
     backgroundImage:
@@ -67,17 +68,17 @@ const linksStyles = {
     alignItems: "center",
     display: "flex",
     flexDirection: "column",
-    gap: "1rem",
+    gap: "1.5rem",
   },
   logoAvatar: {
     height: imageDiameter,
     width: imageDiameter,
-    boxShadow: "0 0 1rem black",
+    boxShadow: `0 0 1rem ${alpha(theme.palette.background.darkerPurple, 0.4)}`,
   },
   logoImage: {
     height: imageDiameter,
     width: imageDiameter,
-    backgroundColor: "black",
+    background: `linear-gradient(to bottom, ${theme.palette.background.lessDarkPurple}, ${theme.palette.background.darkerPurple})`,
   },
   titleTextContainer: {
     display: "inline-grid",
@@ -91,7 +92,7 @@ const linksStyles = {
   subtitle: {
     textAlign: "center",
     lineHeight: "1.25rem",
-    color: theme.palette.text.secondaryBody,
+    color: theme.palette.text.secondaryBody2,
   },
   socialsContainer: {
     display: "flex",
@@ -132,7 +133,7 @@ const linksStyles = {
     ...singleLinkContainerMixin,
     border: `1px solid ${theme.palette.border.emphasis}`,
     "&:hover": {
-      background: alpha("#FFFFFF", 0.4),
+      background: alpha(theme.palette.background.light, 0.4),
     },
   },
   accordionLinkContainer: {
@@ -183,7 +184,7 @@ const linksStyles = {
     color: "purple",
   },
   flagIcon: {
-    color: "orange",
+    color: "darkorange",
   },
   paymentOptionsContainer: {
     padding: "0rem 1rem",

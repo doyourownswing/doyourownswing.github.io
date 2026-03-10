@@ -93,7 +93,7 @@ function Socials() {
 
 function PaymentItemLink(props) {
   return (
-    <Link underline="none" href={props.href}>
+    <Link underline="none" href={props.href} target="_blank">
       <Box sx={linksStyles.paymentLinkContainer}>
         <Box sx={linksStyles.linkBoxSide}>{props.leftItem}</Box>
         <Typography sx={linksStyles.linkBoxText}>{props.label}</Typography>
@@ -183,7 +183,7 @@ function ItemLink(props) {
 
   if (props.href) {
     return (
-      <Link underline="none" href={props.href}>
+      <Link underline="none" href={props.href} target="_blank">
         {item}
       </Link>
     );

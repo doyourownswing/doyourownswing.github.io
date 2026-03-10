@@ -9,9 +9,9 @@ const messages = {
   paypal: "PayPal",
   registrationForm: "One-time registration form",
   classes: "Find your class",
-  codeOfConduct: "Code of conduct",
+  codeOfConduct: "Code of Conduct",
   merch: "Get your merch!",
-  reportAnIncident: "Safety & Access Report Form",
+  reportAnIncident: "Safety & Access Report form",
 };
 
 export default messages;
