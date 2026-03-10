@@ -29,7 +29,7 @@ function validateMoneyValue(value) {
 
     let number = parseFloat(value);
 
-    return number >= 0;
+    return number > 0;
   } catch {
     return false;
   }
