@@ -69,7 +69,10 @@ function validateForm(
     unfilledRequiredFields.push("Additional notes");
   }
 
-  if (!Object.values(eventsAttending).some((e) => e)) {
+  if (
+    exemption !== EXEMPTION.TEACHER &&
+    !Object.values(eventsAttending).some((e) => e)
+  ) {
     unfilledRequiredFields.push("Classes attending");
   }
 

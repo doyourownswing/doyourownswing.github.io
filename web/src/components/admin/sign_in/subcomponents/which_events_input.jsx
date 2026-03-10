@@ -32,7 +32,11 @@ function WhichEvents(props) {
 
   return (
     <Box>
-      <FormControl component="fieldset" variant="standard" required>
+      <FormControl
+        component="fieldset"
+        variant="standard"
+        required={props.required}
+      >
         <FormLabel component="legend" sx={signInStyles.formHeader}>
           {messages.whichClassesHeader}
         </FormLabel>

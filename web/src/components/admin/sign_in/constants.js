@@ -1,8 +1,9 @@
 export const EXEMPTION = {
   NONE: "N/A",
   SPONSOR: "Sponsor",
-  VOLUNTEER_15: "15 min Volunteer",
-  VOLUNTEER_30: "30+ min Volunteer",
+  VOLUNTEER_15: "15 min front desk volunteer",
+  VOLUNTEER_30: "30+ min front desk volunteer",
+  TEACHER: "Volunteer lesson teacher",
   ALL_STAR: "WSDC All-Star",
   BLACK_INDIGENOUS: "Black / Indigenous",
   PAID_BY_OTHER: "Paid for by someone else",
@@ -23,7 +24,7 @@ export const EVENTS = {
   L4: { id: "L4", displayName: "Level 4 (8:40pm)" },
   SOCIAL_ONLY: {
     id: "SOCIAL_ONLY",
-    displayName: "Social only / teaching only",
+    displayName: "Social only",
   },
 };
 

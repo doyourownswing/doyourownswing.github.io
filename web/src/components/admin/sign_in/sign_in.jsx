@@ -183,6 +183,7 @@ function SignIn() {
               <WhichEvents
                 value={eventsAttending}
                 onSetEventsAttendingChange={setEventsAttending}
+                required={exemption !== EXEMPTION.TEACHER}
               />
             </Stack>
             <Box sx={signInStyles.inputContainer}>
