@@ -13,6 +13,7 @@ export const PAYMENT_OPTIONS = {
   CASH: "Cash",
   VENMO: "Venmo",
   ZELLE: "Zelle",
+  PAYPAL: "PayPal",
 };
 
 export const EVENTS = {
