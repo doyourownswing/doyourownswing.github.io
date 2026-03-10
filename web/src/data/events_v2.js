@@ -86,6 +86,7 @@ const events = [
     advanceTopic: "",
     levelOneTopic: L1_TOPICS.week1,
     dj: "DJ Andy",
+    facebookLink: "https://www.facebook.com/events/2031234317734554/",
   },
   {
     title: "How to dance to REALLY slow music",
@@ -94,13 +95,16 @@ const events = [
     advanceTopic: "",
     levelOneTopic: L1_TOPICS.week2,
     dj: "DJ Preston",
+    facebookLink: "https://www.facebook.com/events/782230681608121/",
   },
   {
     title: "How to dance to fast music",
-    subtitle: "Learn the technique required to keep up with faster songs",
+    subtitle:
+      "Featuring cookies from Sweet Note Cakes to celebrate March birthdays!",
     date: createDate("03/19/2026"),
     advanceTopic: "",
     levelOneTopic: L1_TOPICS.week3,
+    facebookLink: "https://www.facebook.com/events/3012544525800616/",
   },
   {
     title: "How to dance to REALLY fast music",
@@ -108,6 +112,7 @@ const events = [
     date: createDate("03/26/2026"),
     advanceTopic: "",
     levelOneTopic: L1_TOPICS.week4,
+    facebookLink: "https://www.facebook.com/events/1220627546942076/",
   },
 ];
 
