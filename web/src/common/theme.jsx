@@ -108,6 +108,7 @@ const theme = responsiveFontSizes(
         barelyPurple: basePalette.purple100,
         palePurple: basePalette.purple200,
         lessDarkPurple: basePalette.purple700,
+        mediumPurple: basePalette.purple600,
         darkPurple: basePalette.purple800,
         darkerPurple: basePalette.purple900,
         purpleDivider: basePalette.purple700,
@@ -129,6 +130,7 @@ const theme = responsiveFontSizes(
         titleLight: basePalette.gray100,
         announcement: basePalette.white,
         title: basePalette.purple500,
+        title2: basePalette.purple600,
         titleNotQuiteBlack: basePalette.purple800,
         navigationOptions: basePalette.gray500,
         subtitle: basePalette.gray500,
@@ -167,6 +169,7 @@ const theme = responsiveFontSizes(
         lightPurple: basePalette.purple400,
         activePurple: basePalette.purple500,
         inactive: basePalette.gray300,
+        secondary: basePalette.gray600,
       },
       callout: {
         border: basePalette.gray200,

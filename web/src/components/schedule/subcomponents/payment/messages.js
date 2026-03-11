@@ -4,6 +4,7 @@ const messages = {
   payUsing: "Pay using",
   zelle: "Zelle",
   scanZelle: "Scan QR code using your preferred banking app to open Zelle",
+  payWithZelle: "Pay with Zelle",
   venmo: "Venmo",
   venmoHandle: "@riley-wcs",
   openVenmo: "Open Venmo",

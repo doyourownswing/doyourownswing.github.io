@@ -1,4 +1,5 @@
 import { BOX_SHADOW, SECTION_PADDING } from "@/common/constants";
+import SocialsColors from "@/common/socials_colors";
 import theme from "@/common/theme";
 import { getRandomInt, getRandomSigmoidInt } from "@/utils/random";
 
@@ -28,36 +29,6 @@ const baseLinkButton = {
   borderRadius: "2rem",
   padding: "1rem 0rem",
   width: "min(100%, 20rem)",
-};
-
-const colors = {
-  // Official discord blurple
-  discord: "#5865F2",
-  // Official dark blurple
-  discordDarker: "#19175c",
-  // DIY nearly white color for button
-  discordOffWhite: "#e7f1ff",
-  // DIY nearly white color for button hover
-  discordOffWhiteDarker: "#cfd4ff",
-
-  // Official facebook blue
-  facebook: "#0766fe",
-  // Official facebook navy for accent
-  facebookDarker: "#003ab8",
-  // DIY nearly white color for button
-  facebookOffWhite: "#e7f1ff",
-  // DIY nearly white color for button hover
-  facebookdOffWhiteDarker: "#c5ddff",
-
-  // Cool link: https://about.instagram.com/brand/gradient?subpath=gradient
-  // Official instagram red color
-  instagram: "#FF0069",
-  // DIY darker instagram color for accent
-  instagramDarker: "#D300C5",
-  // DIY nearly white color for button
-  instagramOffWhite: "#ffe6f0",
-  // DIY nearly white color for button hover
-  instagramOffWhiteDarker: "#ffb8d4",
 };
 
 function buildLinearGradient(color1, color2) {
@@ -167,41 +138,50 @@ const contactStyles = {
   },
   discordCard: {
     ...baseCard,
-    background: buildLinearGradient(colors.discord, colors.discordDarker),
+    background: buildLinearGradient(
+      SocialsColors.discord,
+      SocialsColors.discordDarker
+    ),
   },
   facebookCard: {
     ...baseCard,
-    background: buildLinearGradient(colors.facebook, colors.facebookDarker),
+    background: buildLinearGradient(
+      SocialsColors.facebook,
+      SocialsColors.facebookDarker
+    ),
   },
   instagramCard: {
     ...baseCard,
-    background: buildLinearGradient(colors.instagram, colors.instagramDarker),
+    background: buildLinearGradient(
+      SocialsColors.instagram,
+      SocialsColors.instagramDarker
+    ),
   },
   discordButton: {
     ...baseLinkButton,
-    color: colors.discord,
-    backgroundColor: colors.discordOffWhite,
+    color: SocialsColors.discord,
+    backgroundColor: SocialsColors.discordOffWhite,
     "&:hover": {
-      color: colors.discordDarker,
-      backgroundColor: colors.discordOffWhiteDarker,
+      color: SocialsColors.discordDarker,
+      backgroundColor: SocialsColors.discordOffWhiteDarker,
     },
   },
   facebookButton: {
     ...baseLinkButton,
-    color: colors.facebook,
-    backgroundColor: colors.facebookOffWhite,
+    color: SocialsColors.facebook,
+    backgroundColor: SocialsColors.facebookOffWhite,
     "&:hover": {
-      color: colors.facebookDarker,
-      backgroundColor: colors.facebookdOffWhiteDarker,
+      color: SocialsColors.facebookDarker,
+      backgroundColor: SocialsColors.facebookdOffWhiteDarker,
     },
   },
   instagramButton: {
     ...baseLinkButton,
-    color: colors.instagram,
-    backgroundColor: colors.instagramOffWhite,
+    color: SocialsColors.instagram,
+    backgroundColor: SocialsColors.instagramOffWhite,
     "&:hover": {
-      color: colors.instagramDarker,
-      backgroundColor: colors.instagramOffWhiteDarker,
+      color: SocialsColors.instagramDarker,
+      backgroundColor: SocialsColors.instagramOffWhiteDarker,
     },
   },
   splotches: [
