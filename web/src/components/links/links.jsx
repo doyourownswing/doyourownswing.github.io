@@ -12,7 +12,6 @@ import {
   Typography,
 } from "@mui/material";
 import Logo from "@/assets/images/purple-heart-progress-circle.png";
-// import Logo from "@/assets/images/progress-circle-heart.png";
 import DiscordIcon from "@/components/common/icons/discord";
 import {
   Diversity1,
