@@ -5,6 +5,7 @@ import {
   FormControlLabel,
   FormGroup,
   FormLabel,
+  Typography,
 } from "@mui/material";
 import signInStyles from "../sign_in.styles";
 import { EVENTS } from "@/components/admin/sign_in/constants";
@@ -30,11 +31,20 @@ function WhichEvents(props) {
   };
 
   return (
-    <Box sx={signInStyles.inputContainer}>
-      <FormControl component="fieldset" variant="standard" required>
+    <Box>
+      <FormControl
+        component="fieldset"
+        variant="standard"
+        required={props.required}
+      >
         <FormLabel component="legend" sx={signInStyles.formHeader}>
           {messages.whichClassesHeader}
         </FormLabel>
+        <Box sx={signInStyles.formExplainer}>
+          <Typography display="inline">
+            {messages.whichClassesExplainer}
+          </Typography>
+        </Box>
         <FormGroup sx={signInStyles.eventsCheckboxGroup}>
           {Object.values(EVENTS).map((v) => {
             return (

@@ -49,7 +49,8 @@ function validateForm(
   buyingMask,
   paymentAmount,
   paymentMethod,
-  eventsAttending
+  eventsAttending,
+  additionalNotes,
 ) {
   let unfilledRequiredFields = [];
 
@@ -64,11 +65,14 @@ function validateForm(
     if (!validateMoneyValue(paymentAmount)) {
       unfilledRequiredFields.push("Payment amount");
     }
-  } else if (exemption === EXEMPTION.OTHER) {
+  } else if (exemption === EXEMPTION.OTHER && additionalNotes === "") {
     unfilledRequiredFields.push("Additional notes");
   }
 
-  if (!Object.values(eventsAttending).some((e) => e)) {
+  if (
+    exemption !== EXEMPTION.TEACHER &&
+    !Object.values(eventsAttending).some((e) => e)
+  ) {
     unfilledRequiredFields.push("Classes attending");
   }
 

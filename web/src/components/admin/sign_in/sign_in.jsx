@@ -1,10 +1,8 @@
 import { Box, Button, Container, Stack, Typography } from "@mui/material";
-import DyosLink from "@/components/common/link";
 import { useState } from "react";
 import signInStyles from "./sign_in.styles";
 import SignInService from "./sign_in_service";
 import { isPaymentRequired, validateForm } from "./utils";
-import { REGISTRATION_FORM_LINK } from "@/common/constants";
 import Callout from "@/components/common/callout";
 import {
   EXEMPTION,
@@ -12,6 +10,7 @@ import {
   DATA_STATE,
   BASE_EVENTS_VALUE,
 } from "@/components/admin/sign_in/constants";
+import { VolunteerInstructions } from "@/components/admin/sign_in/subcomponents/volunteer_instructions";
 import PersonInput from "@/components/admin/sign_in/subcomponents/person_input";
 import ExemptionInput from "@/components/admin/sign_in/subcomponents/exemption_input";
 import PaymentInput from "@/components/admin/sign_in/subcomponents/payment_input";
@@ -112,7 +111,8 @@ function SignIn() {
     buyingMask,
     paymentAmount,
     paymentMethod,
-    eventsAttending
+    eventsAttending,
+    additionalNotes,
   );
   let formValid = unfilledRequiredFields.length === 0;
 
@@ -123,22 +123,9 @@ function SignIn() {
           <Typography variant="h4" sx={signInStyles.title}>
             {messages.title}
           </Typography>
-          <Box sx={signInStyles.section}>
-            <Typography variant="h5" sx={signInStyles.sectionHeader}>
-              {messages.registrationHeader}
-            </Typography>
-            <Typography display="inline">{messages.fillOutThisForm}</Typography>
-            <DyosLink
-              href={REGISTRATION_FORM_LINK}
-              openInNewTab
-              fontWeight="bold"
-            >
-              {messages.registrationForm}
-            </DyosLink>
-            <Typography display="inline">
-              {messages.refreshAfterForm}
-            </Typography>
-          </Box>
+
+          <VolunteerInstructions />
+
           <Box sx={signInStyles.section}>
             <Typography variant="h5" sx={signInStyles.sectionHeader}>
               {messages.checkInTitle}
@@ -155,11 +142,13 @@ function SignIn() {
               sx={signInStyles.inputSection}
             >
               <Box sx={signInStyles.formLeft}>
-                <Typography sx={signInStyles.formHeader}>Payment</Typography>
-                <ExemptionInput
-                  value={exemption}
-                  onSelectExemption={onSelectExemption}
-                />
+                <Typography sx={signInStyles.formHeader}>
+                  {messages.paymentHeader}
+                </Typography>
+
+                <Typography sx={signInStyles.formExplainer}>
+                  {messages.paymentExplainer}
+                </Typography>
 
                 <PaymentInput
                   paymentMethodValue={paymentMethod}
@@ -169,20 +158,32 @@ function SignIn() {
                   required={isPaymentRequired(exemption, buyingMask)}
                 />
 
-                <MaskInput
-                  checked={buyingMask}
-                  onMaskPurchaseChange={onMaskPurchaseChange}
-                />
+                <Box sx={signInStyles.section}>
+                  <Typography sx={signInStyles.formHeader}>
+                    Additional information
+                  </Typography>
 
-                <NotesInput
-                  value={additionalNotes}
-                  onSetAdditionalNotes={onSetAdditionalNotes}
-                  required={exemption === EXEMPTION.OTHER}
-                />
+                  <ExemptionInput
+                    value={exemption}
+                    onSelectExemption={onSelectExemption}
+                  />
+
+                  <MaskInput
+                    checked={buyingMask}
+                    onMaskPurchaseChange={onMaskPurchaseChange}
+                  />
+
+                  <NotesInput
+                    value={additionalNotes}
+                    onSetAdditionalNotes={onSetAdditionalNotes}
+                    required={exemption === EXEMPTION.OTHER}
+                  />
+                </Box>
               </Box>
               <WhichEvents
                 value={eventsAttending}
                 onSetEventsAttendingChange={setEventsAttending}
+                required={exemption !== EXEMPTION.TEACHER}
               />
             </Stack>
             <Box sx={signInStyles.inputContainer}>

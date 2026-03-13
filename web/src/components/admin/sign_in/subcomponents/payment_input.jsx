@@ -1,11 +1,13 @@
 import {
   Box,
   FormControl,
+  FormControlLabel,
+  FormLabel,
   InputAdornment,
   InputLabel,
-  MenuItem,
   OutlinedInput,
-  Select,
+  Radio,
+  RadioGroup,
 } from "@mui/material";
 import signInStyles from "../sign_in.styles";
 import { PAYMENT_OPTIONS } from "@/components/admin/sign_in/constants";
@@ -19,23 +21,23 @@ function PaymentInput(props) {
     <Box sx={signInStyles.inputContainer}>
       <Box sx={signInStyles.paymentContainer}>
         <FormControl required={required}>
-          <InputLabel id="payment-method-label">
+          <FormLabel id="payment-method-label">
             {messages.paymentMethodLabel}
-          </InputLabel>
-          <Select
-            labelId="payment-method-label"
+          </FormLabel>
+
+          <RadioGroup
+            row
+            aria-labelledby="payment-method-label"
+            name="payment-method"
             value={props.paymentMethodValue}
-            label="Payment method"
             onChange={props.onSelectPaymentMethod}
-            sx={signInStyles.input}
           >
-            <MenuItem value="">
-              <em>{messages.none}</em>
-            </MenuItem>
             {Object.values(PAYMENT_OPTIONS).map((o) => (
-              <MenuItem value={o}>{o}</MenuItem>
+              <FormControlLabel key={o} value={o} control={<Radio />} label={o}>
+                {o}
+              </FormControlLabel>
             ))}
-          </Select>
+          </RadioGroup>
         </FormControl>
 
         <FormControl required={required}>
