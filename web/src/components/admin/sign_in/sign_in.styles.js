@@ -26,10 +26,13 @@ const signInStyles = {
     textAlign: "center",
   },
   section: {
-    paddingTop: "4rem",
+    paddingTop: "3rem",
   },
   sectionHeader: {
     ...baseHeaderText,
+  },
+  volunteerInstructionsContainer: {
+    marginTop: "1rem",
   },
   inputSection: {
     paddingBottom: "2rem",
@@ -44,15 +47,19 @@ const signInStyles = {
     width: "min(80vw, 36rem)",
   },
   paymentContainer: {
-    display: "flex",
-    flexDirection: { xs: "column", md: "row" },
-    gap: "2rem",
+    display: "grid",
+    alignItems: "end",
+    gridTemplateColumns: "2.5fr 1fr",
+    paddingRight: "2rem",
   },
   paymentAmount: {
-    width: { xs: "min(80vw, 20rem)", md: "unset" },
+    width: "unset",
   },
   formHeader: {
     ...baseHeaderText,
+    paddingBottom: "1rem",
+  },
+  formExplainer: {
     paddingBottom: "1rem",
   },
   personSectionHeaderText: {

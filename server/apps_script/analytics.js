@@ -6,7 +6,7 @@ function dateTimeStringToDateString(dateTimeString) {
   let date = new Date(
     dateTime.getFullYear(),
     dateTime.getMonth(),
-    dateTime.getDate()
+    dateTime.getDate(),
   );
   return date.toDateString();
 }
@@ -76,16 +76,16 @@ function calculatePaymentStats(rawData) {
   return {
     totalAmountPaid: getTotalPayment(rawData),
     totalPaidByVenmo: getTotalPayment(
-      rawData.filter((r) => r.paymentMethod === "Venmo")
+      rawData.filter((r) => r.paymentMethod === "Venmo"),
     ),
     totalPaidByZelle: getTotalPayment(
-      rawData.filter((r) => r.paymentMethod === "Zelle")
+      rawData.filter((r) => r.paymentMethod === "Zelle"),
     ),
     totalPaidByPayPal: getTotalPayment(
-      rawData.filter((r) => r.paymentMethod === "PayPal")
+      rawData.filter((r) => r.paymentMethod === "PayPal"),
     ),
     totalPaidByCash: getTotalPayment(
-      rawData.filter((r) => r.paymentMethod === "Cash")
+      rawData.filter((r) => r.paymentMethod === "Cash"),
     ),
   };
 }
@@ -97,8 +97,13 @@ function calculateExemptionStats(rawData) {
       .length,
     numVolunteers: rawData.filter(
       (r) =>
+        // legacy values
         r.exemption === "30+ min Volunteer" ||
-        r.exemption === "15 min Volunteer"
+        r.exemption === "15 min Volunteer" ||
+        // current values
+        r.exemption === "15 min front desk volunteer" ||
+        r.exemption === "30+ min front desk volunteer" ||
+        r.exemption === "Volunteer lesson teacher",
     ).length,
   };
 }
@@ -126,6 +131,6 @@ function getAnalytics() {
 function doGet(e) {
   let jsonOutput = JSON.stringify(getAnalytics());
   return ContentService.createTextOutput(jsonOutput).setMimeType(
-    ContentService.MimeType.JSON
+    ContentService.MimeType.JSON,
   );
 }
