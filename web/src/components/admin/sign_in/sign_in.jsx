@@ -9,6 +9,8 @@ import {
   EVENTS,
   DATA_STATE,
   BASE_EVENTS_VALUE,
+  SOCIAL_ONLY_HOURS_CUTOFF,
+  SOCIAL_ONLY_EVENTS_VALUE,
 } from "@/components/admin/sign_in/constants";
 import { VolunteerInstructions } from "@/components/admin/sign_in/subcomponents/volunteer_instructions";
 import PersonInput from "@/components/admin/sign_in/subcomponents/person_input";
@@ -38,7 +40,12 @@ function SignIn() {
     setPaymentMethod("");
     setPaymentAmount("");
     setAdditionalNotes("");
-    setEventsAttending(BASE_EVENTS_VALUE);
+
+    if (new Date().getHours() >= SOCIAL_ONLY_HOURS_CUTOFF) {
+      setEventsAttending(SOCIAL_ONLY_EVENTS_VALUE);
+    } else {
+      setEventsAttending(BASE_EVENTS_VALUE);
+    }
   };
 
   const onSubmit = async () => {
