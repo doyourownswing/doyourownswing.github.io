@@ -60,9 +60,8 @@ const messages = {
     "West Coast Swing classes on Thursday nights at Studio M Ballroom in San Jose, CA",
   primaryButton: "COME DANCE WITH US",
   secondaryButton: "START HERE IF YOU'RE NEW",
-  nytCallout: "Read what The New York Times has to say about West Coast Swing",
+  callout: "Join our email newsletter for event reminders!",
   splashImageAltText: "Birds eye view picture of a social at Do Your Own Swing",
-  nytLogoAltText: "The New York Time logo",
   adjectives: shuffleArray(adjectivesList),
 };
 

@@ -9,7 +9,6 @@ import {
 import { Space } from "@/components/common/typography";
 import { useEffect, useState } from "react";
 import SplashImage from "@/assets/images/birds-eye-social.jpg";
-import NytLogo from "@/assets/images/new-york-times-logo.png";
 import theme from "@/common/theme";
 import { StartHere } from "@/common/pages";
 import messages from "./messages";
@@ -17,9 +16,6 @@ import heroStyles from "./hero.styles";
 import "./hero.css";
 import { HTML_IDS } from "../constants";
 import { useNavigate } from "react-router-dom";
-
-const newYorkTimesLink =
-  "https://www.removepaywall.com/search?url=https://www.nytimes.com/2024/12/23/arts/dance/west-coast-swing-dance.html";
 
 const animationIterationEventName = "animationiteration";
 
@@ -44,13 +40,13 @@ function Hero() {
 
     adjectiveContainer.addEventListener(
       animationIterationEventName,
-      onAnimationRestart
+      onAnimationRestart,
     );
 
     return () => {
       adjectiveContainer.removeEventListener(
         animationIterationEventName,
-        onAnimationRestart
+        onAnimationRestart,
       );
     };
   }, [adjectiveIndex, setAdjectiveIndex]);
@@ -115,21 +111,15 @@ function Hero() {
             </Box>
           </Box>
         </Box>
-        <Box sx={heroStyles.nytCalloutContainer}>
+        <Box sx={heroStyles.calloutContainer}>
           <Link
-            sx={heroStyles.nytCallout}
-            href={newYorkTimesLink}
+            sx={heroStyles.callout}
+            href={"https://example.com"}
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Box
-              component="img"
-              src={NytLogo}
-              sx={heroStyles.nytLogo}
-              alt={messages.nytLogoAltText}
-            />
-            <Typography sx={heroStyles.nytCalloutText}>
-              {messages.nytCallout}
+            <Typography sx={heroStyles.calloutText}>
+              {messages.callout}
             </Typography>
           </Link>
         </Box>
