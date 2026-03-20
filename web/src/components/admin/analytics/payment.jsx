@@ -1,17 +1,14 @@
 import theme from "@/common/theme";
 import analyticsStyles from "@/components/admin/analytics/analytics.styles";
+import calculateTotalMonthlyProfit from "@/components/admin/analytics/total_monthly_profit_calculator";
+import calculateTotalWeeklyProfit from "@/components/admin/analytics/total_weekly_profit_calculator";
 import {
   dateStringToMonth,
-  getNumThursdaysInMonth,
   prettyPrintDate,
 } from "@/components/admin/analytics/utils";
 import DyosCard from "@/components/common/card";
-import { formatDate } from "@/utils/date_utils";
 import { Box, Grid, Typography } from "@mui/material";
 import { BarChart, LineChart } from "@mui/x-charts";
-import dayjs from "dayjs";
-
-const WEEKLY_COST = 660;
 
 function TotalWeeklyMoney(props) {
   let data = props.data.weeklyStats;
@@ -87,14 +84,10 @@ function PaymentMethods(props) {
 }
 
 function TotalWeeklyProfit(props) {
-  let data = props.data.weeklyStats;
+  let computedData = calculateTotalWeeklyProfit(props.data);
 
-  const xLabels = data.map((d) => prettyPrintDate(d.date));
-  const weeklyProfit = data.map(
-    (d) => d.payment.totalAmountPaidAfterFees - WEEKLY_COST
-  );
-
-  const maxDeviation = Math.max(...weeklyProfit.map((r) => Math.abs(r)));
+  const xLabels = computedData.map((d) => d.date);
+  const weeklyProfit = computedData.map((d) => d.profit);
 
   return (
     <Grid size={1}>
@@ -104,14 +97,13 @@ function TotalWeeklyProfit(props) {
             Weekly profit
           </Typography>
           <Typography variant="subtitle" sx={analyticsStyles.chartSubtitle}>
-            Excludes sponsors
+            Accounting for sponsors (extrapolating for current month)
           </Typography>
         </Box>
         <LineChart
           height={300}
           series={[{ data: weeklyProfit, label: "Profit" }]}
           xAxis={[{ scaleType: "point", data: xLabels, height: 28 }]}
-          yAxis={[{ min: maxDeviation * -1.1 }]}
           margin={{ right: 64 }}
         />
       </DyosCard>
@@ -145,42 +137,11 @@ function Sponsors(props) {
 }
 
 function MonthlyProfit(props) {
-  let data = props.data;
-  // TODO refactor this plz
+  let computedData = calculateTotalMonthlyProfit(props.data);
+  console.log(computedData);
 
-  let monthlyProfit = new Map();
-
-  // Aggregate weekly totals into monthly
-  for (let week of data.weeklyStats) {
-    let monthString = formatDate(dayjs(week.date).date(1), "MMM, YYYY");
-
-    let newValue =
-      monthlyProfit.getOrInsert(monthString, 0) +
-      week.payment.totalAmountPaidAfterFees -
-      WEEKLY_COST;
-    monthlyProfit.set(monthString, newValue);
-  }
-
-  for (let [key, value] of monthlyProfit) {
-    let monthDate = dayjs(key);
-    let sponsorStats = data.sponsorStats.find((s) => {
-      let sponsorDate = dayjs(s.date);
-      return (
-        sponsorDate.month() === monthDate.month() &&
-        sponsorDate.year() === monthDate.year()
-      );
-    });
-
-    let sponsorAmount = sponsorStats ? sponsorStats.amount : 0;
-    let newValue = value + sponsorAmount;
-
-    monthlyProfit.set(key, newValue);
-  }
-
-  // note: we don't get charged for the weeks we don't have DYOS
-
-  const xLabels = [...monthlyProfit.keys()];
-  const monthlyTotals = [...monthlyProfit.values()];
+  const xLabels = computedData.map((d) => d.month);
+  const monthlyTotals = computedData.map((d) => d.profit);
 
   return (
     <Grid size={1}>
