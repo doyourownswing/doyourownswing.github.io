@@ -12,6 +12,7 @@ import SignIn from "@/components/admin/sign_in/sign_in";
 import Ipad from "@/components/admin/ipad/ipad";
 import Blog from "@/components/blog/blog";
 import Analytics from "@/components/admin/analytics/analytics";
+import Links from "@/components/links/links";
 
 class PageRegistrationInfo {
   constructor(page, isVisible, element, overrides) {
@@ -28,34 +29,35 @@ const pageRegistry = [
   new PageRegistrationInfo(
     pages.Schedule,
     FeatureFlags.showScheduleTab,
-    <Schedule />
+    <Schedule />,
   ),
   new PageRegistrationInfo(pages.About, FeatureFlags.showAboutTab, <About />),
   new PageRegistrationInfo(
     pages.Health,
     FeatureFlags.showHealthTab,
-    <Health />
+    <Health />,
   ),
   new PageRegistrationInfo(
     pages.Code,
     FeatureFlags.showCodeOfConductTab,
-    <CodeOfConduct />
+    <CodeOfConduct />,
   ),
   new PageRegistrationInfo(
     pages.Contact,
     FeatureFlags.showContactTab,
-    <Contact />
+    <Contact />,
   ),
   new PageRegistrationInfo(
     pages.StartHere,
     FeatureFlags.showStartHerePage,
-    <StartHere />
+    <StartHere />,
   ),
   new PageRegistrationInfo(pages.Blog, FeatureFlags.showBlog, <Blog />),
   new PageRegistrationInfo(pages.SignIn, true, <SignIn />, {
     navBarOverrides: {
       showNavBar: false,
     },
+    showFooter: false,
   }),
   new PageRegistrationInfo(pages.Ipad, true, <Ipad />, {
     navBarOverrides: {
@@ -64,6 +66,12 @@ const pageRegistry = [
     showFooter: false,
   }),
   new PageRegistrationInfo(pages.Analytics, true, <Analytics />, {
+    navBarOverrides: {
+      showNavBar: false,
+    },
+    showFooter: false,
+  }),
+  new PageRegistrationInfo(pages.Links, true, <Links />, {
     navBarOverrides: {
       showNavBar: false,
     },
