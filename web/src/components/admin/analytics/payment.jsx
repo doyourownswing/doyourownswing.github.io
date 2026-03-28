@@ -138,7 +138,6 @@ function Sponsors(props) {
 
 function MonthlyProfit(props) {
   let computedData = calculateTotalMonthlyProfit(props.data);
-  console.log(computedData);
 
   const xLabels = computedData.map((d) => d.month);
   const monthlyTotals = computedData.map((d) => d.profit);

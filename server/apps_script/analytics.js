@@ -130,11 +130,12 @@ function calculatePaymentStats(rawData) {
     ),
   };
 
-  // TODO: verify that there aren't any other fees.
   paymentStats.totalAmountPaidAfterFees =
     paymentStats.totalPaidByCash +
     paymentStats.totalPaidByZelle +
     paymentStats.totalPaidByVenmoAfterFees +
+    // Note: very few people use PayPal, and PayPal fees are dependent
+    // on whether the payer selects business or friend transaction type
     paymentStats.totalPaidByPayPal;
 
   return paymentStats;
@@ -147,8 +148,13 @@ function calculateExemptionStats(rawData) {
       .length,
     numVolunteers: rawData.filter(
       (r) =>
+        // legacy values
         r.exemption === "30+ min Volunteer" ||
-        r.exemption === "15 min Volunteer"
+        r.exemption === "15 min Volunteer" ||
+        // current values
+        r.exemption === "15 min front desk volunteer" ||
+        r.exemption === "30+ min front desk volunteer" ||
+        r.exemption === "Volunteer lesson teacher"
     ).length,
   };
 }
