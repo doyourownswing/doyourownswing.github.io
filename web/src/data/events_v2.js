@@ -114,6 +114,47 @@ const events = [
     levelOneTopic: L1_TOPICS.week4,
     facebookLink: "https://www.facebook.com/events/1220627546942076/",
   },
+
+  {
+    title: "DYOScavenger hunt",
+    subtitle: "",
+    date: createDate("04/02/2026"),
+    advanceTopic: "", //game changers - sneaky follower
+    levelOneTopic: L1_TOPICS.week1,
+    facebookLink: "https://www.facebook.com/events/935827152339981/",
+  },
+  {
+    title: "DYOS: Riley's Turns 33% Self Indulgent + Potluck",
+    subtitle: "",
+    date: createDate("04/09/2026"),
+    advanceTopic: "", // game changers - play by the rules (simon says)
+    levelOneTopic: L1_TOPICS.week2,
+    facebookLink: "https://www.facebook.com/events/1177781147574274/",
+  },
+  {
+    title: "",
+    subtitle: "",
+    date: createDate("04/16/2026"),
+    advanceTopic: "", // gmae changers
+    levelOneTopic: L1_TOPICS.week3,
+    facebookLink: "",
+  },
+  {
+    title: "",
+    subtitle: "",
+    date: createDate("04/23/2026"),
+    advanceTopic: "",
+    levelOneTopic: L1_TOPICS.week4,
+    facebookLink: "",
+  },
+  {
+    title: "",
+    subtitle: "",
+    date: createDate("04/30/2026"),
+    advanceTopic: "",
+    levelOneTopic: L1_TOPICS.week1,
+    facebookLink: "",
+  },
 ];
 
 // Example no DYOS item:
