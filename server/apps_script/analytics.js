@@ -1,12 +1,43 @@
 const SIGN_IN_DATA_SHEET =
   "https://docs.google.com/spreadsheets/d/1dJ_m42m3F3VjxRcw9cqQScBVN2IfwAfAc-Q3r2FjzhU/edit?gid=0#gid=0";
 
+const SPONSOR_SHEET =
+  "https://docs.google.com/spreadsheets/d/1FAG3d9pewQjECWRYtud4vOF5Q8e8RrYg87cnEUNuM2I/edit";
+const SPONSOR_TAB_ID = "294023538";
+
+function getSponsorStats() {
+  const sheet =
+    SpreadsheetApp.openByUrl(SPONSOR_SHEET).getSheetById(SPONSOR_TAB_ID);
+  let lastRow = sheet.getLastRow();
+  let range = sheet.getRange(`A5:C${lastRow}`);
+
+  let computedData = new Map();
+
+  for (var row of range.getValues()) {
+    let dateTimeString = dateTimeStringToDateString(row[0]);
+    let sponsorAmountString = row[2];
+
+    if (!!sponsorAmountString) {
+      let newValue =
+        computedData.getOrInsert(dateTimeString, 0) + sponsorAmountString;
+      computedData.set(dateTimeString, newValue);
+    }
+  }
+
+  let structuredData = [];
+  for (const [key, value] of computedData) {
+    structuredData.push({ date: key, amount: value });
+  }
+
+  return structuredData;
+}
+
 function dateTimeStringToDateString(dateTimeString) {
   let dateTime = new Date(dateTimeString);
   let date = new Date(
     dateTime.getFullYear(),
     dateTime.getMonth(),
-    dateTime.getDate(),
+    dateTime.getDate()
   );
   return date.toDateString();
 }
@@ -39,7 +70,7 @@ function divideRawDataByDays(range) {
   return dividedData;
 }
 
-function computeDailyStats(dividedData) {
+function computeWeeklyStats(dividedData) {
   let stats = [];
 
   for (let dailyData of dividedData) {
@@ -73,21 +104,40 @@ function calculatePaymentStats(rawData) {
   const getTotalPayment = (data) =>
     data.reduce((total, current) => total + current.amountPaid, 0);
 
-  return {
+  // Venmo charges 1.9% + $0.10 per transaction over $1
+  const getVenmoTotalAfterFees = (data) =>
+    data.reduce(
+      (total, current) => total + (current.amountPaid * 0.981 - 0.1),
+      0
+    );
+
+  let paymentStats = {
     totalAmountPaid: getTotalPayment(rawData),
     totalPaidByVenmo: getTotalPayment(
-      rawData.filter((r) => r.paymentMethod === "Venmo"),
+      rawData.filter((r) => r.paymentMethod === "Venmo")
+    ),
+    totalPaidByVenmoAfterFees: getVenmoTotalAfterFees(
+      rawData.filter((r) => r.paymentMethod === "Venmo")
     ),
     totalPaidByZelle: getTotalPayment(
-      rawData.filter((r) => r.paymentMethod === "Zelle"),
+      rawData.filter((r) => r.paymentMethod === "Zelle")
     ),
     totalPaidByPayPal: getTotalPayment(
-      rawData.filter((r) => r.paymentMethod === "PayPal"),
+      rawData.filter((r) => r.paymentMethod === "PayPal")
     ),
     totalPaidByCash: getTotalPayment(
-      rawData.filter((r) => r.paymentMethod === "Cash"),
+      rawData.filter((r) => r.paymentMethod === "Cash")
     ),
   };
+
+  // TODO: verify that there aren't any other fees.
+  paymentStats.totalAmountPaidAfterFees =
+    paymentStats.totalPaidByCash +
+    paymentStats.totalPaidByZelle +
+    paymentStats.totalPaidByVenmoAfterFees +
+    paymentStats.totalPaidByPayPal;
+
+  return paymentStats;
 }
 
 function calculateExemptionStats(rawData) {
@@ -97,13 +147,8 @@ function calculateExemptionStats(rawData) {
       .length,
     numVolunteers: rawData.filter(
       (r) =>
-        // legacy values
         r.exemption === "30+ min Volunteer" ||
-        r.exemption === "15 min Volunteer" ||
-        // current values
-        r.exemption === "15 min front desk volunteer" ||
-        r.exemption === "30+ min front desk volunteer" ||
-        r.exemption === "Volunteer lesson teacher",
+        r.exemption === "15 min Volunteer"
     ).length,
   };
 }
@@ -118,19 +163,26 @@ function getColumnValues(range, column) {
   return columnValues;
 }
 
-function getAnalytics() {
+function getWeeklyStats() {
   let sheet = SpreadsheetApp.openByUrl(SIGN_IN_DATA_SHEET);
   let lastRow = sheet.getLastRow();
 
   let allValues = sheet.getRange(`A2:L${lastRow}`);
   let rawData = divideRawDataByDays(allValues);
 
-  return computeDailyStats(rawData);
+  return computeWeeklyStats(rawData);
+}
+
+function getAnalytics() {
+  return {
+    weeklyStats: getWeeklyStats(),
+    sponsorStats: getSponsorStats(),
+  };
 }
 
 function doGet(e) {
   let jsonOutput = JSON.stringify(getAnalytics());
   return ContentService.createTextOutput(jsonOutput).setMimeType(
-    ContentService.MimeType.JSON,
+    ContentService.MimeType.JSON
   );
 }
