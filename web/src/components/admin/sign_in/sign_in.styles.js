@@ -102,6 +102,10 @@ const signInStyles = {
     borderInlineStartColor: theme.palette.callout.successAccent,
     backgroundColor: theme.palette.callout.successBackgroundColor,
   },
+  inProgressCallout: {
+    borderInlineStartColor: theme.palette.callout.accent,
+    backgroundColor: theme.palette.callout.backgroundColor,
+  },
   errorCallout: {
     borderInlineStartColor: theme.palette.callout.errorAccent,
     backgroundColor: theme.palette.callout.errorBackgroundColor,
