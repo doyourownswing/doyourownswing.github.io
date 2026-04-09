@@ -135,7 +135,7 @@ const events = [
     levelOneTopic: L1_TOPICS.week2,
   },
   {
-    title: "DYOS: Riley's Turns 33% Self Indulgent + Potluck",
+    title: "Riley's Turns 33% Self Indulgent + Potluck",
     subtitle: "Come celebrate Riley's birthday with us!",
     date: createDate("04/16/2026"),
     advanceTopic: "Riley Says... (exactly what it sounds like)",
