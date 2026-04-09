@@ -78,7 +78,7 @@ const linksStyles = {
   logoImage: {
     height: imageDiameter,
     width: imageDiameter,
-    background: `linear-gradient(to bottom, ${theme.palette.background.lessDarkPurple}, ${theme.palette.background.darkerPurple})`,
+    backgroundColor: theme.palette.background.darkPurple,
   },
   titleTextContainer: {
     display: "inline-grid",

@@ -11,7 +11,7 @@ import {
   SvgIcon,
   Typography,
 } from "@mui/material";
-import Logo from "@/assets/images/progress-circle-heart.png";
+import Logo from "@/assets/images/purple-heart-progress-circle.png";
 import DiscordIcon from "@/components/common/icons/discord";
 import {
   Diversity1,
@@ -36,7 +36,7 @@ import {
   ZELLE_LINK,
   INCIDENT_REPORT_FORM,
 } from "@/common/constants";
-import logoIcon from "@/assets/images/google-forms-logo.png";
+import googleSheetsLogoIcon from "@/assets/images/google-forms-logo.png";
 import PaypalLogoIcon from "@/assets/images/payment_logos/paypal-logo-icon.svg?react";
 import VenmoLogoIcon from "@/assets/images/payment_logos/venmo-logo-icon.png";
 import ZelleLogoIcon from "@/assets/images/payment_logos/zelle-logo-icon.png";
@@ -197,7 +197,11 @@ function Registration() {
     <ItemLink
       href={REGISTRATION_FORM_LINK}
       leftItem={
-        <Box component="img" src={logoIcon} sx={linksStyles.logoIcon} />
+        <Box
+          component="img"
+          src={googleSheetsLogoIcon}
+          sx={linksStyles.logoIcon}
+        />
       }
       label={messages.registrationForm}
     />
