@@ -143,8 +143,8 @@ const events = [
     facebookLink: "https://www.facebook.com/events/1177781147574274/",
   },
   {
-    title: "Do Your Own Swing",
-    subtitle: "Lesson plans TBD - come back soon for an update",
+    title: "Do Your Own Blues Week 1",
+    subtitle: "Dust of your blues shoes, we're practicing our call & response!",
     date: createDate("04/23/2026"),
     advanceTopic: "",
     levelOneTopic: L1_TOPICS.week4,
@@ -152,8 +152,8 @@ const events = [
     facebookLink: "",
   },
   {
-    title: "Do Your Own Swing",
-    subtitle: "Lesson plans TBD - come back soon for an update",
+    title: "Do Your Own Blues Week 2",
+    subtitle: "Continue practicing our call & response while dancing to blues!",
     date: createDate("04/30/2026"),
     advanceTopic: "",
     levelOneTopic: L1_TOPICS.week4,
