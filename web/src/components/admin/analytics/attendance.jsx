@@ -6,7 +6,7 @@ import { Box, Grid, Typography } from "@mui/material";
 import { BarChart, LineChart } from "@mui/x-charts";
 
 function TotalWeeklyAttendance(props) {
-  let data = props.data;
+  let data = props.data.weeklyStats;
 
   const xLabels = data.map((d) => prettyPrintDate(d.date));
   const weeklyAttendance = data.map((d) => d.attendance.totalAttendees);
@@ -32,7 +32,7 @@ function TotalWeeklyAttendance(props) {
 }
 
 function ClassAttendance(props) {
-  let data = props.data;
+  let data = props.data.weeklyStats;
 
   const xLabels = data.map((d) => prettyPrintDate(d.date));
   const l1 = data.map((d) => d.attendance.numL1Attendees);

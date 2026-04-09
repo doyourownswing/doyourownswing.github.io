@@ -4,9 +4,11 @@ const messages = {
   requiredFieldsUnset: "Fill required fields: ",
   submit: "Submit",
   clear: "Clear form",
-  submitSuccess: "Successfully checked in",
-  submitError:
-    "Something went wrong, please try again. If it still doesn't work, please collect their information by hand.",
+  submitInProgress:
+    "Submitting data... You can continue to check the next person in",
+  submitSuccess: "Successfully checked in: ",
+  resubmitPrompt:
+    "Something went wrong, please try to resubmit this person's data. If it still doesn't work, please copy this information down by hand.",
   exemptionLabel: "Payment exemption",
   maskLabel: "Purchased a mask (extra $1)",
   additionalNotesLabel: "Notes",

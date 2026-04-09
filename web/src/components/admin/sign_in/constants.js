@@ -36,6 +36,13 @@ export const BASE_EVENTS_VALUE = {
   [EVENTS.SOCIAL_ONLY.id]: false,
 };
 
+// If it's after 9 pm, default to checking "social only".
+export const SOCIAL_ONLY_HOURS_CUTOFF = 21;
+export const SOCIAL_ONLY_EVENTS_VALUE = {
+  ...BASE_EVENTS_VALUE,
+  [EVENTS.SOCIAL_ONLY.id]: true,
+};
+
 export const DATA_STATE = {
   NOT_STARTED: "NOT_STARTED",
   IN_PROGRESS: "IN_PROGRESS",

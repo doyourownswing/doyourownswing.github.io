@@ -9,6 +9,8 @@ import {
   EVENTS,
   DATA_STATE,
   BASE_EVENTS_VALUE,
+  SOCIAL_ONLY_HOURS_CUTOFF,
+  SOCIAL_ONLY_EVENTS_VALUE,
 } from "@/components/admin/sign_in/constants";
 import { VolunteerInstructions } from "@/components/admin/sign_in/subcomponents/volunteer_instructions";
 import PersonInput from "@/components/admin/sign_in/subcomponents/person_input";
@@ -21,6 +23,7 @@ import messages from "@/components/admin/sign_in/messages";
 
 // TODO add validation for someone who has already been entered today
 function SignIn() {
+  // Current state of the form inputs, which are fully controlled
   const [people, setPeople] = useState([]);
   const [exemption, setExemption] = useState(EXEMPTION.NONE);
   const [buyingMask, setBuyingMask] = useState(false);
@@ -29,7 +32,10 @@ function SignIn() {
   const [additionalNotes, setAdditionalNotes] = useState("");
   const [eventsAttending, setEventsAttending] = useState(BASE_EVENTS_VALUE);
 
+  // State relating to the user submitting the form
+  const [lastSubmittedPersons, setLastSubmittedPersons] = useState("");
   const [submitState, setSubmitState] = useState(DATA_STATE.NOT_STARTED);
+  const [errorData, setErrorData] = useState([]);
 
   const reset = function () {
     setPeople([]);
@@ -38,39 +44,48 @@ function SignIn() {
     setPaymentMethod("");
     setPaymentAmount("");
     setAdditionalNotes("");
-    setEventsAttending(BASE_EVENTS_VALUE);
+
+    if (new Date().getHours() >= SOCIAL_ONLY_HOURS_CUTOFF) {
+      setEventsAttending(SOCIAL_ONLY_EVENTS_VALUE);
+    } else {
+      setEventsAttending(BASE_EVENTS_VALUE);
+    }
   };
 
-  const onSubmit = async () => {
+  const onSubmit = () => {
     setSubmitState(DATA_STATE.IN_PROGRESS);
 
-    try {
-      let results = await SignInService.checkIn({
-        // Note: it's important to keep these key names aligned with the backend
-        persons: people.map((p) => p.name),
-        exemption: exemption === EXEMPTION.NONE ? null : exemption,
-        mask: buyingMask,
-        paymentMethod: paymentMethod,
-        amountPaid: paymentAmount,
-        notes: additionalNotes,
-        l1: eventsAttending[EVENTS.L1.id],
-        l2: eventsAttending[EVENTS.L2.id],
-        l3: eventsAttending[EVENTS.L3.id],
-        l4: eventsAttending[EVENTS.L4.id],
-        socialOnly: eventsAttending[EVENTS.SOCIAL_ONLY.id],
-      });
+    const submittedData = {
+      // Note: it's important to keep these key names aligned with the backend
+      persons: people.map((p) => p.name),
+      paymentMethod: paymentMethod,
+      amountPaid: paymentAmount,
+      exemption: exemption === EXEMPTION.NONE ? null : exemption,
+      mask: buyingMask,
+      notes: additionalNotes,
+      l1: eventsAttending[EVENTS.L1.id],
+      l2: eventsAttending[EVENTS.L2.id],
+      l3: eventsAttending[EVENTS.L3.id],
+      l4: eventsAttending[EVENTS.L4.id],
+      socialOnly: eventsAttending[EVENTS.SOCIAL_ONLY.id],
+    };
 
-      setSubmitState(DATA_STATE.COMPLETE);
-      reset();
-    } catch (e) {
-      console.log(e);
-      setSubmitState(DATA_STATE.ERROR);
-    }
+    // avoid awaiting this promise on purpose, in order to immediately reset the form
+    SignInService.checkIn(submittedData)
+      .then(() => {
+        setLastSubmittedPersons(people.map((p) => p.name).join(", "));
+        setSubmitState(DATA_STATE.COMPLETE);
+      })
+      .catch((e) => {
+        console.error(e);
+        setErrorData([...errorData, { error: e.message, ...submittedData }]);
+        setSubmitState(DATA_STATE.ERROR);
+      });
+    reset();
   };
 
   let submitInProgress = submitState === DATA_STATE.IN_PROGRESS;
   let submittedSuccessfully = submitState === DATA_STATE.COMPLETE;
-  let submitError = submitState === DATA_STATE.ERROR;
 
   const onSelectPersons = (persons) => {
     setPeople(persons);
@@ -204,7 +219,6 @@ function SignIn() {
                   sx={signInStyles.submitButton}
                   onClick={onSubmit}
                   disabled={!formValid}
-                  loading={submitInProgress}
                 >
                   {messages.submit}
                 </Button>
@@ -218,20 +232,32 @@ function SignIn() {
                 </Button>
               </Box>
             </Box>
+            {submitInProgress && (
+              <Box sx={signInStyles.inputContainer}>
+                <Callout sx={signInStyles.inProgressCallout}>
+                  {messages.submitInProgress}
+                </Callout>
+              </Box>
+            )}
             {submittedSuccessfully && (
               <Box sx={signInStyles.inputContainer}>
                 <Callout sx={signInStyles.successCallout}>
-                  {messages.submitSuccess}
+                  {messages.submitSuccess} {lastSubmittedPersons}
                 </Callout>
               </Box>
             )}
-            {submitError && (
-              <Box sx={signInStyles.inputContainer}>
+            {errorData.map((data) => (
+              <Box
+                sx={signInStyles.inputContainer}
+                key={data.persons.join(",")}
+              >
                 <Callout sx={signInStyles.errorCallout}>
-                  {messages.submitError}
+                  {messages.resubmitPrompt}
+
+                  <pre>{JSON.stringify(data, null, 2)}</pre>
                 </Callout>
               </Box>
-            )}
+            ))}
           </Box>
         </Box>
       </Container>
