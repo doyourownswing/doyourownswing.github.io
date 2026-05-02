@@ -4,7 +4,7 @@ import { createDate, getNextThursday } from "@/utils/date_utils";
 
 const L1_TOPICS = {
   week1: "Left side pass, underarm pass, sugar push",
-  week2: "Whip",
+  week2: "Right side pass, closed position, Whip",
   week3: "Underarm pass, sugar push, sugar tuck",
   week4: "Left side pass, sugar push, spinning side pass",
 };
@@ -113,6 +113,52 @@ const events = [
     advanceTopic: "",
     levelOneTopic: L1_TOPICS.week4,
     facebookLink: "https://www.facebook.com/events/1220627546942076/",
+  },
+
+  {
+    title: "DYOScavenger hunt",
+    subtitle:
+      "Get your detective on with the Secret Agent game during the social!",
+    date: createDate("04/02/2026"),
+    advanceTopic: "Changing the Game: start one pattern, finish with another",
+    levelOneTopic: L1_TOPICS.week1,
+    dj: "DJ Preston",
+    facebookLink: "https://www.facebook.com/events/935827152339981/",
+  },
+  {
+    title: "The Game Changening: week 2",
+    subtitle:
+      "Learn about your fellow dancers with the Clean Laundry game during the social!",
+    date: createDate("04/09/2026"),
+    advanceTopic: "Tag, You're  It: you move, I move, we move",
+    dj: "DJ Andy",
+    levelOneTopic: L1_TOPICS.week2,
+  },
+  {
+    title: "Riley's Turns 33% Self Indulgent + Potluck",
+    subtitle: "Come celebrate Riley's birthday with us!",
+    date: createDate("04/16/2026"),
+    advanceTopic: "Riley Says... (exactly what it sounds like)",
+    levelOneTopic: L1_TOPICS.week3,
+    facebookLink: "https://www.facebook.com/events/1177781147574274/",
+  },
+  {
+    title: "Do Your Own Blues Week 1",
+    subtitle: "Dust of your blues shoes, we're practicing our call & response!",
+    date: createDate("04/23/2026"),
+    advanceTopic: "",
+    levelOneTopic: L1_TOPICS.week4,
+    dj: "DJ Saucy",
+    facebookLink: "",
+  },
+  {
+    title: "Do Your Own Blues Week 2",
+    subtitle: "Continue practicing our call & response while dancing to blues!",
+    date: createDate("04/30/2026"),
+    advanceTopic: "",
+    levelOneTopic: L1_TOPICS.week4,
+    dj: "DJ Reece",
+    facebookLink: "",
   },
 ];
 
