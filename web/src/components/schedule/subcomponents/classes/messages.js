@@ -12,14 +12,9 @@ const messages = {
     description:
       "DYOS's health policy is aimed at mitigating the spread of Covid-19 " +
       "and reducing the severity of breakthrough infections.",
-    classes:
-      "X94+ Masks (KN95, N95, or KF94 with no exhaust port) are " +
-      "required for classes",
-    social:
-      "X94+ Masks MAY be required for social dancing, depending on " +
-      "prevalence of COVID-19 in Santa Clara County",
-    purchase:
-      "KN95 masks are available for sale at check-in - $1 cash / Zelle; $2 Venmo / PayPal",
+    required:
+      "We require X94+ Masks (KN95, N95, or KF94 with no exhaust port)" +
+      " for classes. KN95 masks are available for purchase at check-in.",
   },
 
   prerequisites: "Prerequisites",

@@ -22,7 +22,11 @@ function Review() {
       <Text>{messages.beforeTheEvent.review.our}</Text>
       {!!showCodeOfConduct && [
         <Space />,
-        <Link href="/code-of-conduct" target="__blank" rel="noopener noreferrer">
+        <Link
+          href="/code-of-conduct"
+          target="__blank"
+          rel="noopener noreferrer"
+        >
           <Text>{messages.beforeTheEvent.review.codeOfConduct}</Text>
         </Link>,
       ]}
@@ -100,13 +104,16 @@ function BeforeTheEvent() {
   return (
     <Box sx={startHereStyles.subSectionContainer}>
       <Container>
-        <Typography variant="h6" sx={startHereStyles.sectionTitle}>
+        <Typography variant="h4" sx={startHereStyles.sectionTitle}>
           {messages.beforeTheEvent.title}
         </Typography>
         <List sx={startHereStyles.list}>
           {showReview && (
             <ListItem sx={startHereStyles.listItem}>
-              <Review />
+              {/* <Review /> */}
+              <Typography variant="inline" fontWeight="bold">
+                Step 1:{" "}
+              </Typography>
             </ListItem>
           )}
           <ListItem sx={startHereStyles.listItem}>

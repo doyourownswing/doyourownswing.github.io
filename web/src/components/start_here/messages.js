@@ -6,7 +6,7 @@ const messages = {
     "your first time coming to a DYOS event:",
   endSentence: ". ",
   beforeTheEvent: {
-    title: "Before the event:",
+    title: "Before the event",
     review: {
       our: "Review our",
       codeOfConduct: "Code of Conduct",

@@ -21,7 +21,7 @@ function TitleSection(props) {
         <Typography variant="h3" sx={codeOfConductStyles.title}>
           {messages.title}
         </Typography>
-        <Callout>
+        <Callout sx={codeOfConductStyles.callout}>
           <Typography variant="inline">
             {messages.reportIncident.part1}
           </Typography>
