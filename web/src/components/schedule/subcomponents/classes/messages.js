@@ -14,7 +14,7 @@ const messages = {
       "and reducing the severity of breakthrough infections.",
     required:
       "We require X94+ Masks (KN95, N95, or KF94 with no exhaust port)" +
-      " for classes. KN95 masks are available for purchase at check-in.",
+      " for classes. KN95 masks are available for purchase at check-in for $1.",
   },
 
   prerequisites: "Prerequisites",
