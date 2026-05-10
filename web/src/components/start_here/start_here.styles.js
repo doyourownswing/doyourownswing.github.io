@@ -1,4 +1,4 @@
-import { BOX_SHADOW_2, SECTION_PADDING } from "@/common/constants";
+import { BOX_SHADOW, BOX_SHADOW_2, SECTION_PADDING } from "@/common/constants";
 import theme from "@/common/theme";
 
 const startHereStyles = {
@@ -44,17 +44,24 @@ const startHereStyles = {
     display: "list-item",
     padding: "0.5rem 1rem",
   },
-  listItem2: {
-    display: "list-item",
-    listStyleType: "circle",
-    padding: "0.5rem 1rem",
-  },
   faqsContainer: {
     background: `linear-gradient(to bottom, transparent 0%, ${theme.palette.background.barelyPurple} 3rem 100%)`,
     padding: SECTION_PADDING,
   },
-  faq: {
-    paddingBottom: "16px",
+  faqContainer: {
+    margin: "1rem 0",
+  },
+  faqAccordion: {
+    padding: "0.5rem 1rem",
+    borderRadius: "1rem",
+    boxShadow: BOX_SHADOW,
+  },
+  faqQuestion: {
+    fontWeight: "600",
+    fontSize: { xs: "1rem" },
+  },
+  faqAnswer: {
+    marginBottom: "0.5rem",
   },
   semiBold: {
     fontWeight: 700,

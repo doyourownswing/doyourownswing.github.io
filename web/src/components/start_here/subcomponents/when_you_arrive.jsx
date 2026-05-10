@@ -2,22 +2,6 @@ import { Box, Container, List, ListItem, Typography } from "@mui/material";
 import startHereStyles from "../start_here.styles";
 import messages from "../messages";
 
-function Masks() {
-  return (
-    <Box>
-      <Typography>{messages.whenYouArrive.masks.purchase}</Typography>
-      <List sx={startHereStyles.list}>
-        <ListItem sx={startHereStyles.listItem2}>
-          {messages.whenYouArrive.masks.oneDollar}
-        </ListItem>
-        <ListItem sx={startHereStyles.listItem2}>
-          {messages.whenYouArrive.masks.twoDollars}
-        </ListItem>
-      </List>
-    </Box>
-  );
-}
-
 function Acquire() {
   let dash = <Typography display="inline"> - </Typography>;
 
@@ -48,16 +32,14 @@ function WhenYouArrive() {
         </Typography>
 
         <Box sx={startHereStyles.whenYouArriveStepContainer}>
-          <Typography sx={startHereStyles.stepPreTitle}>STEP 1</Typography>
+          <Typography sx={startHereStyles.stepPreTitle}>
+            {messages.whenYouArrive.checkIn.pretitle}
+          </Typography>
           <Typography variant="h6" sx={startHereStyles.stepTitle}>
-            Check in
+            {messages.whenYouArrive.checkIn.title}
           </Typography>
           <Typography sx={startHereStyles.stepDescription}>
-            Check in at the DYOS station at the front desk of Studio M. They
-            will confirm you're registered and collect payment or confirm your
-            sponsorship is active. High filtration masks are required for class,
-            but if you don't have one, a mask can be purchased from the front
-            desk for $1
+            {messages.whenYouArrive.checkIn.details}
           </Typography>
         </Box>
 
@@ -72,29 +54,16 @@ function WhenYouArrive() {
         </Box>
 
         <Box sx={startHereStyles.whenYouArriveStepContainer}>
-          <Typography sx={startHereStyles.stepPreTitle}>STEP 3</Typography>
+          <Typography sx={startHereStyles.stepPreTitle}>
+            {messages.whenYouArrive.proceed.pretitle}
+          </Typography>
           <Typography variant="h6" sx={startHereStyles.stepTitle}>
-            Start dancing!
+            {messages.whenYouArrive.proceed.title}
           </Typography>
           <Typography sx={startHereStyles.stepDescription}>
-            {messages.whenYouArrive.proceed}
+            {messages.whenYouArrive.proceed.details}
           </Typography>
         </Box>
-        {/* 
-        <List sx={startHereStyles.list}>
-          <ListItem sx={startHereStyles.listItem}>
-            {messages.whenYouArrive.checkIn}
-          </ListItem>
-          <ListItem sx={startHereStyles.listItem}>
-            <Masks />
-          </ListItem>
-          <ListItem sx={startHereStyles.listItem}>
-            <Acquire />
-          </ListItem>
-          <ListItem sx={startHereStyles.listItem}>
-            {messages.whenYouArrive.proceed}
-          </ListItem>
-        </List> */}
       </Container>
     </Box>
   );
