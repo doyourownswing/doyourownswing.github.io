@@ -62,7 +62,7 @@ const messages = {
     },
   },
   whenYouArrive: {
-    title: "When you arrive:",
+    title: "When you arrive",
     checkIn:
       "Check in at the DYOS station at the front desk of Studio M. They will confirm " +
       "you're registered and collect payment or confirm your sponsorship is active.",

@@ -29,28 +29,28 @@ const pageRegistry = [
   new PageRegistrationInfo(
     pages.Schedule,
     FeatureFlags.showScheduleTab,
-    <Schedule />,
+    <Schedule />
   ),
   new PageRegistrationInfo(pages.About, FeatureFlags.showAboutTab, <About />),
   new PageRegistrationInfo(
     pages.Health,
     FeatureFlags.showHealthTab,
-    <Health />,
+    <Health />
   ),
   new PageRegistrationInfo(
     pages.Code,
     FeatureFlags.showCodeOfConductTab,
-    <CodeOfConduct />,
+    <CodeOfConduct />
   ),
   new PageRegistrationInfo(
     pages.Contact,
     FeatureFlags.showContactTab,
-    <Contact />,
+    <Contact />
   ),
   new PageRegistrationInfo(
     pages.StartHere,
     FeatureFlags.showStartHerePage,
-    <StartHere />,
+    <StartHere />
   ),
   new PageRegistrationInfo(pages.Blog, FeatureFlags.showBlog, <Blog />),
   new PageRegistrationInfo(pages.SignIn, true, <SignIn />, {
@@ -106,4 +106,4 @@ class Overrides {
   }
 }
 
-export { generatedRoutes, Overrides };
+export { generatedRoutes, Overrides, pageRegistry };

@@ -1,5 +1,7 @@
 import {
   Box,
+  Button,
+  Chip,
   Container,
   Link,
   List,
@@ -107,13 +109,69 @@ function BeforeTheEvent() {
         <Typography variant="h4" sx={startHereStyles.sectionTitle}>
           {messages.beforeTheEvent.title}
         </Typography>
+
+        <Box sx={startHereStyles.beforeTheEventStepContainer}>
+          <Typography sx={startHereStyles.stepPreTitle}>STEP 1</Typography>
+          <Typography variant="h6" sx={startHereStyles.stepTitle}>
+            Review our Code of Conduct
+          </Typography>
+          <Typography sx={startHereStyles.stepDescription}>
+            At Do Your Own Swing, we want to create a safe environment, so we
+            take our Code of Conduct seriously
+          </Typography>
+          <Button
+            variant="contained"
+            sx={startHereStyles.stepButton}
+            target="_blank"
+            href="/code-of-conduct"
+          >
+            Read our Code of Conduct
+          </Button>
+        </Box>
+
+        <Box sx={startHereStyles.beforeTheEventStepContainer}>
+          <Typography sx={startHereStyles.stepPreTitle}>STEP 2</Typography>
+          <Typography variant="h6" sx={startHereStyles.stepTitle}>
+            Fill out our one-time registration form
+          </Typography>
+          <Typography sx={startHereStyles.stepDescription}>
+            You can also do this when you arrive, but doing it ahead of time
+            makes things easier.
+          </Typography>
+          <Button
+            variant="contained"
+            sx={startHereStyles.stepButton}
+            target="_blank"
+            href={REGISTRATION_FORM_LINK}
+          >
+            Register here
+          </Button>
+        </Box>
+
+        <Box sx={startHereStyles.beforeTheEventStepContainer}>
+          <Typography sx={startHereStyles.stepPreTitle}>STEP 3</Typography>
+          <Typography variant="h6" sx={startHereStyles.stepTitle}>
+            Find which classes are best for you
+          </Typography>
+          <Typography sx={startHereStyles.stepDescription}>
+            We offer four different classes, each designed to challenge dancers
+            of different skill levels. Take a look at the classes and see which
+            ones might be best for you. If you're not sure, send us a message!
+          </Typography>
+          <Button
+            variant="contained"
+            sx={startHereStyles.stepButton}
+            target="_blank"
+            href="/classes"
+          >
+            See our classes
+          </Button>
+        </Box>
+        {/* 
         <List sx={startHereStyles.list}>
           {showReview && (
             <ListItem sx={startHereStyles.listItem}>
-              {/* <Review /> */}
-              <Typography variant="inline" fontWeight="bold">
-                Step 1:{" "}
-              </Typography>
+              <Review />
             </ListItem>
           )}
           <ListItem sx={startHereStyles.listItem}>
@@ -122,7 +180,7 @@ function BeforeTheEvent() {
           <ListItem sx={startHereStyles.listItem}>
             <ChooseClass />
           </ListItem>
-        </List>
+        </List> */}
       </Container>
     </Box>
   );
