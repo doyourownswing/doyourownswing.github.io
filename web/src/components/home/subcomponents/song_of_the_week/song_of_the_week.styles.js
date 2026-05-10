@@ -12,30 +12,18 @@ const songOfTheWeekStyles = {
       md: "row",
     },
     style: {
-      paddingBottom: "32px",
-      gap: {
-        xs: "24px",
-        md: "0px",
-      },
+      gap: { xs: "2rem", lg: "4rem" },
     },
   },
   title: {
     ...theme.typography.title,
   },
   leftContainer: {
-    maxWidth: "400px",
-    minWidth: { sm: "280px" },
     flex: 1,
     margin: { xs: "auto", md: "unset" },
   },
-  songCardContainer: {
-    flex: 2,
-    display: "flex",
-    paddingRight: "24px",
-  },
   songCard: {
-    margin: "auto",
-    marginRight: { md: 0 },
+    margin: { xs: "auto", md: "unset" },
   },
   quotePlaceholder: {
     fontSize: "18px",

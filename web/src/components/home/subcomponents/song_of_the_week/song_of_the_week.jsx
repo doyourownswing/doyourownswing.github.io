@@ -72,11 +72,9 @@ function SongOfTheWeek() {
             {hasQuote && <Quote songInfo={songInfo}></Quote>}
             {!hasQuote && <PlaylistCallout />}
           </Box>
-          <Container sx={songOfTheWeekStyles.songCardContainer}>
-            <Box sx={songOfTheWeekStyles.songCard}>
-              <SongCard songInfo={songInfo}></SongCard>
-            </Box>
-          </Container>
+          <Box sx={songOfTheWeekStyles.songCard}>
+            <SongCard songInfo={songInfo}></SongCard>
+          </Box>
         </Stack>
 
         {hasQuote && <AbbreviatedPlaylistCallout />}
