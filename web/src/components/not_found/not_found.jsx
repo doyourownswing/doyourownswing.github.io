@@ -5,7 +5,6 @@ import messages from "./messages";
 import { REGISTRATION_FORM_LINK, MERCH_STORE_LINK } from "@/common/constants";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import { pageRegistry } from "@/page_registry";
 
 // A map from pathnames that should redirect to an external site
 // to the external URL the path should redirect to
@@ -16,24 +15,30 @@ const pageRedirects = {
 
 function NotFoundMessage() {
   return (
-    <Box>
-      <Container>
-        <Stack flexDirection={{ md: "row" }}>
-          <Box
-            component="img"
-            sx={notFoundStyles.image}
-            alt="A picture of a really cute cat"
-            src={MimiPic}
-          />
-          <Box sx={notFoundStyles.rightContent}>
-            <Typography variant="h3">{messages.lost}</Typography>
-            <Button variant="contained" sx={notFoundStyles.button} href="/">
-              {messages.goHome}
-            </Button>
-          </Box>
-        </Stack>
-      </Container>
-    </Box>
+    // Adds a 1 second delay to avoid the flash of the 404 page before the next page renders
+    // This is because the client side performs a redirect which will trigger the catch-all routing
+    // prior to the network request to fetch the next page. A delay of 1s is not fool-proof,
+    // but should catch the majority of cases.
+    <Fade in={true} sx={{ transitionDelay: "1s" }}>
+      <Box>
+        <Container>
+          <Stack flexDirection={{ md: "row" }}>
+            <Box
+              component="img"
+              sx={notFoundStyles.image}
+              alt="A picture of a really cute cat"
+              src={MimiPic}
+            />
+            <Box sx={notFoundStyles.rightContent}>
+              <Typography variant="h3">{messages.lost}</Typography>
+              <Button variant="contained" sx={notFoundStyles.button} href="/">
+                {messages.goHome}
+              </Button>
+            </Box>
+          </Stack>
+        </Container>
+      </Box>
+    </Fade>
   );
 }
 
@@ -54,14 +59,6 @@ function NotFound() {
       window.location.replace(pageRedirects[pathWithoutSlashes]);
     }
   }, [location.pathname]);
-
-  const isSupportedPage = pageRegistry.some(
-    (p) => p.isVisible && p.page.isCurrentPage()
-  );
-
-  if (isSupportedPage) {
-    return <></>;
-  }
 
   return <NotFoundMessage />;
 }

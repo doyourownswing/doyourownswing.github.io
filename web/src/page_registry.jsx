@@ -106,4 +106,4 @@ class Overrides {
   }
 }
 
-export { generatedRoutes, Overrides, pageRegistry };
+export { generatedRoutes, Overrides };
