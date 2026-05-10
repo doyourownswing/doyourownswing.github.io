@@ -4,7 +4,7 @@ import { createDate, getNextThursday } from "@/utils/date_utils";
 
 const L1_TOPICS = {
   week1: "Left side pass, underarm pass, sugar push",
-  week2: "Right side pass, closed position, Whip",
+  week2: "Right side pass, closed position, whip",
   week3: "Underarm pass, sugar push, sugar tuck",
   week4: "Left side pass, sugar push, spinning side pass",
 };
@@ -158,6 +158,42 @@ const events = [
     advanceTopic: "",
     levelOneTopic: L1_TOPICS.week4,
     dj: "DJ Reece",
+    facebookLink: "",
+  },
+  {
+    title: "Scene Kid Night",
+    subtitle:
+      "Featuring social dance music that will get you right in the Gen X / Millennial nostalgia!",
+    date: createDate("05/07/2026"),
+    advanceTopic: "",
+    levelOneTopic: L1_TOPICS.week1,
+    dj: "DJ Riley",
+    facebookLink:
+      "https://www.facebook.com/doyourownswing/posts/pfbid02BeaXXetfKsj3fivsajnVAzWmwFoPFpmy6cgmFR9KRfvWU4uZQ6r1QmwAQQ9aDDRLl",
+  },
+  {
+    title: "May week 2!",
+    date: createDate("05/14/2026"),
+    advanceTopic: "",
+    levelOneTopic: L1_TOPICS.week2,
+    dj: "DJ Andy",
+    facebookLink: "",
+  },
+  {
+    title: "May week 3!",
+    date: createDate("05/21/2026"),
+    advanceTopic: "",
+    levelOneTopic: L1_TOPICS.week3,
+    dj: "DJ Musikaela",
+    facebookLink: "",
+  },
+  {
+    title: "May week 4!",
+    subtitle: "Note: There will be no DYOS on June 4!",
+    date: createDate("05/28/2026"),
+    advanceTopic: "",
+    levelOneTopic: L1_TOPICS.week4,
+    dj: "DJs Jake, Jen, and Saumya",
     facebookLink: "",
   },
 ];
