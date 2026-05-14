@@ -7,8 +7,11 @@ import Volunteer from "./subcomponents/volunteer/volunteer";
 import scheduleStyles from "./schedule.styles";
 import { useRef } from "react";
 import Privates from "./subcomponents/privates/privates";
+import { useTitle } from "@/common/hooks";
 
 function Schedule() {
+  useTitle("West Coast Swing Classes");
+
   const suggestedPricingRef = useRef(null);
   const volunteerRef = useRef(null);
 

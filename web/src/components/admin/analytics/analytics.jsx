@@ -5,6 +5,8 @@ import Payment from "@/components/admin/analytics/payment";
 import { Box, Container, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 
+import { useTitle } from "@/common/hooks";
+
 function Loading() {
   return (
     <Box sx={{ height: "100vh" }}>
@@ -25,6 +27,8 @@ function Stats(props) {
 }
 
 function Analytics() {
+  useTitle("Cool Stats");
+
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
 

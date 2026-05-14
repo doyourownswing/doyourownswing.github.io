@@ -21,6 +21,7 @@ import {
 } from "@/common/constants";
 import messages from "./messages";
 import "./contact.css";
+import { useTitle } from "@/common/hooks";
 
 function SocialsButton(props) {
   return (
@@ -37,6 +38,8 @@ function SocialsButton(props) {
 }
 
 function Contact() {
+  useTitle("Contact");
+
   const [copiedSnackbarMessage, setCopiedSnackbarMessage] = useState("");
   const [copiedSnackbarOpen, setCopiedSnackbarOpen] = useState(false);
 

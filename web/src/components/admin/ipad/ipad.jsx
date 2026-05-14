@@ -11,6 +11,8 @@ import {
 } from "@/common/constants";
 import QRCode from "react-qr-code";
 
+import { useTitle } from "@/common/hooks";
+
 const TABS = {
   REGISTRATION_FORM: "Registration Form",
   CLASSES: "Classes",
@@ -46,6 +48,8 @@ function EmbeddedRegistrationForm() {
 }
 
 function Ipad() {
+  useTitle();
+
   const [selectedTab, setSelectedTab] = useState(TABS.REGISTRATION_FORM);
 
   const onTabChange = (_, newValue) => {
