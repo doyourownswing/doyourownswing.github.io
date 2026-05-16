@@ -4,7 +4,8 @@ const messages = {
   subtitle:
     "Here's a simple guide to help you feel prepared if it's " +
     "your first time coming to a DYOS event:",
-  endSentence: ". ",
+  splashImageAltText:
+    "Two happy members at Do Your Own Swing giving eachother a double high-five after a dance",
   beforeTheEvent: {
     title: "Before the event",
     review: {
@@ -19,7 +20,7 @@ const messages = {
       pretitle: "STEP 1",
       title: "Fill out our one-time registration form",
       details:
-        "You can also do this when you arrive, but doing it ahead of time makes things easier",
+        "You can also do this when you arrive, but doing it ahead of time makes the checkin process faster",
       callToAction: "Register here",
     },
     class: {
@@ -27,8 +28,8 @@ const messages = {
       title: "Find which classes are best for you",
       details:
         "We offer four different classes, each designed to challenge dancers of different " +
-        "skill levels. Take a look at the classes and see which ones might be best for you. " +
-        "If you're not sure, send us a message!",
+        "skill levels. Take a look at the classes and see which ones might be best for you. ",
+      detailsLink: "If you're not sure, send us a message!",
       callToAction: "Read about our classes",
     },
   },
@@ -39,10 +40,11 @@ const messages = {
       title: "Check in",
       details:
         "Check in at the DYOS station at the front desk of Studio M. " +
-        "They will confirm you're registered and collect payment or confirm " +
-        "your sponsorship is active. We currently accept cash, Zelle, Venmo, " +
-        "and PayPal. High filtration masks are required for class, but if you " +
-        "don't have one, a mask can be purchased from the front desk for $1.",
+        "They will confirm you're registered and collect payment. " +
+        "For payment, we currently accept cash, Zelle, Venmo, and PayPal. " +
+        "High filtration masks are required for class, but if you " +
+        "don't have one, a mask can be purchased from the front desk for $1. " +
+        "Masks are optional, but encouraged during the social.",
     },
     acquire: {
       pretitle: "STEP 2",

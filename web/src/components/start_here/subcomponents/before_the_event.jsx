@@ -2,6 +2,7 @@ import { Box, Button, Container, Typography } from "@mui/material";
 import messages from "../messages";
 import startHereStyles from "../start_here.styles";
 import { REGISTRATION_FORM_LINK } from "@/common/constants";
+import DyosLink from "@/components/common/link";
 
 function Step(props) {
   return (
@@ -12,9 +13,14 @@ function Step(props) {
       <Typography variant="h6" sx={startHereStyles.stepTitle}>
         {props.title}
       </Typography>
-      <Typography sx={startHereStyles.stepDescription}>
-        {props.details}
-      </Typography>
+      <Box sx={startHereStyles.stepDescription}>
+        <Typography display="inline">{props.details}</Typography>
+        <Typography display="inline">
+          <DyosLink href={props.detailsLinkHref} openInNewTab>
+            {props.detailsLinkText}
+          </DyosLink>
+        </Typography>
+      </Box>
       <Button
         variant="contained"
         sx={startHereStyles.stepButton}
@@ -45,6 +51,8 @@ function BeforeTheEvent() {
           pretitle={messages.beforeTheEvent.class.pretitle}
           title={messages.beforeTheEvent.class.title}
           details={messages.beforeTheEvent.class.details}
+          detailsLinkText={messages.beforeTheEvent.class.detailsLink}
+          detailsLinkHref={"/contact"}
           callToAction={messages.beforeTheEvent.class.callToAction}
           href="/classes"
         ></Step>

@@ -29,6 +29,7 @@ function StartHere() {
                 component="img"
                 src={WelcomeImage}
                 sx={startHereStyles.picture}
+                alt={messages.splashImageAltText}
               />
             </Box>
           </Stack>
