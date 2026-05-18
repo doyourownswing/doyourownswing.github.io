@@ -8,10 +8,8 @@ import { useEffect } from "react";
  */
 export function useTitle(title) {
   useEffect(() => {
-    if (title) {
-      document.title = `${title} | Do Your Own Swing`;
-    } else {
-      document.title = "Do Your Own Swing";
-    }
+    document.title = title
+      ? `${title} | Do Your Own Swing`
+      : "Do Your Own Swing";
   }, [title]);
 }

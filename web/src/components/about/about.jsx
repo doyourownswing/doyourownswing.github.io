@@ -156,7 +156,7 @@ function RileyBio() {
 }
 
 function About() {
-  useTitle("About");
+  useTitle("About Us");
 
   return (
     <Box>

@@ -49,7 +49,7 @@ function NotFoundMessage() {
  * 404/not found message.
  */
 function NotFound() {
-  useTitle();
+  useTitle("Page Not Found");
 
   const location = useLocation();
 

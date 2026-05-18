@@ -10,7 +10,7 @@ import Privates from "./subcomponents/privates/privates";
 import { useTitle } from "@/common/hooks";
 
 function Schedule() {
-  useTitle("West Coast Swing Classes");
+  useTitle("Thursday West Coast Swing Classes");
 
   const suggestedPricingRef = useRef(null);
   const volunteerRef = useRef(null);
