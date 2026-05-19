@@ -43,6 +43,8 @@ import ZelleLogoIcon from "@/assets/images/payment_logos/zelle-logo-icon.png";
 import { useState } from "react";
 import messages from "@/components/links/messages";
 
+import { useTitle } from "@/common/hooks";
+
 function Header() {
   return (
     <Box sx={linksStyles.topContainer}>
@@ -267,6 +269,8 @@ function LinksCard() {
 }
 
 function Links() {
+  useTitle();
+
   return (
     <Box sx={linksStyles.container}>
       <Box sx={linksStyles.contentContainer}>

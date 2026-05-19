@@ -6,8 +6,10 @@ import WhoWeAre from "./subcomponents/who_we_are/who_we_are";
 import FeatureFlags from "@/infra/feature_flags";
 import Merch from "./subcomponents/merch/merch";
 import UpcomingEventsV2 from "@/components/home/subcomponents/upcoming_events_v2/upcoming_events_v2";
+import { useTitle } from "@/common/hooks";
 
 export default function Home() {
+  useTitle();
   return (
     <Box>
       <Hero />

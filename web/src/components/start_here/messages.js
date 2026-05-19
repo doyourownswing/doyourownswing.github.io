@@ -4,76 +4,51 @@ const messages = {
   subtitle:
     "Here's a simple guide to help you feel prepared if it's " +
     "your first time coming to a DYOS event:",
-  endSentence: ". ",
+  splashImageAltText:
+    "Two happy members at Do Your Own Swing giving eachother a double high-five after a dance",
   beforeTheEvent: {
-    title: "Before the event:",
+    title: "Before the event",
     review: {
-      our: "Review our",
-      codeOfConduct: "Code of Conduct",
-      and: "&",
-      healthPolicy: "Health Policy",
+      pretitle: "STEP 3",
+      title: "Review our Code of Conduct",
+      details:
+        "At Do Your Own Swing, safety and inclusion stands at the center of everything we do. " +
+        "Please help us uphold our vision by familiarizing yourself with our Code of Conduct.",
+      callToAction: "Read our Code of Conduct",
     },
     registration: {
-      fillOut: "Fill out our",
-      registrationForm: "one-time registration form",
-      doLater:
-        "You can also do this when you arrive, but doing it ahead of time makes things easier.",
+      pretitle: "STEP 1",
+      title: "Fill out our one-time registration form",
+      details:
+        "You can also do this when you arrive, but doing it ahead of time makes the checkin process faster",
+      callToAction: "Register here",
     },
     class: {
-      choose:
-        "Choose which class to go to. Classes are on Thursday evenings and span 4 " +
-        "different levels. ",
-      moreInfo: "Check out more information about our classes ",
-      here: "here",
-      classOptions: [
-        {
-          class: "Welcome to WCS (Level 1) - 8:30pm in the Sky Ballroom",
-          description: [
-            "For those who are brand new to West Coast Swing or developing a basic pattern vocabulary. " +
-              "No partner or experience required!",
-          ],
-        },
-        {
-          class:
-            "Beyond the Basics (Level 2) - 7:30pm in the Spotlight Ballroom",
-          description: [
-            "This class will go over one or two patterns from the Level 1 class, with a focus on making them comfortable. " +
-              "Intended to bridge the gap between beginner and intermediate patterns.",
-          ],
-        },
-        {
-          class: "Skills & Drills (Level 3) - 8:05pm in the Spotlight Ballroom",
-          description: [
-            "Learn the skills for improvised, partnered musical expression! " +
-              "In this class, we work on developing communication with our partner and connecting to the music. " +
-              "Familiarity with introductory level connection techniques and rhythm variations recommended.",
-          ],
-        },
-        {
-          class:
-            "Artistic Application (Level 4) - 8:40pm in the Spotlight Ballroom",
-          description: [
-            'This class will help you cultivate those magical "How can this dance be improvised??" moments. ' +
-              "Learning to respond to the music and your partner",
-            "Must be comfortable with West Coast Swing basics!",
-          ],
-        },
-      ],
+      pretitle: "STEP 2",
+      title: "Find which classes are best for you",
+      details:
+        "We offer four different classes, each designed to challenge dancers of different " +
+        "skill levels. Take a look at the classes and see which ones might be best for you. ",
+      detailsLink: "If you're not sure, send us a message!",
+      callToAction: "Read about our classes",
     },
   },
   whenYouArrive: {
-    title: "When you arrive:",
-    checkIn:
-      "Check in at the DYOS station at the front desk of Studio M. They will confirm " +
-      "you're registered and collect payment or confirm your sponsorship is active.",
-    masks: {
-      purchase:
-        "If masks are required and you do not have one, a mask can be purchased from the front desk for:",
-      oneDollar: "$1 cash or Zelle",
-      twoDollars:
-        "$2 Venmo or PayPal (pricing difference due to transaction fees)",
+    title: "When you arrive",
+    checkIn: {
+      pretitle: "STEP 1",
+      title: "Check in",
+      details:
+        "Check in at the DYOS station at the front desk of Studio M. " +
+        "They will confirm you're registered and collect payment. " +
+        "For payment, we currently accept cash, Zelle, Venmo, and PayPal. " +
+        "High filtration masks are required for class, but if you " +
+        "don't have one, a mask can be purchased from the front desk for $1. " +
+        "Masks are optional, but encouraged during the social.",
     },
     acquire: {
+      pretitle: "STEP 2",
+      title: "Gear up",
       station:
         "Just past the entrance, there's a station to optionally grab the following:",
       items: [
@@ -99,10 +74,14 @@ const messages = {
         },
       ],
     },
-    proceed:
-      "Proceed to your selected DYOS class/event. Please note the studio has multiple rooms and " +
-      "DYOS shares this space with other non-DYOS dancers. If you are unsure where to go, " +
-      "check with the front desk and they can point you in the right direction. ",
+    proceed: {
+      pretitle: "STEP 3",
+      title: "Start dancing!",
+      details:
+        "Proceed to your selected DYOS class/event. Please note the studio has multiple rooms and " +
+        "DYOS shares this space with other non-DYOS dancers. If you are unsure where to go, " +
+        "check with the front desk and they can point you in the right direction. ",
+    },
   },
   faqs: {
     title: "Newcomer FAQs",
@@ -133,8 +112,8 @@ const messages = {
           description:
             "You can choose either - it is not affiliated with gender and is up to your preference! " +
             "The leader is responsible for initiating movement, and the follower's role is to maintain " +
-            "the movement. Many dancers primarily start out learning one role, and then may later choose " +
-            "to learn the opposite role, so you aren't forever committed to only leading or following.",
+            "the movement. It's totally acceptable to start learning one role, then switch to the other. " +
+            "In fact, many of our dancers learn to dance both!",
         },
       },
       {

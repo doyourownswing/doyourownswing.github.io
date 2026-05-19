@@ -3,10 +3,6 @@ import classesStyles from "./classes.styles";
 import messages from "./messages";
 import ClassImage from "@/assets/images/classes1.jpg";
 import Callout from "@/components/common/callout";
-import {
-  BulletedList,
-  BulletedListItem,
-} from "@/components/common/bulleted_list";
 import ClassDetails from "./classes_details";
 
 function Classes() {
@@ -40,15 +36,8 @@ function Classes() {
             {messages.maskingPolicyCallout.title}
           </Typography>
           <Typography>{messages.maskingPolicyCallout.description}</Typography>
-          <BulletedList>
-            <BulletedListItem>
-              <Typography>{messages.maskingPolicyCallout.classes}</Typography>
-            </BulletedListItem>
-            <BulletedListItem>
-              <Typography>{messages.maskingPolicyCallout.social}</Typography>
-            </BulletedListItem>
-          </BulletedList>
-          <Typography>{messages.maskingPolicyCallout.purchase}</Typography>
+          <br />
+          <Typography>{messages.maskingPolicyCallout.required}</Typography>
         </Callout>
 
         <Divider sx={classesStyles.divider} />

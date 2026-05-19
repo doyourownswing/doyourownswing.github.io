@@ -25,7 +25,7 @@ function baseOutlinedItem(color) {
 const codeOfConductStyles = {
   titleSectionContainer: {
     padding: SECTION_PADDING,
-    background: theme.palette.background.palePurple,
+    background: theme.palette.background.barelyPurple,
   },
   title: {
     textAlign: "center",
@@ -36,6 +36,9 @@ const codeOfConductStyles = {
   sectionHeader: {
     fontWeight: "600",
     paddingBottom: "1.5rem",
+  },
+  callout: {
+    backgroundColor: "white",
   },
   tableOfContentsContainer: {
     padding: "2rem 2rem 0",
@@ -50,7 +53,7 @@ const codeOfConductStyles = {
     paddingBottom: "2rem",
   },
   missionStatementSectionContainer: {
-    background: `linear-gradient(to top, white 0%, ${theme.palette.background.palePurple} 4rem 100%)`,
+    background: `linear-gradient(to top, white 0%, ${theme.palette.background.barelyPurple} 4rem 100%)`,
     paddingBottom: "6rem",
   },
   missionStatementCard: {
