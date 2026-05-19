@@ -5,8 +5,11 @@ import BeforeTheEvent from "./subcomponents/before_the_event";
 import WhenYouArrive from "./subcomponents/when_you_arrive";
 import Faqs from "./subcomponents/faqs";
 import WelcomeImage from "@/assets/images/jon-sherwin.png";
+import { useTitle } from "@/common/hooks";
 
 function StartHere() {
+  useTitle("Newcomer Guide");
+
   return (
     <Box>
       <Box sx={startHereStyles.container}>

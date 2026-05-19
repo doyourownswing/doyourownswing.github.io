@@ -13,6 +13,7 @@ import DyosLink from "@/components/common/link";
 import Callout from "@/components/common/callout";
 import { forwardRef, useRef } from "react";
 import { INCIDENT_REPORT_FORM } from "@/common/constants";
+import { useTitle } from "@/common/hooks";
 
 function TitleSection(props) {
   return (
@@ -198,6 +199,8 @@ const ResponseSection = forwardRef(function Response(_, ref) {
 });
 
 function CodeOfConduct() {
+  useTitle("Code of Conduct");
+
   const missionStatementRef = useRef(null);
   const agreementsRef = useRef(null);
   const praxisRef = useRef(null);

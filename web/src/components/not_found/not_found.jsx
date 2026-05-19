@@ -5,6 +5,7 @@ import messages from "./messages";
 import { REGISTRATION_FORM_LINK, MERCH_STORE_LINK } from "@/common/constants";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import { useTitle } from "@/common/hooks";
 
 // A map from pathnames that should redirect to an external site
 // to the external URL the path should redirect to
@@ -48,6 +49,8 @@ function NotFoundMessage() {
  * 404/not found message.
  */
 function NotFound() {
+  useTitle("Page Not Found");
+
   const location = useLocation();
 
   useEffect(() => {

@@ -7,6 +7,7 @@ import DyosLink from "@/components/common/link";
 import { styled } from "@mui/material/styles";
 import { useState } from "react";
 import PurpleLogo from "@/assets/svgs/purple-logo.svg";
+import { useTitle } from "@/common/hooks";
 
 const Paragraph = styled("p")(({ _ }) => aboutStyles.paragraph);
 
@@ -155,6 +156,8 @@ function RileyBio() {
 }
 
 function About() {
+  useTitle("About Us");
+
   return (
     <Box>
       <Splash />
