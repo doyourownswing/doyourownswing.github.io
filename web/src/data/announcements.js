@@ -16,6 +16,11 @@ const announcements = [
     startDate: createDate("07/31/2025"),
     endDate: createDate("08/07/2025"),
   },
+  {
+    text: "No DYOS on June 4th, 2026! See you on June 11th!",
+    startDate: createDate("05/28/2026"),
+    endDate: createDate("06/04/2026"),
+  },
 ];
 
 function getCurrentAnnouncement() {
