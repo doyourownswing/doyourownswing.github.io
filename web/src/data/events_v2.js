@@ -204,7 +204,7 @@ const events = [
   },
   {
     date: createDate("06/11/2026"),
-    title: "June week 2!",
+    title: "DYOS Spirit Night",
     subtitle:
       "Join us for a Silly J&J contest during the social. For more details, check the DYOS Discord server!",
     levelOneTopic: L1_TOPICS.week1,
@@ -213,17 +213,58 @@ const events = [
   },
   {
     date: createDate("06/18/2026"),
-    title: "June week 3!",
-    advanceTopic: "",
+    title: "Glitter and Glow Night",
+    subtitle:
+      "Dust off your neon, wear your best glitter makeup, don your glowsticks for Glitter and Glow Night!",
     levelOneTopic: L1_TOPICS.week2,
     dj: "DJ Joel",
     facebookLink: "",
   },
   {
     date: createDate("06/25/2026"),
-    title: "June week 4!",
-    advanceTopic: "",
+    title: "Rainbow and Flag Night",
+    subtitle:
+      "Finish out the last DYOS of Pride Month with your rainbow, flags, and pride apparel!",
     levelOneTopic: L1_TOPICS.week3,
+    facebookLink: "",
+  },
+  {
+    date: createDate("07/02/2026"),
+    title: "July Week 1",
+    subtitle: "",
+    levelOneTopic: L1_TOPICS.week1,
+    dj: "DJ Joel",
+    facebookLink: "",
+  },
+  {
+    date: createDate("07/09/2026"),
+    title: "July Week 2",
+    subtitle: "",
+    levelOneTopic: L1_TOPICS.week2,
+    dj: "DJ Andy",
+    facebookLink: "",
+  },
+  {
+    date: createDate("07/16/2026"),
+    title: "July Week 3",
+    subtitle: "",
+    levelOneTopic: L1_TOPICS.week3,
+    facebookLink: "",
+  },
+  {
+    date: createDate("07/23/2026"),
+    title: "July Week 4",
+    subtitle: "",
+    levelOneTopic: L1_TOPICS.week4,
+    dj: "DJ Preston",
+    facebookLink: "",
+  },
+  {
+    date: createDate("07/30/2026"),
+    title: "July Week 5",
+    subtitle: "",
+    levelOneTopic: L1_TOPICS.week4,
+    dj: "DJ Saucy",
     facebookLink: "",
   },
 ];
