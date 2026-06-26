@@ -230,8 +230,9 @@ const events = [
   },
   {
     date: createDate("07/02/2026"),
-    title: "July Week 1",
-    subtitle: "",
+    title: "D-Y-jOel-S",
+    subtitle:
+      "Special guest instructor and All-Star Joel will be taking over classes",
     levelOneTopic: L1_TOPICS.week1,
     dj: "DJ Joel",
     facebookLink: "",
@@ -261,8 +262,10 @@ const events = [
   },
   {
     date: createDate("07/30/2026"),
-    title: "July Week 5",
-    subtitle: "",
+    title: "Guest Instructor Rosemary Whitson!",
+    subtitle:
+      "Join us for a special night of classes taught by All-Star competitor " +
+      "and lead-follow-AND-switch dancing phenomenon, Rosemary Whitson!",
     levelOneTopic: L1_TOPICS.week4,
     dj: "DJ Saucy",
     facebookLink: "",
