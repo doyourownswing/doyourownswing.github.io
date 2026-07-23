@@ -92,6 +92,10 @@ const signInStyles = {
     fontSize: "1rem",
     fontWeight: "600",
   },
+  retrySubmitButton: {
+    textTransform: "none",
+    backgroundColor: theme.palette.background.paper,
+  },
   eventsCheckboxGroup: {
     paddingLeft: "1rem",
   },

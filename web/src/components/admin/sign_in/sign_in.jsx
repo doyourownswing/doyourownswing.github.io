@@ -52,10 +52,13 @@ function SignIn() {
     }
   };
 
-  const onSubmit = () => {
+  /**
+   * Submit either the provided data or the data from the form to the backend.
+   */
+  const onSubmit = (data) => {
     setSubmitState(DATA_STATE.IN_PROGRESS);
 
-    const submittedData = {
+    const submittedData = data ?? {
       // Note: it's important to keep these key names aligned with the backend
       persons: people.map((p) => p.name),
       paymentMethod: paymentMethod,
@@ -70,7 +73,8 @@ function SignIn() {
       socialOnly: eventsAttending[EVENTS.SOCIAL_ONLY.id],
     };
 
-    // avoid awaiting this promise on purpose, in order to immediately reset the form
+    // avoid awaiting this promise on purpose:
+    // this allows the form to immediately reset if we are submitting data from the form
     SignInService.checkIn(submittedData)
       .then(() => {
         setLastSubmittedPersons(people.map((p) => p.name).join(", "));
@@ -81,7 +85,9 @@ function SignIn() {
         setErrorData([...errorData, { error: e.message, ...submittedData }]);
         setSubmitState(DATA_STATE.ERROR);
       });
-    reset();
+    if (!data) {
+      reset();
+    }
   };
 
   let submitInProgress = submitState === DATA_STATE.IN_PROGRESS;
@@ -232,7 +238,9 @@ function SignIn() {
                 <Button
                   variant="contained"
                   sx={signInStyles.submitButton}
-                  onClick={onSubmit}
+                  onClick={() => {
+                    onSubmit();
+                  }}
                   disabled={!formValid}
                 >
                   {messages.submit}
@@ -261,7 +269,7 @@ function SignIn() {
                 </Callout>
               </Box>
             )}
-            {errorData.map((data) => (
+            {errorData.map((data, i) => (
               <Box
                 sx={signInStyles.inputContainer}
                 key={data.persons.join(",")}
@@ -270,6 +278,17 @@ function SignIn() {
                   {messages.resubmitPrompt}
 
                   <pre>{JSON.stringify(data, null, 2)}</pre>
+
+                  <Button
+                    variant="outlined"
+                    sx={signInStyles.retrySubmitButton}
+                    onClick={() => {
+                      setErrorData(errorData.toSpliced(i, 1));
+                      onSubmit(data);
+                    }}
+                  >
+                    Retry submission
+                  </Button>
                 </Callout>
               </Box>
             ))}
