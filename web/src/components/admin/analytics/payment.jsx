@@ -39,6 +39,46 @@ function TotalWeeklyMoney(props) {
   );
 }
 
+function WeeklyMoneyPerPerson(props) {
+  let data = props.data.weeklyStats;
+
+  const xLabels = data.map((d) => prettyPrintDate(d.date));
+
+  const revenue = data.map((d) => d.payment.totalAmountPaid);
+  const numPayers = data.map(
+    (d) => d.attendance.totalAttendees - d.exemptions.totalExemptions,
+  );
+  const weeklyAverageRevenue = revenue.map((amt, i) =>
+    (amt / numPayers[i]).toFixed(2),
+  );
+
+  const allTimeRevenue = revenue.reduce((acc, num) => acc + num, 0);
+  const payingPeople = numPayers.reduce((acc, num) => acc + num, 0);
+  console.log("All-time average revenue:", allTimeRevenue / payingPeople);
+
+  return (
+    <Grid size={1}>
+      <DyosCard>
+        <Box sx={analyticsStyles.chartTitleContainer}>
+          <Typography variant="h6" sx={analyticsStyles.chartTitle}>
+            Average at-door amount paid per person
+          </Typography>
+          <Typography variant="subtitle" sx={analyticsStyles.chartSubtitle}>
+            Excludes sponsors and people with an exemption or discount
+          </Typography>
+        </Box>
+        <LineChart
+          height={300}
+          series={[{ data: weeklyAverageRevenue, label: "Revenue" }]}
+          xAxis={[{ scaleType: "point", data: xLabels, height: 28 }]}
+          yAxis={[{ min: 0 }]}
+          margin={{ right: 64 }}
+        />
+      </DyosCard>
+    </Grid>
+  );
+}
+
 function PaymentMethods(props) {
   let data = props.data.weeklyStats;
 
@@ -179,6 +219,7 @@ function Payment(props) {
         sx={analyticsStyles.sectionContentContainer}
       >
         <TotalWeeklyMoney data={data} />
+        <WeeklyMoneyPerPerson data={data} />
         <PaymentMethods data={data} />
         <Sponsors data={data} />
         <TotalWeeklyProfit data={data} />
