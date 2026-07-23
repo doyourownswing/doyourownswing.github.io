@@ -11,6 +11,8 @@ import TableCell from "@mui/material/TableCell";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 
+const MAX_HISTOGRAM_SECTIONS = 10;
+
 /**
  * Given dataArrays (an array of numeric arrays),
  * dates (an array of strings with the same length as an array in data),
@@ -21,39 +23,83 @@ import TableRow from "@mui/material/TableRow";
 function SummaryStats({ dataArrays, dates, labels }) {
   // helper for calculating median (can also be used for quartiles)
   const getElemAroundIndex = (arr, i) => {
-    if (i === Math.trunc(i)) {
-      return arr[i];
+    if (i !== Math.floor(i)) {
+      return arr[Math.floor(i)];
     } else {
-      return (arr[Math.floor(i) - 1] + arr[Math.floor(i)]) / 2;
+      return (arr[i - 1] + arr[i]) / 2;
     }
   };
 
   const summaries = dataArrays.map((arr) => {
+    /* Summary stats */
     const sum = arr.reduce((acc, num) => acc + num, 0);
     const mean = Math.round(sum / arr.length);
 
     const sortedData = arr.toSorted((a, b) => Number(a) - Number(b));
     const median = getElemAroundIndex(sortedData, arr.length / 2);
 
-    const max = arr.reduce((a, b) => Math.max(a, b), -Infinity);
+    // these arrays should be small enough to safely spread them into function calls
+    const max = Math.max(...arr);
     const maxIdx = arr.indexOf(max);
-    const min = arr.reduce((a, b) => Math.min(a, b), Infinity);
+    const min = Math.min(...arr);
     const minIdx = arr.indexOf(min);
 
-    return { mean, median, max, min, maxIdx, minIdx, sortedData };
+    /* Data for the histogram - determine histogram thresholds based on range */
+    const range = max + 1 - min;
+    const thresholdDiff = Math.ceil(range / MAX_HISTOGRAM_SECTIONS);
+    const nSections = Math.ceil(range / thresholdDiff);
+
+    const thresholds = [...new Array(nSections)].map(
+      (_, i) => min + i * thresholdDiff,
+    );
+
+    const thresholdLabels =
+      thresholdDiff > 1
+        ? thresholds.map((n) => `${n}-${n + thresholdDiff - 1}`)
+        : thresholds;
+
+    const counts = thresholds.map(() => 0);
+    arr.forEach((n) => {
+      const bin = Math.floor((n - min) / thresholdDiff);
+      counts[bin] += 1;
+    });
+
+    return {
+      mean,
+      median,
+      max,
+      min,
+      maxIdx,
+      minIdx,
+      histogram: { thresholdLabels, counts },
+    };
   });
 
   return (
     <details>
       <summary>Show/hide summary stats</summary>
-      <LineChart
-        height={300}
-        series={summaries.map(({ sortedData }, i) => {
-          return { data: sortedData, label: `${labels[i]} (sorted)` };
-        })}
-        yAxis={[{ min: 0 }]}
-        margin={{ right: 64 }}
-      />
+      {summaries.map(({ histogram: { thresholdLabels, counts } }, i) => {
+        return (
+          <BarChart
+            key={labels[i]}
+            height={200}
+            xAxis={[
+              {
+                data: thresholdLabels,
+                label: `${labels[i]} histogram`,
+                scaleType: "band",
+                categoryGapRatio: 0,
+              },
+            ]}
+            series={[
+              {
+                data: counts,
+                type: "bar",
+              },
+            ]}
+          />
+        );
+      })}
 
       <Table>
         <TableHead>
@@ -67,7 +113,7 @@ function SummaryStats({ dataArrays, dates, labels }) {
         </TableHead>
         <TableBody>
           {summaries.map(({ mean, median, max, min, maxIdx, minIdx }, i) => (
-            <TableRow>
+            <TableRow key={labels[i]}>
               <TableCell>{labels[i]}</TableCell>
               <TableCell>
                 {min}
