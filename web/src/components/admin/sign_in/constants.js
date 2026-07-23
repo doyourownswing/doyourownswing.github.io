@@ -7,6 +7,7 @@ export const EXEMPTION = {
   ALL_STAR: "WSDC All-Star",
   BLACK_INDIGENOUS: "Black / Indigenous",
   PAID_BY_OTHER: "Paid for by someone else",
+  SPECTATOR: "Spectator (not dancing)",
   OTHER: "Other",
 };
 

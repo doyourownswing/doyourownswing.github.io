@@ -70,7 +70,7 @@ function validateForm(
   }
 
   if (
-    exemption !== EXEMPTION.TEACHER &&
+    ![EXEMPTION.TEACHER, EXEMPTION.SPECTATOR].includes(exemption) &&
     !Object.values(eventsAttending).some((e) => e)
   ) {
     unfilledRequiredFields.push("Classes attending");

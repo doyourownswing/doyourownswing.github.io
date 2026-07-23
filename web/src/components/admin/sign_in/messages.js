@@ -10,6 +10,8 @@ const messages = {
   resubmitPrompt:
     "Something went wrong, please try to resubmit this person's data. If it still doesn't work, please copy this information down by hand.",
   exemptionLabel: "Payment exemption",
+  spectatorInfo:
+    "You can find single-use yellow wristbands for spectators in the cash pouch.",
   maskLabel: "Purchased a mask (extra $1)",
   additionalNotesLabel: "Notes",
   paymentMethodLabel: "Payment method",
