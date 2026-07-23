@@ -189,19 +189,31 @@ function ClassAttendance(props) {
           <Typography variant="h6" sx={analyticsStyles.chartTitle}>
             Class attendance
           </Typography>
+          <Typography variant="subtitle" sx={analyticsStyles.chartSubtitle}>
+            Click a legend item to show/hide that class
+          </Typography>
         </Box>
-        <BarChart
+        <LineChart
           height={300}
           series={[
-            { data: l1, label: "L1", id: "l1" },
-            { data: l2, label: "L2", id: "l2" },
-            { data: l3, label: "L3", id: "l3" },
-            { data: l4, label: "L4", id: "l4" },
-            { data: socialOnly, label: "Social Only", id: "so" },
+            { data: l1, label: "L1", showMark: false },
+            { data: l2, label: "L2", showMark: false },
+            { data: l3, label: "L3", showMark: false },
+            { data: l4, label: "L4", showMark: false },
+            {
+              data: socialOnly,
+              label: "Social Only",
+              showMark: false,
+            },
           ]}
           colors={colors}
-          xAxis={[{ data: xLabels, height: 28 }]}
+          xAxis={[{ scaleType: "point", data: xLabels, height: 28 }]}
           yAxis={[{ width: 50 }]}
+          slotProps={{
+            legend: {
+              toggleVisibilityOnClick: true,
+            },
+          }}
         />
         <SummaryStats
           dataArrays={[l1, l2, l3, l4, socialOnly]}
