@@ -54,7 +54,6 @@ function WeeklyMoneyPerPerson(props) {
 
   const allTimeRevenue = revenue.reduce((acc, num) => acc + num, 0);
   const payingPeople = numPayers.reduce((acc, num) => acc + num, 0);
-  console.log("All-time average revenue:", allTimeRevenue / payingPeople);
 
   return (
     <Grid size={1}>
@@ -74,6 +73,10 @@ function WeeklyMoneyPerPerson(props) {
           yAxis={[{ min: 0 }]}
           margin={{ right: 64 }}
         />
+        <Typography variant="subtitle" sx={analyticsStyles.chartSubtitle}>
+          All-time average amount paid: $
+          {(allTimeRevenue / payingPeople).toFixed(2)}
+        </Typography>
       </DyosCard>
     </Grid>
   );
