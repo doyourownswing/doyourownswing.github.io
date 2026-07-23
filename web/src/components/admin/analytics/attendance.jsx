@@ -16,8 +16,7 @@ const MAX_HISTOGRAM_SECTIONS = 10;
 /**
  * Given dataArrays (an array of numeric arrays),
  * dates (an array of strings with the same length as an array in data),
- * labels (one for each array in data),
- * and colors (optional)
+ * and labels (one for each array in data),
  * displays summary statistics for each array in the data.
  */
 function SummaryStats({ dataArrays, dates, labels }) {
@@ -187,10 +186,10 @@ function ClassAttendance(props) {
       <DyosCard>
         <Box sx={analyticsStyles.chartTitleContainer}>
           <Typography variant="h6" sx={analyticsStyles.chartTitle}>
-            Class attendance
+            Class attendance (# of people)
           </Typography>
           <Typography variant="subtitle" sx={analyticsStyles.chartSubtitle}>
-            Click a legend item to show/hide that class
+            Click a legend item to show/hide that line
           </Typography>
         </Box>
         <LineChart
@@ -225,6 +224,83 @@ function ClassAttendance(props) {
   );
 }
 
+function PercentClassAttendance(props) {
+  let data = props.data.weeklyStats;
+
+  const xLabels = data.map((d) => prettyPrintDate(d.date));
+  const l1 = data.map((d) =>
+    ((100 * d.attendance.numL1Attendees) / d.attendance.totalAttendees).toFixed(
+      1,
+    ),
+  );
+  const l2 = data.map((d) =>
+    ((100 * d.attendance.numL2Attendees) / d.attendance.totalAttendees).toFixed(
+      1,
+    ),
+  );
+  const l3 = data.map((d) =>
+    ((100 * d.attendance.numL3Attendees) / d.attendance.totalAttendees).toFixed(
+      1,
+    ),
+  );
+  const l4 = data.map((d) =>
+    ((100 * d.attendance.numL4Attendees) / d.attendance.totalAttendees).toFixed(
+      1,
+    ),
+  );
+  const socialOnly = data.map((d) =>
+    (
+      (100 * d.attendance.numSocialOnlyAttendees) /
+      d.attendance.totalAttendees
+    ).toFixed(1),
+  );
+
+  const colors = [
+    theme.palette.charts.l1,
+    theme.palette.charts.l2,
+    theme.palette.charts.l3,
+    theme.palette.charts.l4,
+    theme.palette.charts.socialOnly,
+  ];
+
+  return (
+    <Grid size={1}>
+      <DyosCard>
+        <Box sx={analyticsStyles.chartTitleContainer}>
+          <Typography variant="h6" sx={analyticsStyles.chartTitle}>
+            Class attendance (% of total attendees)
+          </Typography>
+          <Typography variant="subtitle" sx={analyticsStyles.chartSubtitle}>
+            Click a legend item to show/hide that line
+          </Typography>
+        </Box>
+        <LineChart
+          height={300}
+          series={[
+            { data: l1, label: "L1", showMark: false },
+            { data: l2, label: "L2", showMark: false },
+            { data: l3, label: "L3", showMark: false },
+            { data: l4, label: "L4", showMark: false },
+            {
+              data: socialOnly,
+              label: "Social Only",
+              showMark: false,
+            },
+          ]}
+          colors={colors}
+          xAxis={[{ scaleType: "point", data: xLabels, height: 28 }]}
+          yAxis={[{ width: 50, min: 0, max: 100 }]}
+          slotProps={{
+            legend: {
+              toggleVisibilityOnClick: true,
+            },
+          }}
+        />
+      </DyosCard>
+    </Grid>
+  );
+}
+
 function Attendance(props) {
   let data = props.data;
 
@@ -243,7 +319,9 @@ function Attendance(props) {
         sx={analyticsStyles.sectionContentContainer}
       >
         <TotalWeeklyAttendance data={data} />
+        <div></div>
         <ClassAttendance data={data} />
+        <PercentClassAttendance data={data} />
       </Grid>
     </Box>
   );
