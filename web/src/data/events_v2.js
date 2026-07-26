@@ -1,7 +1,9 @@
 // Events to be consumed by the UpcomingEventsV2 component
 
-import { createDate, getNextThursday } from "@/utils/date_utils";
+import { createDate, getNextThursday, nameOfMonth } from "@/utils/date_utils";
 
+// Important: if you change the key names here, also update the object accesses
+// in `allEvents` and `getThisMonthsEvents` below.
 const L1_TOPICS = {
   week1: "Left side pass, underarm pass, sugar push",
   week2: "Right side pass, closed position, whip",
@@ -9,7 +11,7 @@ const L1_TOPICS = {
   week4: "Left side pass, sugar push, spinning side pass",
 };
 
-const events = [
+const allEvents = [
   {
     date: createDate("01/08/2026"),
     title: "Footwork Variations week 1",
@@ -270,6 +272,21 @@ const events = [
     dj: "DJ Saucy",
     facebookLink: "",
   },
+  {
+    date: createDate("08/06/2026"),
+    noDyos: true,
+    title: "No DYOS",
+    subtitle: "See you at Swingtacular!",
+  },
+  {
+    date: createDate("08/13/2026"),
+  },
+  {
+    date: createDate("08/20/2026"),
+  },
+  {
+    date: createDate("08/27/2026"),
+  },
 ];
 
 // Example no DYOS item:
@@ -282,6 +299,17 @@ const events = [
 //   subtitle: "See you next week",
 // },
 
+// Example item with all possible info:
+// {
+//   date: createDate("mm/dd/yyyy"),
+//   title: "title",
+//   subtitle: "subtitle",
+//   advanceTopic: "class topic",
+//   levelOneTopic: L1_TOPICS.week1,
+//   dj: "DJ DJ",
+//   facebookLink: "https://www.example.com/",
+// },
+
 // Intro Class Scheduling doc: https://docs.google.com/spreadsheets/d/1JN8aU4991QY5T3iG_sc1WaUgN2MB8FN1t2rTakj4WOA/edit?gid=732299169#gid=732299169
 //   Specifies the class topics
 // Volunteer Sign Up Sheet: https://docs.google.com/spreadsheets/d/1xShbXzthXebT5oTHvB77HGHUBHOC3EyrIx05clzhVzI/edit?gid=0#gid=0
@@ -289,9 +317,32 @@ const events = [
 
 // TODO support specifying a particular month
 function getThisMonthsEvents() {
-  let thisMonth = getNextThursday().month();
+  const thisMonth = getNextThursday().month();
 
-  return events.filter((event) => event.date.month() === thisMonth);
+  const thisMonthEvents = allEvents.filter(
+    (event) => event.date.month() === thisMonth,
+  );
+
+  // Add default info to each event based on which week it is in the month
+  const monthName = nameOfMonth(thisMonth);
+  const weeksWithDyos = thisMonthEvents.filter((e) => !e.noDyos);
+  return thisMonthEvents.map((event) => {
+    if (event.noDyos) {
+      return event;
+    } else {
+      const week = weeksWithDyos.findIndex((e) => e.date === event.date) + 1;
+
+      // weeks beyond 4 repeat L4 topics
+      const l1TopicWeek = week > 4 || week < 1 ? 4 : week;
+
+      // if the event specified a title or L1 topic, those take precedence
+      return {
+        title: `${monthName} Week ${week}`,
+        levelOneTopic: L1_TOPICS[`week${l1TopicWeek}`],
+        ...event,
+      };
+    }
+  });
 }
 
 export default getThisMonthsEvents;

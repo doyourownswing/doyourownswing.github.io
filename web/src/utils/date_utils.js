@@ -43,10 +43,19 @@ function getNextThursday() {
   return today.day(4);
 }
 
+/**
+ * Return the name corresponding to the zero-indexed number passed in
+ * (e.g. 0 => January)
+ */
+function nameOfMonth(monthNum) {
+  return dayjs().month(monthNum).format("MMMM");
+}
+
 export {
   dateToHumanReadableString,
   formatDate,
   createDate,
   getBeginningOfTodayDate,
   getNextThursday,
+  nameOfMonth,
 };
