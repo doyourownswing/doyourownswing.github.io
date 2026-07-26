@@ -65,10 +65,5 @@ function App() {
   );
 }
 
-const rootElement = document.getElementById("root");
-if (rootElement.hasChildNodes()) {
-  hydrateRoot(rootElement, <App />);
-} else {
-  const root = createRoot(document.getElementById("root"));
-  root.render(<App />);
-}
+const root = createRoot(document.getElementById("root"));
+root.render(<App />);
