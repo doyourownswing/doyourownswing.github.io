@@ -18,15 +18,14 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-qr-code": "^2.0.18",
-    "react-router-dom": "^6.23.0",
+    "react-router-dom": "^6.30.4",
     "react-youtube": "^10.1.0",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "vite",
-    "build": "vite build",
+    "start": "vite-react-ssg dev",
+    "build": "vite-react-ssg build",
     "serve": "vite preview",
-    "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
@@ -54,6 +53,7 @@
     "gh-pages": "^6.1.1",
     "vite": "^6.4.1",
     "vite-plugin-eslint": "^1.8.1",
-    "vite-plugin-svgr": "^4.5.0"
+    "vite-plugin-svgr": "^4.5.0",
+    "vite-react-ssg": "^0.9.2"
   }
 }

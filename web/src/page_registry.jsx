@@ -23,63 +23,39 @@ class PageRegistrationInfo {
   }
 }
 
-const pageRegistry = [
-  new PageRegistrationInfo(pages.Home, true, <Home />),
-  new PageRegistrationInfo(pages.NotFound, true, <NotFound />),
+const mainPageRegistry = [
+  new PageRegistrationInfo(pages.Home, true, Home),
+  new PageRegistrationInfo(pages.NotFound, true, NotFound),
   new PageRegistrationInfo(
     pages.Schedule,
     FeatureFlags.showScheduleTab,
-    <Schedule />
+    Schedule,
   ),
-  new PageRegistrationInfo(pages.About, FeatureFlags.showAboutTab, <About />),
-  new PageRegistrationInfo(
-    pages.Health,
-    FeatureFlags.showHealthTab,
-    <Health />
-  ),
+  new PageRegistrationInfo(pages.About, FeatureFlags.showAboutTab, About),
+  new PageRegistrationInfo(pages.Health, FeatureFlags.showHealthTab, Health),
   new PageRegistrationInfo(
     pages.Code,
     FeatureFlags.showCodeOfConductTab,
-    <CodeOfConduct />
+    CodeOfConduct,
   ),
-  new PageRegistrationInfo(
-    pages.Contact,
-    FeatureFlags.showContactTab,
-    <Contact />
-  ),
+  new PageRegistrationInfo(pages.Contact, FeatureFlags.showContactTab, Contact),
   new PageRegistrationInfo(
     pages.StartHere,
     FeatureFlags.showStartHerePage,
-    <StartHere />
+    StartHere,
   ),
-  new PageRegistrationInfo(pages.Blog, FeatureFlags.showBlog, <Blog />),
-  new PageRegistrationInfo(pages.SignIn, true, <SignIn />, {
-    navBarOverrides: {
-      showNavBar: false,
-    },
-    showFooter: false,
-  }),
-  new PageRegistrationInfo(pages.Ipad, true, <Ipad />, {
-    navBarOverrides: {
-      showNavBar: false,
-    },
-    showFooter: false,
-  }),
-  new PageRegistrationInfo(pages.Analytics, true, <Analytics />, {
-    navBarOverrides: {
-      showNavBar: false,
-    },
-    showFooter: false,
-  }),
-  new PageRegistrationInfo(pages.Links, true, <Links />, {
-    navBarOverrides: {
-      showNavBar: false,
-    },
-    showFooter: false,
-  }),
+  new PageRegistrationInfo(pages.Blog, FeatureFlags.showBlog, Blog),
 ];
+
+const standalonePageRegistry = [
+  new PageRegistrationInfo(pages.SignIn, true, SignIn),
+  new PageRegistrationInfo(pages.Ipad, true, Ipad),
+  new PageRegistrationInfo(pages.Analytics, true, Analytics),
+  new PageRegistrationInfo(pages.Links, true, Links),
+];
+
 /** The list of routes to include in the router based on the feature eligibility. */
-const generatedRoutes = pageRegistry
+const generatedRoutes = mainPageRegistry
   .filter((p) => p.isVisible)
   .map((p) => ({
     // Fields used by router
@@ -106,4 +82,4 @@ class Overrides {
   }
 }
 
-export { generatedRoutes, Overrides };
+export { generatedRoutes, mainPageRegistry, standalonePageRegistry, Overrides };
