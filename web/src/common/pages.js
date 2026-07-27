@@ -1,18 +1,11 @@
 class Page {
-  constructor(url, displayName, isCurrentPageFunction) {
+  constructor(url, displayName) {
     this.displayName = displayName;
     this.url = url;
-    this.isCurrentPage =
-      isCurrentPageFunction ??
-      (() => window.location.pathname.includes(this.url));
   }
 }
 
-const Home = new Page(
-  "/",
-  "Home",
-  () => window.location.pathname === "" || window.location.pathname === "/"
-);
+const Home = new Page("/", "Home");
 const Schedule = new Page("/classes", "Classes");
 const About = new Page("/about", "About us");
 const Health = new Page("/health", "Health protocol");

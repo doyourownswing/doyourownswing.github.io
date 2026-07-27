@@ -14,6 +14,7 @@ import theme from "@/common/theme";
 import "./what_is_wcs.css";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
+import { ClientOnly } from "vite-react-ssg";
 
 import { HTML_IDS } from "../constants";
 
@@ -88,12 +89,12 @@ function VideoSection() {
   let youtubePlayerClassName = isScreenSizeXs
     ? breakPointClassName.xs
     : isScreenSizeSm
-    ? breakPointClassName.sm
-    : isScreenSizeMd
-    ? breakPointClassName.md
-    : isScreenSizeLg
-    ? breakPointClassName.lg
-    : breakPointClassName.xl;
+      ? breakPointClassName.sm
+      : isScreenSizeMd
+        ? breakPointClassName.md
+        : isScreenSizeLg
+          ? breakPointClassName.lg
+          : breakPointClassName.xl;
 
   // Returns an onVideoReady callback function scoped to the video index.
   // Video index is used for tracking currently played video.
@@ -166,13 +167,19 @@ function VideoSection() {
     let classNames = getPlayerContainerClasses(index).join(" ");
 
     return (
-      <YouTube
-        videoId={videoId}
-        onReady={createOnVideoReady(index)}
-        onPlay={createOnVideoPlay(index)}
-        iframeClassName={youtubePlayerClassName}
-        className={classNames}
-      ></YouTube>
+      <ClientOnly>
+        {() => {
+          return (
+            <YouTube
+              videoId={videoId}
+              onReady={createOnVideoReady(index)}
+              onPlay={createOnVideoPlay(index)}
+              iframeClassName={youtubePlayerClassName}
+              className={classNames}
+            ></YouTube>
+          );
+        }}
+      </ClientOnly>
     );
   }
 
@@ -279,7 +286,10 @@ const paragraphs = [
 // The What is West Coast Swing section renderer.
 function WhatIsWcs() {
   return (
-    <Box id={HTML_IDS.WHAT_IS_WCS} sx={whatIsWcsStyles.whatIsWcsStylesContainer}>
+    <Box
+      id={HTML_IDS.WHAT_IS_WCS}
+      sx={whatIsWcsStyles.whatIsWcsStylesContainer}
+    >
       <Container>
         <Typography variant="h3" sx={whatIsWcsStyles.header}>
           {messages.title}

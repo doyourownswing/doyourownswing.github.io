@@ -8,7 +8,9 @@ import {
 } from "@mui/material";
 import contactStyles from "./contact.styles";
 import DyosLink from "@/components/common/link";
-import { ContentCopy, Facebook, Instagram } from "@mui/icons-material";
+import ContentCopy from "@mui/icons-material/ContentCopy";
+import Facebook from "@mui/icons-material/Facebook";
+import Instagram from "@mui/icons-material/Instagram";
 import EmailIcon from "@mui/icons-material/Email";
 import DiscordIcon from "@/components/common/icons/discord";
 import { useState } from "react";

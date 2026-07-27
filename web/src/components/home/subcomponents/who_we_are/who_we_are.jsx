@@ -1,13 +1,11 @@
 import { Box, Container, Typography } from "@mui/material";
 import whoWeAreStyles from "./who_we_are.styles";
 import messages from "./messages";
-import {
-  AllInclusive,
-  Diversity2,
-  Favorite,
-  Handshake,
-} from "@mui/icons-material";
-import Grid from '@mui/material/Grid';
+import AllInclusive from "@mui/icons-material/AllInclusive";
+import Diversity2 from "@mui/icons-material/Diversity2";
+import Favorite from "@mui/icons-material/Favorite";
+import Handshake from "@mui/icons-material/Handshake";
+import Grid from "@mui/material/Grid";
 import { HTML_IDS } from "../constants";
 
 // Icons are from:

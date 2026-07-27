@@ -10,7 +10,8 @@ import {
 import { forwardRef } from "react";
 import ClassesPic from "@/assets/images/classes2.jpg";
 import SocialPic from "@/assets/images/mikaela-will-social.jpg";
-import { LocationPin, WatchLater } from "@mui/icons-material";
+import LocationPin from "@mui/icons-material/LocationPin";
+import WatchLater from "@mui/icons-material/WatchLater";
 import theme from "@/common/theme";
 import EventCard from "@/components/home/subcomponents/upcoming_events_v2/event_card";
 import getThisMonthsEvents from "@/data/events_v2";
