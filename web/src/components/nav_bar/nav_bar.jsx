@@ -28,16 +28,13 @@ import { useLocation } from "react-router-dom";
  * Re-renders itself when the URL changes to update button styling.
  */
 function ExpandedMenuOptions() {
-  const [, updateState] = React.useState();
-  const forceUpdate = React.useCallback(() => updateState({}), []);
-  const location = useLocation();
-
-  React.useEffect(() => {
-    forceUpdate();
-  }, [forceUpdate, location]);
+  const { pathname } = useLocation();
 
   const getButtonStyle = (option) => {
-    if (option.isCurrentPage()) {
+    const isCurrentPage =
+      option.url === pathname || (option.url === "/" && pathname === "");
+
+    if (isCurrentPage) {
       return {
         ...navBarStyles.expandedOptionsButton,
         ...navBarStyles.selectedOption,
@@ -67,14 +64,19 @@ function ExpandedMenuOptions() {
  * A menu icon with a dropdown menu.
  */
 function MenuIconOptions() {
+  const { pathname } = useLocation();
   const [anchorElMenu, setAnchorElMenu] = React.useState(null);
   const handleOpenNavMenu = (event) => setAnchorElMenu(event.currentTarget);
   const handleCloseNavMenu = () => setAnchorElMenu(null);
 
-  const getMenuItemTextStyle = (option) =>
-    option.isCurrentPage()
+  const getMenuItemTextStyle = (option) => {
+    const isCurrentPage =
+      option.url === pathname || (option.url === "/" && pathname === "");
+
+    return isCurrentPage
       ? { ...navBarStyles.menuItem, ...navBarStyles.selectedOption }
       : navBarStyles.menuItem;
+  };
 
   return (
     <div>

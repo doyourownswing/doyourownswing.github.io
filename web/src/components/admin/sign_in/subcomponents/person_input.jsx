@@ -9,7 +9,7 @@ import {
 import { useEffect, useState } from "react";
 import signInStyles from "../sign_in.styles";
 import SignInService from "../sign_in_service";
-import { Refresh } from "@mui/icons-material";
+import Refresh from "@mui/icons-material/Refresh";
 import { sortPeopleAlphabetically } from "../utils";
 import { DATA_STATE } from "@/components/admin/sign_in/constants";
 import messages from "@/components/admin/sign_in/messages";

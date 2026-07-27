@@ -7,7 +7,8 @@ import {
   MobileStepper,
   Typography,
 } from "@mui/material";
-import { KeyboardArrowLeft, KeyboardArrowRight } from "@mui/icons-material";
+import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";
+import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
 import FeatureFlags from "@/infra/feature_flags";
 import getNextEvents from "@/data/events";
 import messages from "./messages";

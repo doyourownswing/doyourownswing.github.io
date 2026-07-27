@@ -15,6 +15,7 @@ import {
   VENMO_QR_LINK,
   ZELLE_LINK,
 } from "@/common/constants";
+import { ClientOnly } from "vite-react-ssg";
 
 const ZELLE_DATA = {
   title: ZelleLogo,
@@ -77,7 +78,13 @@ function PaymentOption(props) {
             />
           </Box>
           <Box sx={paymentStyles.cardBody}>
-            <QRCode style={paymentStyles.qrCode} value={data.qrCode}></QRCode>
+            <ClientOnly>
+              {() => {
+                return (
+                  <QRCode style={paymentStyles.qrCode} value={data.qrCode} />
+                );
+              }}
+            </ClientOnly>
             <Typography>{data.associatedAccount}</Typography>
           </Box>
           {!!data.footer && (
