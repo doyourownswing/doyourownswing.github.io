@@ -1,9 +1,136 @@
 import theme from "@/common/theme";
 import analyticsStyles from "@/components/admin/analytics/analytics.styles";
-import { prettyPrintDate } from "@/components/admin/analytics/utils";
+import { prettyPrintDate, shortDate } from "@/components/admin/analytics/utils";
 import DyosCard from "@/components/common/card";
 import { Box, Grid, Typography } from "@mui/material";
 import { BarChart, LineChart } from "@mui/x-charts";
+
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell from "@mui/material/TableCell";
+import TableHead from "@mui/material/TableHead";
+import TableRow from "@mui/material/TableRow";
+
+const MAX_HISTOGRAM_SECTIONS = 10;
+
+/**
+ * Given dataArrays (an array of numeric arrays),
+ * dates (an array of strings with the same length as an array in data),
+ * and labels (one for each array in data),
+ * displays summary statistics for each array in the data.
+ */
+function SummaryStats({ dataArrays, dates, labels }) {
+  // helper for calculating median (can also be used for quartiles)
+  const getElemAroundIndex = (arr, i) => {
+    if (i !== Math.floor(i)) {
+      return arr[Math.floor(i)];
+    } else {
+      return (arr[i - 1] + arr[i]) / 2;
+    }
+  };
+
+  const summaries = dataArrays.map((arr) => {
+    /* Summary stats */
+    const sum = arr.reduce((acc, num) => acc + num, 0);
+    const mean = Math.round(sum / arr.length);
+
+    const sortedData = arr.toSorted((a, b) => Number(a) - Number(b));
+    const median = getElemAroundIndex(sortedData, arr.length / 2);
+
+    // these arrays should be small enough to safely spread them into function calls
+    const max = Math.max(...arr);
+    const maxIdx = arr.indexOf(max);
+    const min = Math.min(...arr);
+    const minIdx = arr.indexOf(min);
+
+    /* Data for the histogram - determine histogram thresholds based on range */
+    const range = max + 1 - min;
+    const thresholdDiff = Math.ceil(range / MAX_HISTOGRAM_SECTIONS);
+    const nSections = Math.ceil(range / thresholdDiff);
+
+    const thresholds = [...new Array(nSections)].map(
+      (_, i) => min + i * thresholdDiff,
+    );
+
+    const thresholdLabels =
+      thresholdDiff > 1
+        ? thresholds.map((n) => `${n}-${n + thresholdDiff - 1}`)
+        : thresholds;
+
+    const counts = thresholds.map(() => 0);
+    arr.forEach((n) => {
+      const bin = Math.floor((n - min) / thresholdDiff);
+      counts[bin] += 1;
+    });
+
+    return {
+      mean,
+      median,
+      max,
+      min,
+      maxIdx,
+      minIdx,
+      histogram: { thresholdLabels, counts },
+    };
+  });
+
+  return (
+    <details>
+      <summary>Show/hide summary stats</summary>
+      {summaries.map(({ histogram: { thresholdLabels, counts } }, i) => {
+        return (
+          <BarChart
+            key={labels[i]}
+            height={200}
+            xAxis={[
+              {
+                data: thresholdLabels,
+                label: `${labels[i]} histogram`,
+                scaleType: "band",
+                categoryGapRatio: 0,
+              },
+            ]}
+            series={[
+              {
+                data: counts,
+                type: "bar",
+              },
+            ]}
+          />
+        );
+      })}
+
+      <Table>
+        <TableHead>
+          <TableRow>
+            <TableCell></TableCell>
+            <TableCell>Min</TableCell>
+            <TableCell>Avg</TableCell>
+            <TableCell>Median</TableCell>
+            <TableCell>Max</TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {summaries.map(({ mean, median, max, min, maxIdx, minIdx }, i) => (
+            <TableRow key={labels[i]}>
+              <TableCell>{labels[i]}</TableCell>
+              <TableCell>
+                {min}
+                <br />({shortDate(dates[minIdx])})
+              </TableCell>
+              <TableCell>{mean}</TableCell>
+              <TableCell>{median}</TableCell>
+              <TableCell>
+                {max}
+                <br />({shortDate(dates[maxIdx])})
+              </TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </details>
+  );
+}
 
 function TotalWeeklyAttendance(props) {
   let data = props.data.weeklyStats;
@@ -25,6 +152,11 @@ function TotalWeeklyAttendance(props) {
           xAxis={[{ scaleType: "point", data: xLabels, height: 28 }]}
           yAxis={[{ min: 0 }]}
           margin={{ right: 64 }}
+        />
+        <SummaryStats
+          dataArrays={[weeklyAttendance]}
+          dates={data.map((d) => d.date)}
+          labels={["Total attendees"]}
         />
       </DyosCard>
     </Grid>
@@ -54,21 +186,115 @@ function ClassAttendance(props) {
       <DyosCard>
         <Box sx={analyticsStyles.chartTitleContainer}>
           <Typography variant="h6" sx={analyticsStyles.chartTitle}>
-            Class attendance
+            Class attendance (# of people)
+          </Typography>
+          <Typography variant="subtitle" sx={analyticsStyles.chartSubtitle}>
+            Click a legend item to show/hide that line
           </Typography>
         </Box>
-        <BarChart
+        <LineChart
           height={300}
           series={[
-            { data: l1, label: "L1", id: "l1" },
-            { data: l2, label: "L2", id: "l2" },
-            { data: l3, label: "L3", id: "l3" },
-            { data: l4, label: "L4", id: "l4" },
-            { data: socialOnly, label: "Social Only", id: "so" },
+            { data: l1, label: "L1", showMark: false },
+            { data: l2, label: "L2", showMark: false },
+            { data: l3, label: "L3", showMark: false },
+            { data: l4, label: "L4", showMark: false },
+            {
+              data: socialOnly,
+              label: "Social Only",
+              showMark: false,
+            },
           ]}
           colors={colors}
-          xAxis={[{ data: xLabels, height: 28 }]}
+          xAxis={[{ scaleType: "point", data: xLabels, height: 28 }]}
           yAxis={[{ width: 50 }]}
+          slotProps={{
+            legend: {
+              toggleVisibilityOnClick: true,
+            },
+          }}
+        />
+        <SummaryStats
+          dataArrays={[l1, l2, l3, l4, socialOnly]}
+          dates={data.map((d) => d.date)}
+          labels={["L1", "L2", "L3", "L4", "Social"]}
+        />
+      </DyosCard>
+    </Grid>
+  );
+}
+
+function PercentClassAttendance(props) {
+  let data = props.data.weeklyStats;
+
+  const xLabels = data.map((d) => prettyPrintDate(d.date));
+  const l1 = data.map((d) =>
+    ((100 * d.attendance.numL1Attendees) / d.attendance.totalAttendees).toFixed(
+      1,
+    ),
+  );
+  const l2 = data.map((d) =>
+    ((100 * d.attendance.numL2Attendees) / d.attendance.totalAttendees).toFixed(
+      1,
+    ),
+  );
+  const l3 = data.map((d) =>
+    ((100 * d.attendance.numL3Attendees) / d.attendance.totalAttendees).toFixed(
+      1,
+    ),
+  );
+  const l4 = data.map((d) =>
+    ((100 * d.attendance.numL4Attendees) / d.attendance.totalAttendees).toFixed(
+      1,
+    ),
+  );
+  const socialOnly = data.map((d) =>
+    (
+      (100 * d.attendance.numSocialOnlyAttendees) /
+      d.attendance.totalAttendees
+    ).toFixed(1),
+  );
+
+  const colors = [
+    theme.palette.charts.l1,
+    theme.palette.charts.l2,
+    theme.palette.charts.l3,
+    theme.palette.charts.l4,
+    theme.palette.charts.socialOnly,
+  ];
+
+  return (
+    <Grid size={1}>
+      <DyosCard>
+        <Box sx={analyticsStyles.chartTitleContainer}>
+          <Typography variant="h6" sx={analyticsStyles.chartTitle}>
+            Class attendance (% of total attendees)
+          </Typography>
+          <Typography variant="subtitle" sx={analyticsStyles.chartSubtitle}>
+            Click a legend item to show/hide that line
+          </Typography>
+        </Box>
+        <LineChart
+          height={300}
+          series={[
+            { data: l1, label: "L1", showMark: false },
+            { data: l2, label: "L2", showMark: false },
+            { data: l3, label: "L3", showMark: false },
+            { data: l4, label: "L4", showMark: false },
+            {
+              data: socialOnly,
+              label: "Social Only",
+              showMark: false,
+            },
+          ]}
+          colors={colors}
+          xAxis={[{ scaleType: "point", data: xLabels, height: 28 }]}
+          yAxis={[{ width: 50, min: 0, max: 100 }]}
+          slotProps={{
+            legend: {
+              toggleVisibilityOnClick: true,
+            },
+          }}
         />
       </DyosCard>
     </Grid>
@@ -93,7 +319,9 @@ function Attendance(props) {
         sx={analyticsStyles.sectionContentContainer}
       >
         <TotalWeeklyAttendance data={data} />
+        <div></div>
         <ClassAttendance data={data} />
+        <PercentClassAttendance data={data} />
       </Grid>
     </Box>
   );

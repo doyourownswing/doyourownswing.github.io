@@ -5,6 +5,9 @@ import dayjs from "dayjs";
 export const prettyPrintDate = (dateString) =>
   formatDate(dayjs(new Date(dateString)), "MMM D, YYYY");
 
+export const shortDate = (dateString) =>
+  formatDate(dayjs(new Date(dateString)), "M/D/YY");
+
 export const dateStringToMonth = (dateString) =>
   formatDate(dayjs(new Date(dateString)), "MMM");
 

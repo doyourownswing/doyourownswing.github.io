@@ -187,10 +187,10 @@ const theme = responsiveFontSizes(
       },
       charts: {
         l1: basePalette.purple300,
-        l2: basePalette.purple400,
-        l3: basePalette.purple500,
-        l4: basePalette.purple600,
-        socialOnly: basePalette.purple700,
+        l2: basePalette.purple500,
+        l3: basePalette.purple600,
+        l4: basePalette.purple900,
+        socialOnly: basePalette.blue300,
         cash: "green",
         venmo: "#008cff",
         paypal: "#002b87",
@@ -234,7 +234,7 @@ const theme = responsiveFontSizes(
         fontFamily: "Poppins",
       },
     },
-  })
+  }),
 );
 
 export default theme;
