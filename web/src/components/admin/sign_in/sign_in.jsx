@@ -102,6 +102,11 @@ function SignIn() {
 
   const onSelectExemption = (event) => {
     setExemption(event.target.value);
+
+    // If the person is a spectator, unselect any selected events
+    if (event.target.value === EXEMPTION.SPECTATOR) {
+      setEventsAttending(BASE_EVENTS_VALUE);
+    }
   };
 
   const onMaskPurchaseChange = (event) => {
@@ -183,6 +188,10 @@ function SignIn() {
                     onSelectExemption={onSelectExemption}
                   />
 
+                  {exemption === EXEMPTION.SPECTATOR && (
+                    <Typography>{messages.spectatorInfo}</Typography>
+                  )}
+
                   <MaskInput
                     checked={buyingMask}
                     onMaskPurchaseChange={onMaskPurchaseChange}
@@ -195,11 +204,17 @@ function SignIn() {
                   />
                 </Box>
               </Box>
-              <WhichEvents
-                value={eventsAttending}
-                onSetEventsAttendingChange={setEventsAttending}
-                required={exemption !== EXEMPTION.TEACHER}
-              />
+              {exemption !== EXEMPTION.SPECTATOR && (
+                <WhichEvents
+                  value={eventsAttending}
+                  onSetEventsAttendingChange={setEventsAttending}
+                  required={
+                    ![EXEMPTION.TEACHER, EXEMPTION.SPECTATOR].includes(
+                      exemption,
+                    )
+                  }
+                />
+              )}
             </Stack>
             <Box sx={signInStyles.inputContainer}>
               {!formValid && (
