@@ -274,9 +274,10 @@ const allEvents = [
   },
   {
     date: createDate("08/06/2026"),
-    noDyos: true,
-    title: "No DYOS",
-    subtitle: "See you at Swingtacular!",
+    title: "Swingtacular Week!",
+    subtitle:
+      "Join us for a shorter event with Alison, Joel, and Natasha! Our social dance will end at 10:30pm tonight.",
+    dj: "TBA",
   },
   {
     date: createDate("08/13/2026"),

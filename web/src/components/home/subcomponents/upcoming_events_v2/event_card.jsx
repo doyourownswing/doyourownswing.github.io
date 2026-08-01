@@ -203,10 +203,12 @@ function EventCard(props) {
                   detail={messages.levelOneTopicHeader}
                   description={`${event.levelOneTopic}*`}
                 />
-                <EventCardDetail
-                  detail={messages.djHeader}
-                  description={!!event.dj ? event.dj : "DJ Riley"}
-                />
+                {event.dj && (
+                  <EventCardDetail
+                    detail={messages.djHeader}
+                    description={event.dj}
+                  />
+                )}
               </Box>
             )}
           </Box>
