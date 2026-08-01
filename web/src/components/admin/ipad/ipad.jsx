@@ -10,6 +10,7 @@ import {
   REGISTRATION_FORM_LINK_EMBEDDABLE,
 } from "@/common/constants";
 import QRCode from "react-qr-code";
+import { ClientOnly } from "vite-react-ssg";
 
 import { useTitle } from "@/common/hooks";
 
@@ -25,7 +26,11 @@ function EmbeddedRegistrationForm() {
     <Box>
       <Box sx={ipadStyles.formQrContainer}>
         <Box sx={ipadStyles.formQrCard}>
-          <QRCode value={REGISTRATION_FORM_LINK} />
+          <ClientOnly>
+            {() => {
+              return <QRCode value={REGISTRATION_FORM_LINK} />;
+            }}
+          </ClientOnly>
           <Typography variant="h6" sx={ipadStyles.formQrText}>
             Scan for registration form
           </Typography>

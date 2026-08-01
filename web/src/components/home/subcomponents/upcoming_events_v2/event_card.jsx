@@ -3,11 +3,9 @@ import DyosCard from "@/components/common/card";
 import eventCardStyles from "@/components/home/subcomponents/upcoming_events_v2/event_card.styles";
 import messages from "@/components/home/subcomponents/upcoming_events_v2/messages";
 import { formatDate } from "@/utils/date_utils";
-import {
-  Apple as AppleIcon,
-  Google as GoogleIcon,
-  Microsoft as MicrosoftIcon,
-} from "@mui/icons-material";
+import AppleIcon from "@mui/icons-material/Apple";
+import GoogleIcon from "@mui/icons-material/Google";
+import MicrosoftIcon from "@mui/icons-material/Microsoft";
 import {
   Box,
   Button,

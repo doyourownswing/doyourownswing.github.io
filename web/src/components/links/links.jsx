@@ -13,17 +13,15 @@ import {
 } from "@mui/material";
 import Logo from "@/assets/images/purple-heart-progress-circle.png";
 import DiscordIcon from "@/components/common/icons/discord";
-import {
-  Diversity1,
-  Email,
-  ExpandMore,
-  Facebook,
-  Flag,
-  Instagram,
-  Paid,
-  School,
-  Store,
-} from "@mui/icons-material";
+import Diversity1 from "@mui/icons-material/Diversity1";
+import Email from "@mui/icons-material/Email";
+import ExpandMore from "@mui/icons-material/ExpandMore";
+import Facebook from "@mui/icons-material/Facebook";
+import Flag from "@mui/icons-material/Flag";
+import Instagram from "@mui/icons-material/Instagram";
+import Paid from "@mui/icons-material/Paid";
+import School from "@mui/icons-material/School";
+import Store from "@mui/icons-material/Store";
 import {
   DYOS_DISCORD_LINK,
   DYOS_FACEBOOK_LINK,
