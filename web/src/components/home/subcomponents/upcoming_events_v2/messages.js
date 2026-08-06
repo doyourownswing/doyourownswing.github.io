@@ -43,7 +43,7 @@ const messages = {
   rsvpOnFacebook: "RSVP on Facebook",
   addToCalendar: "Add to calendar",
   google: "Google",
-  apple: "Apple",
+  apple: "Apple / Download .ics",
   outlook: "Outlook",
   advanceTopicHeader: "L3/L4 class topic: ",
   levelOneTopicHeader: "Intro class topic: ",
