@@ -18,7 +18,7 @@ const FeatureFlags = {
   showStartHerePage: true,
   useHeroV2: true,
   showMerchSection: true,
-  showBlog: isDevel() || window.location.href.includes("blog"),
+  showBlog: isDevel(),
   useUpcomingEventsV2: true,
 };
 

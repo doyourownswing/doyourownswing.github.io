@@ -15,95 +15,54 @@ import Analytics from "@/components/admin/analytics/analytics";
 import Links from "@/components/links/links";
 
 class PageRegistrationInfo {
-  constructor(page, isVisible, element, overrides) {
+  constructor(page, isVisible, element) {
     this.page = page;
     this.isVisible = isVisible;
     this.element = element;
-    this.overrides = overrides;
+  }
+
+  /** Return a partial react router v6 Route object. */
+  get route() {
+    return {
+      path: this.page.url,
+      Component: this.element,
+    };
   }
 }
 
-const pageRegistry = [
-  new PageRegistrationInfo(pages.Home, true, <Home />),
-  new PageRegistrationInfo(pages.NotFound, true, <NotFound />),
+// These pages display with both a header and footer.
+// They're generally part of the main website navigation.
+const mainPageRegistry = [
+  new PageRegistrationInfo(pages.Home, true, Home),
+  new PageRegistrationInfo(pages.NotFound, true, NotFound),
   new PageRegistrationInfo(
     pages.Schedule,
     FeatureFlags.showScheduleTab,
-    <Schedule />
+    Schedule,
   ),
-  new PageRegistrationInfo(pages.About, FeatureFlags.showAboutTab, <About />),
-  new PageRegistrationInfo(
-    pages.Health,
-    FeatureFlags.showHealthTab,
-    <Health />
-  ),
+  new PageRegistrationInfo(pages.About, FeatureFlags.showAboutTab, About),
+  new PageRegistrationInfo(pages.Health, FeatureFlags.showHealthTab, Health),
   new PageRegistrationInfo(
     pages.Code,
     FeatureFlags.showCodeOfConductTab,
-    <CodeOfConduct />
+    CodeOfConduct,
   ),
-  new PageRegistrationInfo(
-    pages.Contact,
-    FeatureFlags.showContactTab,
-    <Contact />
-  ),
+  new PageRegistrationInfo(pages.Contact, FeatureFlags.showContactTab, Contact),
   new PageRegistrationInfo(
     pages.StartHere,
     FeatureFlags.showStartHerePage,
-    <StartHere />
+    StartHere,
   ),
-  new PageRegistrationInfo(pages.Blog, FeatureFlags.showBlog, <Blog />),
-  new PageRegistrationInfo(pages.SignIn, true, <SignIn />, {
-    navBarOverrides: {
-      showNavBar: false,
-    },
-    showFooter: false,
-  }),
-  new PageRegistrationInfo(pages.Ipad, true, <Ipad />, {
-    navBarOverrides: {
-      showNavBar: false,
-    },
-    showFooter: false,
-  }),
-  new PageRegistrationInfo(pages.Analytics, true, <Analytics />, {
-    navBarOverrides: {
-      showNavBar: false,
-    },
-    showFooter: false,
-  }),
-  new PageRegistrationInfo(pages.Links, true, <Links />, {
-    navBarOverrides: {
-      showNavBar: false,
-    },
-    showFooter: false,
-  }),
+  new PageRegistrationInfo(pages.Blog, FeatureFlags.showBlog, Blog),
 ];
-/** The list of routes to include in the router based on the feature eligibility. */
-const generatedRoutes = pageRegistry
-  .filter((p) => p.isVisible)
-  .map((p) => ({
-    // Fields used by router
-    path: p.page.url,
-    element: p.element,
-    // Fields not used by router
-    page: p.page,
-    overrides: p.overrides,
-  }));
 
-class Overrides {
-  static shouldShowNavBar(overrides) {
-    // default to showing nav bar
-    if (!overrides || !overrides.navBarOverrides) return true;
+// These pages display without a header or footer.
+// They're generally only navigated to by URL.
+const standalonePageRegistry = [
+  new PageRegistrationInfo(pages.SignIn, true, SignIn),
+  new PageRegistrationInfo(pages.Ipad, true, Ipad),
+  new PageRegistrationInfo(pages.Analytics, true, Analytics),
+  new PageRegistrationInfo(pages.Links, true, Links),
+];
 
-    return overrides.navBarOverrides.showNavBar ?? true;
-  }
-
-  static shouldShowFooter(overrides) {
-    // default to showing footer
-    if (!overrides) return true;
-
-    return overrides.showFooter ?? true;
-  }
-}
-
-export { generatedRoutes, Overrides };
+export { mainPageRegistry, standalonePageRegistry };
