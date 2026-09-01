@@ -288,6 +288,40 @@ const allEvents = [
   {
     date: createDate("08/27/2026"),
   },
+  {
+    date: createDate("09/03/2026"),
+  },
+  {
+    date: createDate("09/10/2026"),
+  },
+  {
+    date: createDate("09/17/2026"),
+    title: "Medieval Fantasy Night!",
+    subtitle:
+      "Join us for a loose genre night of dungeons, dragons, pagan witches and warlocks, elves, mythological creatures, and even a touch of renaissance for some era-fusion!",
+    facebookLink:
+      "https://www.facebook.com/doyourownswing/posts/pfbid0TjdChQ28GzBMUfSMCXu7QnhmpDkwJvhBMAAom3RaLiAy1Mkc3AdZDVtEsFJJiGTrl",
+  },
+  {
+    date: createDate("09/24/2026"),
+  },
+  {
+    date: createDate("10/01/2026"),
+    title: "DYOS 10 Year Anniversary!",
+  },
+  {
+    date: createDate("10/08/2026"),
+  },
+  {
+    date: createDate("10/15/2026"),
+  },
+  {
+    date: createDate("10/22/2026"),
+  },
+  {
+    date: createDate("10/29/2026"),
+    title: "Halloween/Costume Party!",
+  },
 ];
 
 // Example no DYOS item:
