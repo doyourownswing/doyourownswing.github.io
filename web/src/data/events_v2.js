@@ -308,19 +308,32 @@ const allEvents = [
   {
     date: createDate("10/01/2026"),
     title: "DYOS 10 Year Anniversary!",
+    subtitle:
+      "Celebrate with us with a potluck, special class topics of then vs now, and a social dance set of music over the past 10 years!",
   },
   {
     date: createDate("10/08/2026"),
+    title: "Mini-DYOS",
+    subtitle:
+      "Regularly scheduled classes, followed by a 1 hour practice / social upstairs in the Sky Ballroom. See you at Boogie By The Bay!",
   },
   {
     date: createDate("10/15/2026"),
+    title: "DYOS: farewell Will edition",
+    subtitle:
+      "Before Will leaves the Bay Area, we have him for one last DYOS, and we plan to make it extra special as we sent him off!",
   },
   {
     date: createDate("10/22/2026"),
+    title: "The Paper Plate Games!",
+    subtitle:
+      "Stay tuned for more details of the Paper Plate Games during tonight's social",
   },
   {
     date: createDate("10/29/2026"),
     title: "Halloween/Costume Party!",
+    subtitle:
+      "The spookiest DYOS of the year! Wear your costumes and bring a dish for the potluck! Or don't, we don't judge, we just care that you show up :)",
   },
 ];
 
@@ -355,7 +368,7 @@ function getThisMonthsEvents() {
   const thisMonth = getNextThursday().month();
 
   const thisMonthEvents = allEvents.filter(
-    (event) => event.date.month() === thisMonth,
+    (event) => event.date.month() === thisMonth
   );
 
   // Add default info to each event based on which week it is in the month
