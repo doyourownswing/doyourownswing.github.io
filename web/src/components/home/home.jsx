@@ -6,6 +6,7 @@ import WhoWeAre from "./subcomponents/who_we_are/who_we_are";
 import FeatureFlags from "@/infra/feature_flags";
 import Merch from "./subcomponents/merch/merch";
 import UpcomingEventsV2 from "@/components/home/subcomponents/upcoming_events_v2/upcoming_events_v2";
+import WinterSchedule from "@/components/home/subcomponents/winter_schedule_2025/winter_schedule";
 import { useTitle } from "@/common/hooks";
 
 export default function Home() {
@@ -14,6 +15,7 @@ export default function Home() {
     <Box>
       <Hero />
       <UpcomingEventsV2 />
+      <WinterSchedule />
       <WhoWeAre />
       <WhatIsWcs />
       <SongOfTheWeek />
