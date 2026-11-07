@@ -84,8 +84,8 @@ const winterScheduleStyles = {
     textAlign: "center",
     textShadow: "0 0 8px #5d5d5d",
     // Extra padding to show off the hanging stars
-    paddingTop: "2rem",
-    paddingBottom: "4rem",
+    paddingTop: "1.5rem",
+    paddingBottom: "2rem",
   },
   noClassEventCard: {
     ...baseEventCard,
@@ -124,6 +124,11 @@ const winterScheduleStyles = {
         color: "#b5deff",
       },
     },
+    yesDyosText: {
+      color: "#ffffff",
+      fontSize: "1.25rem",
+      fontWeight: "700",
+    },
   },
   noDyos: {
     eventCard: {
@@ -142,13 +147,11 @@ const winterScheduleStyles = {
       color: "#a3a3a3",
       fontSize: "1.25rem",
       fontWeight: "700",
-      // Mimic the padding given by buttons
-      paddingRight: "8px",
     },
   },
   stars: {
     ...baseEmbellishment,
-    top: "0",
+    top: "-3%",
     width: "min(50vw, 32rem)",
     left: "calc(50% - min(50vw, 32rem) / 2)",
   },

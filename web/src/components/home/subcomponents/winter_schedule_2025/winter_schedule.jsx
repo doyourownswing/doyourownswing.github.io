@@ -18,8 +18,6 @@ function Event(props) {
     ? winterScheduleStyles.dyosDay
     : winterScheduleStyles.noDyos;
 
-  let link = details.eventLink ?? "/classes";
-
   return (
     <Grid size={1}>
       <Stack sx={baseStyle.eventCard} direction={"row"}>
@@ -30,17 +28,11 @@ function Event(props) {
           </Typography>
         </Box>
         <Box>
-          {details.hasDyos && (
-            <Button
-              variant="text"
-              sx={baseStyle.button}
-              href={link}
-              target="_blank"
-            >
-              {messages.seeDetails}
-            </Button>
-          )}
-          {!details.hasDyos && (
+          {details.hasDyos ? (
+            <Typography sx={baseStyle.yesDyosText}>
+              {messages.yesDyos}
+            </Typography>
+          ) : (
             <Typography sx={baseStyle.noDyosText}>{messages.noDyos}</Typography>
           )}
         </Box>
@@ -54,7 +46,12 @@ const WinterSchedule = forwardRef(function WinterSchedule(_, ref) {
     <Box ref={ref} sx={winterScheduleStyles.container}>
       <Box component="img" src={stars} sx={winterScheduleStyles.stars}></Box>
       {winterScheduleStyles.snowflakes.map((snowflakeStyle) => (
-        <Box component="img" src={snowflake} sx={snowflakeStyle}></Box>
+        <Box
+          component="img"
+          src={snowflake}
+          className={"snowflake"}
+          sx={snowflakeStyle}
+        ></Box>
       ))}
       <Container sx={winterScheduleStyles.contentContainer}>
         <Typography variant="h3" sx={winterScheduleStyles.title}>

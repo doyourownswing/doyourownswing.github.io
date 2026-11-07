@@ -8,3 +8,9 @@
     opacity: 15%;
   }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .snowflake {
+    display: none;
+  }
+}
